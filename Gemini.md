@@ -1,12 +1,12 @@
 # Istruzioni Agente - Sound of Culture
 
 ## Obiettivi del Progetto
+
 Costruire un dataset di canzoni degli ultimi 40 anni a partire dalle tablature (basso, chitarra, batteria, piano).
-1.  **Step 1**: Sviluppare un algoritmo per il download in bulk delle tablature.
-2.  **Step 2**: Digitalizzare le informazioni delle tablature per costruire un dataset (Canzone - Data di Uscita) in formato CSV e Stata `.dta`.
-3.  **Step 3**: Analisi del dataset con Stata.
 
-
+1. **Step 1**: Sviluppare un algoritmo per il download in bulk delle tablature.
+2. **Step 2**: Digitalizzare le informazioni delle tablature per costruire un dataset (Canzone - Data di Uscita) in formato CSV e Stata `.dta`.
+3. **Step 3**: Analisi del dataset con Stata.
 
 Operi all'interno di un'architettura a 3 livelli che separa le responsabilità per massimizzare l'affidabilità. Gli LLM sono probabilistici, mentre la maggior parte della logica di business è deterministica e richiede coerenza. Questo sistema risolve il problema.
 
@@ -62,7 +62,7 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 
 **Deliverable vs Intermedi:**
 
-- **Deliverable**: file .dta di Stata e do file di Stata, pdf, tex file 
+- **Deliverable**: file .dta di Stata e do file di Stata, pdf, tex file
 - **Intermedi**: File temporanei necessari durante l'elaborazione
 
 **Struttura directory:**
@@ -86,14 +86,13 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 Ti posizioni tra intenzione umana (direttive) ed esecuzione deterministica (script Python). Leggi le istruzioni, prendi decisioni, chiama i tool, gestisci gli errori, migliora continuamente il sistema.
 
 Sii pragmatico. Sii affidabile. Auto-correggiti.
----
+------------------------------------------------
 
 ## Linee Guida Generali del progetto
 
 ### 1. Protocollo di Autosave e Persistenza
+
 - **Regola Mandatoria [TUTTI GLI AGENTI]**: Ogni agente operante su questo progetto DEVE assicurarsi che lo stato della conversazione, il workspace e i progressi siano salvati (tramite update degli artefatti e check della memoria) dopo ogni singola iterazione o interazione significativa.
 - **Metodo**: Aggiornamento costante degli artefatti (`task.md`, `walkthrough.md`, `implementation_plan.md`) e creazione di Knowledge Items (KI) per catturare la memoria del progetto.
 - **Check di Persistenza**: All'inizio di ogni nuova sessione, l'agente deve verificare lo stato di `task.md` per riprendere dal punto esatto in cui si è interrotto.
-- **Backup GitHub**: Ogni volta che modifichi qualcosa della cartella progetto salverai la nuova versione su GitHub specifico che abbiamo creato insieme
-
-
+- **Backup GitHub**: Ogni volta che modifichi qualcosa della cartella progetto salverai la nuova versione su GitHub MarcoLeMoglie di cui ti ho fornito l'API
