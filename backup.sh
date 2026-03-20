@@ -3,7 +3,7 @@
 # Backup Script - Sound of Culture
 
 echo "Updating Folder Structure in README.md..."
-python visualize_structure.py
+python3 visualize_structure.py
 
 echo "Checking Git Status..."
 if [ ! -d ".git" ]; then
