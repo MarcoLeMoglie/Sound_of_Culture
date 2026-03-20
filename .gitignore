@@ -1,6 +1,4 @@
-.tmp/
+data/
+*.log
 .DS_Store
-__pycache__/
-*.pyc
-.gemini/
-.env
+.tmp/
