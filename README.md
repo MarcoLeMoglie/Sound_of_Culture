@@ -8,6 +8,7 @@ Costruire un dataset di canzoni degli ultimi 40 anni a partire dalle tablature (
 ```text
 ├── .gitignore
 ├── Gemini.md
+├── README.md
 ├── backup.sh
 ├── data
 │   ├── processed_datasets
