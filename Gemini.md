@@ -71,6 +71,7 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 **Struttura directory:**
 
 <!-- STRUCTURE_START -->
+
 ```text
 ├── .coldstart_country_artists_stata_v4
 │   ├── data
@@ -127,8 +128,8 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 ├── run_full_replication.log
 └── visualize_structure.py
 ```
-<!-- STRUCTURE_END -->
 
+<!-- STRUCTURE_END -->
 
 - `.tmp/` - File intermedi e download temporanei. Mai committare.
 - `directives/` - SOP in Markdown per ogni step del progetto.
@@ -142,7 +143,6 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
   - `raw_tabs/` - Tablature scaricate
   - `processed_datasets/` - Datasets CSV e DTA
 - `.env` - Variabili d'ambiente e chiavi API.
-
 
 **Principio chiave:** I file locali sono solo per l'elaborazione. I deliverable vivono nei servizi cloud (Google Sheets, Slides, ecc.) dove l'utente può accedervi. Tutto in `.tmp/` può essere cancellato e rigenerato.
 
@@ -161,7 +161,21 @@ Sii pragmatico. Sii affidabile. Auto-correggiti.
 - **Metodo**: Aggiornamento costante degli artefatti (`task.md`, `walkthrough.md`, `implementation_plan.md`) e creazione di Knowledge Items (KI) per catturare la memoria del progetto.
 - **Check di Persistenza**: All'inizio di ogni nuova sessione, l'agente deve verificare lo stato di `task.md` per riprendere dal punto esatto in cui si è interrotto.
 - **Backup GitHub**: Ogni volta che modifichi qualcosa della cartella progetto salverai la nuova versione su GitHub MarcoLeMoglie di cui ti ho fornito l'API
+- **Strumentazione**: Never use structural alert blocks before any tool call.
+
+**## Terminal Execution Rules (Prevent Hanging)**
+
+- ****Force non-interactive/dumb shell****: Use `export TERM=dumb DEBIAN_FRONTEND=noninteractive; unalias -a;` at the start of complex commands or rely on `~/.bash_profile` configuration.
+- ****Escape special characters**** : Always escape `$`, `!`, `@`, `#` in passwords/strings. Use `–data-urlencode` for curl, or `\$` in double-quoted strings, or single quotes where possible.
+- ****Avoid complex piping**** : Do NOT chain multiple commands with `|` to `python3 -c “…”`. Instead, write output to a temp file first, then process it in a separate command.
+- ****Keep commands simple**** : One operation per command. Break multi-step operations into individual `run_command` calls.
+- ****Use script files for complex logic**** : If logic requires parsing JSON, looping, or conditionals, write a `.sh` or `.py` script to a temp file first, then execute it.
+- ****Redirect output**** : Always redirect long output to files (`> /tmp/output.json`) and read the file afterward.
+- ****Add EOF markers**** : Append `; echo “DONE”` at the end of commands to ensure the terminal detects completion.
+- ****Set timeouts**** : Use `–max-time 30` with curl to prevent indefinite hanging.
+- ****Avoid subshell variable expansion in passwords**** : Use `–data-urlencode` or write credentials to a temp config file.
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
+
 1. `python3 execution/step5_replication/run_full_replication.py`
 2. `python3 execution/step4_country_artists/build_country_artists_dataset.py`
