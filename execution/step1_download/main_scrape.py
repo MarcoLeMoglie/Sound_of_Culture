@@ -33,11 +33,12 @@ def main():
     import sys
     input_file = sys.argv[1] if len(sys.argv) > 1 else "data/input_songs.json"
 
-    output_dir = "data/raw_tabs"
+    # Output directory will be set dynamically inside the loop
     
     # Initialize client
     client = UltimateGuitarClient()
     print(f"Orchestrator started. Device ID: {client.device_id}")
+
 
     # Load items
     items = load_input(input_file)
@@ -59,6 +60,8 @@ def main():
         tab_type = item.get("type", "Chords")
         limit = item.get("limit", 5)
         
+        output_dir = f"data/raw_tabs_{tab_type.lower()}"
+        
         # --- RESUME SKIP CHECK ---
         safe_artist = "".join(c for c in artist if c.isalnum() or c in (' ', '_', '-')).rstrip().replace(" ", "_")
         safe_song = "".join(c for c in title if c.isalnum() or c in (' ', '_', '-')).rstrip().replace(" ", "_")
@@ -66,6 +69,7 @@ def main():
         existing = []
         if os.path.exists(output_dir):
              existing = [f for f in os.listdir(output_dir) if f.startswith(f"{safe_artist}_{safe_song}_")]
+
         if existing:
              print(f"[{idx+1}/{len(items)}] Skipping '{query}', already downloaded ({len(existing)} versions).")
              continue

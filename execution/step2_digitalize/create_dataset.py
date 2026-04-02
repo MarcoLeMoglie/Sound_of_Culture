@@ -3,14 +3,28 @@ import os
 import pandas as pd
 from datetime import datetime
 
+INSTRUMENT = "Chords" # Default
+OUTPUT_DIR = "data/processed_datasets/top100YearEnd8525"
+OUTPUT_NAME_MAP = {
+    "Chords": "dataset_chords_top100yearend",
+    "Bass": "dataset_bass_top100yearend",
+}
+
+TYPE_MAPPING = {
+    "Chords": "Chords",
+    "Bass": "Bass Tabs"
+}
+
 def flatten_tab_data(filepath):
     """Loads a single tab JSON and extracts row data."""
     with open(filepath, 'r') as f:
         data = json.load(f)
     
     # --- STRICT FILTER ---
-    if data.get("type") != "Chords":
-        return None # Skip non-chord files
+    if data.get("type") != TYPE_MAPPING.get(INSTRUMENT, INSTRUMENT):
+        return None # Skip other instruments
+
+
         
     # Extract flat fields
     row = {
@@ -120,9 +134,14 @@ def flatten_tab_data(filepath):
     row["all_chords_summary"] = chord_summary
             
     # --- SYNTHETIC INDICES ---
-    from music_indices import calculate_indices
-    indices = calculate_indices(data)
+    if INSTRUMENT == "Bass":
+         from music_indices_bass import calculate_bass_indices
+         indices = calculate_bass_indices(data)
+    else:
+         from music_indices import calculate_indices
+         indices = calculate_indices(data)
     row.update(indices)
+
 
     return row
 
@@ -190,13 +209,24 @@ def merge_versions_aggregated(group):
 
 
 def main():
-    input_dir = "data/raw_tabs"
-    output_dir = "data/processed_datasets"
+    import sys
+    global INSTRUMENT
+    
+    instrument_arg = sys.argv[1] if len(sys.argv) > 1 else "Chords"
+    INSTRUMENT = instrument_arg.capitalize()
+    
+    input_dir = f"data/raw_tabs_{INSTRUMENT.lower()}"
+    output_dir = OUTPUT_DIR
     os.makedirs(output_dir, exist_ok=True)
     
     # Find all JSON files
+    if not os.path.exists(input_dir):
+        print(f"Input directory {input_dir} not found.")
+        return
+        
     json_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.endswith('.json')]
-    print(f"Found {len(json_files)} JSON files in {input_dir}")
+    print(f"[{INSTRUMENT}] Found {len(json_files)} JSON files in {input_dir}")
+
     
     rows = []
     for f in json_files:
@@ -225,12 +255,14 @@ def main():
         df_best = df
         
     # Save CSV
-    csv_path = os.path.join(output_dir, "dataset.csv")
+    dataset_name = OUTPUT_NAME_MAP.get(INSTRUMENT, f"dataset_{INSTRUMENT.lower()}_top100yearend")
+    csv_path = os.path.join(output_dir, f"{dataset_name}.csv")
     df_best.to_csv(csv_path, index=False)
     print(f"Saved CSV Dataset: {csv_path}")
     
     # Save Stata DTA
-    dta_path = os.path.join(output_dir, "dataset.dta")
+    dta_path = os.path.join(output_dir, f"{dataset_name}.dta")
+
     try:
         # Standard cleaning for Stata
         for col in df_best.columns:
@@ -243,6 +275,17 @@ def main():
         print(f"Saved Stata DTA Dataset: {dta_path}")
     except Exception as e:
         print(f"Error saving Stata DTA: {e}")
+
+    if INSTRUMENT == "Chords":
+        alias_csv_path = os.path.join(output_dir, "dataset_top100yearend.csv")
+        alias_dta_path = os.path.join(output_dir, "dataset_top100yearend.dta")
+        df_best.to_csv(alias_csv_path, index=False)
+        print(f"Saved CSV Alias Dataset: {alias_csv_path}")
+        try:
+            df_best.to_stata(alias_dta_path, write_index=False, version=118)
+            print(f"Saved Stata DTA Alias Dataset: {alias_dta_path}")
+        except Exception as e:
+            print(f"Error saving Stata DTA alias: {e}")
 
 if __name__ == "__main__":
     main()

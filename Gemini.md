@@ -48,6 +48,9 @@ Prima di scrivere uno script, controlla `execution/` secondo la tua direttiva. C
 **3. Aggiorna le direttive mentre impari**
 Le direttive sono documenti vivi. Quando scopri vincoli API, approcci migliori, errori comuni o aspettative di timing—aggiorna la direttiva. Ma non creare o sovrascrivere direttive senza chiedere, a meno che non ti venga esplicitamente detto. Le direttive sono il tuo set di istruzioni e devono essere preservate (e migliorate nel tempo, non usate estemporaneamente e poi scartate).
 
+**4. Tracciabilità degli Script**
+Sotto ogni SOP (Standard Operating Procedure) e Direttiva completata almeno una volta, devi elencare la lista dei file Python utilizzati nell'ordine esatto in cui vengono eseguiti. Ogni volta che modifichi il flusso (elimini o aggiungi script), aggiorna immediatamente queste liste. Questa regola è mandatoria e deve essere verificata prima di ogni esecuzione.
+
 ## Loop di auto-correzione
 
 Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
@@ -67,17 +70,78 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 
 **Struttura directory:**
 
+<!-- STRUCTURE_START -->
+```text
+├── .coldstart_country_artists_stata_v4
+│   ├── data
+│   └── run_full_replication.log
+├── .gitignore
+├── Gemini.md
+├── backup.sh
+├── data
+│   ├── billboard_country_artists.json
+│   ├── discovery_progress_artists.json
+│   ├── discovery_test_americana.json
+│   ├── download_log.txt
+│   ├── input_songs.json
+│   ├── input_songs_bass.json
+│   ├── input_songs_bulk.json
+│   ├── input_songs_bulk_bass.json
+│   ├── input_songs_bulk_country.json
+│   ├── input_songs_bulk_country_expansion.json
+│   ├── processed_datasets
+│   ├── raw_tabs_bass
+│   ├── raw_tabs_chords
+│   ├── raw_tabs_country
+│   └── seed_country_artists.json
+├── debug_output.log
+├── directives
+│   ├── 01_download_tablatures.md
+│   ├── 02_digitalize_tablatures.md
+│   ├── 03_analyze_data.md
+│   ├── 04_build_country_artists_dataset.md
+│   ├── 05_replication_package.md
+│   ├── MIGRATE_GITHUB.md
+│   └── costruzione dataset artisti country
+├── discovery_master_log.txt
+├── download_country.log
+├── download_expansion.log
+├── error.log
+├── error_full.log
+├── execution
+│   ├── step1_download
+│   ├── step2_digitalize
+│   ├── step3_analysis
+│   ├── step4_country_artists
+│   └── step5_replication
+├── fuzzy_error.log
+├── fuzzy_resumed_stderr.log
+├── fuzzy_stderr.log
+├── release_enrichment.log
+├── release_enrichment_discogs.log
+├── release_enrichment_fuzzy.log
+├── release_enrichment_wiki.log
+├── release_enrichment_wiki_recovery.log
+├── release_enrichment_wiki_recovery2.log
+├── run_full_replication.log
+└── visualize_structure.py
+```
+<!-- STRUCTURE_END -->
+
+
 - `.tmp/` - File intermedi e download temporanei. Mai committare.
 - `directives/` - SOP in Markdown per ogni step del progetto.
 - `execution/` - Script Python e Stata (`.do`) divisi per step:
   - `step1_download/`
   - `step2_digitalize/`
   - `step3_analysis/`
+  - `step4_country_artists/`
+  - `step5_replication/`
 - `data/` - Archivio dati:
   - `raw_tabs/` - Tablature scaricate
   - `processed_datasets/` - Datasets CSV e DTA
 - `.env` - Variabili d'ambiente e chiavi API.
-- `README.md` - Documentazione e visualizzazione del livello struttura.
+
 
 **Principio chiave:** I file locali sono solo per l'elaborazione. I deliverable vivono nei servizi cloud (Google Sheets, Slides, ecc.) dove l'utente può accedervi. Tutto in `.tmp/` può essere cancellato e rigenerato.
 
@@ -96,3 +160,7 @@ Sii pragmatico. Sii affidabile. Auto-correggiti.
 - **Metodo**: Aggiornamento costante degli artefatti (`task.md`, `walkthrough.md`, `implementation_plan.md`) e creazione di Knowledge Items (KI) per catturare la memoria del progetto.
 - **Check di Persistenza**: All'inizio di ogni nuova sessione, l'agente deve verificare lo stato di `task.md` per riprendere dal punto esatto in cui si è interrotto.
 - **Backup GitHub**: Ogni volta che modifichi qualcosa della cartella progetto salverai la nuova versione su GitHub MarcoLeMoglie di cui ti ho fornito l'API
+
+## Python Utilizzati Nell'Ultima Esecuzione Completata
+1. `python3 execution/step5_replication/run_full_replication.py`
+2. `python3 execution/step4_country_artists/build_country_artists_dataset.py`

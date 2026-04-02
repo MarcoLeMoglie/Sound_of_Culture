@@ -1,0 +1,251 @@
+Costruisci un dataset storico dei cantanti country degli Stati Uniti, dalle origini del genere fino a oggi.
+
+OBIETTIVO
+Produrre un dataset finale a livello di PERSONA, non di band, che includa artisti rilevanti per la country music statunitense, con informazioni biografiche, musicali, identificative e di qualità delle fonti.
+
+DEVI PRODURRE DUE CAMPIONI
+1. CAMPIONE RISTRETTO
+- target: circa 1200-2000 artisti
+- molto pulito, alta affidabilità
+- include solo artisti con forte evidenza di appartenenza al country
+- include solo persone nate negli Stati Uniti
+- include soprattutto singer, singer-songwriters, vocal performers country
+
+2. CAMPIONE ALLARGATO
+- target: 3000+ artisti/candidati
+- più inclusivo
+- include anche crossover e casi borderline ma comunque rilevanti per la country music USA
+- include solo persone nate negli Stati Uniti nel dataset principale
+- i casi dubbi devono essere marcati con bassa confidenza o con review manuale
+
+REGOLE DELLE FLAG
+Aggiungi tre colonne:
+- flag_restricted_sample
+- flag_expanded_sample
+- sample_membership
+
+Regole:
+- se un artista appartiene al campione ristretto, allora:
+  flag_restricted_sample = 1
+  flag_expanded_sample = 1
+  sample_membership = restricted
+
+- se un artista appartiene solo al campione allargato, allora:
+  flag_restricted_sample = 0
+  flag_expanded_sample = 1
+  sample_membership = expanded_only
+
+UNITÀ STATISTICA
+L’unità statistica è la PERSONA.
+Non inserire band, gruppi, duo, family acts o entità collettive come righe del dataset principale.
+Quando una band o un duo è rilevante, recupera i singoli membri come persone separate, solo se coerente con il perimetro country.
+
+PERIMETRO GEOGRAFICO
+Il dataset principale deve contenere solo artisti NATI NEGLI STATI UNITI.
+Se incontri artisti country rilevanti ma non nati negli USA:
+- non inserirli nel dataset principale
+- inserirli in un file separato chiamato country_artists_excluded_or_non_us.csv
+- compilare exclusion_reason
+
+FONTI DA USARE E ORDINE DI PRIORITÀ
+1. Wikidata come backbone principale
+2. MusicBrainz come fonte secondaria di verifica/integrazione
+3. Wikipedia categorie e liste come discovery layer
+4. Country Music Hall of Fame come seed storico ad alta qualità
+5. VIAF / LOC solo per disambiguazione e authority control
+
+REGOLE DI ESTRAZIONE
+- Parti da un seed iniziale di artisti raccolti da:
+  a) Country Music Hall of Fame
+  b) categorie/liste Wikipedia di country singers e country musicians statunitensi
+- Espandi i candidati tramite Wikidata e MusicBrainz
+- Deduplica prima con Wikidata QID e MusicBrainz MBID
+- Se mancano gli identificativi, usa matching su:
+  nome principale + data di nascita + luogo di nascita + alias
+- Non unire omonimi senza almeno due evidenze convergenti
+- Non inventare mai valori mancanti
+
+REGOLE SU NASCITA E LUOGO DI NASCITA
+- Usa come fonte primaria il place of birth
+- Se il luogo di nascita è una città o contea, risali allo stato federato USA
+- Non inferire mai lo stato di nascita da:
+  residenza
+  luogo di attività
+  etichetta discografica
+  luogo di morte
+  biografia narrativa non verificata
+- Se lo stato di nascita non è ricostruibile con confidenza sufficiente:
+  lascia birth_state vuoto
+  imposta manual_review_needed = 1
+  spiega in notes
+
+REGOLE SU COUNTRY / GENERE
+- Mantieni i generi originali in una colonna raw
+- Crea una colonna normalizzata genres_normalized
+- Normalizza almeno questi generi:
+  country
+  country pop
+  country rock
+  outlaw country
+  bluegrass
+  americana
+  western swing
+  honky-tonk
+  alt-country
+  bro-country
+  country gospel
+- Crea due booleani:
+  is_country_core
+  is_country_broad
+
+DEFINIZIONE OPERATIVA DEL CAMPIONE RISTRETTO
+Un artista entra nel campione ristretto se:
+- è una persona fisica
+- è nato negli Stati Uniti
+- ha evidenza di essere singer / singer-songwriter / vocal performer
+- ha forte rilevanza country
+- ha identità ben disambiguata
+- ha data di nascita e luogo di nascita sufficientemente affidabili
+
+DEFINIZIONE OPERATIVA DEL CAMPIONE ALLARGATO
+Un artista entra nel campione allargato se:
+- è una persona fisica
+- è nato negli Stati Uniti
+- è rilevante per la country music USA anche se crossover o borderline
+- può avere dati incompleti purché l’identità sia ragionevolmente chiara
+- in caso di dubbio, genre_confidence può essere low ma non nullo
+
+COLONNE OBBLIGATORIE DEL DATASET
+Usa almeno queste colonne:
+artist_id
+name_primary
+birth_name
+stage_name
+aliases
+wikidata_qid
+musicbrainz_mbid
+isni
+viaf_id
+wikipedia_url
+birth_date
+birth_year
+birth_place_raw
+birth_city
+birth_county
+birth_state
+birth_state_abbr
+birth_country
+death_date
+death_year
+death_place_raw
+citizenship
+occupations
+genres_raw
+genres_normalized
+country_relevance_score
+instruments
+member_of
+record_labels
+awards
+official_website
+birth_decade
+us_macro_region
+is_deceased
+age_or_age_at_death
+is_us_born
+is_solo_person
+is_country_core
+is_country_broad
+flag_restricted_sample
+flag_expanded_sample
+sample_membership
+inclusion_reason
+exclusion_reason
+source_primary
+source_secondary
+source_seed
+evidence_urls
+source_count
+birth_date_confidence
+birth_place_confidence
+genre_confidence
+manual_review_needed
+notes
+
+CONFIDENCE
+Usa solo questi valori:
+- high
+- medium
+- low
+
+REGOLE DI QUALITÀ
+- Ogni campo compilato deve essere supportato da almeno una fonte tracciabile
+- Mantieni sempre evidence_urls
+- Mantieni sempre source_count
+- Se due fonti confliggono:
+  1. preferisci Wikidata per data e luogo di nascita
+  2. usa MusicBrainz per alias e verifica identità artistica
+  3. documenta il conflitto in notes
+- Non cancellare informazioni conflittuali senza traccia
+- Crea una coda separata di review manuale per i casi dubbi
+
+REGOLE DI DEDUPLICA
+- Deduplica prima su wikidata_qid
+- poi su musicbrainz_mbid
+- poi con matching conservativo su nome + data di nascita + luogo di nascita + alias
+- non fondere due record solo perché il nome coincide
+
+REGOLE SUGLI STRUMENTI
+- Estrai strumenti solo se supportati dalle fonti
+- Normalizza almeno:
+  voice
+  vocals
+  guitar
+  acoustic guitar
+  electric guitar
+  banjo
+  fiddle
+  violin
+  mandolin
+  piano
+  pedal steel guitar
+  dobro
+- non inferire strumenti non esplicitati
+
+OUTPUT OBBLIGATORI
+Devi produrre questi file:
+1. country_artists_master.csv
+2. country_artists_restricted.csv
+3. country_artists_expanded.csv
+4. country_artists_excluded_or_non_us.csv
+5. country_artists_sources.csv
+6. country_artists_data_dictionary.csv
+7. country_artists_qc_report.md
+8. manual_review_queue.csv
+
+REQUISITI DEL QC REPORT
+Il report deve includere:
+- numero totale candidati raccolti
+- numero totale artisti nel master
+- numero nel campione ristretto
+- numero nel campione allargato
+- numero esclusi/non-US
+- numero casi in manual review
+- quota di record con birth_state valorizzato
+- quota di record con birth_date valorizzata
+- quota di record con Wikidata QID
+- quota di record con MBID
+- principali motivi di esclusione
+- principali conflitti tra fonti
+- descrizione sintetica della pipeline
+
+VINCOLI FINALI
+- Procedi fino a produrre i file finali
+- Non fermarti a chiedere conferma
+- Non inventare dati
+- Mantieni il dataset riproducibile
+- Salva i file in CSV UTF-8
+- Usa una riga per artista
+
+PYTHON UTILIZZATI NELL'ULTIMA ESECUZIONE COMPLETATA
+1. python3 execution/step4_country_artists/build_country_artists_dataset.py

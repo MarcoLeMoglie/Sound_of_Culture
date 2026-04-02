@@ -4,7 +4,8 @@ import json
 import os
 
 years = [1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024]
-output_file = "data/processed_datasets/songs_tracklist.json"
+output_dir = "data/processed_datasets/top100YearEnd8525"
+output_file = os.path.join(output_dir, "songs_tracklist_top100yearend.json")
 os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
 headers = {

@@ -4,17 +4,24 @@
 Eseguire analisi statistiche ed econometriche sul dataset creato utilizzando Stata.
 
 ## Input
-- `data/processed_datasets/songs_dataset.dta`
+- `data/processed_datasets/dataset.dta` (Tablature digitalizzate in formato Stata)
 
 ## Esecuzione
-- Pulizia finale dei dati (se necessaria).
-- Statistiche descrittive (distribuzione per anno, genere, strumento).
-- Analisi econometrica (Do-file di Stata).
+1. **Dati**: Pulizia e aggregazione finale (se necessaria).
+2. **Statistiche**: Analisi descrittive (distribuzione per anno, genere, strumento).
+3. **Comandi**: Eseguire i file `.do` di Stata posizionati nella cartella dedicata.
+   ```bash
+   /Applications/Stata/StataMP.app/Contents/MacOS/stata-mp -b do execution/step3_analysis/do/eda.do
+   ```
 
-## Output
-- File `.do` di Stata con il codice di analisi.
-- Grafici e Tabelle esportati (in `.pdf`, `.eps` o `.tex` come da standard).
+## Struttura File - `execution/step3_analysis/`
+*   `do/` - Contiene tutti i file `.do` di Stata (es. `eda.do`, `eda_expanded.do`).
+*   `temp/` - File di log generati dall'esecuzione di Stata (es. `eda.log`).
+*   `output_figures/` - Grafici esportati (in formato `.pdf`, `.eps` o `.tex`).
 
 ## Casi Limite & Note
-- Gestione dei missing values.
-- Formattazione output per paper/report.
+- **Missing Values**: Gestione accurata dei missing su variabili musicali e BPM.
+- **Path Assoolute**: Assicurarsi che nel file `.do` la directory di lavoro (`cd`) punti alla root del progetto.
+
+## Python Utilizzati Nell'Ultima Esecuzione Completata
+1. `nessuno`
