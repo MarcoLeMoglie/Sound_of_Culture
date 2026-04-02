@@ -10,7 +10,7 @@ Costruire un replication package completo e leggibile solo per `country_artists`
 - Direttive in `directives/`
 
 ## Esecuzione
-1. Creare una cartella datata del replication package dentro `data/processed_datasets/country_artists/`.
+1. Creare o aggiornare la cartella fissa del replication package dentro `data/processed_datasets/country_artists/`.
 2. Copiare nel package gli script Python rilevanti e lo snapshot delle direttive.
 3. Copiare nel package tutti i dataset finali e i checkpoint intermedi necessari alla replica di `country_artists`.
 4. Scrivere un `README` con metodo, fonti, scelte, naming, limiti e istruzioni di replica.
@@ -19,7 +19,7 @@ Costruire un replication package completo e leggibile solo per `country_artists`
 6. Verificare il file `.do` con una run reale in Stata e correggere eventuali incompatibilità di versione o sintassi prima di considerare il package completato.
 
 ## Output
-- `data/processed_datasets/country_artists/replication_package_country_song_data/`
+- `data/processed_datasets/country_artists/replication_package_country_songs_2026_04_01/`
 
 ## Casi Limite & Note
 - Il replication package deve includere sia i dati finali sia i checkpoint intermedi utili a ridurre i tempi di rerun.

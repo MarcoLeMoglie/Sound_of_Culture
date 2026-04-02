@@ -15,7 +15,7 @@ It includes:
 ## Package Structure
 
 ```text
-replication_package_2026-03-27/
+replication_package_country_artists_2026_04_02/
 ├── README.md
 ├── code/
 │   ├── python/

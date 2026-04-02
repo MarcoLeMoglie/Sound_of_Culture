@@ -48,8 +48,8 @@ Prima di scrivere uno script, controlla `execution/` secondo la tua direttiva. C
 **3. Aggiorna le direttive mentre impari**
 Le direttive sono documenti vivi. Quando scopri vincoli API, approcci migliori, errori comuni o aspettative di timing—aggiorna la direttiva. Ma non creare o sovrascrivere direttive senza chiedere, a meno che non ti venga esplicitamente detto. Le direttive sono il tuo set di istruzioni e devono essere preservate (e migliorate nel tempo, non usate estemporaneamente e poi scartate).
 
-**4. Tracciabilità degli Script**
-Sotto ogni SOP (Standard Operating Procedure) e Direttiva completata almeno una volta, devi elencare la lista dei file Python utilizzati nell'ordine esatto in cui vengono eseguiti. Ogni volta che modifichi il flusso (elimini o aggiungi script), aggiorna immediatamente queste liste. Questa regola è mandatoria e deve essere verificata prima di ogni esecuzione.
+**5. Stabilità e Gestione delle Cartelle**
+Per prevenire blocchi o hang dei comandi `run_command` (specialmente con `mkdir`), utilizza sempre la creazione implicita delle cartelle tramite il tool `write_to_file`. Invece di creare una directory esplicitamente, scrivi un file (anche vuoto) nel percorso di destinazione desiderato. Questa regola deve essere seguita in tutte le sessioni di questo progetto per massimizzare la stabilità dell'architettura.
 
 ## Loop di auto-correzione
 
@@ -80,6 +80,7 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 ├── backup.sh
 ├── data
 │   ├── billboard_country_artists.json
+│   ├── casualties_uswars
 │   ├── discovery_progress_artists.json
 │   ├── discovery_test_americana.json
 │   ├── download_log.txt

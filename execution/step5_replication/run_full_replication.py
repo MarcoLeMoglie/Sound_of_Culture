@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 
-PACKAGE_DATE = "2026-03-27"
+PACKAGE_DIRNAME = "replication_package_country_artists_2026_04_02"
 
 
 def run(cmd, cwd: Path) -> None:
@@ -20,8 +20,8 @@ def copy_file(src: Path, dst: Path) -> None:
     shutil.copy2(src, dst)
 
 
-def package_root_from_script(script_path: Path, project_root: Path, package_date: str) -> Path:
-    expected = project_root / "data" / "processed_datasets" / "country_artists" / f"replication_package_{package_date}"
+def package_root_from_script(script_path: Path, project_root: Path, package_dirname: str) -> Path:
+    expected = project_root / "data" / "processed_datasets" / "country_artists" / package_dirname
     if expected.exists():
         return expected
     return script_path.parents[3]
@@ -38,16 +38,16 @@ def current_script_path() -> Path:
 
 def parse_runtime_args(argv: list[str]) -> tuple[Path, str, bool]:
     project_root = None
-    package_date = PACKAGE_DATE
+    package_dirname = PACKAGE_DIRNAME
     full_rebuild = False
     for arg in argv[1:]:
         if arg == "--full-rebuild":
             full_rebuild = True
         elif project_root is None:
             project_root = Path(arg).resolve()
-        elif package_date == PACKAGE_DATE:
-            package_date = arg
-    return project_root or Path.cwd().resolve(), package_date, full_rebuild
+        elif package_dirname == PACKAGE_DIRNAME:
+            package_dirname = arg
+    return project_root or Path.cwd().resolve(), package_dirname, full_rebuild
 
 
 def copy_python_tree(project_root: Path, package_root: Path) -> None:
@@ -232,8 +232,8 @@ def run_country_pipeline(project_root: Path, package_root: Path, *, full_rebuild
 
 def main() -> None:
     script_path = current_script_path()
-    project_root, package_date, full_rebuild = parse_runtime_args(sys.argv)
-    package_root = package_root_from_script(script_path, project_root, package_date)
+    project_root, package_dirname, full_rebuild = parse_runtime_args(sys.argv)
+    package_root = package_root_from_script(script_path, project_root, package_dirname)
 
     print(f"Project root: {project_root}", flush=True)
     print(f"Replication package target: {package_root}", flush=True)
