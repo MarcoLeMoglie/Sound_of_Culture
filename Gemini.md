@@ -71,7 +71,6 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 **Struttura directory:**
 
 <!-- STRUCTURE_START -->
-
 ```text
 ├── .coldstart_country_artists_stata_v4
 │   ├── data
@@ -128,7 +127,6 @@ Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
 ├── run_full_replication.log
 └── visualize_structure.py
 ```
-
 <!-- STRUCTURE_END -->
 
 - `.tmp/` - File intermedi e download temporanei. Mai committare.

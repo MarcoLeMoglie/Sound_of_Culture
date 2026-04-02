@@ -14,26 +14,27 @@ Estrarre ed elaborare le informazioni contenute nelle tablature `top100` per cos
     *   **Accordi**: Conteggio occorrenze dei tag `[ch]`.
     *   **Indicatori Sintetici**: 13 metriche (es. `complexity`, `repetition`, `energy`).
 
-3.  **Aggregazione**: Per ogni combinazione `song_name + artist_name`, mantenere una sola osservazione aggregando le versioni disponibili con la logica deterministica già implementata.
+3.  **Consolidamento Release Year**:
+    *   Eseguire lo script di consolidamento avanzato per arricchire il dataset con le date di rilascio recuperate da MusicBrainz, Wikipedia e Web Search.
+    *   **Logica a 3 Livelli**:
+        1.  **Exact Match**: Corrispondenza perfetta Artist/Song string.
+        2.  **Super-Normalization**: Rimozione punteggiatura e junk words (es. "chords", "tab").
+        3.  **Fuzzy Match (90%)**: Fallback con `difflib` limitato allo stesso artista normalizzato per evitare falsi positivi.
 
 4.  Eseguire lo script di elaborazione:
     ```bash
     python3 execution/step2_digitalize/create_dataset.py Chords
-    python3 execution/step2_digitalize/create_dataset.py Bass
+    python3 execution/step2_digitalize/final_consolidate_internet.py
     ```
 
 ## Output
-- `data/processed_datasets/top100YearEnd8525/dataset_chords_top100yearend.csv`
-- `data/processed_datasets/top100YearEnd8525/dataset_chords_top100yearend.dta`
-- `data/processed_datasets/top100YearEnd8525/dataset_bass_top100yearend.csv`
-- `data/processed_datasets/top100YearEnd8525/dataset_bass_top100yearend.dta`
-- `data/processed_datasets/top100YearEnd8525/dataset_top100yearend.csv`
-- `data/processed_datasets/top100YearEnd8525/dataset_top100yearend.dta`
+- `data/processed_datasets/country_artists/Sound_of_Culture_Country_Full_Enriched_v5.csv`
+- `data/processed_datasets/country_artists/Sound_of_Culture_Country_Full_Enriched_v5.dta`
 
 ## Casi Limite & Note
-- **Compatibilità**: Mantenere la logica di fallback per variabili missing se presenti versioni multiple (facoltativo se abbiamo scaricato solo il best).
-- **Path**: I `csv` e `dta` finali non devono essere più creati direttamente in `data/processed_datasets/`, ma solo dentro `data/processed_datasets/top100YearEnd8525/`.
+- **Soglia Fuzzy**: Mantenere il cutoff al **90%** per mantenere l'integrità accademica.
+- **Compatibilità Stata**: Troncamento automatico delle stringhe a 244 caratteri implementato in `final_consolidate_internet.py`.
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
 1. `python3 execution/step2_digitalize/create_dataset.py Chords`
-2. `python3 execution/step2_digitalize/create_dataset.py Bass`
+2. `python3 execution/step2_digitalize/final_consolidate_internet.py`

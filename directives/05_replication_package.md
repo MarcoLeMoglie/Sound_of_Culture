@@ -12,11 +12,15 @@ Costruire un replication package completo e leggibile solo per `country_artists`
 ## Esecuzione
 1. Creare o aggiornare la cartella fissa del replication package dentro `data/processed_datasets/country_artists/`.
 2. Copiare nel package gli script Python rilevanti e lo snapshot delle direttive.
-3. Copiare nel package tutti i dataset finali e i checkpoint intermedi necessari alla replica di `country_artists`.
-4. Scrivere un `README` con metodo, fonti, scelte, naming, limiti e istruzioni di replica.
-5. Aggiungere un file `.do` di Stata che usi l'integrazione Python di Stata per lanciare la pipeline end-to-end senza interruzioni manuali.
-   Il `.do` deve supportare sia la replica standard sia una modalità opzionale `full_rebuild`.
-6. Verificare il file `.do` con una run reale in Stata e correggere eventuali incompatibilità di versione o sintassi prima di considerare il package completato.
+3. Configurare la pipeline di enrichment a 4 fasi per il recupero delle date di rilascio (`release_year`):
+    - **Fase 1 (MusicBrainz Strict)**: Corrispondenza esatta artista-brano.
+    - **Fase 2 (MusicBrainz Fuzzy)**: Corrispondenza flessibile per gestire varianti di naming.
+    - **Fase 3 (Discogs)**: Recupero complementare tramite API Discogs.
+    - **Fase 4 (Internet/Wiki Recovery)**: Recupero finale tramite ricerca web assistita o cache Internet.
+4. Copiare nel package tutti i dataset finali e i checkpoint intermedi necessari alla replica di `country_artists`.
+5. Scrivere un `README` con metodo, fonti, scelte, naming, limiti e istruzioni di replica, includendo le nuove dipendenze API.
+6. Aggiungere un file `.do` di Stata che usi l'integrazione Python di Stata per lanciare la pipeline end-to-end senza interruzioni manuali.
+7. Verificare il file `.do` con una run reale in Stata e correggere eventuali incompatibilità di versione o sintassi prima di considerare il package completato.
 
 ## Output
 - `data/processed_datasets/country_artists/replication_package_country_songs_2026_04_01/`
