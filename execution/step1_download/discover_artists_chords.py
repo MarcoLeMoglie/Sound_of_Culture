@@ -56,9 +56,9 @@ def discover_artist_chords(artist_name, client):
 
 def process_discovery():
     client = UltimateGuitarClient()
-    seed_file = "data/seed_country_artists.json"
-    output_file = "data/input_songs_bulk_country.json"
-    progress_file = "data/discovery_progress_artists.json"
+    seed_file = "data/intermediate/json/seed_country_artists.json"
+    output_file = "data/intermediate/json/input_songs_bulk_country.json"
+    progress_file = "data/intermediate/json/discovery_progress_artists.json"
     
     if not os.path.exists(seed_file):
         print(f"Error: {seed_file} not found.")

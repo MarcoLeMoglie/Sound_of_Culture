@@ -6,11 +6,13 @@ import os
 import re
 import csv
 from typing import Optional
+from pathlib import Path
 
 # Configuration
-INPUT_CSV = "data/processed_datasets/country_artists/Sound_of_Culture_Country_Full_Enriched_v3.csv"
-OUTPUT_CSV = "data/processed_datasets/country_artists/Sound_of_Culture_Country_Full_Enriched_v4.csv"
-CACHE_FILE = "data/processed_datasets/country_artists/release_years_cache_wiki.json"
+BASE_DIR = Path("data/processed_datasets/country_artists")
+INPUT_CSV = BASE_DIR / "Sound_of_Culture_Country_Full_Enriched_v3.csv"
+OUTPUT_CSV = BASE_DIR / "Sound_of_Culture_Country_Full_Enriched_v4.csv"
+CACHE_FILE = BASE_DIR / "intermediate" / "json_caches" / "release_years_cache_wiki.json"
 WIKIDATA_SPARQL_URL = "https://query.wikidata.org/sparql"
 USER_AGENT = "SoundOfCultureBot/1.0 (https://github.com/MarcoLeMoglie/Sound_of_Culture; marco@example.com) Requests/2.31.0"
 

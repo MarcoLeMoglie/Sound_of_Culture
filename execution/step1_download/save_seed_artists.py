@@ -8,7 +8,7 @@ artists = [
 # De-duplicate just in case
 artists = sorted(list(set(artists)))
 
-with open("data/seed_country_artists.json", "w") as f:
+with open("data/intermediate/json/seed_country_artists.json", "w") as f:
     json.dump(artists, f, indent=4)
 
-print(f"Verified {len(artists)} unique artists saved to data/seed_country_artists.json")
+print(f"Verified {len(artists)} unique artists saved to data/intermediate/json/seed_country_artists.json")

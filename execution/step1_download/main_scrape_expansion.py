@@ -81,7 +81,7 @@ def download_worker(tab_metadata, client, output_dir, total_count):
     return "failed"
 
 def main():
-    discovery_file = "data/input_songs_bulk_country_expansion.json"
+    discovery_file = "data/intermediate/json/input_songs_bulk_country_expansion.json"
     output_dir = "data/raw_tabs_country"
     NUM_WORKERS = 5 # Increased workers for expansion download
     

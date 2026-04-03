@@ -13,11 +13,12 @@ Sviluppare un algoritmo per il download in bulk delle **migliori versioni Chord*
 2. **Selezione Best**: Per ogni combinazione artist-song, mantenere solo l'ID con il rating più alto.
 3. **Download**: Eseguire lo script orchestratore per scaricare i JSON dettagliati in `data/raw_tabs_country/`.
    ```bash
-   python3 execution/step1_download/main_scrape_best_chords.py
+   python3 execution/step1_download/main_scrape_best_chords.py > log/download_country.log
    ```
 
 ## Output
 - File JSON salvati in `data/raw_tabs_country/` (es. `Oasis_Wonderwall_2223387.json`).
+- Cache di discovery in `data/intermediate/json/` (es. `best_chords_discovered.json`).
 
 ## Casi Limite & Note
 - **Paginazione**: L'API potrebbe limitare a 100 pagine; utilizzare query grid per bypassare il limite.

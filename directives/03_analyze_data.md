@@ -16,7 +16,7 @@ Eseguire analisi statistiche ed econometriche sul dataset creato utilizzando Sta
 
 ## Struttura File - `execution/step3_analysis/`
 *   `do/` - Contiene tutti i file `.do` di Stata (es. `eda.do`, `eda_expanded.do`).
-*   `temp/` - File di log generati dall'esecuzione di Stata (es. `eda.log`).
+*   `log/` - File di log generati dall'esecuzione di Stata (es. `eda.log`).
 *   `output_figures/` - Grafici esportati (in formato `.pdf`, `.eps` o `.tex`).
 
 ## Casi Limite & Note

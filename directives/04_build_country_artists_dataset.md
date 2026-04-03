@@ -37,6 +37,7 @@ Costruire un dataset storico a livello di persona di artisti country nati negli 
 - `data/processed_datasets/country_artists/manual_review_queue.csv`
 - `data/processed_datasets/country_artists/manual_review_queue.dta`
 - `data/processed_datasets/country_artists/country_artists_qc_report.md`
+- File intermedi e cache in `data/processed_datasets/country_artists/intermediate/`
 
 ## Casi Limite & Note
 - Non inferire mai `birth_state` da residenza, carriera o luogo di morte.
@@ -45,4 +46,4 @@ Costruire un dataset storico a livello di persona di artisti country nati negli 
 - Il campione ristretto deve essere sempre un sottoinsieme di quello allargato.
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
-1. `python3 execution/step4_country_artists/build_country_artists_dataset.py`
+1. `python3 execution/step4_country_artists/build_country_artists_dataset.py > log/build_country_artists.log`

@@ -31,7 +31,7 @@ def save_tab(artist, song, tab_id, data, output_dir, year=None):
 
 def main():
     import sys
-    input_file = sys.argv[1] if len(sys.argv) > 1 else "data/input_songs.json"
+    input_file = sys.argv[1] if len(sys.argv) > 1 else "data/intermediate/json/input_songs.json"
 
     # Output directory will be set dynamically inside the loop
     
@@ -43,7 +43,7 @@ def main():
     # Load items
     items = load_input(input_file)
     if not items:
-        print("No items to process. Please create data/input_songs.json with a list of songs/artists.")
+        print("No items to process. Please create data/intermediate/json/input_songs.json with a list of songs/artists.")
         return
 
     print(f"Processing {len(items)} queries...")

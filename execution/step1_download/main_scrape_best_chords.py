@@ -90,7 +90,7 @@ def download_worker(t, client, output_dir, total_to_process):
     return "failed"
 
 def main():
-    discovery_file = "data/input_songs_bulk_country.json"
+    discovery_file = "data/intermediate/json/input_songs_bulk_country.json"
     output_dir = "data/raw_tabs_country"
     NUM_WORKERS = 3 # 3 concurrent workers for ~3x speedup
     

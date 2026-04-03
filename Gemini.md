@@ -51,85 +51,46 @@ Le direttive sono documenti vivi. Quando scopri vincoli API, approcci migliori, 
 **5. Stabilità e Gestione delle Cartelle**
 Per prevenire blocchi o hang dei comandi `run_command` (specialmente con `mkdir`), utilizza sempre la creazione implicita delle cartelle tramite il tool `write_to_file`. Invece di creare una directory esplicitamente, scrivi un file (anche vuoto) nel percorso di destinazione desiderato. Questa regola deve essere seguita in tutte le sessioni di questo progetto per massimizzare la stabilità dell'architettura.
 
+**6. Centralizzazione JSON e Cache**
+Tutti i file JSON prodotti durante l'esecuzione devono essere centralizzati per mantenere pulita la root `data/`:
+- **JSON Generici** (es. liste di artisti, seed, discovery): salvati in `data/intermediate/json/`.
+- **Cache Artisti** (es. release year caches, bio caches): salvati in `data/processed_datasets/country_artists/intermediate/json_caches/`.
+- **Regola Mandatoria**: Gli script Python devono creare queste directory (se mancanti) prima di scrivere i file.
+
 ## Loop di auto-correzione
-
-Gli errori sono opportunità di apprendimento. Quando qualcosa si rompe:
-
-1. Correggilo
-2. Aggiorna il tool
-3. Testa il tool, assicurati che funzioni
-4. Aggiorna la direttiva per includere il nuovo flusso
-5. Il sistema ora è più forte
+... (rest of lines) ...
 
 ## Organizzazione File
 
 **Deliverable vs Intermedi:**
 
 - **Deliverable**: file .dta di Stata e do file di Stata, pdf, tex file
-- **Intermedi**: File temporanei necessari durante l'elaborazione
+- **Intermedi**: File temporanei necessari durante l'elaborazione (CSV intermedi, JSON caches in `intermediate/`)
 
 **Struttura directory:**
 
 <!-- STRUCTURE_START -->
 ```text
-├── .coldstart_country_artists_stata_v4
-│   ├── data
-│   └── run_full_replication.log
-├── .gitignore
-├── Gemini.md
-├── backup.sh
-├── data
-│   ├── billboard_country_artists.json
-│   ├── casualties_uswars
-│   ├── discovery_progress_artists.json
-│   ├── discovery_test_americana.json
-│   ├── download_log.txt
-│   ├── input_songs.json
-│   ├── input_songs_bass.json
-│   ├── input_songs_bulk.json
-│   ├── input_songs_bulk_bass.json
-│   ├── input_songs_bulk_country.json
-│   ├── input_songs_bulk_country_expansion.json
-│   ├── processed_datasets
-│   ├── raw_tabs_bass
-│   ├── raw_tabs_chords
-│   ├── raw_tabs_country
-│   └── seed_country_artists.json
-├── debug_output.log
-├── directives
-│   ├── 01_download_tablatures.md
-│   ├── 02_digitalize_tablatures.md
-│   ├── 03_analyze_data.md
-│   ├── 04_build_country_artists_dataset.md
-│   ├── 05_replication_package.md
-│   ├── MIGRATE_GITHUB.md
-│   └── costruzione dataset artisti country
-├── discovery_master_log.txt
-├── download_country.log
-├── download_expansion.log
-├── error.log
-├── error_full.log
-├── execution
-│   ├── step1_download
-│   ├── step2_digitalize
-│   ├── step3_analysis
-│   ├── step4_country_artists
-│   └── step5_replication
-├── fuzzy_error.log
-├── fuzzy_resumed_stderr.log
-├── fuzzy_stderr.log
-├── release_enrichment.log
-├── release_enrichment_discogs.log
-├── release_enrichment_fuzzy.log
-├── release_enrichment_wiki.log
-├── release_enrichment_wiki_recovery.log
-├── release_enrichment_wiki_recovery2.log
-├── run_full_replication.log
-└── visualize_structure.py
+├── log/                        # Log centralizzati (> log/file.log)
+├── data/
+│   ├── raw_tabs_country/       # JSON grezzi da UG
+│   ├── intermediate/
+│   │   └── json/               # JSON generici e discovery
+│   └── processed_datasets/
+│       └── country_artists/
+│           ├── intermediate/
+│           │   ├── json_caches/ # Cache release years, bio, ecc.
+│           │   └── restricted_final_v6_backfill/
+│           └── replication_packages/
+├── execution/
+│   ├── step1_download/
+│   ├── step2_digitalize/
+...
 ```
 <!-- STRUCTURE_END -->
 
 - `.tmp/` - File intermedi e download temporanei. Mai committare.
+- `log/` - Repository centrale per tutti i file di log e output di terminale.
 - `directives/` - SOP in Markdown per ogni step del progetto.
 - `execution/` - Script Python e Stata (`.do`) divisi per step:
   - `step1_download/`
@@ -168,12 +129,17 @@ Sii pragmatico. Sii affidabile. Auto-correggiti.
 - ****Avoid complex piping**** : Do NOT chain multiple commands with `|` to `python3 -c “…”`. Instead, write output to a temp file first, then process it in a separate command.
 - ****Keep commands simple**** : One operation per command. Break multi-step operations into individual `run_command` calls.
 - ****Use script files for complex logic**** : If logic requires parsing JSON, looping, or conditionals, write a `.sh` or `.py` script to a temp file first, then execute it.
-- ****Redirect output**** : Always redirect long output to files (`> /tmp/output.json`) and read the file afterward.
+- ****Redirect output**** : Always redirect long output or execution logs to the `log/` folder (e.g. `> log/output.json`) and read the file afterward. Never leave logs in the root directory.
 - ****Add EOF markers**** : Append `; echo “DONE”` at the end of commands to ensure the terminal detects completion.
 - ****Set timeouts**** : Use `–max-time 30` with curl to prevent indefinite hanging.
 - ****Avoid subshell variable expansion in passwords**** : Use `–data-urlencode` or write credentials to a temp config file.
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
 
-1. `python3 execution/step5_replication/run_full_replication.py`
-2. `python3 execution/step4_country_artists/build_country_artists_dataset.py`
+1. `python3 execution/step5_replication/run_country_songs_replication.py`
+2. `python3 execution/step5_replication/run_full_replication.py`
+3. `python3 execution/step4_country_artists/build_country_artists_dataset.py`
+4. `python3 execution/step5_replication/run_country_merge_v6_replication.py`
+5. `python3 execution/step2_digitalize/final_merge_restricted_v2.py`
+6. `python3 execution/step2_digitalize/backfill_restricted_final_v6_demographics.py`
+7. `python3 execution/step2_digitalize/enrich_release_years_restricted_final_v6.py`

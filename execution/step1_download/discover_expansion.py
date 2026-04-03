@@ -15,13 +15,13 @@ def run_expansion_discovery():
     client = UltimateGuitarClient()
     # Path relative to project root
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
-    output_file = os.path.join(project_root, 'data/input_songs_bulk_country_expansion.json')
+    output_file = os.path.join(project_root, 'data/intermediate/json/input_songs_bulk_country_expansion.json')
     
     # 1. Extract combined new artists
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
     res_csv = os.path.join(project_root, 'data/processed_datasets/country_artists/country_artists_restricted.csv')
     mas_csv = os.path.join(project_root, 'data/processed_datasets/country_artists/country_artists_master.csv')
-    seed_file = os.path.join(project_root, 'data/seed_country_artists.json')
+    seed_file = os.path.join(project_root, 'data/intermediate/json/seed_country_artists.json')
     
     df_res = pd.read_csv(res_csv)
     df_mas = pd.read_csv(mas_csv)

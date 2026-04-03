@@ -16,15 +16,15 @@ def discover_best_chords():
                "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
                "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     
-    output_file = "data/input_songs_bulk_country.json"
+    output_file = "data/intermediate/json/input_songs_bulk_country.json"
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     
     # Global dictionary to track up to 3 best versions per song: (artist, song) -> [tab_info, ...]
     best_tabs_per_song = {}
     
     processed_queries = []
-    if os.path.exists("data/discovery_progress.json"):
-        with open("data/discovery_progress.json", "r") as f:
+    if os.path.exists("data/intermediate/json/discovery_progress.json"):
+        with open("data/intermediate/json/discovery_progress.json", "r") as f:
             processed_queries = json.load(f)
             print(f"Resuming. Already processed {len(processed_queries)} queries.")
 
@@ -108,7 +108,7 @@ def discover_best_chords():
         
         # Save progress after each query
         processed_queries.append(query)
-        with open("data/discovery_progress.json", "w") as f:
+        with open("data/intermediate/json/discovery_progress.json", "w") as f:
             json.dump(processed_queries, f)
             
         # Save current best list

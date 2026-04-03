@@ -23,13 +23,14 @@ Estrarre ed elaborare le informazioni contenute nelle tablature `top100` per cos
 
 4.  Eseguire lo script di elaborazione:
     ```bash
-    python3 execution/step2_digitalize/create_dataset.py Chords
-    python3 execution/step2_digitalize/final_consolidate_internet.py
+    python3 execution/step2_digitalize/create_dataset.py Chords > log/digitalize_chords.log
+    python3 execution/step2_digitalize/final_consolidate_internet.py > log/release_enrichment.log
     ```
 
 ## Output
 - `data/processed_datasets/country_artists/Sound_of_Culture_Country_Full_Enriched_v5.csv`
 - `data/processed_datasets/country_artists/Sound_of_Culture_Country_Full_Enriched_v5.dta`
+- Cache dei `release_year` in `data/processed_datasets/country_artists/intermediate/json_caches/`
 
 ## Casi Limite & Note
 - **Soglia Fuzzy**: Mantenere il cutoff al **90%** per mantenere l'integrità accademica.
