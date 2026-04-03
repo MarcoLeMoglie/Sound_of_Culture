@@ -18,3 +18,6 @@ data/processed_datasets/*
 data/processed_datasets/country_artists/*
 !data/processed_datasets/country_artists/replication_package_*/
 !data/processed_datasets/country_artists/replication_package_*/**
+!data/processed_datasets/country_artists/Sound_of_Culture_Country_Restricted_Final_v6.*
+!data/processed_datasets/country_artists/country_artists_data_dictionary.*
+!data/processed_datasets/country_artists/country_artists_qc_report.md
