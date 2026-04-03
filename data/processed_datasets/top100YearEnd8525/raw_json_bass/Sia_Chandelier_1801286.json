@@ -1,0 +1,434 @@
+{
+    "id": 1801286,
+    "song_id": 1437665,
+    "song_name": "Chandelier",
+    "artist_id": 9670,
+    "artist_name": "Sia",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 1,
+    "votes": 13,
+    "difficulty": "novice",
+    "rating": 4.58776,
+    "date": "1452241637",
+    "status": "approved",
+    "preset_id": 26922,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "",
+    "version_description": "",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 34581
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/6/663393/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187286/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "beginner",
+    "date_update": 1480323263,
+    "source": "",
+    "versions": [],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/sia/chandelier-bass-1801286",
+    "strumming": [],
+    "videosCount": 294,
+    "comments_count": 1,
+    "contributor": {
+        "user_id": 3258150,
+        "username": "bgward65"
+    },
+    "advertising": {
+        "targeting_song_genre": "pop"
+    },
+    "versions_count": 23,
+    "pro_brother": {
+        "id": 2404069,
+        "song_id": 1437665,
+        "song_name": "Chandelier",
+        "artist_id": 9670,
+        "artist_name": "Sia",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 236,
+        "difficulty": "",
+        "rating": 4.84274,
+        "date": "1528965469",
+        "status": "approved",
+        "preset_id": 26922,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "Bbm",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": 34581
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/6/663393/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187286/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1671455046,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 1085977,
+            "song_id": 274315,
+            "song_name": "Titanium",
+            "artist_id": 9590,
+            "artist_name": "David Guetta",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 2016,
+            "difficulty": "",
+            "rating": 4.55497,
+            "date": "1313971201",
+            "status": "approved",
+            "preset_id": 244,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Eb",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [
+                    {
+                        "join_field": " feat. ",
+                        "artist": {
+                            "id": 9670,
+                            "name": "Sia"
+                        }
+                    }
+                ],
+                "video_urls": null,
+                "album_id": 11201
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/2/329332/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/7/6754/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1626602032,
+            "source": ""
+        },
+        {
+            "id": 1956589,
+            "song_id": 1710759,
+            "song_name": "Perfect",
+            "artist_id": 30232,
+            "artist_name": "Ed Sheeran",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 53562,
+            "difficulty": "novice",
+            "rating": 4.86008,
+            "date": "1488453515",
+            "status": "approved",
+            "preset_id": 18913,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Ab",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11229
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/5/1564216/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/5/2/5219/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1679839047,
+            "source": ""
+        },
+        {
+            "id": 27336,
+            "song_id": 135952,
+            "song_name": "Hallelujah",
+            "artist_id": 9898,
+            "artist_name": "Jeff Buckley",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 5958,
+            "difficulty": "novice",
+            "rating": 4.84841,
+            "date": "1018396800",
+            "status": "approved",
+            "preset_id": 125,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Db",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 3357
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/1/115842/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/4/245/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1739839608,
+            "source": ""
+        },
+        {
+            "id": 1248578,
+            "song_id": 346275,
+            "song_name": "All Of Me",
+            "artist_id": 11714,
+            "artist_name": "John Legend",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 28187,
+            "difficulty": "novice",
+            "rating": 4.84986,
+            "date": "1369872001",
+            "status": "approved",
+            "preset_id": 14737,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Fm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 27867
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/5/3/538079/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/6/36103/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1707834866,
+            "source": ""
+        },
+        {
+            "id": 1397194,
+            "song_id": 349246,
+            "song_name": "Wake Me Up",
+            "artist_id": 34411,
+            "artist_name": "Avicii",
+            "type": "Chords",
+            "part": "",
+            "version": 2,
+            "votes": 2123,
+            "difficulty": "novice",
+            "rating": 4.74012,
+            "date": "1371513601",
+            "status": "approved",
+            "preset_id": 10947,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Bm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11707
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/5/1/517631/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/1/3150/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1536759124,
+            "source": ""
+        },
+        {
+            "id": 1006040,
+            "song_id": 241854,
+            "song_name": "Someone Like You",
+            "artist_id": 20519,
+            "artist_name": "Adele",
+            "type": "Chords",
+            "part": "",
+            "version": 2,
+            "votes": 4436,
+            "difficulty": "intermediate",
+            "rating": 4.78249,
+            "date": "1290643201",
+            "status": "approved",
+            "preset_id": 14669,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "A",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 22209
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/3/332170/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187276/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1552656730,
+            "source": ""
+        },
+        {
+            "id": 2105155,
+            "song_id": 1753593,
+            "song_name": "Havana",
+            "artist_id": 70566,
+            "artist_name": "Camila Cabello",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 2301,
+            "difficulty": "novice",
+            "rating": 4.79927,
+            "date": "1502562159",
+            "status": "approved",
+            "preset_id": 18475,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Gm",
+            "version_description": "It's just capo on 3 and Em C B7 the whole way through.",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 584846
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/5/1581972/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/4/2/42084/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1606646404,
+            "source": ""
+        }
+    ],
+    "content": "Chandelier - Sia\r\nTabbed by: Bree\r\nE-mail: bgward65@yahoo.com\r\nTuning: Standard\r\n\r\nVerse: No playing.\r\n\r\n[tab][Pre-Chorus]\r\n(Come in at \"1, 2, 3...\". Stop at \"Throw 'em back...\")\r\nG|---------------------------------------------------------------------------|\r\nD|---------------------------------------------------------------------------|\r\nA|---------------------------------------------------------------------------|\r\nE|---2222222--4444444--1111111-----------------------------------------------|[/tab]\r\n\r\n[tab][Chorus]\r\n(Personally, I strum like I would an acoustic guitar, alternating up and down\r\nbut you don't have to. Listen to the beat and play to it.)\r\nPlay from \"I'm gonna swing...\". Pause at 1:16 when she says the last \"chandelier\"\r\nG|---------------------------------------------------------------------------|\r\nD|---------------------------------------------------------------------------|\r\nA|---------------------------------------------------------------------------|\r\nE|---2222222--4444444--1111111--2222222----(x4)------------------------------|[/tab]\r\n\r\n[tab][Post-Chorus]\r\n\"But, I'm holding on for dear life...\" up through the final \"on for tonight.\"\r\nG|---------------------------------------------------------------------------|\r\nD|---------------------------------------------------------------------------|\r\nA|---------------------------------------------------------------------------|\r\nE|---2222222--4444444--1111111--2222222----(x2)------------------------------|[/tab]\r\n\r\nRepeat through the whole song. Very simple, fun, and easy to play <3\r\n\r\nENJOY! :)",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

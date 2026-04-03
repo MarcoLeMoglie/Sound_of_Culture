@@ -1,0 +1,414 @@
+{
+    "id": 2730306,
+    "song_id": 141030,
+    "song_name": "Longer",
+    "artist_id": 10287,
+    "artist_name": "Dan Fogelberg",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 1,
+    "votes": 0,
+    "difficulty": "intermediate",
+    "rating": 0,
+    "date": "1560733511",
+    "status": "approved",
+    "preset_id": 19387,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "G",
+    "version_description": "",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 78669
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/1/31281/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/2/12801/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "intermediate",
+    "date_update": 1560733511,
+    "source": "",
+    "versions": [],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/dan-fogelberg/longer-bass-2730306",
+    "strumming": [],
+    "videosCount": 23,
+    "comments_count": 0,
+    "contributor": {
+        "user_id": 38444,
+        "username": "Neckwringer"
+    },
+    "advertising": {
+        "targeting_song_genre": "rock"
+    },
+    "versions_count": 17,
+    "pro_brother": {
+        "id": 2248489,
+        "song_id": 141030,
+        "song_name": "Longer",
+        "artist_id": 10287,
+        "artist_name": "Dan Fogelberg",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 152,
+        "difficulty": "",
+        "rating": 4.88644,
+        "date": "1512120836",
+        "status": "approved",
+        "preset_id": 19387,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "G",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": 78669
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/1/31281/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/2/12801/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1651850714,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 1189554,
+            "song_id": 320944,
+            "song_name": "All Too Well",
+            "artist_id": 16027,
+            "artist_name": "Taylor Swift",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 6957,
+            "difficulty": "novice",
+            "rating": 4.9226,
+            "date": "1350604801",
+            "status": "approved",
+            "preset_id": 28379,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "C",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 5522
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/4/2/422724/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/0/30/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1596309712,
+            "source": ""
+        },
+        {
+            "id": 470901,
+            "song_id": 1421,
+            "song_name": "Rose",
+            "artist_id": 85,
+            "artist_name": "Westlife",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 81,
+            "difficulty": "novice",
+            "rating": 4.7191,
+            "date": "1170979201",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/8/2898/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1476083902,
+            "source": ""
+        },
+        {
+            "id": 593250,
+            "song_id": 38645,
+            "song_name": "El Mariachi Desperado Theme",
+            "artist_id": 1343,
+            "artist_name": "Gipsy Kings",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 128,
+            "difficulty": "",
+            "rating": 4.67485,
+            "date": "1193270401",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/1/21036/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1566029736,
+            "source": ""
+        },
+        {
+            "id": 325416,
+            "song_id": 164884,
+            "song_name": "Youre My Everything",
+            "artist_id": 12196,
+            "artist_name": "Santa Esmeralda",
+            "type": "Tabs",
+            "part": "intro",
+            "version": 1,
+            "votes": 0,
+            "difficulty": "novice",
+            "rating": 0,
+            "date": "1137974401",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 166235
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/4/74851/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1137974401,
+            "source": ""
+        },
+        {
+            "id": 925284,
+            "song_id": 212925,
+            "song_name": "Yell",
+            "artist_id": 24125,
+            "artist_name": "Ikimono-Gakari",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 6,
+            "difficulty": "",
+            "rating": 4.3782,
+            "date": "1267142401",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 888071
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/8/1812555/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/8/1/81211/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1267142401,
+            "source": ""
+        },
+        {
+            "id": 1571956,
+            "song_id": 1728275,
+            "song_name": "Detective Conan Theme",
+            "artist_id": 6356,
+            "artist_name": "Misc Cartoons",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 0,
+            "difficulty": "",
+            "rating": 0,
+            "date": "1394657592",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p0/media/cover/artist/8/8266de5b16a80dcb224042beec424e92/misc-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": false
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1394657592,
+            "source": ""
+        },
+        {
+            "id": 53333,
+            "song_id": 61814,
+            "song_name": "If",
+            "artist_id": 2450,
+            "artist_name": "Bread",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 19,
+            "difficulty": "",
+            "rating": 4.38198,
+            "date": "1055116800",
+            "status": "approved",
+            "preset_id": 14359,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 55385
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/7/171502/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/5/7554/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1055116800,
+            "source": ""
+        }
+    ],
+    "content": "LONGER (Bassline)\r\nAs recorded by Dan Fogelberg\r\n(From the 1979 Album PHOENIX)\r\n\r\nWords and Music by Dan Fogelberg\r\nTranscribed by Slowhand\r\n\r\nGtr I (E A D G) - 'Norbert Putnam - Bass'\r\n\r\n[tab] [Intro]\r\n Q=82\r\n 4/4\r\n  Gtr I\r\n   H    H      H    H      H    H      Q.   E +H\r\nG|-----------|-----------|-----------|---------------|\r\nD|-----------|-----------|-----------|---------------|\r\nA|------0----|-2----3----|------0----|-2----3-(3)----|\r\nE|-3---------|-----------|-3---------|---------------|[/tab]\r\n\r\n\r\n[tab]   H    H      H    H      H    H      H    +E  Q  E\r\nG|-----------|-----------|-----------|---------------||\r\nD|-----------|-----------|-----------|---------------||\r\nA|------0----|-2----3----|-1----0----|---------------||\r\nE|-3---------|-----------|-----------|-3----(3)-3--2-||[/tab]\r\n\r\n\r\n[tab]  [1st, 2nd & 4th Verses]\r\n  Segno  $\r\n     H    H      H    H      H    H      H    H\r\nG||------------|-----------|-----------|-----------|\r\nD||o-----------|-----------|-----------|-----------|\r\nA||o------0----|-2----3----|------0----|-2----3----|\r\nE||--3---------|-----------|-3---------|-----------|[/tab]\r\n\r\n\r\n[tab]                                      1.\r\n                 To Coda\r\n   H    H      H    H      H    H      H    +E  Q  E\r\nG|-----------|-----------|-----------|----------------||\r\nD|-----------|-----------|-----------|---------------o||\r\nA|------0----|-2----3----|-1----0----|---------------o||\r\nE|-3---------|-----------|-----------|-3----(3)-3--2--||[/tab]\r\n\r\n\r\n[tab]              [Bridge]\r\n  2.\r\n   W           H    Q.   E   H    Q.   E   H    Q.   E\r\nG|----------||-------------|-------------|-------------|\r\nD|----------||-----------0-|-------------|-----------0-|\r\nA|----------||-3----3------|-1----1----1-|-3----3------|\r\nE|-3--------||-------------|-------------|-------------|[/tab]\r\n\r\n\r\n[tab]   H    Q.   E   H    Q.   E   H    Q.   E    E E E E E E E E\r\nG|-------------|-------------|-------------|----5-7-5---5-7-5-|\r\nD|-------------|-----------0-|-------------|-/5-------4-------|\r\nA|-1----1----1-|-3----3------|-1----1----1-|------------------|\r\nE|-------------|-------------|-------------|------------------|[/tab]\r\n\r\n\r\n[tab]                     [3rd Verse]\r\n   E E E E E E E E     H    H      H    H      H    H      H    H\r\nG|---5-7-5---5-7----||-----------|-----------|-----------|-----------|\r\nD|-3-------4-----7\\-||-----------|-----------|-----------|-----------|\r\nA|------------------||------0----|-2----3----|------0----|-2----3----|\r\nE|------------------||-3---------|-----------|-3---------|-----------|[/tab]\r\n\r\n\r\n[tab]   H    H      H    H      H    H      H    +E  Q  E\r\nG|-----------|-----------|-----------|---------------|\r\nD|-----------|-----------|-----------|---------------|\r\nA|------0----|-2----3----|-1----0----|---------------|\r\nE|-3---------|-----------|-----------|-3----(3)-3--2-|[/tab]\r\n\r\n\r\n[tab]                               [Interlude]\r\n   H    H      H    +E  Q  E     H    Q.   E   H    Q.   E\r\nG|-----------|---------------||--------------|--------------||\r\nD|-----------|---------------||o-----------0-|-------------o||\r\nA|-1----0----|---------------||o-3----3------|-1----1----1-o||\r\nE|-----------|-3----(3)-3--2-||--------------|--------------||[/tab]\r\n\r\n\r\n[tab]                                                   Dal Segno al Coda\r\n   H    Q.   E   H    Q.   E    E E E E E E E E   E E E E E E E E\r\nG|-------------|-------------|----5-7-5---5-7-5-|---5-7-5---5-7-----||\r\nD|-----------0-|-------------|-/5-------4-------|-3-------4-----7\\--||\r\nA|-3----3------|-1----1----1-|------------------|-------------------||\r\nE|-------------|-------------|------------------|-------------------||[/tab]\r\n\r\n\r\n[tab]  [Outro]\r\n  Coda &\r\n     H    H      H    +E  Q  E     H    H      W          +W\r\nG||------------|----------------||-----------|----------|--------*|\r\nD||o-----------|---------------o||-----------|----------|--------*|\r\nA||o-1----0----|---------------o||-1----0----|----------|--------*|\r\nE||------------|-3----(3)-3--2--||-----------|-3--------|-(3)----*|[/tab]\r\n\r\n************************************\r\nDuration Legend\r\n\r\nW - whole; H - half; Q - quarter; E - 8th; S - 16th; a - acciaccatura; \r\n+ - note tied to previous; . - note dotted;\r\nDuration letters will always appear directly above the note/fret number it represents the\r\nduration for.  Duration letters with no fret number below them represent rests.\r\nUncapitalized letters represent notes that are staccato (1/2 duration). \r\n\r\n|  (n)  -  note tied to previous\r\n|  /\\   -  slide into or out of (from/to \"nowhere\")\r\n**************************************",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

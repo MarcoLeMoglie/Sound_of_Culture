@@ -1,0 +1,466 @@
+{
+    "id": 1828591,
+    "song_id": 145470,
+    "song_name": "Rock With You",
+    "artist_id": 10582,
+    "artist_name": "Michael Jackson",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 1,
+    "votes": 14,
+    "difficulty": "",
+    "rating": 4.84732,
+    "date": "1458812889",
+    "status": "approved",
+    "preset_id": 2567,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "",
+    "version_description": null,
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 2228
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/7/2742822/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/4/6448/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "",
+    "date_update": 1458812889,
+    "source": "",
+    "versions": [
+        {
+            "id": 5822996,
+            "song_id": 145470,
+            "song_name": "Rock With You",
+            "artist_id": 10582,
+            "artist_name": "Michael Jackson",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 2,
+            "votes": 0,
+            "difficulty": "intermediate",
+            "rating": 0,
+            "date": "1749120455",
+            "status": "approved",
+            "preset_id": 2567,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "There's no version for 5-string bass in standard tune. The only other version is tabbed for a 4-string tuned down half a step.",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 2228
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/7/2742822/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/4/6448/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1749120455,
+            "source": ""
+        }
+    ],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/michael-jackson/rock-with-you-bass-1828591",
+    "strumming": [],
+    "videosCount": 47,
+    "comments_count": 1,
+    "contributor": {
+        "user_id": 8132183,
+        "username": "AWal2323"
+    },
+    "advertising": {
+        "targeting_song_genre": "pop"
+    },
+    "versions_count": 19,
+    "pro_brother": {
+        "id": 1957165,
+        "song_id": 145470,
+        "song_name": "Rock With You",
+        "artist_id": 10582,
+        "artist_name": "Michael Jackson",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 200,
+        "difficulty": "",
+        "rating": 4.76554,
+        "date": "1488542215",
+        "status": "approved",
+        "preset_id": 2567,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "F#",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": 2228
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/7/2742822/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/4/6448/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1764076749,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 52942,
+            "song_id": 55671,
+            "song_name": "Dancing Queen",
+            "artist_id": 1998,
+            "artist_name": "ABBA",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 112,
+            "difficulty": "intermediate",
+            "rating": 4.6209,
+            "date": "1054598400",
+            "status": "approved",
+            "preset_id": 9087,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "E",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11489
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/6/162091/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/0/20717/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1612453400,
+            "source": ""
+        },
+        {
+            "id": 1704028,
+            "song_id": 142934,
+            "song_name": "Straight Outta Compton",
+            "artist_id": 10394,
+            "artist_name": "Nina Gordon",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 9,
+            "difficulty": "",
+            "rating": 4.78368,
+            "date": "1422333150",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 3138583
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/2/128536/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1479718239,
+            "source": ""
+        },
+        {
+            "id": 1005016,
+            "song_id": 241613,
+            "song_name": "Planetary Go",
+            "artist_id": 7804,
+            "artist_name": "My Chemical Romance",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 22,
+            "difficulty": "",
+            "rating": 4.41617,
+            "date": "1290556801",
+            "status": "approved",
+            "preset_id": 38083,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 1086
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/4/247088/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/2/12444/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1290556801,
+            "source": ""
+        },
+        {
+            "id": 1006001,
+            "song_id": 241997,
+            "song_name": "Party Poison",
+            "artist_id": 7804,
+            "artist_name": "My Chemical Romance",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 71,
+            "difficulty": "",
+            "rating": 4.84334,
+            "date": "1290556801",
+            "status": "approved",
+            "preset_id": 6828,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 1086
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/4/247088/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/2/12444/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1479898700,
+            "source": ""
+        },
+        {
+            "id": 1010847,
+            "song_id": 243920,
+            "song_name": "Merry Christmas Kiss My Ass",
+            "artist_id": 15557,
+            "artist_name": "All Time Low",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 6,
+            "difficulty": "novice",
+            "rating": 4.3782,
+            "date": "1292025601",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/1/311037/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/3/2309/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1291973414,
+            "source": ""
+        },
+        {
+            "id": 1694178,
+            "song_id": 1580318,
+            "song_name": "Bones Are Blue",
+            "artist_id": 44738,
+            "artist_name": "Melanie Martinez",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 49,
+            "difficulty": "novice",
+            "rating": 4.85397,
+            "date": "1419743433",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/0/10313/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1481814329,
+            "source": ""
+        },
+        {
+            "id": 1724007,
+            "song_id": 1595668,
+            "song_name": "Runaways",
+            "artist_id": 15557,
+            "artist_name": "All Time Low",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 10,
+            "difficulty": "novice",
+            "rating": 4.72338,
+            "date": "1427364727",
+            "status": "approved",
+            "preset_id": 1959,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 9789
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/7/2/723157/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/3/2309/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1481705214,
+            "source": ""
+        }
+    ],
+    "content": "                                      Rock With You\r\n                                     Michael Jackson\r\n                                    \r\n\r\nBass                                                          Rod Temperton\r\n\r\nAs played by Bobby Watson\r\n\r\nTuning: Eb Ab Db Gb\r\n\r\nIntro\r\n\r\n1 Bar Rest\r\n\r\n[tab]Gb|-----------------|---------4-------|-----------------|-----------------|\r\nDb|-----------------|-------4---4-----|-----------------|-----------------|\r\nAb|-----------------|-2-----------2---|-----------------|-2-----5-----6---|\r\nEb|-0-----0-0-------|---------------0-|-0-----0-0-------|-----------------|\r\n    E E E.S E E Q     E E E.S E.S E E   E E E.S E E Q     Q.    Q.    Q[/tab]\r\n\r\n[tab]Gb|-----------------|---------4-------|-----------------|-------------------|\r\nDb|-----------------|-------4---4-----|-----------------|---------------0-2-|\r\nAb|-----------------|-2-----------2---|-0-----0-------0-|-0-----0---1-2-----|\r\nEb|-0-----0-0-------|---------------0-|-----------------|-------------------|\r\n    E E E.S E E Q     E E E.S E.S E E   Q.    H       E   Q.    Q   E E S S[/tab]\r\n\r\nVerse 1\r\n\r\n[tab]Gb|-----------------|-----------------|-----------------|-------4---------|\r\nDb|-----------------|-----------------|-----------------|-----4-------0-2-|\r\nAb|-----------------|-----------------|-2-------2-------|-2-------2-------|\r\nEb|-0-----x-3---4---|-5-----x-5---6---|-----------------|-----------------|\r\n    E E E.S Q   Q     E E E.S Q   Q     E Q.    E Q.      E E.S E E E E E[/tab]\r\n\r\n[tab]Gb|-------------------|-----------------|-------------4---|-----------------|\r\nDb|-------------------|-----------------|-----------4-----|-------4-----2---|\r\nAb|-------------------|-----------------|-2-----2-------2-|-2-------2-0---0-|\r\nEb|-0-----x-0---x-3-4-|-5-----x-5---6---|-----------------|-----------------|\r\n    E E E.S E S S E E   E E E.S Q   Q     E Q.  E S S E.S   E Q.  E E S S E[/tab]\r\n\r\n[tab]Gb|-----------------|-----------------|-------------------|-------2-2---2---|\r\nDb|-----------------|-----------------|-------------------|-----2-----2-----|\r\nAb|-----------------|-----------------|-3-----3---3-3-----|-0-0-------------|\r\nEb|-3-----3-3-----3-|-2---2-2-2-----2-|---------3-----3-4-|---------------0-|\r\n    E E E.S E E E.S   E Q S S E Q   E   E Q   S S E.S E E   E E E E E.S E E[/tab]\r\n\r\nPre-Chorus 1\r\n\r\n[tab]Gb|-----------------|-----------------|-----------------|-----------------|\r\nDb|-2---4---5-------|-----------------|-2---4---5---6-7-|-------------7---|\r\nAb|-----------------|-----------------|-----------------|---0-0---0-----0-|\r\nEb|-----------------|-----------------|-----------------|-----------------|\r\n    Q   Q   E Q.      W                 Q   Q   Q   E E   E E Q   Q   E E[/tab]\r\n\r\nChorus 1\r\n\r\n[tab]Gb|-----------------|---------4---------|-----------------|-----------------|\r\nDb|-----------------|-------4---4---4---|-----------------|-------0-0---1---|\r\nAb|-----------------|-2-----------2---2-|-----------------|-0-2-------------|\r\nEb|-0-----0-0-------|-------------------|-0---0---0-------|-----------------|\r\n    E E E.S E E Q     E E E.S E.S E S S   E E E E E E Q     S E.E S E.E Q[/tab]\r\n\r\n[tab]Gb|-----------------|---------4---------|-----------------|-----------------|\r\nDb|-2---------------|-------4-----4-----|-----------------|-----------------|\r\nAb|-----------------|-0-2-----------2-1-|-0---0-0-----0-0-|-0-------0---1-2-|\r\nEb|---0---0---0-----|-------------------|-----------------|-----------------|\r\n    S S E E E E Q.    E E E.S Q   S E E   Q.  S S Q.  S S   E E Q   E E E E[/tab]\r\n\r\nVerse 2\r\n\r\n[tab]Gb|-----------------|-----------------|-----------------|-------4-5-4-----|\r\nDb|-2---------------|-----------------|-----------------|-------------5-4-|\r\nAb|-----------------|-------------0-1-|-2-----x-2-----x-|-2---------------|\r\nEb|---------3---4---|-5-----x-5-------|-----------------|-----------------|\r\n    E E Q   Q   Q     E E E.S Q   E E   E E E.S E E E.S   E Q.  S E S E E[/tab]\r\n\r\n[tab]Gb|-----------------|-----------------|---------4-------|-------------------|\r\nDb|-2---------------|-----------------|-------4---------|-------------------|\r\nAb|-----------------|---------0---1---|-2-------------2-|-2-----2-2-2---2---|\r\nEb|---------x-3-2-0-|-5---------------|-----------------|-------------------|\r\n    E E Q   S E.E E   E E Q   Q   Q     E Q S S E.S E.S   E Q   S S E E E E [/tab]\r\n\r\n[tab]Gb|-------------------|-----------------|-----------------|-----------------|\r\nDb|-----------2---5---|---------4-------|-----------------|-------------7---|\r\nAb|---------2---5-----|-----------------|-3-------3-------|-----------------|\r\nEb|-3-----3---------3-|---2-----------2-|-------------4---|-5-------5-----5-|\r\n    E Q   E E E E.S     E Q.    Q.    E   E Q.    Q   Q     Q   Q   Q   E E[/tab]\r\n\r\nPre-Chorus 2\r\n\r\n[tab]Gb|-----------------|-----------------|-----------------|-----------------|\r\nDb|-2---4---5-------|-----------------|-2---4---5---6-7-|-----------------|\r\nAb|-----------------|-----------------|-----------------|-----------------|\r\nEb|-----------------|-----------------|-----------------|---5-5---5---5\\--|\r\n    Q   Q   E Q.      W                 Q   Q   Q   E E   E E Q   Q   Q[/tab]\r\n\r\nChorus 2\r\n\r\n[tab]Gb|-----------------|-------------4-----|-----------------|-----------------|\r\nDb|-----------------|-------4---4---4---|-2---------------|-------0-----1---|\r\nAb|-----------------|-2-------2-------2-|-----------------|-2---------------|\r\nEb|-0-----0-0-----0-|-------------------|-------0-0-----0-|-----------------|\r\n    E E E.S E E E.S   E E E.S E.S E S S   E E E.S E E E.S   Q.    Q.    Q[/tab]\r\n\r\n[tab]Gb|-----------------|---------4---------|-------2---------|-------------------|\r\nDb|-2---------------|-------4-----4-----|-----------------|-------------------|\r\nAb|-----------------|-2-------------2-1-|-0---0-------0-0-|-0-----0-0-0---0---|\r\nEb|-------0-0-----0-|-------------------|-----------------|-------------------|\r\n    E E E.S E E E.S   E E E S Q   S E S   Q.  S S Q.  S S   E E E S S Q   Q[/tab]\r\n\r\nBridge \r\n\r\n[tab]Gb|-------------4---|-7-6-4---4-------|------------/18--|(18)-------------|\r\nDb|---------------4-|-----------4---0-|-2----------/18--|(18)-------------|\r\nAb|-2-------2-------|-------------2---|-----------------|-----------------|\r\nEb|-----------------|-----------------|-------0-0-------|-----------2-3-2-|\r\n    Q   Q   Q E S S   E E E E E.S E.S   E E E.S E E Q     H       E E E E [/tab]\r\n\r\n[tab]Gb|-------------------|-----------------|-5-------5-------|-------------------|\r\nDb|-----------2-0-5---|-4---------------|-------5-----5-6-|---7-7-7-7-7-7-----|\r\nAb|---------2---------|-----x-x---------|-----------------|---------------0-2-|\r\nEb|-3-----3---------3-|---------2-----2-|-----------------|-5-----------------|\r\n    E E E E E.S E S S   Q.  S S Q.    E   E E E.S E S S E   E E E E E E E S S[/tab]\r\n\r\nSolo\r\n\r\n[tab]Gb|-------------------|---------4-------|-----------------|-----------------|\r\nDb|-------------------|-------4---4--/2-|-----------------|-----------------|\r\nAb|-----------------3-|-2-----------2---|---------------3-|-2-----2/5---5-5-|\r\nEb|-0-----0-0---0-3---|-----------------|-0-----0-0-2-3---|-----------------|\r\n    E E E.S E S S E E   E E E.S E.S E E   E E E.S E E E E   E E E.S Q   E E[/tab]\r\n\r\n[tab]Gb|---------------------|-----------------|-----------------|---------9-7-------|\r\nDb|-0h2-----0-2---------|-----------------|-----------------|-------------7-----|\r\nAb|---------------------|-2-----4-----5---|(5)------5---5---|-5-----5-------8-7-|\r\nEb|-------------0-0-0-0-|-----------------|-----------------|-------------------|\r\n    S S E E.S S S E E.S   Q.    Q.    Q     H       Q   Q     Q.  S S E E S S E[/tab]\r\n\r\n[tab]Gb|-----------------|---------4-------|-----------------|-----------------|\r\nDb|-----------------|-------4---4-----|-----------------|-----------------|\r\nAb|---------------0-|-2-----------2---|-----------------|-2-----5-----6---|\r\nEb|-0-----0-0-2-3---|-----------------|-0-----0-0-----0-|-----------------|\r\n    E E E.S E E E E   E E E.S E.S Q     E E E.S E E E.S   E E E Q.    Q[/tab]\r\n\r\n[tab]Gb|-----------------|-----------------|-----------------|-----------------|\r\nDb|-2---------------|-----------------|-----------------|-----------------|\r\nAb|-----------------|-2-----4-----5---|(5)------5-------|-5-------6-------|\r\nEb|-------0-0-----0-|-----------------|-----------------|-----------------|\r\n    E E E.S E E E.S   Q.    Q.    Q     H       H         H       H[/tab]\r\n\r\nChorus 3\r\n\r\n[tab]Gb|-----------------|---------5---------|-----------------|-----------------|\r\nDb|-3---------------|-----------5-------|-------------3---|-------1-1-1-1-2-|\r\nAb|-----------------|-3-----3-----3-3-0-|-----------------|-3---------------|\r\nEb|-------1-1-----1-|-------------------|-1-------1-------|-----------------|\r\n    E E E.S E E E.S   E E E.S E.S E S S   E E Q   E E E E   Q.    E.S E E E [/tab]\r\n\r\n[tab]Gb|-----------------|---------5---------|-----------------|-----------------|\r\nDb|-3---------------|-------5-----5-----|-----------------|---------------1-|\r\nAb|-----------------|-3-------------3-2-|-1-----1-------1-|-1-----1-1-2-3---|\r\nEb|-------1-1-----1-|-------------------|-----------------|-----------------|\r\n    E E E.S E E E.S   E E E S Q   S E E   Q.  S S Q.    E   E E E E E E E E[/tab]\r\n\r\n[tab]Gb|-----------------|---------5---------|-----------------|-----------------|\r\nDb|-3---------------|-----------5---5---|-3---------------|-------1---1-1-2-|\r\nAb|-----------------|-3-----3-----3---3-|-----------------|-3-------3-------|\r\nEb|-------1-1-----1-|-------------------|-----1-1-1---1-1-|-----------------|\r\n    E E E.S E E E.S   E E E.S E.S E S S   E Q S S E Q S S   Q.    E.S E E E [/tab]\r\n\r\n[tab]Gb|-----------------|-----------------|-----------------|-3-3-5-6-6-3-5-3-3-4-5-|\r\nDb|-3---------------|-----------------|-----------------|-----------------------|\r\nAb|---3-------------|-3---3---3---3-2-|-1-----1---------|-----------------------|\r\nEb|-----1---1-----1-|-----------------|-----------------|-----------------------|\r\n    E.S Q   Q   E.S   Q   Q   Q   E E   Q.  S S H         S S S S S S E E E E E[/tab]\r\n\r\n[tab]Gb|-----------------|---------5---------|-----------------|-----------------|\r\nDb|-3---------------|-------5-----5-----|-3---------------|-------1---1-1-2-|\r\nAb|-----3-3-3-------|-3-------------3-2-|-----------------|-3-------3-------|\r\nEb|-----------4-1-1-|-------------------|-------1-1-----1-|-----------------|\r\n    E Q S E.S E E S   E E E S Q   S E E   E E E.S E E E.S   Q.    E.S E E E [/tab]\r\n\r\n[tab]Gb|-------------------|-------------5-----|-----------------|-3-3-3-3-3-3-3-----||\r\nDb|-3---1-------------|-----------5-------|-----------------|-------------------||\r\nAb|-------3-----------|-3-----3---------3-|-1-----1---------|-------------------||\r\nEb|---------4-1---1-1-|-------------------|-----------------|-------------------||\r\n    E E.S S S E Q S S   Q.    Q   S S E E   Q.  S S H         S S E E S S E Q.[/tab]\r\n\r\n\r\nKey to rhythm notations:\r\n\r\nW - Whole Note/Semi-Brieve\r\nH - Half Note/Minim\r\nQ - Quarter Note/Crotchet       Q. - Dotted Quarter Note\r\nE - Eight Note/Quaver           E. - Dotted Eight Note\r\nS - Sixteenth Note/Semi-Quaver  S. - Dotted Sixteenth Note",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

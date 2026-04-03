@@ -1,0 +1,4228 @@
+{
+    "id": 5290479,
+    "song_id": 24219486,
+    "song_name": "Houdini",
+    "artist_id": 1500,
+    "artist_name": "Eminem",
+    "type": "Chords",
+    "part": "",
+    "version": 1,
+    "votes": 17,
+    "difficulty": "",
+    "rating": 4.77017,
+    "date": "1717132697",
+    "status": "approved",
+    "preset_id": 82050,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "Am",
+    "version_description": "",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": null
+    },
+    "album_cover": {
+        "has_album_cover": false
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187260/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "intermediate",
+    "date_update": 1717687131,
+    "source": "",
+    "versions": [],
+    "userRating": 0,
+    "tuning": "E A D G B E",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/eminem/houdini-chords-5290479",
+    "strumming": [
+        {
+            "part": "Basic Pattern",
+            "denuminator": 8,
+            "bpm": 127,
+            "is_triplet": 0,
+            "measures": [
+                {
+                    "measure": 202
+                },
+                {
+                    "measure": 101
+                },
+                {
+                    "measure": 1
+                },
+                {
+                    "measure": 101
+                },
+                {
+                    "measure": 203
+                },
+                {
+                    "measure": 202
+                },
+                {
+                    "measure": 202
+                },
+                {
+                    "measure": 202
+                }
+            ]
+        },
+        {
+            "part": "Expanded Pattern",
+            "denuminator": 8,
+            "bpm": 127,
+            "is_triplet": 0,
+            "measures": [
+                {
+                    "measure": 2
+                },
+                {
+                    "measure": 101
+                },
+                {
+                    "measure": 1
+                },
+                {
+                    "measure": 101
+                },
+                {
+                    "measure": 203
+                },
+                {
+                    "measure": 101
+                },
+                {
+                    "measure": 1
+                },
+                {
+                    "measure": 101
+                }
+            ]
+        }
+    ],
+    "videosCount": 11,
+    "comments_count": 3,
+    "contributor": {
+        "user_id": 51934874,
+        "username": "weilbacherk2022"
+    },
+    "advertising": {
+        "targeting_song_genre": "hip hop"
+    },
+    "versions_count": 6,
+    "pro_brother": {
+        "id": 5305188,
+        "song_id": 24219486,
+        "song_name": "Houdini",
+        "artist_id": 1500,
+        "artist_name": "Eminem",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 10,
+        "difficulty": "",
+        "rating": 4.87723,
+        "date": "1718114130",
+        "status": "approved",
+        "preset_id": 82050,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "Am",
+        "version_description": null,
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": null
+        },
+        "album_cover": {
+            "has_album_cover": false
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187260/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1718114130,
+        "source": ""
+    },
+    "recommended": [],
+    "applicature": [
+        {
+            "chord": "Am",
+            "variations": [
+                {
+                    "id": "x02210",
+                    "listCapos": [],
+                    "noteIndex": 9,
+                    "notes": [
+                        52,
+                        48,
+                        45,
+                        40,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        0,
+                        1,
+                        2,
+                        2,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        1,
+                        3,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x02555",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 0,
+                            "lastString": 2,
+                            "finger": 4
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        57,
+                        52,
+                        48,
+                        40,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        5,
+                        5,
+                        5,
+                        2,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x07555",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 0,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        57,
+                        52,
+                        48,
+                        45,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        5,
+                        5,
+                        5,
+                        7,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x07558",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        60,
+                        52,
+                        48,
+                        45,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        8,
+                        5,
+                        5,
+                        7,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "577555",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 0,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        57,
+                        52,
+                        48,
+                        45,
+                        40,
+                        33
+                    ],
+                    "frets": [
+                        5,
+                        5,
+                        5,
+                        7,
+                        7,
+                        5
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "577558",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        60,
+                        52,
+                        48,
+                        45,
+                        40,
+                        33
+                    ],
+                    "frets": [
+                        8,
+                        5,
+                        5,
+                        7,
+                        7,
+                        5
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        3,
+                        2,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx7555",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 0,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        57,
+                        52,
+                        48,
+                        45,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        5,
+                        5,
+                        5,
+                        7,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx7558",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        60,
+                        52,
+                        48,
+                        45,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        8,
+                        5,
+                        5,
+                        7,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x079108",
+                    "listCapos": [],
+                    "noteIndex": 9,
+                    "notes": [
+                        60,
+                        57,
+                        52,
+                        45,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        8,
+                        10,
+                        9,
+                        7,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        2,
+                        4,
+                        3,
+                        1,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx79108",
+                    "listCapos": [],
+                    "noteIndex": 9,
+                    "notes": [
+                        60,
+                        57,
+                        52,
+                        45,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        8,
+                        10,
+                        9,
+                        7,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        2,
+                        4,
+                        3,
+                        1,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x0109108",
+                    "listCapos": [],
+                    "noteIndex": 9,
+                    "notes": [
+                        60,
+                        57,
+                        52,
+                        48,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        8,
+                        10,
+                        9,
+                        10,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        1,
+                        4,
+                        2,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 8,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x0255x",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 4
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        52,
+                        48,
+                        40,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        5,
+                        2,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x0221x",
+                    "listCapos": [],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        48,
+                        45,
+                        40,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        1,
+                        2,
+                        2,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        1,
+                        3,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x0755x",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        52,
+                        48,
+                        45,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        5,
+                        7,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "57755x",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        52,
+                        48,
+                        45,
+                        40,
+                        33
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        5,
+                        7,
+                        7,
+                        5
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x010910x",
+                    "listCapos": [],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        57,
+                        52,
+                        48,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        10,
+                        9,
+                        10,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        1,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 9,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "5322xx",
+                    "listCapos": [
+                        {
+                            "fret": 2,
+                            "startString": 2,
+                            "lastString": 3,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        -1,
+                        45,
+                        40,
+                        36,
+                        33
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        2,
+                        2,
+                        3,
+                        5
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        2,
+                        4
+                    ],
+                    "fret": 2,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "5775xx",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 2,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        -1,
+                        48,
+                        45,
+                        40,
+                        33
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        5,
+                        7,
+                        7,
+                        5
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x0x210",
+                    "listCapos": [],
+                    "noteIndex": 9,
+                    "notes": [
+                        52,
+                        48,
+                        45,
+                        -1,
+                        33,
+                        -1
+                    ],
+                    "frets": [
+                        0,
+                        1,
+                        2,
+                        -1,
+                        0,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        1,
+                        2,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "5x7555",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 0,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        57,
+                        52,
+                        48,
+                        45,
+                        -1,
+                        33
+                    ],
+                    "frets": [
+                        5,
+                        5,
+                        5,
+                        7,
+                        -1,
+                        5
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "5x7558",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        60,
+                        52,
+                        48,
+                        45,
+                        -1,
+                        33
+                    ],
+                    "frets": [
+                        8,
+                        5,
+                        5,
+                        7,
+                        -1,
+                        5
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "5x755x",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 9,
+                    "notes": [
+                        -1,
+                        52,
+                        48,
+                        45,
+                        -1,
+                        33
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        5,
+                        7,
+                        -1,
+                        5
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                }
+            ]
+        },
+        {
+            "chord": "Dm",
+            "variations": [
+                {
+                    "id": "xx0231",
+                    "listCapos": [],
+                    "noteIndex": 2,
+                    "notes": [
+                        53,
+                        50,
+                        45,
+                        38,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        1,
+                        3,
+                        2,
+                        0,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        1,
+                        3,
+                        2,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx0765",
+                    "listCapos": [],
+                    "noteIndex": 2,
+                    "notes": [
+                        57,
+                        53,
+                        50,
+                        38,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        5,
+                        6,
+                        7,
+                        0,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        1,
+                        2,
+                        3,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x57765",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 0,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        57,
+                        53,
+                        50,
+                        45,
+                        38,
+                        -1
+                    ],
+                    "frets": [
+                        5,
+                        6,
+                        7,
+                        7,
+                        5,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        4,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx0101010",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 0,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        62,
+                        57,
+                        53,
+                        38,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        10,
+                        10,
+                        10,
+                        0,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx0101013",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        65,
+                        57,
+                        53,
+                        38,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        13,
+                        10,
+                        10,
+                        0,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "101212101010",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 0,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        62,
+                        57,
+                        53,
+                        50,
+                        45,
+                        38
+                    ],
+                    "frets": [
+                        10,
+                        10,
+                        10,
+                        12,
+                        12,
+                        10
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "101212101013",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        65,
+                        57,
+                        53,
+                        50,
+                        45,
+                        38
+                    ],
+                    "frets": [
+                        13,
+                        10,
+                        10,
+                        12,
+                        12,
+                        10
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        3,
+                        2,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx12101010",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 0,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        62,
+                        57,
+                        53,
+                        50,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        10,
+                        10,
+                        10,
+                        12,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx12101013",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        65,
+                        57,
+                        53,
+                        50,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        13,
+                        10,
+                        10,
+                        12,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x5776x",
+                    "listCapos": [],
+                    "noteIndex": 2,
+                    "notes": [
+                        -1,
+                        53,
+                        50,
+                        45,
+                        38,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        6,
+                        7,
+                        7,
+                        5,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        4,
+                        3,
+                        1,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "1012121010x",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        -1,
+                        57,
+                        53,
+                        50,
+                        45,
+                        38
+                    ],
+                    "frets": [
+                        -1,
+                        10,
+                        10,
+                        12,
+                        12,
+                        10
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "10877xx",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 3,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        -1,
+                        -1,
+                        50,
+                        45,
+                        41,
+                        38
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        7,
+                        7,
+                        8,
+                        10
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        2,
+                        4
+                    ],
+                    "fret": 7,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "10121210xx",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 2,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        -1,
+                        -1,
+                        53,
+                        50,
+                        45,
+                        38
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        10,
+                        12,
+                        12,
+                        10
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x5x765",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 0,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        57,
+                        53,
+                        50,
+                        -1,
+                        38,
+                        -1
+                    ],
+                    "frets": [
+                        5,
+                        6,
+                        7,
+                        -1,
+                        5,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        3,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "10x12101010",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 0,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        62,
+                        57,
+                        53,
+                        50,
+                        -1,
+                        38
+                    ],
+                    "frets": [
+                        10,
+                        10,
+                        10,
+                        12,
+                        -1,
+                        10
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "10x12101013",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        65,
+                        57,
+                        53,
+                        50,
+                        -1,
+                        38
+                    ],
+                    "frets": [
+                        13,
+                        10,
+                        10,
+                        12,
+                        -1,
+                        10
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "10x121010x",
+                    "listCapos": [
+                        {
+                            "fret": 10,
+                            "startString": 1,
+                            "lastString": 5,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 2,
+                    "notes": [
+                        -1,
+                        57,
+                        53,
+                        50,
+                        -1,
+                        38
+                    ],
+                    "frets": [
+                        -1,
+                        10,
+                        10,
+                        12,
+                        -1,
+                        10
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 10,
+                    "type": "MINOR",
+                    "baseDisplayNote": ""
+                }
+            ]
+        },
+        {
+            "chord": "E7#9",
+            "variations": [
+                {
+                    "id": "020000",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        52,
+                        47,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020003",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        47,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        0,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        2,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020004",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        47,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        0,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        3,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020030",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        52,
+                        50,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        0,
+                        3,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020033",
+                    "listCapos": [
+                        {
+                            "fret": 3,
+                            "startString": 0,
+                            "lastString": 1,
+                            "finger": 2
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020034",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        50,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        3,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        3,
+                        2,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020103",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        47,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        3,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020403",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        47,
+                        47,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        0,
+                        4,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        2,
+                        0,
+                        3,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "022030",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        52,
+                        50,
+                        43,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        0,
+                        3,
+                        0,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        0,
+                        2,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020133",
+                    "listCapos": [
+                        {
+                            "fret": 3,
+                            "startString": 0,
+                            "lastString": 1,
+                            "finger": 3
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "022033",
+                    "listCapos": [
+                        {
+                            "fret": 3,
+                            "startString": 0,
+                            "lastString": 1,
+                            "finger": 3
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        43,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        0,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        2,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020433",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        47,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        4,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        3,
+                        2,
+                        4,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "022034",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        50,
+                        43,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        3,
+                        0,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        3,
+                        0,
+                        2,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "022133",
+                    "listCapos": [
+                        {
+                            "fret": 3,
+                            "startString": 0,
+                            "lastString": 1,
+                            "finger": 4
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        44,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        1,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        3,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "022433",
+                    "listCapos": [
+                        {
+                            "fret": 2,
+                            "startString": 3,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        47,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        4,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        3,
+                        2,
+                        4,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx2133",
+                    "listCapos": [
+                        {
+                            "fret": 3,
+                            "startString": 0,
+                            "lastString": 1,
+                            "finger": 3
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        44,
+                        40,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        1,
+                        2,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx2433",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        55,
+                        50,
+                        47,
+                        40,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        3,
+                        3,
+                        4,
+                        2,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        3,
+                        2,
+                        4,
+                        1,
+                        0,
+                        0
+                    ],
+                    "fret": 2,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x79787",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 0,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        59,
+                        55,
+                        50,
+                        47,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        7,
+                        8,
+                        7,
+                        9,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x797810",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        55,
+                        50,
+                        47,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        10,
+                        8,
+                        7,
+                        9,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        2,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "02000x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        47,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        0,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "02003x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        50,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        3,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "02203x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        50,
+                        43,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        3,
+                        0,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        0,
+                        2,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7678x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        55,
+                        50,
+                        44,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        8,
+                        7,
+                        6,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        4,
+                        3,
+                        1,
+                        2,
+                        0
+                    ],
+                    "fret": 6,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7978x",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        55,
+                        50,
+                        47,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        8,
+                        7,
+                        9,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0200xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        43,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        0,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7x787",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 0,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        59,
+                        55,
+                        50,
+                        -1,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        7,
+                        8,
+                        7,
+                        -1,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0x203x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        50,
+                        43,
+                        40,
+                        -1,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        3,
+                        0,
+                        2,
+                        -1,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        2,
+                        0,
+                        1,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7_PLUS_9",
+                    "baseDisplayNote": ""
+                }
+            ]
+        },
+        {
+            "chord": "E7",
+            "variations": [
+                {
+                    "id": "020100",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        52,
+                        47,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        0,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020104",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        47,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020130",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        52,
+                        50,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        0,
+                        3,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020404",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        47,
+                        47,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        0,
+                        4,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        3,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020134",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        50,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        3,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        3,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "020434",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        50,
+                        47,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        3,
+                        4,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        2,
+                        3,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "022130",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        52,
+                        50,
+                        44,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        0,
+                        3,
+                        1,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        4,
+                        1,
+                        3,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "022434",
+                    "listCapos": [
+                        {
+                            "fret": 2,
+                            "startString": 3,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        50,
+                        47,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        3,
+                        4,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        2,
+                        3,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx2130",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        52,
+                        50,
+                        44,
+                        40,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        0,
+                        3,
+                        1,
+                        2,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        1,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx2134",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        50,
+                        44,
+                        40,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        4,
+                        3,
+                        1,
+                        2,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        3,
+                        1,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "xx2434",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        50,
+                        47,
+                        40,
+                        -1,
+                        -1
+                    ],
+                    "frets": [
+                        4,
+                        3,
+                        4,
+                        2,
+                        -1,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        2,
+                        3,
+                        1,
+                        0,
+                        0
+                    ],
+                    "fret": 2,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "056454",
+                    "listCapos": [
+                        {
+                            "fret": 4,
+                            "startString": 0,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        56,
+                        52,
+                        47,
+                        44,
+                        38,
+                        28
+                    ],
+                    "frets": [
+                        4,
+                        5,
+                        4,
+                        6,
+                        5,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        0,
+                        4,
+                        2,
+                        0
+                    ],
+                    "fret": 4,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "056757",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        59,
+                        52,
+                        50,
+                        44,
+                        38,
+                        28
+                    ],
+                    "frets": [
+                        7,
+                        5,
+                        7,
+                        6,
+                        5,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        3,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "079797",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 0,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        59,
+                        56,
+                        50,
+                        47,
+                        40,
+                        28
+                    ],
+                    "frets": [
+                        7,
+                        9,
+                        7,
+                        9,
+                        7,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        4,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0799910",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 3,
+                            "finger": 3
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        52,
+                        47,
+                        40,
+                        28
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        9,
+                        9,
+                        7,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0797910",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        50,
+                        47,
+                        40,
+                        28
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        7,
+                        9,
+                        7,
+                        0
+                    ],
+                    "fingers": [
+                        4,
+                        3,
+                        0,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x79797",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 0,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        59,
+                        56,
+                        50,
+                        47,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        7,
+                        9,
+                        7,
+                        9,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        4,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x799910",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 3,
+                            "finger": 3
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        52,
+                        47,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        9,
+                        9,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x797910",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        50,
+                        47,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        7,
+                        9,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        3,
+                        0,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "01199910",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 3,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        52,
+                        47,
+                        44,
+                        28
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        9,
+                        9,
+                        11,
+                        0
+                    ],
+                    "fingers": [
+                        2,
+                        0,
+                        0,
+                        0,
+                        3,
+                        0
+                    ],
+                    "fret": 9,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "011991210",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 2,
+                            "lastString": 3,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        59,
+                        52,
+                        47,
+                        44,
+                        28
+                    ],
+                    "frets": [
+                        10,
+                        12,
+                        9,
+                        9,
+                        11,
+                        0
+                    ],
+                    "fingers": [
+                        2,
+                        4,
+                        0,
+                        0,
+                        3,
+                        0
+                    ],
+                    "fret": 9,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "011129910",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        52,
+                        50,
+                        44,
+                        28
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        9,
+                        12,
+                        11,
+                        0
+                    ],
+                    "fingers": [
+                        2,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 9,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "121199910",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 3,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        52,
+                        47,
+                        44,
+                        40
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        9,
+                        9,
+                        11,
+                        12
+                    ],
+                    "fingers": [
+                        2,
+                        0,
+                        0,
+                        0,
+                        3,
+                        4
+                    ],
+                    "fret": 9,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "02010x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        47,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "02013x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        50,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        3,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "02213x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        50,
+                        44,
+                        40,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        3,
+                        1,
+                        2,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        4,
+                        1,
+                        3,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "05643x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        50,
+                        47,
+                        44,
+                        38,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        3,
+                        4,
+                        6,
+                        5,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        1,
+                        2,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 3,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "05645x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        52,
+                        47,
+                        44,
+                        38,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        4,
+                        6,
+                        5,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        1,
+                        4,
+                        2,
+                        0
+                    ],
+                    "fret": 4,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "05675x",
+                    "listCapos": [
+                        {
+                            "fret": 5,
+                            "startString": 1,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        52,
+                        50,
+                        44,
+                        38,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        7,
+                        6,
+                        5,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        3,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "07675x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        52,
+                        50,
+                        44,
+                        40,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        7,
+                        6,
+                        7,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        1,
+                        4,
+                        2,
+                        3,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7675x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        52,
+                        50,
+                        44,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        5,
+                        7,
+                        6,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        1,
+                        4,
+                        2,
+                        3,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "07979x",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        56,
+                        50,
+                        47,
+                        40,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        9,
+                        7,
+                        9,
+                        7,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        4,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7979x",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        56,
+                        50,
+                        47,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        -1,
+                        9,
+                        7,
+                        9,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        4,
+                        0,
+                        3,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0111299x",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        56,
+                        52,
+                        50,
+                        44,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        9,
+                        9,
+                        12,
+                        11,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        0,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 9,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "011121312x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        59,
+                        56,
+                        50,
+                        44,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        12,
+                        13,
+                        12,
+                        11,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        4,
+                        2,
+                        1,
+                        0
+                    ],
+                    "fret": 11,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0201xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        44,
+                        38,
+                        35,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        0,
+                        2,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0564xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        47,
+                        44,
+                        38,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        4,
+                        6,
+                        5,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        3,
+                        2,
+                        0
+                    ],
+                    "fret": 4,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0567xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        50,
+                        44,
+                        38,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        7,
+                        6,
+                        5,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        3,
+                        2,
+                        1,
+                        0
+                    ],
+                    "fret": 5,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0767xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        50,
+                        44,
+                        40,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        7,
+                        6,
+                        7,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        3,
+                        1,
+                        2,
+                        0
+                    ],
+                    "fret": 6,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "011129xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        52,
+                        50,
+                        44,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        9,
+                        12,
+                        11,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        1,
+                        4,
+                        3,
+                        0
+                    ],
+                    "fret": 9,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0111213xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        56,
+                        50,
+                        44,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        13,
+                        12,
+                        11,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        3,
+                        2,
+                        1,
+                        0
+                    ],
+                    "fret": 11,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "12111213xx",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        -1,
+                        56,
+                        50,
+                        44,
+                        40
+                    ],
+                    "frets": [
+                        -1,
+                        -1,
+                        13,
+                        12,
+                        11,
+                        12
+                    ],
+                    "fingers": [
+                        0,
+                        0,
+                        4,
+                        3,
+                        1,
+                        2
+                    ],
+                    "fret": 11,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7x797",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 0,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        59,
+                        56,
+                        50,
+                        -1,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        7,
+                        9,
+                        7,
+                        -1,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7x7910",
+                    "listCapos": [
+                        {
+                            "fret": 7,
+                            "startString": 2,
+                            "lastString": 4,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        50,
+                        -1,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        7,
+                        -1,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        3,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "x7x9910",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 2,
+                            "finger": 3
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        52,
+                        -1,
+                        40,
+                        -1
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        9,
+                        -1,
+                        7,
+                        -1
+                    ],
+                    "fingers": [
+                        4,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    "fret": 7,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "12x99910",
+                    "listCapos": [
+                        {
+                            "fret": 9,
+                            "startString": 1,
+                            "lastString": 3,
+                            "finger": 1
+                        }
+                    ],
+                    "noteIndex": 4,
+                    "notes": [
+                        62,
+                        56,
+                        52,
+                        47,
+                        -1,
+                        40
+                    ],
+                    "frets": [
+                        10,
+                        9,
+                        9,
+                        9,
+                        -1,
+                        12
+                    ],
+                    "fingers": [
+                        2,
+                        0,
+                        0,
+                        0,
+                        0,
+                        4
+                    ],
+                    "fret": 9,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                },
+                {
+                    "id": "0x213x",
+                    "listCapos": [],
+                    "noteIndex": 4,
+                    "notes": [
+                        -1,
+                        50,
+                        44,
+                        40,
+                        -1,
+                        28
+                    ],
+                    "frets": [
+                        -1,
+                        3,
+                        1,
+                        2,
+                        -1,
+                        0
+                    ],
+                    "fingers": [
+                        0,
+                        3,
+                        1,
+                        2,
+                        0,
+                        0
+                    ],
+                    "fret": 0,
+                    "type": "_7",
+                    "baseDisplayNote": ""
+                }
+            ]
+        }
+    ],
+    "content": "[Intro: Eminem]\r\n[tab][ch]Am[/ch]                 [ch]Dm[/ch]\r\n   Guess who's back, back again?[/tab]\r\n[tab][ch]E7#9[/ch]           [ch]Am[/ch]\r\n   Shady's back, tell a friend[/tab]\r\n[tab][ch]Am[/ch]                 [ch]Dm[/ch]\r\n   Guess who's back, back again?[/tab]\r\n[tab][ch]E7#9[/ch]           [ch]Am[/ch]\r\n   Shady's back, tell a friend[/tab]\r\n[tab][ch]Am[/ch]                 [ch]Dm[/ch]\r\n   Guess who's back, back again?[/tab]\r\n[tab][ch]E7#9[/ch]           [ch]Am[/ch]\r\n   Shady's back, tell a friend[/tab]\r\n[tab][ch]Am[/ch]\r\n   Guess who's back? Guess who's back?[/tab]\r\n[tab][ch]Dm[/ch]\r\n   Guess who's back? Guess who's back?[/tab]\r\n[tab][ch]E7#9[/ch]\r\n   Guess who's back? Guess who's back?[/tab]\r\n[tab][ch]Am[/ch]\r\n   Guess who's back? (Haha)[/tab]\r\n[tab]        [ch]Am[/ch]            [ch]Dm[/ch]\r\nDa-da-da, da, da, da, da, da, da[/tab]\r\n[tab]        [ch]E7#9[/ch]\r\nDa-da-da, da, da, da, da[/tab]\r\n\r\n\r\n[Verse 1: Eminem]\r\n[tab]      [ch]Am[/ch]\r\nWell, look what the stork brung (What?)[/tab]\r\n[tab]            [ch]Dm[/ch]\r\nLittle baby devil with the forked tongue[/tab]\r\n[tab]                       [ch]E7#9[/ch]\r\nAnd it's stickin' out, yeah, like a sore thumb (Bleh)[/tab]\r\n[tab]                [ch]Am[/ch]\r\nWith a forehead that it grew horns from (Look)[/tab]\r\n[tab]                              [ch]Am[/ch]                                  [ch]Dm[/ch]\r\nStill a white jerk (It's him!), pullin' up in a Chrysler to the cypher[/tab]\r\n[tab]                     [ch]Dm[/ch]\r\nWith the Vics, Percs and a Bud Light shirt[/tab]\r\n[tab][ch]E7#9[/ch]\r\nLyrical technician (Yeah), an electrician (Yeah)[/tab]\r\n[tab][ch]Am[/ch]\r\n   Y'all light work (Haha)[/tab]\r\n[tab]                  [ch]Am[/ch]\r\nAnd I don't gotta play pretend, it's you I make believe (What?)[/tab]\r\n[tab][ch]Dm[/ch]\r\nAnd you know I'm here to stay 'cause me (Why?)[/tab]\r\n[tab][ch]E7#9[/ch]\r\nIf I was to ever take a leave (What?)[/tab]\r\n[tab][ch]Am[/ch]\r\nIt would be aspirin' to break a feve' (Yeah)[/tab]\r\n[tab][ch]Am[/ch]\r\nIf I was to ask for Megan Thee (What?)[/tab]\r\n[tab][ch]Dm[/ch]\r\nStallion if she would collab with me[/tab]\r\n[tab][ch]E7#9[/ch]\r\nWould I really have a shot at a feat? (Haha)[/tab]\r\n[tab]        [ch]E7[/ch]\r\nI don't know, but I'm glad to be back like[/tab]\r\n\r\n\r\n[Chorus: Eminem]\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick)[/tab]\r\n[tab][ch]E7#9[/ch]                             [ch]Am[/ch]\r\n   I'm 'bout to reach in my bag, bruh (Like)[/tab]\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick, poof)[/tab]\r\n[tab][ch]E7#9[/ch]                            [ch]Am[/ch]\r\n   Just like that and I'm back, bro[/tab]\r\n\r\n\r\n[Verse 2: Eminem]\r\n[tab]     [ch]Am[/ch]\r\nNow, back in the days of old me (When?)[/tab]\r\n[tab]                 [ch]Dm[/ch]\r\nRight around the time I became a dope fiend (Oh)[/tab]\r\n[tab]           [ch]E7#9[/ch]\r\nAte some codeine as a way of coping (Mm)[/tab]\r\n[tab]          [ch]Am[/ch]\r\nTaste of opiates, case of O.E.\u200b[/tab]\r\n[tab]            [ch]Am[/ch]\r\nTurned me into smiley face emoji (Woo)[/tab]\r\n[tab]            [ch]Dm[/ch]\r\nMy shit may not be age-appropriate[/tab]\r\n[tab]     [ch]E7#9[/ch]                                   [ch]Am[/ch]\r\nBut I will hit an eight-year-old in the face with a participation trophy[/tab]\r\n[tab]              [ch]Am[/ch]\r\n'Cause I have zero doubts[/tab]\r\n[tab]                [ch]Dm[/ch]\r\nThat this whole world's 'bout[/tab]\r\n[tab]                  [ch]E7#9[/ch]\r\nTo turn into some girl scouts[/tab]\r\n[tab]                [ch]Am[/ch]\r\nThat censorship bureau's out to (Shut me down)[/tab]\r\n[tab]        [ch]Am[/ch]\r\nSo when I started this verse[/tab]\r\n[tab]                 [ch]Dm[/ch]\r\nIt did start off lighthearted at first (Hmm)[/tab]\r\n[tab]                  [ch]E7#9[/ch]\r\nBut it feels like I'm targeted[/tab]\r\n[tab]                  [ch]Am[/ch]\r\nMind-bogglin' how my profit has skyrocketed[/tab]\r\n[tab]     [ch]Am[/ch]\r\nLook what I pocketed[/tab]\r\n[tab]                       [ch]Dm[/ch]\r\nYeah, the shit is just like y'all had been light joggin', and[/tab]\r\n[tab]     [ch]E7#9[/ch]\r\nI've been runnin' at full speed[/tab]\r\n[tab]               [ch]Am[/ch]\r\nAnd that's why I'm ahead like my noggin', and[/tab]\r\n[tab]        [ch]Am[/ch]\r\nI'm the fight y'all get in[/tab]\r\n[tab]                        [ch]Dm[/ch]\r\nWhen you debate who the best, but opps, I'm white chalkin' when[/tab]\r\n[tab]  [ch]E7#9[/ch]\r\nI step up to that mic, cock it then[/tab]\r\n[tab]       [ch]E7[/ch]\r\n\"Oh my God, it's him! Not again!\"[/tab]\r\n\r\n\r\n[Chorus: Eminem]\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick)[/tab]\r\n[tab][ch]E7#9[/ch]                             [ch]Am[/ch]\r\n   I'm 'bout to reach in my bag, bruh (Like)[/tab]\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick, poof)[/tab]\r\n[tab][ch]E7#9[/ch]                            [ch]Am[/ch]\r\n   Just like that and I'm back, bro[/tab]\r\n\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick)[/tab]\r\n[tab][ch]E7#9[/ch]                              [ch]Am[/ch]\r\n   I'm 'bout to reach in my bag, bruh (Like)[/tab]\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick, poof)[/tab]\r\n[tab][ch]E7#9[/ch]                            [ch]Am[/ch]\r\n   Just like that and I'm back, bro[/tab]\r\n\r\n\r\n[Bridge: Eminem]\r\n[tab][ch]Am[/ch]                              [ch]Dm[/ch]\r\n   Sometimes, I wonder what the old me'd say (If what?)[/tab]\r\n[tab][ch]E7#9[/ch]                             [ch]Am[/ch]\r\n    If he could see the way shit is today (Look at this shit, man)[/tab]\r\n[tab][ch]Am[/ch]                              [ch]Dm[/ch]\r\n   He'd probably say that everything is gay (Like happy)[/tab]\r\n[tab][ch]E7#9[/ch]\r\n   What's my name? What's my name? (Slim Shady)[/tab]\r\n\r\n\r\n\r\n[Verse 3: Eminem]\r\n[tab]            [ch]Am[/ch]\r\nSo how many little kids still wanna act like me? (Haha)[/tab]\r\n[tab][ch]Dm[/ch]\r\nI'm a bigger prick than cacti be (Yeah)[/tab]\r\n[tab]    [ch]E7#9[/ch]\r\nAnd that's why these (What?)[/tab]\r\n[tab]                      [ch]Am[/ch]\r\nWords sting just like you were being attacked by bees (Bzz)[/tab]\r\n[tab]       [ch]Am[/ch]\r\nIn the coupe, leaning back my seat (What?)[/tab]\r\n[tab]           [ch]Dm[/ch]\r\nBumpin' R. Kelly's favorite group (Uh), the black guy (Guy) pees (Pees, haha)[/tab]\r\n[tab][ch]E7#9[/ch]\r\n  In my Air Max 90s[/tab]\r\n[tab]      [ch]Am[/ch]\r\nWhite Ts, walkin' parental advisory[/tab]\r\n[tab][ch]Am[/ch]\r\n  My transgender cat's Siamese (Why?)[/tab]\r\n[tab] [ch]Dm[/ch]\r\nIdentifies as black, but acts Chinese (Haha)[/tab]\r\n[tab][ch]E7#9[/ch]\r\nLike a motherfuckin' Hacky Sack, I treat (What?)[/tab]\r\n[tab]    [ch]Am[/ch]\r\nThe whole world 'cause I got it at my feet (Yeah)[/tab]\r\n[tab]    [ch]Am[/ch]\r\nHow can I explain to you (What?)[/tab]\r\n[tab]            [ch]Dm[/ch]\r\nThat even myself I'm a danger too? (Yeah)[/tab]\r\n[tab]                [ch]E7#9[/ch]\r\nI hop on tracks like a kangaroo[/tab]\r\n[tab]              [ch]E7#9[/ch]\r\nAnd say a few things or two to anger you[/tab]\r\n[tab]                    [ch]Am[/ch]\r\nBut fuck that, if I think that shit, I'ma say that shit[/tab]\r\n[tab][ch]Dm[/ch]\r\nCancel me, what? Okay, that's it[/tab]\r\n[tab]    [ch]E7#9[/ch]\r\nGo ahead, Paul, quit, snake-ass prick[/tab]\r\n[tab]    [ch]Am[/ch]\r\nYou male cross dresser (Haha), fake-ass bitch[/tab]\r\n[tab][ch]Am[/ch]\r\n  And I'll probably get shit for that (Watch)[/tab]\r\n[tab]    [ch]Dm[/ch]\r\nBut you can all suck my dick, in fact[/tab]\r\n[tab]     [ch]E7#9[/ch]                                     [ch]Am[/ch]\r\nFuck them, fuck Dre, fuck Jimmy, fuck me, fuck you[/tab]\r\n[tab]                          [ch]Am[/ch]\r\nFuck my own kids, they're brats (Fuck 'em)[/tab]\r\n[tab][ch]Am[/ch]\r\n   They can screw off (Yeah), them and you all (Uh)[/tab]\r\n[tab][ch]Dm[/ch]\r\n   You too, Paul, got two balls[/tab]\r\n[tab][ch]E7#9[/ch]\r\n   Big as RuPaul's (Woah)[/tab]\r\n[tab]                     [ch]Am[/ch]\r\nWhat you thought you saw ain't what you saw (Nah)[/tab]\r\n[tab]                         [ch]Am[/ch]\r\n'Cause you're never gon' see me[/tab]\r\n[tab]                                  [ch]Dm[/ch]\r\nCaught sleepin' and see the kidnappin' never did happen[/tab]\r\n[tab]              [ch]E7#9[/ch]\r\nLike Sherri Papini, Harry Houdini[/tab]\r\n[tab]           [ch]E7[/ch]\r\nI vanish into the thin air as I'm leavin' like[/tab]\r\n\r\n\r\n[Chorus: Eminem]\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick)[/tab]\r\n[tab][ch]E7#9[/ch]                             [ch]Am[/ch]\r\n   I'm 'bout to reach in my bag, bruh (Like)[/tab]\r\n[tab] [ch]Am[/ch]        [ch]Dm[/ch]\r\nAbra-abracadabra (And for my last trick, poof)[/tab]\r\n[tab][ch]E7#9[/ch]                            [ch]Am[/ch]\r\n   Just like that and I'm back, bro[/tab]",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false,
+    "chart_year": 2024
+}

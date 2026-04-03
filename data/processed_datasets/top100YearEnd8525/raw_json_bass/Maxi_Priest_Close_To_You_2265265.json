@@ -1,0 +1,386 @@
+{
+    "id": 2265265,
+    "song_id": 2657683,
+    "song_name": "Close To You",
+    "artist_id": 22912,
+    "artist_name": "Maxi Priest",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 1,
+    "votes": 3,
+    "difficulty": "intermediate",
+    "rating": 4.734,
+    "date": "1514289889",
+    "status": "approved",
+    "preset_id": 0,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "",
+    "version_description": "",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 2070986
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/4/34464/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/8/5/85384/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "intermediate",
+    "date_update": 1514294651,
+    "source": "",
+    "versions": [],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/maxi-priest/close-to-you-bass-2265265",
+    "strumming": [],
+    "videosCount": 4,
+    "comments_count": 2,
+    "contributor": {
+        "user_id": 3597535,
+        "username": "Romenus"
+    },
+    "advertising": {
+        "targeting_song_genre": "reggae & ska"
+    },
+    "versions_count": 2,
+    "pro_brother": null,
+    "recommended": [
+        {
+            "id": 766,
+            "song_id": 2398,
+            "song_name": "I Still Havent Found What Im Looking For",
+            "artist_id": 149,
+            "artist_name": "U2",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 27,
+            "difficulty": "",
+            "rating": 4.44676,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 3501,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 1175
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/7/1729091/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/8/3813/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1480684583,
+            "source": ""
+        },
+        {
+            "id": 2108,
+            "song_id": 9104,
+            "song_name": "We Can Leave The World",
+            "artist_id": 438,
+            "artist_name": "Sasha",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 19,
+            "difficulty": "",
+            "rating": 4.74566,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 89013
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/2/120898/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/3/131341/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1004486400,
+            "source": ""
+        },
+        {
+            "id": 2704,
+            "song_id": 10615,
+            "song_name": "Kiss Me",
+            "artist_id": 480,
+            "artist_name": "Sixpence None The Richer",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 2216,
+            "difficulty": "novice",
+            "rating": 4.88214,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 10469,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Eb",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11511
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/0/205605/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/3/23322/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1594642105,
+            "source": ""
+        },
+        {
+            "id": 432388,
+            "song_id": 55754,
+            "song_name": "Its Okay",
+            "artist_id": 2000,
+            "artist_name": "Atomic Kitten",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 12,
+            "difficulty": "",
+            "rating": 4.82696,
+            "date": "1162944001",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 101483
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/6/2652/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1162944001,
+            "source": ""
+        },
+        {
+            "id": 59936,
+            "song_id": 93500,
+            "song_name": "Eye In The Sky",
+            "artist_id": 4057,
+            "artist_name": "The Alan Parsons Project",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 377,
+            "difficulty": "",
+            "rating": 4.77734,
+            "date": "1062028800",
+            "status": "approved",
+            "preset_id": 19573,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 109701
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/4/14166/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/4/5/45209/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1466150638,
+            "source": ""
+        },
+        {
+            "id": 683644,
+            "song_id": 202992,
+            "song_name": "Electric Feel",
+            "artist_id": 20395,
+            "artist_name": "MGMT",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 12,
+            "difficulty": "novice",
+            "rating": 4.36024,
+            "date": "1212451201",
+            "status": "approved",
+            "preset_id": 13635,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 6996
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/1/116100/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/2/7257/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1480319143,
+            "source": ""
+        },
+        {
+            "id": 4525919,
+            "song_id": 207429,
+            "song_name": "I Wont Say Im In Love",
+            "artist_id": 21889,
+            "artist_name": "Susan Egan",
+            "type": "Vocal",
+            "part": "",
+            "version": 1,
+            "votes": 0,
+            "difficulty": "",
+            "rating": 0,
+            "date": "1671408000",
+            "status": "approved",
+            "preset_id": 63140,
+            "tab_access_type": "public",
+            "tp_version": 1,
+            "tonality_name": "C",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [
+                    {
+                        "join_field": "/",
+                        "artist": {
+                            "id": 21889,
+                            "name": "Susan Egan"
+                        }
+                    }
+                ],
+                "video_urls": null,
+                "album_id": 2212595
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": false
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1671408000,
+            "source": ""
+        }
+    ],
+    "content": "Close To You - Maxi Priest\r\n\r\nEnjoy!\r\nAdrian R\r\n\r\n\r\n\r\nH = Hammer-on\r\nx = Dead note\r\n\r\n\r\n\r\n[Intro]\r\n\r\n[tab]G|--------------------------|\r\nD|--------------------------|\r\nA|--6--9--6-----------------|\r\nE|-----------6--9-----6--9--|[/tab]\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n\r\n\r\n[tab]G|-----------------------------|\r\nD|-----------------------------|\r\nA|--6--9--6--------------------|\r\nE|-----------6--9-----6--9--6--|[/tab]\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n\r\n\r\n[Verse]\r\n\r\n[tab]G|-----------------------------|\r\nD|-----------------------------|\r\nA|--6--9--6--------------------|\r\nE|-----------6--9-----6--9--6--|[/tab]\r\n\r\n       \"She was a Jezebel..\"\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n        \"Living her life..\"\r\n\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n        \"Telling me lies..\" \r\n\r\n\r\n\r\n[tab]G|--------------------------|\r\nD|--------------------------|\r\nA|--6--9--6-----------------|\r\nE|-----------6--9-----6--9--|[/tab]\r\n\r\n        \"Spinning me lies..\"\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n        \"Walking the tightrope..\"\r\n\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n        \"A fatal attraction..\"\r\n\r\n\r\n\r\n[Chorus]\r\n\r\n[tab]G|----------------------------------------------------------------------|\r\nD|----------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6--|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6-----|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|---------------------------------------------------------------------|\r\nD|---------------------------------------------------------------------|\r\nA|--6--6---------------------------------------------6--9--6--------6--|\r\nE|---------6--6-----6--4--4--4-----6--6--6-----6--9-----------9--6-----|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[Pre Chorus]\r\n\r\n[tab]G|------------------------------------------------------------------------------------------|\r\nD|------------------------------------------------------------------------------------------|\r\nA|--6--6--6--------------------------H------------------------------------6--6--6--------6--|\r\nE|-----------9--9--9-----7--7--7----7^9--9--9--9-----7--7--7-----9--9--9-----------9--6-----|[/tab]\r\n\r\n    \"I feel love..\"\r\n\r\n\r\n\r\n[tab]G|-------------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------------|\r\nA|--6--6--6---------------------------------------------------H------------------------|\r\nE|-----------9--9--9-----7--7--7-----9--9--9-----7--7--7-----7^4--4--6--6--6-----6--9--|[/tab]\r\n\r\n    \"When we touch..\"\r\n\r\n\r\n\r\n[Chorus 2]\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|---------------------------------------------------------------------|\r\nD|---------------------------------------------------------------------|\r\nA|--6--6---------------------------------------------6--9--6--------6--|\r\nE|---------6--6-----6--4--4--4-----6--6--6-----6--9-----------9--6-----|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[Verse 2 - No Bass]\r\n\r\n\"She was a Gemini..\"\r\n\r\n\r\n\r\n[Verse 3]\r\n\r\n[tab]G|--------------------------|\r\nD|--------------------------|\r\nA|--6--9--6-----------------|\r\nE|-----------6--9-----6--9--|[/tab]\r\n\r\n     \"There's more to this..\"\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n     \r\n     \" A devil woman..\"\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n    \"With the formal rising..\"\r\n\r\n\r\n\r\n[Chorus 3]\r\n\r\n[tab]G|----------------------------------------------------------------------|\r\nD|----------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6--|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6-----|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[Pre Chorus 2]\r\n\r\n[tab]G|------------------------------------------------------------------------------------------------|\r\nD|------------------------------------------------------------------------------------------------|\r\nA|--6--6--6------------------------------------------------------------6--6--6--------6-----------|\r\nE|-----------9--9--9-----7--7--7------9--9--9-----7--7--7-----9--9--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I feel love..\"\r\n\r\n\r\n[tab]G|------------------------------------------------------------------------------------------|\r\nD|------------------------------------------------------------------------------------------|\r\nA|--6--9--6--6--6---H----------------------------------------------------H------------------|\r\nE|-----------------6^9--9--9--9-----7--7--7-----7--7--7-----7--7--7-----7^4--4--6--6--6--6--|[/tab]\r\n\r\n      \"When we touch..\"\r\n\r\n\r\n\r\n[Chorus 4]\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[Intro 2/Solo]\r\n\r\n[tab]G|--------------------------|\r\nD|--------------------------|\r\nA|--6--9--6-----------------|\r\nE|-----------6--9-----6--9--|[/tab]\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n\r\n\r\n[tab]G|-----------------------------|\r\nD|-----------------------------|\r\nA|--6--9--6--------------------|\r\nE|-----------6--9-----6--9--6--|[/tab]\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n\r\n\r\n[Verse 4]\r\n\r\n[tab]G|-----------------------------|\r\nD|-----------------------------|\r\nA|--6--9--6--------------------|\r\nE|-----------6--9-----6--9--6--|[/tab]\r\n\r\n    \"She has an attitude..\"\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n    \"You never know if..\"\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n    \"Tying me up..\"\r\n\r\n\r\n\r\n[tab]G|--------------------------|\r\nD|--------------------------|\r\nA|--6--9--6-----------------|\r\nE|-----------6--9-----6--9--|[/tab]\r\n\r\n    \"Her blood was hot..\"\r\n\r\n\r\n\r\n[tab]G|-----------------------------------|\r\nD|-----------------------------------|\r\nA|--6--9--6-----------------6--------|\r\nE|-----------6--9-----6--9-----9--6--|[/tab]\r\n\r\n     \"A neon sign..\"\r\n\r\n\r\n[tab]G|--------------------------------------------------------|\r\nD|--------------------------------------------------------|\r\nA|-----------6-----------6-----------------8--------------|\r\nE|--4--4--4-----4-----4-----4-----6--6--6-----6-----6--9--|[/tab]\r\n\r\n     \"It's hard to say..\"\r\n\r\n\r\n\r\n[Chorus 5]\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|----------------------------------------------------------------------|\r\nD|----------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6--|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6-----|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|---------------------------------------------------------------------------|\r\nD|---------------------------------------------------------------------------|\r\nA|--6--6------------------------------------------6--9--6--------6-----------|\r\nE|---------6--6-----4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n      \"She was a Jezebel..\"\r\n\r\n\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n      \"Spinning me around like..\"\r\n\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I.............wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|-------------------------------------------------------------------------------|\r\nD|-------------------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6-----------|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6--------6--9--|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[tab]G|----------------------------------------------------------------------|\r\nD|----------------------------------------------------------------------|\r\nA|--6--9--6-------------------------------------------6--9--6--------6--|\r\nE|-----------9--6-------4--4--4-----6--6--6-----6--9-----------9--6-----|[/tab]\r\n\r\n\"I just wanna be close to you..\"\r\n\r\n\r\n\r\n[End]\r\n\r\n\r\n[Lyrics]\r\n\r\nShe was a Jezebel, this burstin' queen \r\nLivin' her life like a bad sweet dream \r\nTellin' me lies when the truth was clear \r\nI think she knew what I wanted to hear\r\n\r\nSpinnin' around like a wheel on fire \r\nWalkin' the tightrope on love's highwire \r\nA fatal attraction is where I'm at \r\nThere's no escapin' me\r\n\r\nI just want to be close to you \r\nAnd do all the things you want me to \r\nI just want to be close to you \r\nAnd show you the way I feel\r\n\r\nI feel love when I'm lying in the midnight hour \r\nHolding you's just like a dream \r\nLove is never what it seems\r\n\r\nWhen we touch \r\nAnd you're holdin' me the way you feel \r\nGirl, you make my dreams come true \r\nYou make my dreams come true\r\n\r\nI just want to be close to you \r\nAnd do all the things you want me to \r\nI just want to be close to you \r\nAnd show you the way I feel\r\n\r\nShe was a Gemini on the cusp of Mars \r\nShe holds me back but she goes too far \r\nWindin' me up just to let me down \r\nSo emotional gagged and bound\r\n\r\nThere's more to this than meets the eye \r\nA devil woman locked inside \r\nWith the formal rising I was scared \r\nI think I was possessed\r\n\r\nI just want to be close to you \r\nAnd do all the things you want me to \r\nI just want to be close to you \r\nAnd show you the way I feel\r\n\r\nI feel love everytime your body's next to mine \r\nSomethin' deep inside of me \r\nWants to love you endlessly\r\n\r\nWhen we touch \r\nGirl, you don't know how it makes me feel \r\nI just can't believe it's real \r\nI can't believe it's real\r\n\r\nI just want to be close to you \r\nAnd do all the things you want me to \r\nI just want to be close to you \r\nAnd show you the way I feel\r\n\r\nShe had an attitude I can't explain \r\nYou never know if your in flame \r\nTying me up with elastic words \r\nI'm on a countdown till I get hurt\r\n\r\nHer blood was hot she burned so bright \r\nA neon sign there in the night \r\nIt's hard to say if I went too far \r\nMy heart still bears a scar\r\n\r\nI just want to be close to you \r\nI just want to be close to you \r\n\r\nI just want to be close to you\r\nShe was a Jezebel, this burstin' queen \r\nLivin' her life like a bad sweet dream \r\nTellin' me lies when the truth was clear \r\nI think she knew what I wanted to hear\r\n\r\nI just want to be close to you\r\nSpinnin' around like a wheel on fire \r\nWalkin' the tightrope on love's highwire \r\nA fatal attraction is where I'm at \r\nThere's no escapin' me\r\n\r\nI want to be close to you \r\nAnd do all the things you want me to \r\nI just want to be close to you (I just want to be close to you, baby) \r\nAnd show you the way I feel\r\n\r\nI just want to be close to you \r\nAnd do all the things you want me to \r\nI just want to be close to you \r\nAnd show you the way I feel",
+    "official_tab_want": {
+        "artist_id": 22912,
+        "song_id": 2657683,
+        "vote_count": 35
+    },
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

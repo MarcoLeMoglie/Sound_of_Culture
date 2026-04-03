@@ -1,0 +1,442 @@
+{
+    "id": 4424600,
+    "song_id": 1660058,
+    "song_name": "Summers Over Interlude",
+    "artist_id": 25414,
+    "artist_name": "Drake",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 1,
+    "votes": 0,
+    "difficulty": "novice",
+    "rating": 0,
+    "date": "1668603684",
+    "status": "approved",
+    "preset_id": 6430,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "Em",
+    "version_description": "",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [
+            {
+                "join_field": " feat. ",
+                "artist": {
+                    "id": 393828,
+                    "name": "Majid Al Maskati"
+                }
+            }
+        ],
+        "video_urls": null,
+        "album_id": 43253
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/4/1489209/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187293/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "beginner",
+    "date_update": 1668603684,
+    "source": "",
+    "versions": [],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/drake/summers-over-interlude-bass-4424600",
+    "strumming": [],
+    "videosCount": 3,
+    "comments_count": 0,
+    "contributor": {
+        "user_id": 41932754,
+        "username": "micbro1906"
+    },
+    "advertising": {
+        "targeting_song_genre": "hip hop"
+    },
+    "versions_count": 6,
+    "pro_brother": {
+        "id": 5106262,
+        "song_id": 1660058,
+        "song_name": "Summers Over Interlude",
+        "artist_id": 25414,
+        "artist_name": "Drake",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 8,
+        "difficulty": "",
+        "rating": 4.85491,
+        "date": "1705413015",
+        "status": "approved",
+        "preset_id": 6430,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "Em",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [
+                {
+                    "join_field": " feat. ",
+                    "artist": {
+                        "id": 393828,
+                        "name": "Majid Al Maskati"
+                    }
+                }
+            ],
+            "video_urls": null,
+            "album_id": 43253
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/4/1489209/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187293/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1730321763,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 17275,
+            "song_id": 52988,
+            "song_name": "Hey Jude",
+            "artist_id": 1916,
+            "artist_name": "The Beatles",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 5129,
+            "difficulty": "",
+            "rating": 4.76603,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 6880,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "F",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 2420450
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/6/162159/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/5/4/5402/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1639874189,
+            "source": ""
+        },
+        {
+            "id": 13280,
+            "song_id": 40290,
+            "song_name": "Iris",
+            "artist_id": 1375,
+            "artist_name": "Goo Goo Dolls",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 20,
+            "difficulty": "",
+            "rating": 4.01757,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 2683,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 1327
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/9/6/96650/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/0/3026/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1482574407,
+            "source": ""
+        },
+        {
+            "id": 2053939,
+            "song_id": 1749763,
+            "song_name": "The Weekend",
+            "artist_id": 69461,
+            "artist_name": "SZA",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 89,
+            "difficulty": "",
+            "rating": 4.77611,
+            "date": "1497834906",
+            "status": "approved",
+            "preset_id": 48590,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 713636
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/6/1608886/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187397/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1558393203,
+            "source": ""
+        },
+        {
+            "id": 45782,
+            "song_id": 149925,
+            "song_name": "Careless Whisper",
+            "artist_id": 10920,
+            "artist_name": "George Michael",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 406,
+            "difficulty": "",
+            "rating": 4.74426,
+            "date": "1045440000",
+            "status": "approved",
+            "preset_id": 4494,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Dm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 53365
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/6/169660/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/1/6101/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1723496146,
+            "source": ""
+        },
+        {
+            "id": 26070,
+            "song_id": 57806,
+            "song_name": "Amber",
+            "artist_id": 2058,
+            "artist_name": "311",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 8,
+            "difficulty": "",
+            "rating": 3.58218,
+            "date": "1017014400",
+            "status": "approved",
+            "preset_id": 4919,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11421
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/4/1490715/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/4/7448/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1017014400,
+            "source": ""
+        },
+        {
+            "id": 41038,
+            "song_id": 157118,
+            "song_name": "Cry Me A River",
+            "artist_id": 11470,
+            "artist_name": "Justin Timberlake",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 6,
+            "difficulty": "",
+            "rating": 3.9338,
+            "date": "1039910400",
+            "status": "approved",
+            "preset_id": 29799,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 33999
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/4/9/4939/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/5/2/5235/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1039910400,
+            "source": ""
+        },
+        {
+            "id": 759410,
+            "song_id": 1441468,
+            "song_name": "Halo",
+            "artist_id": 43935,
+            "artist_name": "Beyonc\u00e9",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 658,
+            "difficulty": "",
+            "rating": 4.84478,
+            "date": "1227484801",
+            "status": "approved",
+            "preset_id": 14981,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 29293
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/1/116760/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/9/191201/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1460366319,
+            "source": ""
+        }
+    ],
+    "content": "[tab][Intro]\r\nG|-------------------------------|------------------------|\r\nD|-------------2-----------2-----|------------------------|\r\nA|-------------------------------|2-----3-----0-----3-----|\r\nE|0h12\\2|0-----------0-----------|------------------------|\r\n         1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n \r\n[tab]G|------------------------|------------------------|\r\nD|------2-----------2/4\\2-|------------------------|\r\nA|------------------------|2-----3-----0-----3-----|\r\nE|0-----------0-----------|------------------------|\r\n  1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n\r\n[tab][Verse]\r\n\"Days in the sun and nights in the rain\"\r\nG|------------------------|------------------------|\r\nD|2-----------2-----------|------------------------|\r\nA|------------------------|2-----3-----0-----3-----|\r\nE|------0-----------0-0-0-|------------------------|\r\n  1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n\r\n[tab]\"Summer is over, simple and plain\"\r\nG|------------------------|------------------------|\r\nD|2-----------------2-----|------------------------|\r\nA|------------------------|2-----3-----0-----3-----|\r\nE|------------0-----------|------------------------|\r\n  1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n\r\n[tab]\"Found me some fun that's good for the pain\"\r\nG|------------------------|------------------------|\r\nD|------2-----------2/4\\2-|------------------------|\r\nA|------------------------|2-----3-----0-----3-----|\r\nE|0-----------0-----------|------------------------|\r\n  1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n\r\n[tab]\"Already told you, I don't feel the same\" \"I don't feel the...\r\nG|------------------------|------------------------|\r\nD|2-----------2-----------|------------------------|\r\nA|------------------------|2-----3-----0-----3-----|\r\nE|------0-----------0-0-0-|------------------------|\r\n  1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n\r\n[tab][Outro]\r\n...same\"           \"Anywhere I go, I can't help but show\" \"I don't feel the...  \r\nG|------------------------|------------------------|\r\nD|------2-----------2/4\\2-|------------------------|\r\nA|------------------------|2-----3-----0-----3-----|\r\nE|0-----------0-----------|------------------------|\r\n  1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n\r\n[tab]...same\"           \"Anywhere I go, I can't help but know\"\r\nG|------------------------|------------------------|\r\nD|2-----------2-----------|------------------------|\r\nA|------------------------|2-----3-----0-----3-----|\r\nE|------0-----------0-0-0-|------------------------|\r\n  1+2+3+1+2+3+1+2+3+1+2+3+|1+2+3+1+2+3+1+2+3+1+2+3+|[/tab]\r\n\r\n\r\n\r\n************************************\r\n\r\n| h  Hammer-on\r\n| \\  Slide down\r\n| /  Slide up\r\n|    \r\n\r\n************************************",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

@@ -1,4 +1,20 @@
-data/
+# Core ignores
 *.log
 .DS_Store
 .tmp/
+log/
+tmp/
+
+# Block all data folders and files
+data/*
+
+# Allow specific data folders needed for replication/backup
+!data/processed_datasets/
+data/processed_datasets/*
+!data/processed_datasets/country_artists/
+!data/processed_datasets/top100YearEnd8525/
+
+# Allow specific items in country_artists
+data/processed_datasets/country_artists/*
+!data/processed_datasets/country_artists/replication_package_*/
+!data/processed_datasets/country_artists/replication_package_*/**

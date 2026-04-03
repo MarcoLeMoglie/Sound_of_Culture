@@ -1,0 +1,525 @@
+{
+    "id": 3026837,
+    "song_id": 1455494,
+    "song_name": "Bang Bang",
+    "artist_id": 30717,
+    "artist_name": "Jessie J",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 1,
+    "votes": 0,
+    "difficulty": "novice",
+    "rating": 0,
+    "date": "1584214889",
+    "status": "approved",
+    "preset_id": 71479,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "Cm",
+    "version_description": "Bass transcription of the bass/synth bass line.",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [
+            {
+                "join_field": " feat. ",
+                "artist": {
+                    "id": 34410,
+                    "name": "Ariana Grande"
+                }
+            },
+            {
+                "join_field": ", ",
+                "artist": {
+                    "id": 30707,
+                    "name": "Nicki Minaj"
+                }
+            }
+        ],
+        "video_urls": null,
+        "album_id": 30119
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/8/681646/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/5/1536/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "beginner",
+    "date_update": 1584214889,
+    "source": "",
+    "versions": [
+        {
+            "id": 4708472,
+            "song_id": 1455494,
+            "song_name": "Bang Bang",
+            "artist_id": 30717,
+            "artist_name": "Jessie J",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 2,
+            "votes": 0,
+            "difficulty": "",
+            "rating": 0,
+            "date": "1680511492",
+            "status": "approved",
+            "preset_id": 71479,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [
+                    {
+                        "join_field": " feat. ",
+                        "artist": {
+                            "id": 34410,
+                            "name": "Ariana Grande"
+                        }
+                    },
+                    {
+                        "join_field": ", ",
+                        "artist": {
+                            "id": 30707,
+                            "name": "Nicki Minaj"
+                        }
+                    }
+                ],
+                "video_urls": null,
+                "album_id": 30119
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/8/681646/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/5/1536/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1680511492,
+            "source": ""
+        }
+    ],
+    "userRating": 0,
+    "tuning": "C G C F",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/jessie-j/bang-bang-bass-3026837",
+    "strumming": [],
+    "videosCount": 9,
+    "comments_count": 1,
+    "contributor": {
+        "user_id": 8881062,
+        "username": "TheBassDiaries"
+    },
+    "advertising": {
+        "targeting_song_genre": "pop"
+    },
+    "versions_count": 14,
+    "pro_brother": {
+        "id": 4888504,
+        "song_id": 1455494,
+        "song_name": "Bang Bang",
+        "artist_id": 30717,
+        "artist_name": "Jessie J",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 0,
+        "difficulty": "",
+        "rating": 0,
+        "date": "1690297512",
+        "status": "approved",
+        "preset_id": 71479,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "Cm",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [
+                {
+                    "join_field": " feat. ",
+                    "artist": {
+                        "id": 34410,
+                        "name": "Ariana Grande"
+                    }
+                },
+                {
+                    "join_field": ", ",
+                    "artist": {
+                        "id": 30707,
+                        "name": "Nicki Minaj"
+                    }
+                }
+            ],
+            "video_urls": null,
+            "album_id": 30119
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/8/681646/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/5/1536/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1694006823,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 1956589,
+            "song_id": 1710759,
+            "song_name": "Perfect",
+            "artist_id": 30232,
+            "artist_name": "Ed Sheeran",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 53562,
+            "difficulty": "novice",
+            "rating": 4.86008,
+            "date": "1488453515",
+            "status": "approved",
+            "preset_id": 18913,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Ab",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11229
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/5/1564216/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/5/2/5219/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1679839047,
+            "source": ""
+        },
+        {
+            "id": 1397194,
+            "song_id": 349246,
+            "song_name": "Wake Me Up",
+            "artist_id": 34411,
+            "artist_name": "Avicii",
+            "type": "Chords",
+            "part": "",
+            "version": 2,
+            "votes": 2123,
+            "difficulty": "novice",
+            "rating": 4.74012,
+            "date": "1371513601",
+            "status": "approved",
+            "preset_id": 10947,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Bm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11707
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/5/1/517631/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/1/3150/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1536759124,
+            "source": ""
+        },
+        {
+            "id": 1731803,
+            "song_id": 1600419,
+            "song_name": "Flashlight",
+            "artist_id": 30717,
+            "artist_name": "Jessie J",
+            "type": "Chords",
+            "part": "",
+            "version": 2,
+            "votes": 1526,
+            "difficulty": "intermediate",
+            "rating": 4.82959,
+            "date": "1429682842",
+            "status": "approved",
+            "preset_id": 28029,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "C",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/7/2/728927/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/5/1536/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1500647417,
+            "source": ""
+        },
+        {
+            "id": 1026037,
+            "song_id": 240895,
+            "song_name": "Price Tag",
+            "artist_id": 30717,
+            "artist_name": "Jessie J",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 27,
+            "difficulty": "novice",
+            "rating": 4.68013,
+            "date": "1296604801",
+            "status": "approved",
+            "preset_id": 22685,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [
+                    {
+                        "join_field": " feat. ",
+                        "artist": {
+                            "id": 12786,
+                            "name": "B.o.B"
+                        }
+                    }
+                ],
+                "video_urls": null,
+                "album_id": 30117
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/7/272274/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/5/1536/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1479386816,
+            "source": ""
+        },
+        {
+            "id": 1775924,
+            "song_id": 1626522,
+            "song_name": "Hello",
+            "artist_id": 20519,
+            "artist_name": "Adele",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 2113,
+            "difficulty": "",
+            "rating": 4.84287,
+            "date": "1445572752",
+            "status": "approved",
+            "preset_id": 14667,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Fm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 10088
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/9/3/931271/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187276/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1656273289,
+            "source": ""
+        },
+        {
+            "id": 2371739,
+            "song_id": 2730061,
+            "song_name": "No Tears Left To Cry",
+            "artist_id": 34410,
+            "artist_name": "Ariana Grande",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 567,
+            "difficulty": "novice",
+            "rating": 4.827,
+            "date": "1524202281",
+            "status": "approved",
+            "preset_id": 26835,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Am",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 564434
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/5/1588880/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/5/3/5322/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1535723675,
+            "source": ""
+        },
+        {
+            "id": 1470822,
+            "song_id": 1437665,
+            "song_name": "Chandelier",
+            "artist_id": 9670,
+            "artist_name": "Sia",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 93,
+            "difficulty": "novice",
+            "rating": 4.18125,
+            "date": "1395187201",
+            "status": "approved",
+            "preset_id": 26922,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 34581
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/6/663393/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/187286/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1539786598,
+            "source": ""
+        }
+    ],
+    "content": "Title: Bang Bang (ft. Ariana Grande & Nicki Minaj)\r\nArtist: Jessie J\r\nAlbum: Sweet Talker\r\nTuning: Drop C (C G C F)\r\nTab Author: Pearce Hamblin (The Bass Diaries)\r\n \r\n\r\n \r\n[Intro/Verse 1]\r\n\r\nNo bass part for this section (9 bars).\r\n\r\n\r\n[Pre-Chorus 1]\r\n\r\nNo bass part for this section (8 bars).\r\n\r\n\r\n[Chorus 1]\r\n \r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\-----------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\-----------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\-----------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[Verse 2]\r\n\r\nNo bass part for this section (8 bars).\r\n\r\n\r\n[Pre-Chorus 2]\r\n\r\nNo bass part for this section (8 bars).\r\n\r\n\r\n[Chorus 2]\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\-----------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\-----------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\-----------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\-----------------------------------|----------------------------------------|[/tab]\r\n\r\n\r\n[Verse 3]\r\n\r\nNo bass part for this section (16 bars).\r\n\r\n\r\n[Pre-Chorus 3]\r\n\r\nNo bass part for this section (9 bars).\r\n\r\n\r\n[Chorus 3]\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[Chorus 4/Outro]\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|--------------------------------10--h12-|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\n[tab]    1    +    2    +    3    +    4    +     1    +    2    +    3    +    4    +\r\nF|----------------------------------------|----------------------------------------|\r\nC|----------------------------------------|----------------------------------------|\r\nG|----------------------------------------|----------------------------------------|\r\nC|--12\\------------0--------------0-------|-------0----0---------------------------|[/tab]\r\n\r\n\r\nNo further bass part for the remaining 5 bars.\r\n \r\n\r\n \r\n***********************************\r\n\r\n| h Hammer-on\r\n| \\ Slide down\r\n \r\n***********************************",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

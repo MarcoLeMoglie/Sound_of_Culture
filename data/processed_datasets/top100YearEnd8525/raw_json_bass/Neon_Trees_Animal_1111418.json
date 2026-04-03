@@ -1,0 +1,562 @@
+{
+    "id": 1111418,
+    "song_id": 219786,
+    "song_name": "Animal",
+    "artist_id": 28093,
+    "artist_name": "Neon Trees",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 4,
+    "votes": 10,
+    "difficulty": "novice",
+    "rating": 4.64646,
+    "date": "1322524801",
+    "status": "approved",
+    "preset_id": 38573,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "",
+    "version_description": null,
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 7617
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/5/251705/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/2/6296/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "beginner",
+    "date_update": 1322524801,
+    "source": "",
+    "versions": [
+        {
+            "id": 958688,
+            "song_id": 219786,
+            "song_name": "Animal",
+            "artist_id": 28093,
+            "artist_name": "Neon Trees",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 19,
+            "difficulty": "novice",
+            "rating": 4.24561,
+            "date": "1276646401",
+            "status": "approved",
+            "preset_id": 38573,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 7617
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/5/251705/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/2/6296/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1486631209,
+            "source": ""
+        },
+        {
+            "id": 1035258,
+            "song_id": 219786,
+            "song_name": "Animal",
+            "artist_id": 28093,
+            "artist_name": "Neon Trees",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 2,
+            "votes": 0,
+            "difficulty": "",
+            "rating": 0,
+            "date": "1300060801",
+            "status": "approved",
+            "preset_id": 38573,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 7617
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/5/251705/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/2/6296/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1300060801,
+            "source": ""
+        },
+        {
+            "id": 1048043,
+            "song_id": 219786,
+            "song_name": "Animal",
+            "artist_id": 28093,
+            "artist_name": "Neon Trees",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 3,
+            "votes": 0,
+            "difficulty": "novice",
+            "rating": 0,
+            "date": "1303257601",
+            "status": "approved",
+            "preset_id": 38573,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 7617
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/5/251705/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/2/6296/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1303257601,
+            "source": ""
+        }
+    ],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/neon-trees/animal-bass-1111418",
+    "strumming": [],
+    "videosCount": 42,
+    "comments_count": 2,
+    "contributor": {
+        "user_id": 1483169,
+        "username": "kuffy"
+    },
+    "advertising": {
+        "targeting_song_genre": "rock"
+    },
+    "versions_count": 24,
+    "pro_brother": {
+        "id": 2797232,
+        "song_id": 219786,
+        "song_name": "Animal",
+        "artist_id": 28093,
+        "artist_name": "Neon Trees",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 101,
+        "difficulty": "",
+        "rating": 4.80198,
+        "date": "1566203242",
+        "status": "approved",
+        "preset_id": 38573,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "F",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": 7617
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/5/251705/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/2/6296/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1760350050,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 1121978,
+            "song_id": 291622,
+            "song_name": "Everybody Talks",
+            "artist_id": 28093,
+            "artist_name": "Neon Trees",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 2535,
+            "difficulty": "",
+            "rating": 4.8894,
+            "date": "1326240001",
+            "status": "approved",
+            "preset_id": 8121,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Eb",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 65769
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/4/0/401751/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/2/6296/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1756076441,
+            "source": ""
+        },
+        {
+            "id": 6125,
+            "song_id": 19556,
+            "song_name": "Wonderwall",
+            "artist_id": 734,
+            "artist_name": "Oasis",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 2448,
+            "difficulty": "intermediate",
+            "rating": 4.59015,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 2332,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "F#m",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 148
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/9/297362/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/8/182456/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1589132708,
+            "source": ""
+        },
+        {
+            "id": 137013,
+            "song_id": 39593,
+            "song_name": "Boulevard Of Broken Dreams",
+            "artist_id": 1368,
+            "artist_name": "Green Day",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 228,
+            "difficulty": "",
+            "rating": 3.96275,
+            "date": "1095120000",
+            "status": "approved",
+            "preset_id": 761,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Eb",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 247
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/1/119002/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/5/35/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1586626015,
+            "source": ""
+        },
+        {
+            "id": 212554,
+            "song_id": 163352,
+            "song_name": "How To Save A Life",
+            "artist_id": 11997,
+            "artist_name": "The Fray",
+            "type": "Tabs",
+            "part": "intro",
+            "version": 1,
+            "votes": 21,
+            "difficulty": "",
+            "rating": 3.55853,
+            "date": "1126915200",
+            "status": "approved",
+            "preset_id": 12153,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 4532
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/0/101503/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/4/3/432/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1126915200,
+            "source": ""
+        },
+        {
+            "id": 1956589,
+            "song_id": 1710759,
+            "song_name": "Perfect",
+            "artist_id": 30232,
+            "artist_name": "Ed Sheeran",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 53562,
+            "difficulty": "novice",
+            "rating": 4.86008,
+            "date": "1488453515",
+            "status": "approved",
+            "preset_id": 18913,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Ab",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 11229
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/5/1564216/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/5/2/5219/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1679839047,
+            "source": ""
+        },
+        {
+            "id": 503129,
+            "song_id": 136714,
+            "song_name": "Everything",
+            "artist_id": 9957,
+            "artist_name": "Michael Bubl\u00e9",
+            "type": "Tabs",
+            "part": "intro",
+            "version": 1,
+            "votes": 24,
+            "difficulty": "",
+            "rating": 4.57049,
+            "date": "1176681601",
+            "status": "approved",
+            "preset_id": 40307,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 5740
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/2/121984/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/6/36621/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1176681601,
+            "source": ""
+        },
+        {
+            "id": 868189,
+            "song_id": 5169,
+            "song_name": "Hey Soul Sister",
+            "artist_id": 250,
+            "artist_name": "Train",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 954,
+            "difficulty": "intermediate",
+            "rating": 4.77264,
+            "date": "1251936001",
+            "status": "approved",
+            "preset_id": 17373,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 26307
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/0/102552/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/8/38792/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1605560014,
+            "source": ""
+        }
+    ],
+    "content": "Artist: Neon Trees\r\nSong: Animal\r\nTabbed by Kuffy66 @hotmail.com\r\n\r\n[tab]Intro - slide in after 8 beats\r\nG|-------------------|-----------------|-----------------|-------------------------|\r\nD|-------------------|-----------------|-----------------|-------------------------|\r\nA|15/8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|-----------------|-------------------------| x2\r\nE|-------------------|-----------------|-8-8-8-8-8-8-8-8-|-10-10-10-10-10-10-10-10-|[/tab]\r\n\r\n[tab]Verse 1\r\nG|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-8-8---8-8-8---8-|-8-8---8-8-8---8-|-----------------|-----------------|\r\nE|-----------------|-----------------|-8-8---8-8-8---8-|-8-8---8-8-8---8-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------8-8-8-|\r\nA|-----------------|-----------------|-----------------|-----------------|\r\nE|-6-6---6-6-6---6-|-6-6---6-6-6---6-|-8-8---8-8-8---8-|-8-8---8-8-------|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-------------------|\r\nD|-----------------|-----------------|-----------------|-------------------|\r\nA|-8-8---8-8-8---8-|-8-8---8-8-8---8-|-----------------|-------------------|\r\nE|-----------------|-----------------|-8-8---8-8-8---8-|-8-8---8-8-8---8-6H|[/tab]\r\n\r\n[tab]Chorus 1\r\nG|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|-----------------|-----------------|\r\nE|-----------------|-----------------|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-----------------|-----------------|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|\r\nE|-6-6-6-6-6-6-6-6-|-6-6-6-6-6-6-6-6-|-----------------|-----------------|[/tab]\r\n\r\n[tab]G|-------------------------|-------------------------|-----------------|-----------------|\r\nD|-------------------------|-------------------------|-----------------|-----------------|\r\nA|-12-12-12-12-12-12-12-12-|-12-12-12-12-12-12-12-12-|-----------------|-----------------|\r\nE|-------------------------|-------------------------|-6-6-6-6-6-6-6-6-|-6-6-6-6-6-6-6-6-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------8-8-8-|\r\nA|-----------------|-----------------|-8-8---8-8-8---8-|-8-8---8-8-------|\r\nE|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|-----------------|-----------------|[/tab]\r\n\r\n[tab]Verse 2\r\nG|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-8-8---8-8-8---8-|-8-8---8-8-8---8-|-----------------|-----------------|\r\nE|-----------------|-----------------|-8-8---8-8-8---8-|-8-8---8-8-8---8-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------8-8-8-|\r\nA|-----------------|-----------------|-----------------|-----------------|\r\nE|-6-6---6-6-6---6-|-6-6---6-6-6---6-|-8-8---8-8-8---8-|-8-8---8-8-------|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-8-8---8-8-8---8-|-8-8---8-8-8---8-|-----------------|-----------------|\r\nE|-----------------|-----------------|-8-8---8-8-8---8-|-8-8---8-8-8---8-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-----------------|-----------------|-----------------|-----------------|\r\nE|-6-6---6-6-6---6-|-6-6---6-6-6---6-|-8-8---8-8-8---8-|-8-8---8-8-8---8-|[/tab]\r\n\r\n\r\n[tab]Chorus 2\r\nG|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|-----------------|-----------------|\r\nE|-----------------|-----------------|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-----------------|-----------------|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|\r\nE|-6-6-6-6-6-6-6-6-|-6-6-6-6-6-6-6-6-|-----------------|-----------------|[/tab]\r\n\r\n[tab]G|-------------------------|-------------------------|-----------------|-----------------|\r\nD|-------------------------|-------------------------|-----------------|-----------------|\r\nA|-12-12-12-12-12-12-12-12-|-12-12-12-12-12-12-12-12-|-----------------|-----------------|\r\nE|-------------------------|-------------------------|-6-6-6-6-6-6-6-6-|-6-6-6-6-6-6-6-6-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|\r\nD|-----------------|-----------------|\r\nA|-----------------|-----------------|\r\nE|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|[/tab]\r\n\r\n[tab]Bridge\r\nG|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-----------------|-----------------|-----------------|-----------------|x2\r\nE|-6---------------|-----------------|-8---------------|-----------------|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|\r\nD|-----------------|-8-8-8-8-8-8-8-8-|\r\nA|-----------------|-----------------|\r\nE|-6---------------|-----------------|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-------------------------|\r\nD|-----------------|-----------------|-----------------|-------------------------|\r\nA|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|-----------------|-------------------------|x2\r\nE|-----------------|-----------------|-8-8-8-8-8-8-8-8-|-10-10-10-10-10-10-10-10-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-8-8---8-8-8---8-|-8-8---8-8-8---8-|-8-8---8-8-8---8-|-8-8---8-8-------|\r\nE|-----------------|-----------------|-----------------|-----------------|[/tab]\r\n\r\n[tab]Chorus 3\r\nG|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|-----------------|-----------------|\r\nE|-----------------|-----------------|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-----------------|-----------------|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|\r\nE|-6-6-6-6-6-6-6-6-|-6-6-6-6-6-6-6-6-|-----------------|-----------------|[/tab]\r\n\r\n[tab]G|-------------------------|-------------------------|-----------------|-----------------|\r\nD|-------------------------|-------------------------|-----------------|-----------------|\r\nA|-12-12-12-12-12-12-12-12-|-12-12-12-12-12-12-12-12-|-----------------|-----------------|\r\nE|-------------------------|-------------------------|-6-6-6-6-6-6-6-6-|-6-6-6-6-6-6-6-6-|[/tab]\r\n\r\n[tab]G|-----------------|-----------------|-----------------|-----------------|\r\nD|-----------------|-----------------|-----------------|-----------------|\r\nA|-----------------|-----------------|-8---------------|-----------------|\r\nE|-8-8-8-8-8-8-8-8-|-8-8-8-8-8-8-8-8-|-----------------|-----------------|[/tab]\r\n\r\nEnd",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

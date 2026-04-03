@@ -1,0 +1,468 @@
+{
+    "id": 3314735,
+    "song_id": 32847,
+    "song_name": "Ladies Night",
+    "artist_id": 1074,
+    "artist_name": "Kool & the Gang",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 2,
+    "votes": 5,
+    "difficulty": "intermediate",
+    "rating": 4.6755,
+    "date": "1598864903",
+    "status": "approved",
+    "preset_id": 0,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "C#m",
+    "version_description": "Listening closely to the recording it sounds as if he actually plays it in C, but tunes slightly sharp so its halfway in between C and C#.",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 2012488
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/9/19001/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/6/265/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "intermediate",
+    "date_update": 1598864903,
+    "source": "",
+    "versions": [
+        {
+            "id": 10044,
+            "song_id": 32847,
+            "song_name": "Ladies Night",
+            "artist_id": 1074,
+            "artist_name": "Kool & the Gang",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 26,
+            "difficulty": "",
+            "rating": 4.15188,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 2012488
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/9/19001/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/6/265/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1487587823,
+            "source": ""
+        }
+    ],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/kool-the-gang/ladies-night-bass-3314735",
+    "strumming": [],
+    "videosCount": 2,
+    "comments_count": 0,
+    "contributor": {
+        "user_id": 38444,
+        "username": "Neckwringer"
+    },
+    "advertising": {
+        "targeting_song_genre": "r&b funk & soul"
+    },
+    "versions_count": 6,
+    "pro_brother": {
+        "id": 3314738,
+        "song_id": 32847,
+        "song_name": "Ladies Night",
+        "artist_id": 1074,
+        "artist_name": "Kool & the Gang",
+        "type": "Power",
+        "part": "",
+        "version": 1,
+        "votes": 4,
+        "difficulty": "intermediate",
+        "rating": 4.62914,
+        "date": "1598867348",
+        "status": "approved",
+        "preset_id": 0,
+        "tab_access_type": "public",
+        "tp_version": 2,
+        "tonality_name": "C#m",
+        "version_description": "Listening closely to the recording it sounds as if he actually plays it in C, but tunes slightly sharp so its halfway in between C and C#.",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": 2012488
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/9/19001/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/6/265/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1598867348,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 598998,
+            "song_id": 32842,
+            "song_name": "Get Down On It",
+            "artist_id": 1074,
+            "artist_name": "Kool & the Gang",
+            "type": "Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 9,
+            "difficulty": "",
+            "rating": 3.7837,
+            "date": "1194480001",
+            "status": "approved",
+            "preset_id": 32757,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 2012527
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/6/265/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1194480001,
+            "source": ""
+        },
+        {
+            "id": 223279,
+            "song_id": 32840,
+            "song_name": "Celebration",
+            "artist_id": 1074,
+            "artist_name": "Kool & the Gang",
+            "type": "Pro",
+            "part": "",
+            "version": 1,
+            "votes": 20,
+            "difficulty": "",
+            "rating": 4.45235,
+            "date": "978307200",
+            "status": "approved",
+            "preset_id": 14171,
+            "tab_access_type": "public",
+            "tp_version": 1,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 197457
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/6/265/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 978307200,
+            "source": ""
+        },
+        {
+            "id": 1407394,
+            "song_id": 219320,
+            "song_name": "Summer Jam",
+            "artist_id": 27725,
+            "artist_name": "The Underdog Project",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 37,
+            "difficulty": "novice",
+            "rating": 4.71007,
+            "date": "1375056001",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 199591
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/6/1657074/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/9/190552/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1375056001,
+            "source": ""
+        },
+        {
+            "id": 165348,
+            "song_id": 1575656,
+            "song_name": "The Letter",
+            "artist_id": 38558,
+            "artist_name": "The Box Tops",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 648,
+            "difficulty": "",
+            "rating": 4.75796,
+            "date": "1108598400",
+            "status": "approved",
+            "preset_id": 16225,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 195313
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/6/668572/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/3/6/3640/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1616166452,
+            "source": ""
+        },
+        {
+            "id": 14288,
+            "song_id": 42998,
+            "song_name": "Hotel California",
+            "artist_id": 1509,
+            "artist_name": "Eagles",
+            "type": "Tabs",
+            "part": "",
+            "version": 2,
+            "votes": 2855,
+            "difficulty": "",
+            "rating": 4.71324,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 10137,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Bm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 2992
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/6/669553/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/7/177/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1649581221,
+            "source": ""
+        },
+        {
+            "id": 1815225,
+            "song_id": 1647850,
+            "song_name": "Fresh",
+            "artist_id": 1074,
+            "artist_name": "Kool & the Gang",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 15,
+            "difficulty": "advanced",
+            "rating": 4.46692,
+            "date": "1455556260",
+            "status": "approved",
+            "preset_id": 59929,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 2012623
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/6/265/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1456412269,
+            "source": ""
+        },
+        {
+            "id": 664332,
+            "song_id": 1427467,
+            "song_name": "Would I Lie To You",
+            "artist_id": 43544,
+            "artist_name": "Charles & Eddie",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 134,
+            "difficulty": "novice",
+            "rating": 4.8789,
+            "date": "1208131201",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 2540179
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/6/1658070/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/7/67574/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1501232569,
+            "source": ""
+        }
+    ],
+    "content": "LADIES' NIGHT (Bassline)\r\nAs recorded by Kool & The Gang\r\n(From the 1979 Album LADIES' NIGHT)\r\n\r\nWords and Music by George M. Brown & Kool And The Gang\r\nTranscribed by Slowhand\r\n\r\nGtr I (E A D G) - 'Robert \"Kool\" Bell - Bass'\r\n\r\n[tab] [Intro]\r\n Q=118\r\n 4/4\r\n  Gtr I\r\n   H    S E  S  E. S   W          H.       a  Q     +H     H\r\nG|-------------------|----------|---------16s18--|-(18)---------|\r\nD|-------------16\\---|----------|----------------|--------------|\r\nA|--------4/---------|----------|----------------|--------------|\r\nE|-------------------|----------|----------------|--------------|[/tab]\r\n\r\n\r\n[tab]   H.      E E     Q.   E H      W          W          H.       Q\r\nG|--------------|--------------|----------|----------|---------------||\r\nD|--------------|--------------|----------|----------|---------------||\r\nA|--------------|-11\\----------|----------|----------|---------16\\---||\r\nE|-----------6/-|--------------|----------|----------|---------------||[/tab]\r\n\r\n\r\n[tab]     E E E E E S S +Q     e e e S S H     4x\r\nG||---------------------|-----------------||\r\nD||o-----2---4---6-(6)--|---------4------o||\r\nA||o-4------------------|-4-4-7-7--------o||\r\nE||---------------------|-----------------||[/tab]\r\n\r\n\r\n[tab] [Chorus]\r\n     E E E E E S S +Q     e e e S S H     4x\r\nG||---------------------|-----------------||\r\nD||o-----2---4---6-(6)--|---------4------o||\r\nA||o-4------------------|-4-4-7-7--------o||\r\nE||---------------------|-----------------||[/tab]\r\n\r\n\r\n[tab] [Verse 1]\r\n     E E E E E S S +Q     e e e S S H     4x\r\nG||---------------------|-----------------||\r\nD||o-----2---4---6-(6)--|---------4------o||\r\nA||o-4------------------|-4-4-7-7--------o||\r\nE||---------------------|-----------------||[/tab]\r\n\r\n\r\n[tab] [Chorus]\r\n     E E E E E S S +Q     e e e S S H     4x\r\nG||---------------------|-----------------||\r\nD||o-----2---4---6-(6)--|---------4------o||\r\nA||o-4------------------|-4-4-7-7--------o||\r\nE||---------------------|-----------------||[/tab]\r\n\r\n\r\n[tab] [Verse 2]\r\n     E E E E E S S +Q     e e e S S H     8x\r\nG||---------------------|-----------------||\r\nD||o-----2---4---6-(6)--|---------4------o||\r\nA||o-4------------------|-4-4-7-7--------o||\r\nE||---------------------|-----------------||[/tab]\r\n\r\n\r\n[tab] [Chorus]\r\n     E E E E E S S +Q     e e e S S H     4x\r\nG||---------------------|-----------------||\r\nD||o-----2---4---6-(6)--|---------4------o||\r\nA||o-4------------------|-4-4-7-7--------o||\r\nE||---------------------|-----------------||[/tab]\r\n\r\n\r\n[tab] [Bridge]\r\n     E. S E E E Q  S S   E Q  Q.   S S S S\r\nG||--------------------|-------------------|\r\nD||o-------------------|-------------------|\r\nA||o-------------------|------7----7-5-----|\r\nE||--5--5---3-5----5-6-|-7-------------8-7-|[/tab]\r\n\r\n\r\n[tab]   E. S E E E Q  S S   E Q.   E E E E\r\nG|-------------------|------------------||\r\nD|-------------------|-----------------o||\r\nA|-------------------|--------7-7------o||\r\nE|-5--5---3-5----5-6-|-7----------7-7---||[/tab]\r\n\r\n\r\n [Outro]\r\n     |-3-|                                  |-3-|\r\n[tab]     Q Q Q Q  E S S   Q  +E  E Q  S S S S   Q Q Q Q  E S S   H    E E E E  6x\r\nG||-----------------|---------------------|----------------|---------------||\r\nD||o----------------|--------4-4--4-2-----|----------------|------4-4-----o||\r\nA||o-2-2---2----2-3-|-4--(4)----------4-3-|-2-2---2----2-3-|-4--------4-4-o||\r\nE||------4----------|---------------------|-----4----------|---------------||[/tab]\r\n\r\n************************************\r\nDuration Legend\r\n\r\nW - whole; H - half; Q - quarter; E - 8th; S - 16th; a - acciaccatura;\r\n+ - note tied to previous; . - note dotted;\r\nDuration letters will always appear directly above the note/fret number it represents\r\nthe duration for.  Duration letters with no fret number below them represent rests.\r\nUncapitalized letters represent notes that are staccato (1/2 duration).\r\n\r\n|  +()   -  note tied to previous\r\n|   /\\   -  slide into or out of (from/to \"nowhere\")\r\n|   s    -  legato slide\r\n| |-3-|  -  triplet\r\n|   |    -  bar\r\n|   ||   -  double bar\r\n|  ||o   -  repeat start\r\n|  o||   -  repeat end\r\n**************************************",
+    "official_tab_want": {
+        "artist_id": 1074,
+        "song_id": 32847,
+        "vote_count": 274
+    },
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

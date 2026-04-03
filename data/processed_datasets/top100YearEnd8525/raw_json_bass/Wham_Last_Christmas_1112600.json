@@ -1,0 +1,513 @@
+{
+    "id": 1112600,
+    "song_id": 167617,
+    "song_name": "Last Christmas",
+    "artist_id": 12597,
+    "artist_name": "Wham!",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 1,
+    "votes": 41,
+    "difficulty": "novice",
+    "rating": 4.60013,
+    "date": "1322697601",
+    "status": "approved",
+    "preset_id": 18711,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "",
+    "version_description": null,
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 54061
+    },
+    "album_cover": {
+        "has_album_cover": false
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/4/74939/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "beginner",
+    "date_update": 1322697601,
+    "source": "",
+    "versions": [
+        {
+            "id": 1920443,
+            "song_id": 167617,
+            "song_name": "Last Christmas",
+            "artist_id": 12597,
+            "artist_name": "Wham!",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 2,
+            "votes": 3,
+            "difficulty": "",
+            "rating": 4.06735,
+            "date": "1483024426",
+            "status": "approved",
+            "preset_id": 18711,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 54061
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/4/74939/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1483024426,
+            "source": ""
+        },
+        {
+            "id": 2248913,
+            "song_id": 167617,
+            "song_name": "Last Christmas",
+            "artist_id": 12597,
+            "artist_name": "Wham!",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 3,
+            "votes": 10,
+            "difficulty": "",
+            "rating": 4.49262,
+            "date": "1512394219",
+            "status": "approved",
+            "preset_id": 18711,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "This is the version exact in standard tuning.",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 54061
+            },
+            "album_cover": {
+                "has_album_cover": false
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/4/74939/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1512394219,
+            "source": ""
+        }
+    ],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/wham/last-christmas-bass-1112600",
+    "strumming": [],
+    "videosCount": 709,
+    "comments_count": 4,
+    "contributor": {
+        "user_id": 827151,
+        "username": "fiachraduffy"
+    },
+    "advertising": {
+        "targeting_song_genre": "pop"
+    },
+    "versions_count": 41,
+    "pro_brother": {
+        "id": 2236663,
+        "song_id": 167617,
+        "song_name": "Last Christmas",
+        "artist_id": 12597,
+        "artist_name": "Wham!",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 1053,
+        "difficulty": "",
+        "rating": 4.83565,
+        "date": "1510929982",
+        "status": "approved",
+        "preset_id": 18711,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "D",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": 54061
+        },
+        "album_cover": {
+            "has_album_cover": false
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/7/4/74939/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1669732120,
+        "source": ""
+    },
+    "recommended": [
+        {
+            "id": 1180259,
+            "song_id": 316899,
+            "song_name": "All I Want",
+            "artist_id": 38213,
+            "artist_name": "Kodaline",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 12855,
+            "difficulty": "novice",
+            "rating": 4.9073,
+            "date": "1346803201",
+            "status": "approved",
+            "preset_id": 2686,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "C",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 8991
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/7/1/711817/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/4/14718/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1588936863,
+            "source": ""
+        },
+        {
+            "id": 1496532,
+            "song_id": 1450590,
+            "song_name": "Lost Stars",
+            "artist_id": 46692,
+            "artist_name": "Adam Levine",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 974,
+            "difficulty": "",
+            "rating": 4.8264,
+            "date": "1403689130",
+            "status": "approved",
+            "preset_id": 2678,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "F",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/6/7/676175/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/2/0/20653/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1584620440,
+            "source": ""
+        },
+        {
+            "id": 1026037,
+            "song_id": 240895,
+            "song_name": "Price Tag",
+            "artist_id": 30717,
+            "artist_name": "Jessie J",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 27,
+            "difficulty": "novice",
+            "rating": 4.68013,
+            "date": "1296604801",
+            "status": "approved",
+            "preset_id": 22685,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [
+                    {
+                        "join_field": " feat. ",
+                        "artist": {
+                            "id": 12786,
+                            "name": "B.o.B"
+                        }
+                    }
+                ],
+                "video_urls": null,
+                "album_id": 30117
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/2/7/272274/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/5/1536/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1479386816,
+            "source": ""
+        },
+        {
+            "id": 101232,
+            "song_id": 113611,
+            "song_name": "Fuck It",
+            "artist_id": 7851,
+            "artist_name": "Eamon",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 108,
+            "difficulty": "",
+            "rating": 4.77838,
+            "date": "1074470400",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": null
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/9/199339/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/9/69977/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1074470400,
+            "source": ""
+        },
+        {
+            "id": 2202381,
+            "song_id": 2619545,
+            "song_name": "Ready To Change",
+            "artist_id": 38213,
+            "artist_name": "Kodaline",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 3,
+            "difficulty": "novice",
+            "rating": 4.56735,
+            "date": "1507984341",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Gm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 566858
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/5/1580905/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/4/14718/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1507984341,
+            "source": ""
+        },
+        {
+            "id": 2065097,
+            "song_id": 1753159,
+            "song_name": "Brother",
+            "artist_id": 38213,
+            "artist_name": "Kodaline",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 111,
+            "difficulty": "",
+            "rating": 4.89827,
+            "date": "1498245280",
+            "status": "approved",
+            "preset_id": 32319,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "Gm",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 225153
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/1/5/1596936/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/4/14718/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1724147496,
+            "source": ""
+        },
+        {
+            "id": 1249774,
+            "song_id": 322440,
+            "song_name": "Big Bad World",
+            "artist_id": 38213,
+            "artist_name": "Kodaline",
+            "type": "Chords",
+            "part": "",
+            "version": 1,
+            "votes": 105,
+            "difficulty": "novice",
+            "rating": 4.80925,
+            "date": "1369872001",
+            "status": "approved",
+            "preset_id": 0,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": null,
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 8991
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/5/1/513884/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/1/4/14718/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1466848760,
+            "source": ""
+        }
+    ],
+    "content": "A great Christmas number but no bass tab for it! So here goes!\r\n\r\n\r\n[tab]|---------------------------------|\r\n|---------------------------------|\r\n|-4-4-4-4-4-4-4-4-4-4-4-4--4--4---|\r\n|-------------------------8--8----|[/tab]\r\n\r\n\r\n[tab]|---------------------------------|\r\n|---------------------------------|\r\n|-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-4-|\r\n|---------------------------------|[/tab]\r\n\r\n\r\n[tab]|---------------------------------|\r\n|-1-1-1-1-1-1-1-1-1-1-1-1-3-4-3-4-|\r\n|---------------------------------|\r\n|---------------------------------|[/tab]\r\n\r\n[tab]|---------------------------------|\r\n|---------------------------------|\r\n|-----------------------6---------|\r\n|-4--4-4-4--4-4-4--6--8-----------|[/tab]\r\n\r\nAnd thats it! Just repeat over and over for the whole song!\r\n\r\nAs always, get in touch with any corrections!",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}

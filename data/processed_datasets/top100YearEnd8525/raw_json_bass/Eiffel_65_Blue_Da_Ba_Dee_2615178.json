@@ -1,0 +1,201 @@
+{
+    "id": 2615178,
+    "song_id": 42158,
+    "song_name": "Blue Da Ba Dee",
+    "artist_id": 1478,
+    "artist_name": "Eiffel 65",
+    "type": "Bass Tabs",
+    "part": "",
+    "version": 3,
+    "votes": 28,
+    "difficulty": "novice",
+    "rating": 4.85178,
+    "date": "1551184301",
+    "status": "approved",
+    "preset_id": 15283,
+    "tab_access_type": "public",
+    "tp_version": 0,
+    "tonality_name": "",
+    "version_description": "",
+    "verified": 0,
+    "recording": {
+        "is_acoustic": 0,
+        "tonality_name": "",
+        "performance": null,
+        "recording_artists": [],
+        "video_urls": null,
+        "album_id": 1912708
+    },
+    "album_cover": {
+        "has_album_cover": true,
+        "app_album_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/8/38184/primary-cover.jpg@200?c=1"
+        }
+    },
+    "artist_cover": {
+        "has_artist_cover": true,
+        "app_artist_cover": {
+            "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/9/69899/primary-cover.jpg@200?c=1"
+        }
+    },
+    "unique_chords": "",
+    "ug_difficulty": "beginner",
+    "date_update": 1757071213,
+    "source": "",
+    "versions": [
+        {
+            "id": 13986,
+            "song_id": 42158,
+            "song_name": "Blue Da Ba Dee",
+            "artist_id": 1478,
+            "artist_name": "Eiffel 65",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 1,
+            "votes": 9,
+            "difficulty": "",
+            "rating": 4.28365,
+            "date": "1004486400",
+            "status": "approved",
+            "preset_id": 15283,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 1912708
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/8/38184/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/9/69899/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1757070965,
+            "source": ""
+        },
+        {
+            "id": 2577351,
+            "song_id": 42158,
+            "song_name": "Blue Da Ba Dee",
+            "artist_id": 1478,
+            "artist_name": "Eiffel 65",
+            "type": "Bass Tabs",
+            "part": "",
+            "version": 2,
+            "votes": 4,
+            "difficulty": "intermediate",
+            "rating": 4.62914,
+            "date": "1548064965",
+            "status": "approved",
+            "preset_id": 15283,
+            "tab_access_type": "public",
+            "tp_version": 0,
+            "tonality_name": "",
+            "version_description": "This riff originally played with synth.",
+            "verified": 0,
+            "recording": {
+                "is_acoustic": 0,
+                "tonality_name": "",
+                "performance": null,
+                "recording_artists": [],
+                "video_urls": null,
+                "album_id": 1912708
+            },
+            "album_cover": {
+                "has_album_cover": true,
+                "app_album_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/8/38184/primary-cover.jpg@200?c=1"
+                }
+            },
+            "artist_cover": {
+                "has_artist_cover": true,
+                "app_artist_cover": {
+                    "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/9/69899/primary-cover.jpg@200?c=1"
+                }
+            },
+            "unique_chords": "",
+            "ug_difficulty": "",
+            "date_update": 1757070987,
+            "source": ""
+        }
+    ],
+    "userRating": 0,
+    "tuning": "E A D G",
+    "capo": 0,
+    "urlWeb": "https://tabs.ultimate-guitar.com/tab/eiffel-65/blue-da-ba-dee-bass-2615178",
+    "strumming": [],
+    "videosCount": 54,
+    "comments_count": 4,
+    "contributor": {
+        "user_id": 25998564,
+        "username": "World19"
+    },
+    "advertising": {
+        "targeting_song_genre": "pop"
+    },
+    "versions_count": 27,
+    "pro_brother": {
+        "id": 2139769,
+        "song_id": 42158,
+        "song_name": "Blue Da Ba Dee",
+        "artist_id": 1478,
+        "artist_name": "Eiffel 65",
+        "type": "Official",
+        "part": "",
+        "version": 1,
+        "votes": 71,
+        "difficulty": "",
+        "rating": 4.89736,
+        "date": "1504619212",
+        "status": "approved",
+        "preset_id": 15283,
+        "tab_access_type": "public",
+        "tp_version": 0,
+        "tonality_name": "Gm",
+        "version_description": "",
+        "verified": 0,
+        "recording": {
+            "is_acoustic": 0,
+            "tonality_name": "",
+            "performance": null,
+            "recording_artists": [],
+            "video_urls": null,
+            "album_id": 1912708
+        },
+        "album_cover": {
+            "has_album_cover": true,
+            "app_album_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/album/cover/3/8/38184/primary-cover.jpg@200?c=1"
+            }
+        },
+        "artist_cover": {
+            "has_artist_cover": true,
+            "app_artist_cover": {
+                "small": "https://www.ultimate-guitar.com/static/s3/ugdb-p1/media/artist/cover/6/9/69899/primary-cover.jpg@200?c=1"
+            }
+        },
+        "unique_chords": "",
+        "ug_difficulty": "",
+        "date_update": 1757326225,
+        "source": ""
+    },
+    "recommended": [],
+    "content": "This is just the keyboard part but on bass. Why, for all the people that like the idea of playing it \r\non bass.\r\n\r\n\r\n[tab]G|--3---3-5--2-3----7-8-7-5-3---3-2------|\r\nD|---0-5---0-----5-8---5-----0-5---0-3-5-|\r\nA|---------------------------------------|\r\nE|---------------------------------------|[/tab]\r\n\r\nOr you can loop it if you do this and repeat immediately\r\n\r\n[tab]G|--3---3-5--2-3----7-8-7-5-3---3---3-5--2-3----7-8-7-5-3-----|\r\nD|---0-5---0-----5-8---5-----0-5-0-5---0----5-8----5------0-5-|\r\nA|------------------------------------------------------------|\r\nE|------------------------------------------------------------|[/tab]",
+    "is_backing_track_under_review": false,
+    "is_tab_ml": false
+}
