@@ -17,22 +17,24 @@ scanning cannot.
 
 Fall back to Grep/Glob/Read **only** when the graph doesn't cover what you need.
 
-### Key Tools
+### Key Rules For Claude
 
-| Tool | Use when |
-|------|----------|
-| `detect_changes` | Reviewing code changes — gives risk-scored analysis |
-| `get_review_context` | Need source snippets for review — token-efficient |
-| `get_impact_radius` | Understanding blast radius of a change |
-| `get_affected_flows` | Finding which execution paths are impacted |
-| `query_graph` | Tracing callers, callees, imports, tests, dependencies |
-| `semantic_search_nodes` | Finding functions/classes by name or keyword |
-| `get_architecture_overview` | Understanding high-level codebase structure |
-| `refactor_tool` | Planning renames, finding dead code |
+`AGENTS.md` is the canonical instruction file for this project.
 
-### Workflow
+The essential operating rules are:
 
-1. The graph auto-updates on file changes (via hooks).
-2. Use `detect_changes` for code review.
-3. Use `get_affected_flows` to understand impact.
-4. Use `query_graph` pattern="tests_for" to check coverage.
+- work against the new four-phase project design
+- treat Overleaf reports as canonical narrative deliverables
+- preserve legacy `execution/step*` paths unless migration is explicit
+- update `project_memory/` after meaningful work
+- document every serious attempt, including rejected ones
+- keep Stata workflows fully explained
+- preserve archival branches before destructive cleanup
+- remember that `supermemory` is not installed yet
+
+Read next:
+
+- `directives/README.md`
+- `directives/00_project_charter.md`
+- `directives/07_reporting_overleaf_sop.md`
+- `directives/08_memory_continuity_sop.md`
