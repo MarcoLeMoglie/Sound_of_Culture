@@ -952,6 +952,15 @@ def enrich_from_wikipedia(s: requests.Session, df: pd.DataFrame, checkpoint_path
         lambda row: clean_text(row["birth_date"]) if parse_iso_date(clean_text(row["birth_date"])) else clean_text(row["wp_birth_date"]),
         axis=1,
     )
+    enriched["birth_year"] = enriched.apply(
+        lambda row: row["birth_year"]
+        if pd.notna(row["birth_year"])
+        else (
+            extract_year_hint(row.get("wp_birth_year", ""))
+            or extract_birth_year_from_categories(row.get("wp_categories", ""))
+        ),
+        axis=1,
+    )
     enriched["birth_name"] = enriched.apply(
         lambda row: clean_text(row["birth_name"]) or clean_text(row["wp_birth_name"]),
         axis=1,
@@ -972,6 +981,13 @@ def enrich_from_wikipedia(s: requests.Session, df: pd.DataFrame, checkpoint_path
         lambda row: pipe_join([clean_text(row["genres_raw"]), clean_text(row["wp_genres_raw"])]),
         axis=1,
     )
+    if "wikipedia_categories" in enriched.columns:
+        enriched["wikipedia_categories"] = enriched.apply(
+            lambda row: pipe_join([clean_text(row["wikipedia_categories"]), clean_text(row["wp_categories"])]),
+            axis=1,
+        )
+    else:
+        enriched["wikipedia_categories"] = enriched["wp_categories"].map(clean_text)
     return enriched.drop(
         columns=[
             "wp_birth_date",
@@ -980,6 +996,8 @@ def enrich_from_wikipedia(s: requests.Session, df: pd.DataFrame, checkpoint_path
             "wp_birth_place_raw",
             "wp_aliases",
             "wp_genres_raw",
+            "wp_birth_year",
+            "wp_categories",
         ]
     )
 
