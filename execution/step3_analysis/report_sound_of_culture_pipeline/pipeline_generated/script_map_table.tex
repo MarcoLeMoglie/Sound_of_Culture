@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\caption{Key scripts in the country-only pipeline}
+\label{tab:script_map}
+\begin{tabular}{lcc}
+\toprule
+Script & Role & Main outputs \\
+\midrule
+build\_country\_artists\_dataset.py & Builds the base country-only, adjacent-only and union artist universes & country\_artists\_*.csv/.dta and QC report \\
+enrich\_artist\_universe\_missing\_metadata.py & Top-up pass for residual missing birth metadata in artist universes & artist\_universe\_country\_only.csv/.dta plus checkpoints \\
+country\_only\_ultimate\_guitar.py & Discovery, planning and raw JSON download from Ultimate Guitar & discovery JSONs, plan JSON, raw\_tabs\_country, raw\_country\_tabs \\
+supplement\_billboard\_country\_chords.py & Adds Billboard artists and missing chart songs not covered by broad UG discovery & supplement discovery JSON and run report \\
+build\_country\_only\_chords\_final.py & Merges v6 base, new UG chord rows, chart flags and release-year backfill & Sound\_of\_Culture\_Country\_CountryOnly\_Chords\_Final\_2026\_04\_08.csv/.dta \\
+run\_full\_replication.py & Cold-start or snapshot-assisted replication wrapper for country artists & replication package with code, directives and datasets \\
+run\_country\_songs\_replication.py & Restores or snapshots the upstream country-song deliverables and caches & song replication package \\
+run\_country\_merge\_v6\_replication.py & Restores or rebuilds the restricted final v6 bridge used upstream & merge-v6 replication package \\
+\bottomrule
+\end{tabular}
+\end{table}

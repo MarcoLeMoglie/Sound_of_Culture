@@ -8,6 +8,7 @@ import time
 from collections import Counter, defaultdict
 from copy import deepcopy
 from datetime import datetime
+from difflib import SequenceMatcher
 from io import StringIO
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
@@ -65,6 +66,18 @@ DEEZER_ALBUM_URL = "https://api.deezer.com/album"
 DISCOGS_SEARCH_URL = "https://api.discogs.com/database/search"
 MB_SEARCH_URL = "https://musicbrainz.org/ws/2/recording/"
 MB_RELEASE_SEARCH_URL = "https://musicbrainz.org/ws/2/release/"
+
+WEB_CONFIRMED_RELEASE_YEAR_OVERRIDES = {
+    ("Vince Gill", "What The Cowgirls Do"): 1994,
+    ("Ernest Tubb", "I Cried A Tear"): 1959,
+    ("Adam Wakefield", "Lonesome Broken And Blue"): 2016,
+    ("The Killers", "All These Things That Ive Done"): 2004,
+    ("The Killers", "A Great Big Sled"): 2006,
+    ("The Killers", "Bling Confessions Of A King"): 2006,
+    ("The Killers", "Runaways"): 2012,
+    ("The Killers", "Sams Town"): 2006,
+    ("The Killers", "Joseph Better You Than Me"): 2008,
+}
 
 SONG_COLUMNS = [
     "song_name",
@@ -218,6 +231,7 @@ def clean_for_search(text: object) -> str:
     text = normalize_space(text)
     text = text.replace("&", " and ")
     text = text.replace("+", " and ")
+    text = re.sub(r"\bn\b", " and ", text, flags=re.IGNORECASE)
     text = re.sub(r"\([^)]*\)", "", text)
     text = re.sub(r"\[[^]]*\]", "", text)
     text = re.sub(r"\b(chords?|tabs?|acoustic|live|remix|cover|official|version|ver)\b", "", text, flags=re.IGNORECASE)
@@ -311,6 +325,34 @@ def build_target_song_lookup(target_songs: Dict[str, str]) -> Dict[str, str]:
     return lookup
 
 
+def normalize_match_tokens(text: object) -> List[str]:
+    stopwords = {
+        "a",
+        "an",
+        "and",
+        "for",
+        "in",
+        "of",
+        "on",
+        "the",
+        "to",
+        "with",
+    }
+    tokens = []
+    for token in norm_text(text).split():
+        if not token or token in stopwords:
+            continue
+        stem = token
+        if len(stem) > 4 and stem.endswith("ies"):
+            stem = stem[:-3] + "y"
+        elif len(stem) > 4 and stem.endswith("es"):
+            stem = stem[:-2]
+        elif len(stem) > 3 and stem.endswith("s"):
+            stem = stem[:-1]
+        tokens.append(stem)
+    return tokens
+
+
 def resolve_target_song_norm(title: object, target_lookup: Dict[str, str], target_songs: Dict[str, str]) -> str:
     title_norm = norm_text(title)
     title_key = normalize_key(title)
@@ -337,6 +379,34 @@ def resolve_target_song_norm(title: object, target_lookup: Dict[str, str], targe
             return canonical_norm
         if len(title_key) >= 10 and title_key in song_key:
             return canonical_norm
+
+    title_tokens = set(normalize_match_tokens(title))
+    if title_key and title_tokens:
+        best_match = ""
+        best_score = 0.0
+        second_best = 0.0
+        for canonical_norm, song_title in target_songs.items():
+            song_key = normalize_key(song_title)
+            song_tokens = set(normalize_match_tokens(song_title))
+            if not song_key or not song_tokens:
+                continue
+            ratio = SequenceMatcher(None, title_key, song_key).ratio()
+            overlap = len(title_tokens & song_tokens) / max(len(title_tokens), len(song_tokens), 1)
+            score = max(ratio, overlap)
+            if ratio >= 0.90 and overlap >= 0.60:
+                score = max(score, (ratio + overlap) / 2)
+            if score > best_score:
+                second_best = best_score
+                best_score = score
+                best_match = canonical_norm
+            elif score > second_best:
+                second_best = score
+        if best_match and (
+            best_score >= 0.975
+            or (best_score >= 0.93 and best_score - second_best >= 0.03)
+            or (best_score >= 0.90 and second_best <= 0.82 and len(title_tokens) >= 3)
+        ):
+            return best_match
     return ""
 
 
@@ -1465,6 +1535,18 @@ def year_from_artist_musicbrainz_releases(
     elif len(target_songs) >= 120:
         dynamic_pages = max(dynamic_pages, 8)
         max_release_fetches = max(max_release_fetches, 100)
+    elif len(target_songs) >= 60:
+        dynamic_pages = max(dynamic_pages, 10)
+        max_release_fetches = max(max_release_fetches, 140)
+    elif len(target_songs) >= 25:
+        dynamic_pages = max(dynamic_pages, 12)
+        max_release_fetches = max(max_release_fetches, 180)
+    elif len(target_songs) >= 10:
+        dynamic_pages = max(dynamic_pages, 10)
+        max_release_fetches = max(max_release_fetches, 140)
+    else:
+        dynamic_pages = max(dynamic_pages, 8)
+        max_release_fetches = max(max_release_fetches, 100)
 
     for page in range(dynamic_pages):
         query = f"arid:{artist_mbid}" if artist_mbid else f'artist:"{artist}"'
@@ -1511,7 +1593,7 @@ def year_from_artist_musicbrainz_releases(
 
         if len(found) >= len(target_songs) or release_fetches >= max_release_fetches:
             break
-        if page_hits == 0 and page >= 2:
+        if page_hits == 0 and page >= 5:
             break
     return found
 
@@ -1526,6 +1608,15 @@ def enrich_release_years(df: pd.DataFrame) -> pd.DataFrame:
     df["release_year"] = pd.to_numeric(df["release_year"], errors="coerce")
     df["_artist_norm"] = df["artist_name"].map(normalize_space)
     df["_song_norm"] = df["song_name"].map(norm_text)
+
+    manual_fills = 0
+    for idx in df.index[df["release_year"].isna()]:
+        key = (normalize_space(df.at[idx, "artist_name"]), normalize_space(df.at[idx, "song_name"]))
+        year = WEB_CONFIRMED_RELEASE_YEAR_OVERRIDES.get(key)
+        if is_valid_year(year):
+            df.at[idx, "release_year"] = int(year)
+            dedicated_cache[canonical_release_key(*key)] = int(year)
+            manual_fills += 1
 
     cache_fills = 0
     for idx in df.index[df["release_year"].isna()]:
@@ -1544,6 +1635,8 @@ def enrich_release_years(df: pd.DataFrame) -> pd.DataFrame:
             df.at[idx, "release_year"] = int(float(cached_value))
             cache_fills += 1
     log(f"Rows filled from historical release caches: {cache_fills}")
+    if manual_fills:
+        log(f"Rows filled from web-confirmed manual release overrides: {manual_fills}")
 
     remaining = df[df["release_year"].isna()].copy()
     if remaining.empty or cache_only:

@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\caption{Current main artifacts produced by the pipeline}
+\label{tab:artifact_counts}
+\begin{tabular}{lcc}
+\toprule
+Artifact & Rows / objects & Comment \\
+\midrule
+Base country-only artist universe & 2,333 & Country-union core before Billboard additions \\
+Adjacent-only artist universe & 2,493 & Adjacent-genre expansion kept separate from the core country list \\
+Full artist universe & 4,824 & Country core plus adjacent-only union \\
+Current artist\_universe\_country\_only.csv & 2,539 & Current country-only file after Billboard additions and direct missing-data top-up \\
+Current new chord-song cache & 36,584 & Songs prepared for append after deduplication and raw JSON parsing \\
+Current final country-only chord dataset & 44,058 & Final chord-level dataset used in the exploratory report \\
+\bottomrule
+\end{tabular}
+\end{table}

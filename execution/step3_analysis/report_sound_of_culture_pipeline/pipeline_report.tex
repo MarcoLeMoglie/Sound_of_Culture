@@ -1,0 +1,363 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  breaklines=true,
+  columns=fullflexible,
+  frame=single,
+  keepspaces=true
+}
+
+\input{pipeline_generated/macros.tex}
+
+\title{Sound of Culture\\Report metodologico sulla pipeline country-only, adjacent e Ultimate Guitar}
+\author{Nota tecnica di replica cold-start}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Obiettivo del report}
+Questo secondo report non commenta i trend descrittivi del dataset finale, gia documentati nel report esplorativo, ma ricostruisce in modo operativo l'intera pipeline che porta dal perimetro degli artisti country alla costruzione del dataset chord-level finale. L'obiettivo e duplice: da un lato lasciare una traccia leggibile di \emph{che cosa e stato fatto davvero}; dall'altro rendere la pipeline replicabile sia in modalita snapshot-assisted sia in modalita cold-start, cioe rifacendo gli step chiave a partire dagli script sorgente.
+
+Il punto centrale da chiarire e che il progetto ha piu livelli logici:
+\begin{enumerate}[leftmargin=2em]
+\item un universo artisti, costruito prima a livello di \texttt{country-only}, poi esteso a \texttt{adjacent-only} e all'unione completa;
+\item una pipeline di discovery e download su Ultimate Guitar che usa \texttt{artist\_universe\_country\_only.csv} come input;
+\item una fase di supplemento Billboard per artisti o canzoni ancora mancanti;
+\item un builder finale che parte dal file \texttt{Restricted Final v6}, aggiunge nuove canzoni UG, riattacca i metadati artista, costruisce i flag Billboard e riempie i \texttt{release\_year} mancanti.
+\end{enumerate}
+
+Questa architettura spiega anche perche nel repository coesistono sia script di costruzione ``live'' sia wrapper di replica che ripristinano snapshot e cache. La replica completa, in pratica, e una combinazione tra codice, checkpoint intermedi e output consolidati.
+
+\section{Panoramica generale}
+\input{pipeline_generated/script_map_table.tex}
+\input{pipeline_generated/artifact_counts_table.tex}
+
+La fotografia corrente degli artefatti chiave e la seguente:
+\begin{itemize}[leftmargin=2em]
+\item il nucleo storico \texttt{country-only} contiene \BaseCountryCoreArtists\ artisti;
+\item l'universo \texttt{adjacent-only} aggiunge \AdjacentOnlyArtists\ artisti non nel nucleo ma rilevanti come perimetro esteso;
+\item l'unione completa degli universi artista arriva a \FullArtistUniverse\ record;
+\item il file \texttt{artist\_universe\_country\_only.csv} attualmente in uso contiene \CurrentCountryOnlyArtists\ record, cioe il nucleo country piu \BillboardAddedArtists\ artisti aggiunti nel supplemento Billboard;
+\item il dataset finale \texttt{Sound\_of\_Culture\_Country\_CountryOnly\_Chords\_Final\_2026\_04\_08.csv} contiene \CurrentFinalChordRows\ osservazioni;
+\item il file intermedio \texttt{country\_only\_chords\_new\_songs\_2026\_04\_08.csv} contiene \CurrentNewSongRows\ righe gia pronte per l'append al v6.
+\end{itemize}
+
+La relazione tra questi oggetti e importante: l'universo artisti non e solo un dizionario anagrafico, ma e la chiave che decide quali ricerche fare su UG, quali artisti hanno diritto di entrare nella fase song-level e come attaccare al file finale i metadati demografici recuperati nelle fasi precedenti.
+
+\section{Step 1: costruzione degli universi artista}
+\subsection{Logica sostantiva}
+La pipeline degli artisti nasce in \texttt{build\_country\_artists\_dataset.py}. Lo script raccoglie seed da Hall of Fame, categorie e liste Wikipedia, amplia il perimetro con query Wikidata sui generi country-correlati, poi standardizza e deduplica. La scelta metodologica qui e chiara: prima si costruisce un universo artista con un criterio relativamente conservativo ma ricco di metadati, poi si usa quell'universo come spina dorsale di tutto il resto.
+
+Nel report QC salvato dallo script, il perimetro iniziale e:
+\begin{itemize}[leftmargin=2em]
+\item \BaseCountryCoreArtists\ artisti nel \texttt{core country-union};
+\item \AdjacentOnlyArtists\ artisti \texttt{adjacent-only};
+\item \FullArtistUniverse\ artisti nel full artist universe.
+\end{itemize}
+
+Il fatto che il file \texttt{artist\_universe\_country\_only.csv} corrente sia piu grande del nucleo originario non e un errore: e l'effetto della fase successiva di supplemento Billboard, che aggiunge artisti utili per coprire canzoni charted ancora assenti.
+
+\subsection{Come vengono riempiti i campi anagrafici gia nel builder base}
+Il builder base recupera prima metadati strutturati da Wikidata, poi li completa con Wikipedia e, solo dove serve, con MusicBrainz. La funzione piu importante e \texttt{prepare\_dataset()}, che:
+\begin{enumerate}[leftmargin=2em]
+\item unisce i seed con i dettagli Wikidata;
+\item riempie gli URL Wikipedia mancanti dalle sitelinks;
+\item fa enrichment da infobox e lead Wikipedia;
+\item costruisce \texttt{birth\_year} da \texttt{birth\_date} o da indizi secondari;
+\item risolve \texttt{birth\_city}, \texttt{birth\_state}, \texttt{birth\_country};
+\item applica un fallback da categorie Wikipedia se la geografia e ancora incompleta;
+\item usa un enrichment MusicBrainz mirato sui casi ancora incompleti;
+\item costruisce score di rilevanza country, flag di campione, confidence e note.
+\end{enumerate}
+
+\paragraph{Snippet chiave: orchestrazione del builder artista.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/artist_prepare_dataset.py}
+
+\paragraph{Snippet chiave: risoluzione della geografia di nascita.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/artist_resolve_birth_geography.py}
+
+\paragraph{Snippet chiave: enrichment MusicBrainz mirato nel builder base.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/artist_targeted_musicbrainz.py}
+
+La cosa importante da leggere in questi snippet e l'ordine. Il progetto non fa un'imputazione cieca: parte da campi strutturati forti, usa il lead Wikipedia per colmare lacune narrative, poi applica fallback espliciti e annotabili. Questa gerarchia e una scelta di qualita del dato, non solo di convenienza tecnica.
+
+\section{Step 2: recupero residuo dei missing in \texttt{artist\_universe\_country\_only}}
+\subsection{Perche esiste un secondo passaggio}
+Il builder base dell'universo artista e pensato per la costruzione generale degli output \texttt{country\_artists\_*}. Ma il file operativo usato a valle dalla pipeline UG e \texttt{artist\_universe\_country\_only.csv}. Per questo esiste uno script separato, \texttt{enrich\_artist\_universe\_missing\_metadata.py}, che fa un \emph{top-up} diretto dei missing residui sul file country-only.
+
+Questa distinzione e cruciale per la replica:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{build\_country\_artists\_dataset.py} costruisce l'universo artisti generale e i campioni principali;
+\item \texttt{enrich\_artist\_universe\_missing\_metadata.py --country-only-direct} rifinisce il file country-only effettivamente usato dagli step successivi.
+\end{itemize}
+
+\subsection{Ordine operativo del top-up}
+La funzione \texttt{enrich\_country\_only\_direct()} documenta esplicitamente la sequenza del recupero residuo:
+\begin{enumerate}[leftmargin=2em]
+\item parsing e pulizia della geografia gia presente;
+\item risoluzione dei QID Wikidata mancanti dai nomi;
+\item enrichment mirato da QID Wikidata;
+\item enrichment da Wikipedia;
+\item risoluzione dei MBID MusicBrainz mancanti;
+\item enrichment MusicBrainz mirato;
+\item enrichment MusicBrainz generico;
+\item recupero di anno/origine da Wikipedia per i gruppi o i casi residui;
+\item enrichment Discogs e iTunes/Apple Music;
+\item enrichment dagli official websites via schema JSON-LD;
+\item applicazione di override manuali web-confirmed;
+\item nuova pulizia geografica e inferenza dello stato da coppie citta-paese gia osservate;
+\item refresh delle variabili derivate e salvataggio finale del country-only.
+\end{enumerate}
+
+\paragraph{Snippet chiave: pipeline completa di top-up sul country-only.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/artist_country_only_direct.py}
+
+\paragraph{Snippet chiave: risoluzione dei QID mancanti dai nomi.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/artist_resolve_missing_qids.py}
+
+\paragraph{Snippet chiave: fallback Discogs/iTunes e official websites.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/artist_discogs_official.py}
+
+\input{pipeline_generated/missingness_table.tex}
+
+Questa tabella va letta con attenzione. I missing residui nel file country-only non significano necessariamente fallimento della pipeline: una parte dei record aggiunti dal supplemento Billboard riguarda gruppi, entita non statunitensi o casi con evidenza documentale piu debole. La regola pratica e che la pipeline non forza valori quando la fonte non supera una soglia minima di credibilita.
+
+\subsection{Logica dettagliata per variabile}
+\paragraph{\texttt{birth\_year}.}
+L'anno di nascita viene recuperato, in ordine, da:
+\begin{enumerate}[leftmargin=2em]
+\item \texttt{birth\_date} strutturato;
+\item campi Wikidata mirati;
+\item infobox e lead Wikipedia;
+\item origine/anni attivi nei gruppi;
+\item Discogs;
+\item official websites;
+\item override manuali web-confirmed.
+\end{enumerate}
+
+\paragraph{\texttt{birth\_city} e \texttt{birth\_state}.}
+La citta e lo stato seguono una logica di parsing gerarchico:
+\begin{enumerate}[leftmargin=2em]
+\item parsing di \texttt{birth\_place\_raw};
+\item gerarchie amministrative Wikidata e MusicBrainz;
+\item categorie Wikipedia e seed location fallback;
+\item parsing di campi \texttt{Origin} o schema degli official websites;
+\item inferenza dello stato da combinazioni citta-paese gia osservate in record completi;
+\item correzioni manuali su casi noti o sospetti.
+\end{enumerate}
+
+\paragraph{\texttt{birth\_country}.}
+Il paese viene riempito da:
+\begin{enumerate}[leftmargin=2em]
+\item place hierarchy strutturata;
+\item country raw fields;
+\item MusicBrainz area/context;
+\item Discogs e official website schema;
+\item override manuali.
+\end{enumerate}
+
+In sintesi, il top-up non e un semplice merge di fonti, ma una pipeline gerarchica che prova prima fonti strutturate e riutilizzabili, poi fallback piu rumorosi, e lascia traccia nei \texttt{notes}.
+
+\section{Step 3: discovery e download da Ultimate Guitar}
+\subsection{Perche il download e separato in discovery, plan e download}
+Lo script \texttt{country\_only\_ultimate\_guitar.py} e costruito in tre sottocomandi distinti:
+\begin{enumerate}[leftmargin=2em]
+\item \texttt{discover}: cerca su UG gli artisti del country-only e salva fino a tre versioni migliori per canzone;
+\item \texttt{plan}: misura quante discovery rows esistono e quante raw JSON mancano ancora sul disco;
+\item \texttt{download}: scarica i payload JSON grezzi, con resume, shard opzionali e gestione di rate limits e casi 451.
+\end{enumerate}
+
+Questa separazione e importante per la replica cold-start, perche consente di fermarsi e riprendere senza perdere lo stato gia acquisito.
+
+\paragraph{Snippet chiave: discovery su UG con checkpoint e resume.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/ug_discovery.py}
+
+\paragraph{Snippet chiave: plan, download e CLI.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/ug_plan_download_cli.py}
+
+\input{pipeline_generated/ug_plan_table.tex}
+
+La lettura corretta del plan snapshot e questa:
+\begin{itemize}[leftmargin=2em]
+\item il progetto ha mirato a \UgArtistsTargeted\ artisti nel paese country-only base;
+\item per le \emph{chords} risultano \UgChordUniqueSongs\ canzoni uniche e \UgChordJsonTotal\ JSON discovery, di cui solo \UgChordJsonMissing\ mancanti nel plan salvato;
+\item per i \emph{tabs} risultano \UgTabUniqueSongs\ canzoni uniche e \UgTabJsonTotal\ JSON discovery, con \UgTabJsonMissing\ mancanti.
+\end{itemize}
+
+Questo spiega due fatti sostantivi. Primo, la pipeline salva piu JSON per canzone perche tiene fino a tre versioni top-rated. Secondo, il file finale chord-level non usa ciecamente un solo payload, ma puo fondere i primi tre quando servono informazioni complementari.
+
+\section{Step 4: supplemento Billboard}
+\subsection{Perche serve un supplemento}
+Anche una discovery larga su UG puo lasciare fuori:
+\begin{itemize}[leftmargin=2em]
+\item artisti che non erano nel country-only base ma compaiono nelle liste Billboard;
+\item canzoni charted di artisti gia presenti ma non ancora intercettate dalla discovery larga.
+\end{itemize}
+
+Per questo esiste \texttt{supplement\_billboard\_country\_chords.py}, che lavora su due fronti:
+\begin{enumerate}[leftmargin=2em]
+\item full discovery per gli artisti aggiunti dal supplemento;
+\item targeted search song-by-song per canzoni Billboard ancora mancanti.
+\end{enumerate}
+
+\paragraph{Snippet chiave: supplemento Billboard.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/billboard_supplement_run.py}
+
+\input{pipeline_generated/supplement_table.tex}
+
+Il punto metodologico qui e che il supplemento non sostituisce la discovery base: la estende in modo mirato. Il report di run salvato documenta un caso concreto con \SupplementAddedArtists\ artisti aggiunti, \SupplementTargetSongs\ target song processate nel run salvato, \SupplementRows\ discovery rows aggiunte e \SupplementNewDownloads\ nuovi raw JSON scaricati.
+
+Questa fase spiega anche perche il file country-only corrente contiene \BillboardAddedArtists\ artisti in piu rispetto al nucleo originario: il supplemento Billboard ha modificato il perimetro operativo usato a valle.
+
+\section{Step 5: costruzione del dataset finale chord-level}
+\subsection{Meccanica del builder finale}
+Lo script \texttt{build\_country\_only\_chords\_final.py} parte dal file \texttt{Restricted Final v6} e lo estende. La logica e la seguente:
+\begin{enumerate}[leftmargin=2em]
+\item legge le discovery rows chord-only e i raw JSON scaricati;
+\item costruisce nuove canzoni da appendere al v6;
+\item deduplica le nuove canzoni per UG id e per coppia artista-canzone;
+\item riattacca i metadati artista dall'universo country-only;
+\item crea bridge rows sintetiche per artisti con raw JSON ma senza presenza nel file combinato;
+\item applica \texttt{num\_chord\_json\_used};
+\item costruisce o carica la cache Billboard year-end;
+\item applica i flag chart-level;
+\item riempie i \texttt{release\_year} mancanti;
+\item salva CSV e DTA con label.
+\end{enumerate}
+
+\paragraph{Snippet chiave: costruzione delle nuove righe song-level da raw JSON.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/final_build_new_song_rows.py}
+
+\paragraph{Snippet chiave: cache Billboard e build finale del dataset.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/final_build_dataset.py}
+
+Ci sono due dettagli da sottolineare.
+
+Primo, la variabile \texttt{genre} nel file finale e \emph{song-level} e viene letta dal payload UG (\texttt{advertising.targeting\_song\_genre}); non e una proprieta ereditata automaticamente dall'universo artisti. Questo e il motivo per cui, a livello esplorativo, il dataset largo contiene anche brani classificati come \texttt{rock}, \texttt{pop} o \texttt{folk} pur partendo da artisti country-only.
+
+Secondo, il builder finale usa fino a tre JSON chord per canzone e fa \emph{deep backfill} dei payload: non e una semplice scelta del top-1, ma una procedura che cerca di estrarre il massimo contenuto informativo dai migliori file disponibili.
+
+\section{Step 6: recupero dei \texttt{release\_year} mancanti}
+\subsection{Gerarchia di imputazione}
+Il recupero dei \texttt{release\_year} e uno dei punti piu delicati dell'intera pipeline. Lo script non usa un solo servizio, ma una gerarchia molto esplicita. L'ordine e:
+\begin{enumerate}[leftmargin=2em]
+\item override manuali \texttt{WEB\_CONFIRMED\_RELEASE\_YEAR\_OVERRIDES};
+\item cache storiche e master cache derivate dal v6 e da cache precedenti;
+\item cache dedicate della run country-only finale;
+\item lookup artist-level su iTunes;
+\item lookup artist-level su MusicBrainz recordings;
+\item lookup artist-level su MusicBrainz releases;
+\item lookup artist-level su Deezer;
+\item lookup song-bundle su iTunes partendo dalle canzoni ancora mancanti;
+\item fallback song-level: Discogs, poi MusicBrainz, poi Wikidata, poi Wikipedia.
+\end{enumerate}
+
+\input{pipeline_generated/release_caches_table.tex}
+
+\paragraph{Snippet chiave: enrichment dei release year.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/final_enrich_release_years.py}
+
+Questa parte va letta come una strategia di minimizzazione dei costi e massimizzazione della precisione:
+\begin{itemize}[leftmargin=2em]
+\item prima si prova a riusare conoscenza gia salvata;
+\item poi si interroga per artista, che e piu efficiente quando mancano molte canzoni dello stesso autore;
+\item solo alla fine si scende al song-level, che e piu costoso e piu rumoroso;
+\item durante il loop lo script salva continuamente cache dedicate, cosi la run e riprendibile.
+\end{itemize}
+
+\section{Replica cold-start e replica da snapshot}
+\subsection{Cold-start reale}
+Per rifare davvero la pipeline da capo, la sequenza concettuale e:
+\begin{enumerate}[leftmargin=2em]
+\item costruire i dataset artista base con \texttt{build\_country\_artists\_dataset.py};
+\item fare top-up del country-only con \texttt{enrich\_artist\_universe\_missing\_metadata.py --country-only-direct};
+\item lanciare \texttt{country\_only\_ultimate\_guitar.py discover};
+\item controllare copertura con \texttt{country\_only\_ultimate\_guitar.py plan};
+\item scaricare i raw JSON con \texttt{country\_only\_ultimate\_guitar.py download};
+\item eseguire \texttt{supplement\_billboard\_country\_chords.py};
+\item costruire il dataset finale con \texttt{build\_country\_only\_chords\_final.py}.
+\end{enumerate}
+
+I comandi pratici, dal root del progetto, sono:
+\begin{lstlisting}[language=bash]
+python3 execution/step4_country_artists/build_country_artists_dataset.py
+python3 execution/step4_country_artists/enrich_artist_universe_missing_metadata.py --country-only-direct
+
+python3 execution/step1_download/country_only_ultimate_guitar.py discover --max-pages 20 --checkpoint-every 10 --workers 3
+python3 execution/step1_download/country_only_ultimate_guitar.py plan
+python3 execution/step1_download/country_only_ultimate_guitar.py download --kind both --workers 3 --min-delay 0.6 --max-delay 1.6
+
+python3 execution/step1_download/supplement_billboard_country_chords.py --max-pages-artist 20 --max-pages-song 3 --workers 3 --min-delay 0.6 --max-delay 1.6
+
+python3 execution/step2_digitalize/build_country_only_chords_final.py
+\end{lstlisting}
+
+\subsection{Replica assistita da snapshot}
+Il repository contiene anche wrapper di replica che servono a due funzioni:
+\begin{itemize}[leftmargin=2em]
+\item ripristinare output consolidati se non si vuole o non si puo rifare una run live;
+\item aggiornare e ricreare i replication package con codice, direttive e output correnti.
+\end{itemize}
+
+Lo script piu importante in questa famiglia e \texttt{run\_full\_replication.py}, che per la parte country artists decide se:
+\begin{enumerate}[leftmargin=2em]
+\item usare gli output gia presenti nel root del progetto;
+\item ripristinare uno snapshot bundled;
+\item forzare un full rebuild se richiesto con \texttt{--full-rebuild}.
+\end{enumerate}
+
+\paragraph{Snippet chiave: wrapper di replica full.}
+\lstinputlisting[language=Python]{pipeline_generated/snippets/replication_run_full.py}
+
+I wrapper aggiuntivi fanno invece snapshot o restore di componenti specifiche:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{run\_country\_songs\_replication.py}: output upstream dei song files e release-year caches;
+\item \texttt{run\_country\_merge\_v6\_replication.py}: bridge \texttt{Restricted Final v6};
+\item \texttt{run\_artist\_universe\_replication.py}: snapshot e restore del solo universo artista.
+\end{itemize}
+
+La distinzione metodologica e importante: una replica ``da snapshot'' non e la stessa cosa di una ricostruzione \emph{live}. La prima verifica la portabilita del pacchetto; la seconda verifica la robustezza della pipeline di costruzione.
+
+\section{Come leggere correttamente il rapporto tra country-only, adjacent e dataset finale}
+Una possibile fonte di confusione e la presenza simultanea di tre oggetti:
+\begin{enumerate}[leftmargin=2em]
+\item \texttt{country-only}: perimetro principale usato per la discovery UG e per il dataset finale qui studiato;
+\item \texttt{adjacent-only}: perimetro esteso, utile per coverage, confronto e archivio, ma non usato direttamente per il file chord-level country-only;
+\item \texttt{country plus adjacent}: unione dei due, utile come universo allargato o come prodotto documentale separato.
+\end{enumerate}
+
+In altre parole, le \emph{adjacent} servono a costruire un perimetro esteso degli artisti, ma il dataset \texttt{Sound\_of\_Culture\_Country\_CountryOnly\_Chords\_Final\_2026\_04\_08} viene costruito sull'universo \texttt{artist\_universe\_country\_only.csv}. Il fatto che alcuni brani nel dataset largo non abbiano \texttt{genre == country} non contraddice questo punto: dipende dal fatto che il genere e letto a livello di canzone dal payload UG.
+
+\section{Conclusione operativa}
+Se dovessi spiegare la pipeline in una frase sola, direi cosi: il progetto costruisce prima un'identita affidabile degli artisti, poi usa quella identita per scaricare e pulire i contenuti musicali, poi completa i missing piu delicati con una gerarchia di fonti strutturate e fallback documentati, e infine impacchetta sia gli output finali sia le cache necessarie per rendere la replica ripetibile.
+
+Le implicazioni pratiche sono tre:
+\begin{itemize}[leftmargin=2em]
+\item per rifare il lavoro da zero bisogna pensare la replica come pipeline multi-step, non come singolo script;
+\item per ridurre tempi e fragilita conviene conservare checkpoint intermedi e cache, specialmente per \texttt{release\_year};
+\item per valutare il dato finale bisogna sempre distinguere tra perimetro degli artisti e classificazione song-level del payload UG.
+\end{itemize}
+
+\appendix
+\clearpage
+\section{Dove trovare il codice completo}
+Questo report include soltanto snippet funzionali. Le copie integrali degli script principali sono salvate nella cartella \texttt{pipeline\_code/} del pacchetto del report, mentre gli artefatti di supporto usati per costruire il report sono salvati in \texttt{pipeline\_assets/}.
+
+\end{document}

@@ -174,6 +174,17 @@ NON_US_SUBDIVISIONS = {
 COUNTY_PATTERN = re.compile(r"\bcounty\b", re.I)
 
 WEB_CONFIRMED_OVERRIDES = {
+    "Ash Bowers": {
+        "birth_city": "Jackson",
+        "birth_state": "Tennessee",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace: Wikipedia",
+    },
+    "Arum Rae": {
+        "birth_state": "Colorado",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
+    },
     "Catherine McGrath": {
         "birth_date": "1997-06-09",
         "birth_year": 1997,
@@ -247,6 +258,40 @@ WEB_CONFIRMED_OVERRIDES = {
         "birth_country": "Canada",
         "notes_append": "web-confirmed birthplace region: Wikipedia/Merritt Walk of Stars",
     },
+    "Dale Ann Bradley": {
+        "birth_state": "Kentucky",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
+    },
+    "Delmore Brothers": {
+        "birth_state": "Alabama",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed origin state for duo: Wikipedia",
+    },
+    "Gene Sullivan": {
+        "birth_state": "Alabama",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
+    },
+    "Jenny Don't And The Spurs": {
+        "birth_state": "Oregon",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed origin state for band: Wikipedia",
+    },
+    "Jimmy Newman": {
+        "birth_date": "1927-08-29",
+        "birth_year": 1927,
+        "birth_city": "Mamou",
+        "birth_state": "Louisiana",
+        "birth_country": "United States",
+        "force_keys": ["birth_year", "birth_city", "birth_state", "birth_country", "birth_date"],
+        "notes_append": "web-confirmed birthplace/date: Wikipedia",
+    },
+    "Logan Brill": {
+        "birth_state": "Tennessee",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
+    },
     "Sean McConnell": {
         "birth_year": 1985,
         "notes_append": "web-confirmed birth year inferred from Wikipedia biography: debut album in 2000 at age 15",
@@ -317,6 +362,16 @@ WEB_CONFIRMED_OVERRIDES = {
         "birth_state": "New Mexico",
         "birth_country": "United States",
         "notes_append": "web-confirmed group origin/active decade: Wikipedia",
+    },
+    "The Davis Sisters": {
+        "birth_state": "Pennsylvania",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed origin state for group: Wikipedia",
+    },
+    "Van Zant": {
+        "birth_state": "Florida",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed origin state for duo: Wikipedia",
     },
     "Warren Zeiders": {
         "birth_city": "Hershey",

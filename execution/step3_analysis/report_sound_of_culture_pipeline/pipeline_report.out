@@ -1,0 +1,23 @@
+\BOOKMARK [1][-]{section.1}{Obiettivo del report}{}% 1
+\BOOKMARK [1][-]{section.2}{Panoramica generale}{}% 2
+\BOOKMARK [1][-]{section.3}{Step 1: costruzione degli universi artista}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Logica sostantiva}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Come vengono riempiti i campi anagrafici gia nel builder base}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{Step 2: recupero residuo dei missing in artist\137universe\137country\137only}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Perche esiste un secondo passaggio}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Ordine operativo del top-up}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Logica dettagliata per variabile}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Step 3: discovery e download da Ultimate Guitar}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{Perche il download e separato in discovery, plan e download}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{Step 4: supplemento Billboard}{}% 12
+\BOOKMARK [2][-]{subsection.6.1}{Perche serve un supplemento}{section.6}% 13
+\BOOKMARK [1][-]{section.7}{Step 5: costruzione del dataset finale chord-level}{}% 14
+\BOOKMARK [2][-]{subsection.7.1}{Meccanica del builder finale}{section.7}% 15
+\BOOKMARK [1][-]{section.8}{Step 6: recupero dei release\137year mancanti}{}% 16
+\BOOKMARK [2][-]{subsection.8.1}{Gerarchia di imputazione}{section.8}% 17
+\BOOKMARK [1][-]{section.9}{Replica cold-start e replica da snapshot}{}% 18
+\BOOKMARK [2][-]{subsection.9.1}{Cold-start reale}{section.9}% 19
+\BOOKMARK [2][-]{subsection.9.2}{Replica assistita da snapshot}{section.9}% 20
+\BOOKMARK [1][-]{section.10}{Come leggere correttamente il rapporto tra country-only, adjacent e dataset finale}{}% 21
+\BOOKMARK [1][-]{section.11}{Conclusione operativa}{}% 22
+\BOOKMARK [1][-]{appendix.A}{Dove trovare il codice completo}{}% 23
