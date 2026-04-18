@@ -18,10 +18,13 @@
 - block 6: repository onboarding README and phase-based Overleaf/report
   templates standardized
 - block 7: GitHub-facing cutover preparation completed safely
+- block 8: initial legacy-reference migration completed for active project
+  surfaces
 
 ## Current block
 
-- block 7 completed as a safe pre-cutover inventory block
+- block 8 completed as the first safe migration pass from `step*` references
+  toward phase-based entrypoints
 
 ## Plugin memory status
 
@@ -59,5 +62,6 @@
 
 ## Next recommended step
 
-Proceed to a targeted legacy-reference migration block before any destructive
-cleanup of `execution/step*` paths.
+Proceed to the next migration pass that separates active references from
+archival / replication-package references and only then evaluate whether any
+destructive cleanup of `execution/step*` is safe.

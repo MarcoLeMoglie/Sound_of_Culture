@@ -80,3 +80,14 @@ reference migration block that:
 2. rewrites those references to phase-based destinations where appropriate
 3. preserves replication-package and archival snapshots untouched
 4. verifies that scripts and reports still run after path changes
+
+## Progress after the initial migration pass
+
+The first safe migration pass introduced phase-based public entrypoints under:
+
+- `execution/phase_01_dataset_construction/`
+- `execution/phase_02_exploratory_analysis/`
+
+These wrappers reduce the number of user-facing references that need to point
+directly to `execution/step*`, while leaving the underlying legacy
+implementation untouched.

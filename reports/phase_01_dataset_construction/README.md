@@ -8,7 +8,11 @@ Subfolders:
 - `01_country_only_and_adjacent_only/`
 - `02_final_dataset_ultimate_guitar/`
 
-Current legacy code still lives mainly in:
+Canonical execution entrypoints now live in:
+
+- `execution/phase_01_dataset_construction/`
+
+Legacy implementation still lives mainly in:
 
 - `execution/step1_download/`
 - `execution/step2_digitalize/`

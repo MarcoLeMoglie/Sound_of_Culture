@@ -10,7 +10,9 @@ TARGET_CSV = BASE_DIR / "Sound_of_Culture_Country_Restricted_Final_v6.csv"
 TARGET_DTA = BASE_DIR / "Sound_of_Culture_Country_Restricted_Final_v6.dta"
 BACKFILL_DIR = BASE_DIR / "intermediate" / "restricted_final_v6_backfill"
 PRECOMPUTED_LOOKUP_FILE = BACKFILL_DIR / "precomputed_targeted_live_lookup.csv"
-COUNTRY_BUILDER_PATH = Path("execution/step4_country_artists/build_country_artists_dataset.py")
+COUNTRY_BUILDER_PATH = Path(
+    "execution/phase_01_dataset_construction/build_country_artists_dataset.py"
+)
 
 REFERENCE_FILES: List[Tuple[str, str, int]] = [
     ("country_artists_restricted.csv", "restricted", 1),

@@ -9,7 +9,11 @@ It should cover:
 - spatial dynamics
 - descriptive patterns worth validating later
 
-Current legacy analytical materials mainly live in:
+Canonical exploratory entrypoints now live in:
+
+- `execution/phase_02_exploratory_analysis/`
+
+Legacy analytical materials still live mainly in:
 
 - `execution/step3_analysis/`
 

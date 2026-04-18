@@ -2,7 +2,14 @@
 
 The canonical project phase is `phase_02_exploratory_analysis`.
 
-Current legacy analytical code and outputs still live mainly in:
+## Canonical entrypoints
+
+- `execution/phase_02_exploratory_analysis/do/eda.do`
+- `execution/phase_02_exploratory_analysis/do/eda_bass.do`
+
+## Current legacy implementation roots
+
+Current analytical code and outputs still live mainly in:
 
 - `execution/step3_analysis/`
 

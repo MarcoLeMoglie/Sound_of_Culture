@@ -107,3 +107,26 @@ replication-package copies that intentionally preserve historical layouts.
 
 The next cleanup block should migrate active references first and should avoid
 rewriting archival or packaged replication material unless explicitly required.
+
+## 2026-04-18
+
+### Decision
+
+Introduce phase-based wrapper entrypoints instead of moving or deleting legacy
+implementation files immediately.
+
+### Why
+
+The project still contains active code, Stata scripts, and replication wrappers
+that depend on legacy `execution/step*` layouts. Wrapper entrypoints reduce
+user-facing legacy references while keeping the implementation stable.
+
+### Consequence
+
+The canonical execution surface now starts in:
+
+- `execution/phase_01_dataset_construction/`
+- `execution/phase_02_exploratory_analysis/`
+
+But the underlying implementation and archival material remain in place until a
+later migration block safely retires them.

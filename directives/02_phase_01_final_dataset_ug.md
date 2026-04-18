@@ -13,7 +13,18 @@ recovery steps for missing or incomplete metadata.
 - build the final song-level dataset
 - recover missing release years and attached metadata
 
-## Existing code base to check first
+## Canonical execution entrypoints to check first
+
+- `execution/phase_01_dataset_construction/country_only_ultimate_guitar.py`
+- `execution/phase_01_dataset_construction/supplement_billboard_country_chords.py`
+- `execution/phase_01_dataset_construction/build_country_only_chords_final.py`
+- `execution/phase_01_dataset_construction/backfill_restricted_final_v6_demographics.py`
+- `execution/phase_01_dataset_construction/enrich_release_years_restricted_final_v6.py`
+- `execution/phase_01_dataset_construction/run_country_merge_v6_replication.py`
+- `execution/phase_01_dataset_construction/run_country_songs_replication.py`
+- `execution/phase_01_dataset_construction/run_full_replication.py`
+
+## Legacy implementation roots behind those entrypoints
 
 - `execution/step1_download/`
 - `execution/step2_digitalize/`

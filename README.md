@@ -107,17 +107,25 @@ High-level structure:
 Important subtrees:
 
 - `execution/step1_download/`
-  Ultimate Guitar discovery and download logic.
+  Legacy Ultimate Guitar discovery and download logic.
 - `execution/step2_digitalize/`
-  Song-level processing and final dataset assembly logic.
+  Legacy song-level processing and final dataset assembly logic.
 - `execution/step3_analysis/`
   Legacy exploratory analysis code and report generation.
 - `execution/step4_country_artists/`
-  Country artist-universe construction and metadata enrichment.
+  Legacy country artist-universe construction and metadata enrichment.
 - `execution/step5_replication/`
-  Replication wrappers and cold-start packaging logic.
+  Legacy replication wrappers and cold-start packaging logic.
 - `execution/phase_*`
-  Canonical phase directories created during restructuring.
+  Canonical phase directories and public entrypoints created during
+  restructuring.
+
+Current phase-based execution surfaces:
+
+- `execution/phase_01_dataset_construction/`
+- `execution/phase_02_exploratory_analysis/`
+- `execution/phase_03_validation/`
+- `execution/phase_04_causal_shocks/`
 
 ## Canonical report structure
 
@@ -288,6 +296,7 @@ project.
 
 - Legacy `execution/step*` code is still active.
 - Phase-based folders are the canonical organizational layer.
+- New documentation should point to phase-based entrypoints first.
 - Do not move legacy execution folders unless a task explicitly includes path
   migration.
 - The repo contains archival / replication snapshots such as `.coldstart_*`.

@@ -12,7 +12,12 @@ validation or causal use.
 - describe spatial patterns
 - identify suspicious missingness, coverage problems, or sample shifts
 
-## Existing code base to check first
+## Canonical execution entrypoints to check first
+
+- `execution/phase_02_exploratory_analysis/do/eda.do`
+- `execution/phase_02_exploratory_analysis/do/eda_bass.do`
+
+## Legacy implementation root behind those entrypoints
 
 - `execution/step3_analysis/`
 

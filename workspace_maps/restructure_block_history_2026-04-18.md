@@ -129,6 +129,31 @@ Why it mattered:
 - the cutover inventory prevents accidental deletion of still-referenced legacy
   paths
 
+## Block 8: Initial legacy-reference migration
+
+What was done:
+
+- created phase-based Python entrypoint wrappers for the main Phase 1 workflows
+- created phase-based Stata wrapper entrypoints for the exploratory analysis
+- switched active directives and README files to point first to the new
+  phase-based execution surface
+- updated one active hardcoded code reference so it now resolves the country
+  builder through the phase-based wrapper instead of the old direct step path
+
+Why it mattered:
+
+- the project needed a public execution surface aligned with the new
+  architecture before any destructive cleanup of `execution/step*`
+- this reduces user-facing dependence on legacy paths without touching archival
+  or replication-package material
+
+What is still not done:
+
+- the underlying implementation still lives in `execution/step*`
+- replication-package copies and archival snapshots still preserve old paths by
+  design
+- a later migration block is still needed before legacy folders can be removed
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.

@@ -28,9 +28,13 @@
 - the restructured branch is now the GitHub default branch
 - a repo banner image exists at `assets/github-social-preview.png`
 - block 7 documented why destructive legacy cleanup is still premature
+- block 8 created phase-based wrappers for the main Phase 1 workflows
+- block 8 created phase-based Stata wrapper entrypoints for exploratory
+  analysis
+- active directives now point first to phase-based execution entrypoints
 
 ## Recommended next action
 
-Continue with a targeted legacy-reference migration block, using
-`workspace_maps/block7_cutover_inventory_2026-04-18.md` as the checklist of
-remaining cutover blockers.
+Continue with the next migration pass, focusing only on active non-archival
+references that still point directly to `execution/step*`, and keep
+replication-package / archival paths untouched unless explicitly requested.
