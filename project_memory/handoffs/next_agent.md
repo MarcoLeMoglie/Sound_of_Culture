@@ -97,11 +97,18 @@
   surface; treat `execution/step*` as the retained backend for implementation
   stability and historical compatibility
 - canonical Overleaf reports for all project phases must be written in English
+- a destructive-cutover plan now exists in
+  `workspace_maps/destructive_cutover_plan_2026-04-18.md`
+- the current answer on cleanup is: safe for caches and residue, not yet safe
+  for tracked legacy `execution/step*` code
 
 ## Recommended next action
 
-Return to scientific dataset/report work unless a future task explicitly
-requests a deeper, riskier refactor of the legacy backend layer.
+Choose between:
+
+- returning to scientific dataset/report work
+- starting Stage 1 of the destructive cutover plan, beginning with native
+  Phase 2 exploratory `.do` migration and output-path rerooting
 
 Keep replication-package / archival paths untouched unless explicitly
 requested, except when a validated replication run intentionally refreshes its

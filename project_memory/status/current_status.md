@@ -84,3 +84,14 @@ refactoring rather than as a blocker.
 ## Reporting language rule
 
 Canonical Overleaf reports for all phases are now explicitly English-only.
+
+## Destructive cutover status
+
+A destructive-cutover plan has now been written in
+`workspace_maps/destructive_cutover_plan_2026-04-18.md`.
+
+Current conclusion:
+
+- operational restructuring is complete
+- destructive deletion of `execution/step*` is still unsafe until the backend
+  is migrated natively into `execution/phase_*`

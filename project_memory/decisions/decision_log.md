@@ -262,6 +262,31 @@ coauthors.
 
 All retained phase-report text should be written in English, even if working
 notes or chat discussions happen in Italian.
+
+## 2026-04-18
+
+### Decision
+
+Do not perform a destructive cleanup of tracked legacy `execution/step*` files
+yet; treat destructive cutover as a separate migration program.
+
+### Why
+
+The phase-based surface is now complete operationally, but it still delegates
+to legacy runtime backends. Deleting those files now would break active
+wrappers, replication packaging, and exploratory Stata launchers.
+
+### Consequence
+
+The project now has a formal destructive-cutover plan in
+`workspace_maps/destructive_cutover_plan_2026-04-18.md`.
+
+Until that plan's native-backend migration and validation stages are complete:
+
+- do not delete tracked legacy execution code
+- limit cleanup to transient residue
+- treat any future deletion pass as high-risk work requiring explicit runtime
+  validation
 Machine-specific local paths can still appear as plain text when they are
 needed to describe external assets such as the Overleaf folder.
 
