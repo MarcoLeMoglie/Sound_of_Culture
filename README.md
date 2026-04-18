@@ -1,3 +1,5 @@
+![Sound of Culture repository banner](assets/github-social-preview.png)
+
 # Sound of Culture
 
 This repository studies how music can be used as a measure of culture in the
@@ -18,6 +20,10 @@ branch.
 ## Current project status
 
 Active working branch:
+
+- `codex/restructure-workspace-2026-04-18`
+
+Current GitHub default branch:
 
 - `codex/restructure-workspace-2026-04-18`
 
@@ -234,6 +240,19 @@ Current install notes:
 See:
 
 - [project_memory/inventories/local_tooling.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/project_memory/inventories/local_tooling.md)
+
+## Repository presentation
+
+The GitHub repository now uses:
+
+- default branch: `codex/restructure-workspace-2026-04-18`
+- About description: `Music as a measure of culture across U.S. states using country music data, validation, and social shocks.`
+- repository banner image shown at the top of this README:
+  `assets/github-social-preview.png`
+
+GitHub's About panel on the right supports text metadata, while the main visual
+identity is provided here in the README banner. The generated banner file can
+also be reused manually as a social preview image in GitHub settings if needed.
 
 ## How a coauthor should start
 

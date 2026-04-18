@@ -109,6 +109,26 @@ Why it mattered:
   easy for collaborators to understand where each phase report lives, how it is
   supposed to be updated, and where supporting outputs should be stored
 
+## Block 7: Public-facing cutover preparation
+
+What was done:
+
+- set the restructured branch as the GitHub default branch
+- added the repository About description on GitHub
+- generated a repository banner image for the new landing page
+- updated the root README so GitHub now opens on the restructured project
+  framing
+- created a cutover inventory documenting what still blocks destructive legacy
+  cleanup
+
+Why it mattered:
+
+- the restructured branch is now the public-facing entry point for the project
+- collaborators landing on GitHub now see the redefined project rather than the
+  old one
+- the cutover inventory prevents accidental deletion of still-referenced legacy
+  paths
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.

@@ -25,9 +25,12 @@
 - repo root now has a full onboarding `README.md`
 - block 6 created canonical Overleaf report templates for the missing phase
   reports and standardized output subfolders
+- the restructured branch is now the GitHub default branch
+- a repo banner image exists at `assets/github-social-preview.png`
+- block 7 documented why destructive legacy cleanup is still premature
 
 ## Recommended next action
 
-Continue from the next implementation block, using the root README,
-`workspace_maps/restructure_block_history_2026-04-18.md`, and the new Overleaf
-phase entry points as the canonical map of the restructured project.
+Continue with a targeted legacy-reference migration block, using
+`workspace_maps/block7_cutover_inventory_2026-04-18.md` as the checklist of
+remaining cutover blockers.

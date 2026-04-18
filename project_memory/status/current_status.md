@@ -17,10 +17,11 @@
 - block 5: code-review-graph standardized across clients and rebuilt
 - block 6: repository onboarding README and phase-based Overleaf/report
   templates standardized
+- block 7: GitHub-facing cutover preparation completed safely
 
 ## Current block
 
-- block 6 completed
+- block 7 completed as a safe pre-cutover inventory block
 
 ## Plugin memory status
 
@@ -58,6 +59,5 @@
 
 ## Next recommended step
 
-Proceed to the next restructuring or implementation block, using the new root
-README and the phase-based Overleaf templates as the canonical onboarding and
-reporting layer.
+Proceed to a targeted legacy-reference migration block before any destructive
+cleanup of `execution/step*` paths.

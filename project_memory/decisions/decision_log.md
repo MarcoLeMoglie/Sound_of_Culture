@@ -89,3 +89,21 @@ Collaborators should now start from:
 
 And phase report work should now target the phase-based Overleaf entry points
 created during block 6.
+
+## 2026-04-18
+
+### Decision
+
+Use a safe pre-cutover inventory before any destructive cleanup of legacy
+execution paths.
+
+### Why
+
+The restructured branch is now the GitHub default branch, but the repository
+still contains many active references to legacy `execution/step*` paths and to
+replication-package copies that intentionally preserve historical layouts.
+
+### Consequence
+
+The next cleanup block should migrate active references first and should avoid
+rewriting archival or packaged replication material unless explicitly required.
