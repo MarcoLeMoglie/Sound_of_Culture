@@ -12,8 +12,9 @@ nice-to-have. It is a hard requirement.
 - server URL: `https://mcp.supermemory.ai/mcp`
 - project scope: `sound-of-culture`
 
-Until client authentication is completed and validated in the relevant tools,
-the active guaranteed memory layer remains the repo-side structure under
+For this local Codex environment, API-key authentication has now been validated.
+Until the MCP tool is visibly available inside all relevant clients, the active
+guaranteed memory layer still remains the repo-side structure under
 `project_memory/`.
 
 ## Minimum required updates

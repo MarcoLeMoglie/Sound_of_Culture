@@ -22,11 +22,13 @@
 
 - `supermemory` MCP configured in repo MCP files
 - `supermemory` MCP configured in local Codex config
-- client authentication still not validated
-- repo-side memory remains mandatory until validation is complete
+- API-key authentication validated against the MCP server for local Codex
+- current live assistant session still does not expose Supermemory as a usable
+  tool
+- repo-side memory remains mandatory until tool availability is confirmed
 
 ## Next recommended step
 
-Authenticate the configured `supermemory` server in the relevant clients,
-validate basic save/recall behavior, and then update the SOP to mark the plugin
-memory layer as operational.
+Restart or refresh the client until the Supermemory MCP tools become available
+inside the live assistant session, then run a real save/recall test and mark
+the memory layer as operational.

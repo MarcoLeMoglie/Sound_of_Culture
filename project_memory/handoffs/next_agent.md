@@ -12,9 +12,10 @@
 - archival branch exists
 - phase-based skeleton exists
 - directives and SOPs were rewritten around the new project goals
-- `supermemory` is configured but not yet authentication-validated
+- `supermemory` is configured and API-key authentication is validated for local
+  Codex
 
 ## Recommended next action
 
-Authenticate and validate the configured `supermemory` setup. After a successful
-save/recall test, update the SOP to mark plugin-based memory as operational.
+Refresh the client until Supermemory tools appear in-session. Then run a real
+save/recall test and update the SOP to mark plugin-based memory as operational.

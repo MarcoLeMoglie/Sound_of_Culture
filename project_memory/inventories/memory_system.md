@@ -26,10 +26,13 @@ Server configuration:
 ## Validation status
 
 - configured: yes
-- authenticated in client: not yet validated
-- safe to rely on as sole memory layer: not yet
+- authenticated in local Codex config via API key: yes
+- direct HTTP verification against MCP server: yes
+- MCP tool visibly available in the current live assistant session: not yet
+- safe to rely on as sole memory layer across all clients: not yet
 
 ## Operational rule
 
-Until authentication and real usage are confirmed, always keep the repo-side
-memory files up to date even if Supermemory is enabled in the client.
+Until the MCP tool is confirmed as available and working in all relevant
+clients, always keep the repo-side memory files up to date even if Supermemory
+is enabled in the client.
