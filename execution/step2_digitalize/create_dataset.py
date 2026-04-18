@@ -135,10 +135,10 @@ def flatten_tab_data(filepath):
             
     # --- SYNTHETIC INDICES ---
     if INSTRUMENT == "Bass":
-         from music_indices_bass import calculate_bass_indices
+         from execution.phase_01_dataset_construction.music_indices_bass import calculate_bass_indices
          indices = calculate_bass_indices(data)
     else:
-         from music_indices import calculate_indices
+         from execution.phase_01_dataset_construction.music_indices import calculate_indices
          indices = calculate_indices(data)
     row.update(indices)
 

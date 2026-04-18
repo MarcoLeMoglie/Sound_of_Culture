@@ -6,19 +6,18 @@ import random
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Add current dir to path to import scraper_client
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from scraper_client import UltimateGuitarClient
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+from execution.phase_01_dataset_construction.scraper_client import UltimateGuitarClient
 from discover_artists_chords import discover_artist_chords
 
 def run_expansion_discovery():
     client = UltimateGuitarClient()
     # Path relative to project root
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
     output_file = os.path.join(project_root, 'data/intermediate/json/input_songs_bulk_country_expansion.json')
     
     # 1. Extract combined new artists
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
     res_csv = os.path.join(project_root, 'data/processed_datasets/country_artists/country_artists_restricted.csv')
     mas_csv = os.path.join(project_root, 'data/processed_datasets/country_artists/country_artists_master.csv')
     seed_file = os.path.join(project_root, 'data/intermediate/json/seed_country_artists.json')

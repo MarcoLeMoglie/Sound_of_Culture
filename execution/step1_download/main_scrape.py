@@ -2,7 +2,13 @@ import json
 import os
 import time
 import random
-from scraper_client import UltimateGuitarClient
+import sys
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
+
+from execution.phase_01_dataset_construction.scraper_client import UltimateGuitarClient
 
 def load_input(filepath):
     """Loads the list of items to scrape from a JSON file."""

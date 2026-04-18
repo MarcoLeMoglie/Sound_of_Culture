@@ -6,9 +6,10 @@ import random
 import os
 import sys
 
-# Add current dir to path to import scraper_client if needed
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from scraper_client import UltimateGuitarClient
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+from execution.phase_01_dataset_construction.scraper_client import UltimateGuitarClient
 
 def discover_genre(genre_id=None, subgenre_id=None, limit_pages=5):
     """

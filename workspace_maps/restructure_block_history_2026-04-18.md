@@ -258,6 +258,38 @@ What is still not done:
 - several deeper legacy helper modules are still not bridged individually
 - destructive cleanup of legacy folders remains unsafe
 
+## Block 13: Helper-module migration
+
+What was done:
+
+- added new phase-based bridge modules for several remaining high-value Phase 1
+  helpers:
+  `music_indices_bass.py`,
+  `complete_country_only_release_years_parallel.py`,
+  `complete_country_only_release_years_sequential.py`,
+  `create_country_expansion_dataset.py`,
+  `targeted_residual_artist_metadata.py`,
+  `build_billboard_augmented_targets_from_cache.py`
+- rerooted a set of `step1_download` scripts away from local
+  `scraper_client` imports toward the phase-based bridge
+- rerooted `create_dataset.py` toward the phase-based music-index bridges
+- runtime-validated the cached Billboard augmented-target builder through the
+  phase-based surface
+
+Why it mattered:
+
+- this block pushes the migration below the public entrypoint layer and into
+  the helper layer that active scripts actually depend on
+- it reduces the amount of local-only import behavior that still ties the
+  project to the legacy layout
+
+What is still not done:
+
+- many `step1_download` utilities still do not have their own explicit bridge
+  file under `phase_01_dataset_construction/`
+- some deeper or older `step2_digitalize` helpers remain legacy-only
+- destructive cleanup of legacy folders remains unsafe
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.

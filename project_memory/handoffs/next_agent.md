@@ -62,6 +62,22 @@
   `execution/phase_01_dataset_construction/run_artist_universe_replication.py`
   successfully; the run refreshed the bundled artist-universe replication
   snapshot
+- block 13 added bridge modules for:
+  `music_indices_bass.py`,
+  `complete_country_only_release_years_parallel.py`,
+  `complete_country_only_release_years_sequential.py`,
+  `create_country_expansion_dataset.py`,
+  `targeted_residual_artist_metadata.py`,
+  `build_billboard_augmented_targets_from_cache.py`
+- block 13 rerooted a set of `step1_download` scripts away from local
+  `scraper_client` imports toward
+  `execution.phase_01_dataset_construction.scraper_client`
+- block 13 rerooted `execution/step2_digitalize/create_dataset.py` to the
+  phase-based `music_indices` and `music_indices_bass` bridges
+- block 13 runtime-validated
+  `execution/phase_01_dataset_construction/build_billboard_augmented_targets_from_cache.py`
+  successfully; it reported `1515` augmented missing song targets with `1490`
+  existing-artist matches and `25` missing-artist cases
 
 ## Recommended next action
 

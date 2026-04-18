@@ -15,9 +15,9 @@ from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-sys.path.append(str(Path(__file__).resolve().parent))
+sys.path.append(str(PROJECT_ROOT))
 
-from scraper_client import UltimateGuitarClient
+from execution.phase_01_dataset_construction.scraper_client import UltimateGuitarClient
 
 
 ARTIST_CSV = PROJECT_ROOT / "data" / "processed_datasets" / "country_artists" / "artist_universe_country_only.csv"

@@ -28,11 +28,12 @@
   layer
 - block 12: GitHub README links fixed and artist-universe replication
   validated through the phase-based surface
+- block 13: additional Phase 1 helper modules bridged and legacy helper
+  imports reduced further
 
 ## Current block
 
-- block 12 completed as the second runtime-validation pass plus GitHub README
-  link repair
+- block 13 completed as the next helper-module migration pass for Phase 1
 
 ## Plugin memory status
 
@@ -70,7 +71,7 @@
 
 ## Next recommended step
 
-Proceed to the next migration/testing pass that decides whether to migrate more
-remaining legacy helper modules into bridge form or to validate a higher-cost
-Phase 1 path such as a richer artist-side workflow before touching more
+Proceed to the next migration/testing pass that decides whether to bridge more
+remaining `step1_download` and `step2_digitalize` utilities or to validate one
+of the newly bridged helper workflows more deeply before touching additional
 implementation internals.

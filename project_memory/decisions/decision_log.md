@@ -220,3 +220,28 @@ the repository landing page confusing for collaborators.
 The main `README.md` should keep GitHub-facing references repo-relative.
 Machine-specific local paths can still appear as plain text when they are
 needed to describe external assets such as the Overleaf folder.
+
+## 2026-04-18
+
+### Decision
+
+Prioritize helper-module bridging and helper-import cleanup before attempting
+another large live rebuild path.
+
+### Why
+
+After blocks 11 and 12, the phase-based surface had already been validated on
+the replication wrappers. The next highest-value bottleneck was the helper
+layer: local imports like `scraper_client` and residual unbridged Phase 1
+modules still made the code harder to reason about and less consistent with the
+new architecture.
+
+### Consequence
+
+The next migration pass should favor:
+
+- bridge modules for high-value helper scripts
+- rerooting active helper imports to those bridges
+- local cached runtime validation where possible
+
+before spending effort on more expensive live rebuild workflows.
