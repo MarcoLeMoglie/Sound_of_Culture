@@ -40,6 +40,24 @@ Current restructuring status:
 - block 5 completed: code-review-graph standardized and rebuilt
 - block 6 completed: phase-based Overleaf/report system standardized with
   canonical templates and folder conventions
+- block 7 completed: GitHub-facing cutover prepared safely
+- block 8 completed: phase-based wrappers introduced for the main execution
+  surface
+- block 9 completed: operational launchers and replication instructions shifted
+  toward phase-based entrypoints
+- block 10 completed: active internal imports started moving toward bridge
+  modules
+- block 11 completed: the bridge layer was runtime-validated on live Phase 1
+  workflows
+- block 12 completed: GitHub README links were repaired and artist-universe
+  replication was validated through the phase-based surface
+- block 13 completed: additional helper modules were bridged and helper
+  imports reduced further
+- block 14 completed: wrapper coverage was extended across the full active
+  Python surface of `step1_download` and `step2_digitalize`
+- block 15 completed: wrapper coverage was finished for the remaining active
+  `step4_country_artists` / `step5_replication` surface, closing the
+  operational restructuring pass
 
 For a block-by-block history, see:
 
@@ -80,11 +98,14 @@ The validated measure is then used in causal applications:
 
 ## Repository structure
 
-The repository is in a transition state.
+The repository is in a transition state, but the operational restructuring is
+now substantially complete.
 
 The canonical conceptual organization is phase-based, but much of the active
-code still lives in legacy `execution/step*` folders. This is intentional. We
-are avoiding breaking hardcoded paths before the final migration step.
+implementation still lives in legacy `execution/step*` folders. This is
+intentional. We have already shifted the public execution surface to the
+phase-based folders and are preserving the legacy layer for implementation
+stability, replication-package compatibility, and historical reproducibility.
 
 Until migration is fully complete, every new modification must explicitly
 remember this coexistence rule instead of pretending the repository already has
@@ -123,6 +144,16 @@ Important subtrees:
 - `execution/phase_*`
   Canonical phase directories and public entrypoints created during
   restructuring.
+
+Current restructuring interpretation:
+
+- use `execution/phase_01_dataset_construction/` and
+  `execution/phase_02_exploratory_analysis/` as the canonical operational
+  entrypoints
+- treat `execution/step*` as the retained implementation backend and archival
+  compatibility layer
+- do not delete or rename legacy execution folders unless a later task
+  explicitly includes a destructive cutover with downstream reference checks
 
 Current phase-based execution surfaces:
 

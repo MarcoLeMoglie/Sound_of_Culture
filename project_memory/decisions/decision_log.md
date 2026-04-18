@@ -218,6 +218,32 @@ the repository landing page confusing for collaborators.
 ### Consequence
 
 The main `README.md` should keep GitHub-facing references repo-relative.
+
+## 2026-04-18
+
+### Decision
+
+Treat the restructuring program as operationally complete once every active
+Phase 1 Python entrypoint and every active Phase 2 exploratory `.do` launcher
+has a canonical phase-based bridge.
+
+### Why
+
+At this point the remaining legacy `execution/step*` directories are serving
+mainly as the implementation backend and as compatibility roots for historical
+replication packages. Pushing further just to erase those names would be a
+deeper refactor, not a prerequisite for productive work on the new project.
+
+### Consequence
+
+Agents should now:
+
+- launch active work from `execution/phase_01_dataset_construction/` and
+  `execution/phase_02_exploratory_analysis/`
+- treat additional legacy cleanup as optional refactoring, not as an immediate
+  blocker
+- keep the coexistence rule in mind whenever they touch legacy implementation
+  files that still sit behind the phase-based bridge layer
 Machine-specific local paths can still appear as plain text when they are
 needed to describe external assets such as the Overleaf folder.
 

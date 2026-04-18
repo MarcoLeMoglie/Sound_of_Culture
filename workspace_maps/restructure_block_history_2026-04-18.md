@@ -315,13 +315,43 @@ What is still not done:
 - replication-side helper modules still preserve more legacy structure
 - destructive cleanup of legacy folders remains unsafe
 
-## Transitional rule that still applies
+## Block 15: Operational restructuring closure
 
-The project is not yet in the final cutover state.
+What was done:
+
+- added the last missing active Phase 1 replication-side bridge module:
+  `restore_top100_jsons_by_id.py`
+- reran the wrapper inventory across `step4_country_artists`,
+  `step5_replication`, and `step3_analysis/do`
+- confirmed that no active Python entrypoints remain unbridged in
+  `step4_country_artists` or `step5_replication`
+- confirmed that no active exploratory `.do` launchers remain unbridged
+  relative to `step3_analysis/do`
+- wrote an explicit closure note clarifying that the phase-based folders are
+  now the canonical operational surface and the legacy `step*` folders are the
+  retained backend layer
+
+Why it mattered:
+
+- this is the point where the restructuring stops being an open-ended cleanup
+  project and becomes a stable working architecture
+- collaborators and agents now have a clear answer to the question "where do I
+  launch active work from?" without pretending historical compatibility layers
+  have disappeared
+
+What intentionally remains:
+
+- legacy implementation files behind the bridge layer
+- historical replication-package layouts
+- archival snapshots and cutover inventories
+
+## Transitional rule that still applies
 
 That means:
 
-- legacy `execution/step*` folders are still active
-- phase-based folders are canonical for organization and reporting
-- final destructive cleanup should happen only after the relevant migration
-  block, not before
+- legacy `execution/step*` folders are still present as the backend and
+  compatibility layer
+- phase-based folders are canonical for active operational entrypoints,
+  organization, and reporting
+- any future destructive cleanup of the legacy layer should be treated as an
+  optional deep refactor, not as unfinished baseline restructuring

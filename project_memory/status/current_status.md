@@ -32,11 +32,14 @@
   imports reduced further
 - block 14: remaining step1/step2 Phase 1 wrappers completed and helper
   coverage extended across the full active Python surface
+- block 15: remaining active Phase 1 replication-side wrapper coverage
+  completed, closing the operational restructuring pass
 
 ## Current block
 
-- block 14 completed as the bridge-coverage completion pass for active
-  `step1_download` and `step2_digitalize` Python modules
+- block 15 completed as the final active-wrapper completion pass for
+  `step4_country_artists`, `step5_replication`, and the Phase 2 exploratory
+  Stata surface
 
 ## Plugin memory status
 
@@ -74,7 +77,6 @@
 
 ## Next recommended step
 
-Proceed to the next migration/testing pass that decides whether to start
-bridging deeper `step4_country_artists` residual helpers and any remaining
-replication-side code, or to shift attention back to scientific work now that
-the active Phase 1 Python surface has a canonical wrapper layer.
+The operational restructuring pass is complete enough to move back to
+scientific work. Further cleanup should now be treated as optional deep
+refactoring rather than as a blocker.

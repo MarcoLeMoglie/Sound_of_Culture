@@ -86,15 +86,21 @@
   `execution/phase_01_dataset_construction/prepare_bulk_input.py`
   successfully; it recreated `data/intermediate/json/input_songs_bulk.json`
   with `994` queries
+- block 15 added the last missing active replication-side Phase 1 wrapper:
+  `execution/phase_01_dataset_construction/restore_top100_jsons_by_id.py`
+- inventory after block 15 showed no remaining missing active Python bridges in
+  `step4_country_artists` or `step5_replication`, and no missing exploratory
+  `.do` wrappers relative to `step3_analysis/do`
+- after block 15, the operational interpretation is now:
+  use `execution/phase_01_dataset_construction/` and
+  `execution/phase_02_exploratory_analysis/` as the canonical execution
+  surface; treat `execution/step*` as the retained backend for implementation
+  stability and historical compatibility
 
 ## Recommended next action
 
-Continue with the next migration/testing pass, choosing between:
-
-- extending the same bridge strategy to deeper `step4_country_artists`
-  residual utilities and possibly some replication-side helpers
-- pausing restructuring and moving back to scientific dataset/report work now
-  that the active Phase 1 Python surface has a canonical wrapper layer
+Return to scientific dataset/report work unless a future task explicitly
+requests a deeper, riskier refactor of the legacy backend layer.
 
 Keep replication-package / archival paths untouched unless explicitly
 requested, except when a validated replication run intentionally refreshes its

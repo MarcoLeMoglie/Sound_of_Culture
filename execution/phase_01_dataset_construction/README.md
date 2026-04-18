@@ -31,6 +31,7 @@ implementation still runs from legacy `execution/step*` directories.
 - `execution/phase_01_dataset_construction/run_country_merge_v6_replication.py`
 - `execution/phase_01_dataset_construction/run_country_songs_replication.py`
 - `execution/phase_01_dataset_construction/run_full_replication.py`
+- `execution/phase_01_dataset_construction/restore_top100_jsons_by_id.py`
 - `execution/phase_01_dataset_construction/do/run_country_artists_replication.do`
 - `execution/phase_01_dataset_construction/do/run_artist_universe_replication.do`
 - `execution/phase_01_dataset_construction/do/run_country_merge_v6_replication.do`
@@ -40,6 +41,12 @@ Bridge coverage now also extends across the remaining `step1_download` and
 `step2_digitalize` Python utilities, so the canonical Phase 1 folder now
 exposes wrappers for the full active Python surface of those two legacy
 subtrees.
+
+As of block 15, bridge coverage also spans the active Python entrypoints in
+`step4_country_artists` and `step5_replication`, so collaborators can now
+treat `execution/phase_01_dataset_construction/` as the canonical operational
+surface for Phase 1 work. The legacy folders remain in place as the
+implementation backend and as historical packaging roots.
 
 ## Current legacy implementation roots
 
