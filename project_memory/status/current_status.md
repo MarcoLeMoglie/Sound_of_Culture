@@ -13,10 +13,12 @@
 - block 1: archival snapshot created and pushed
 - block 2: phase-based workspace skeleton created and pushed
 - block 3: directives and SOP rewrite completed on the working branch
+- block 4: Supermemory configured, authenticated, and validated in-session
+- block 5: code-review-graph standardized across clients and rebuilt
 
 ## Current block
 
-- block 4 completed: Supermemory is authenticated and operational
+- waiting to start block 6
 
 ## Plugin memory status
 
@@ -42,7 +44,17 @@
 - local install patched with a blank-pipeline fallback so NLP compression is
   still usable offline
 
+## Review graph status
+
+- `code-review-graph` confirmed in Codex, Cursor, OpenCode, and Kiro
+- local Antigravity config manually realigned to this workspace
+- graph rebuilt on 2026-04-18
+- current indexed languages: `python`, `bash`
+- important non-indexed project surfaces: Stata, LaTeX, data artifacts
+- tracked archival snapshot folders still create graph-search noise, so path
+  filtering remains important
+
 ## Next recommended step
 
-Proceed to block 5 and standardize the review-graph / multi-agent operating
-setup for the newly restructured project.
+Proceed to block 6 and continue standardizing the report / Overleaf operating
+structure for the new project phases.

@@ -42,3 +42,25 @@ Agents should now start from:
 - `directives/00_project_charter.md`
 - `directives/07_reporting_overleaf_sop.md`
 - `directives/08_memory_continuity_sop.md`
+
+## 2026-04-18
+
+### Decision
+
+Treat `code-review-graph` as the primary exploration tool for Python and shell
+code, but not as the sole source of truth for the full project.
+
+### Why
+
+The rebuilt graph is valuable and now standardized across clients, but it only
+indexes `python` and `bash` in this workspace and it also sees tracked
+archival / replication snapshot paths that can generate duplicate results.
+
+### Consequence
+
+Agents should:
+
+- use graph tools first for Python and shell exploration
+- fall back to direct reads for Stata, LaTeX, and data artifacts
+- interpret graph results with path awareness, especially around `.coldstart_*`
+  and replication-package copies

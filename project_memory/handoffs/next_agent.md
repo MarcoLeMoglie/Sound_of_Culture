@@ -19,8 +19,11 @@
   `SUPERMEMORY_API_KEY`
 - `caveman-compression` is installed locally for Codex under
   `~/.codex/vendor/caveman-compression`
+- `code-review-graph` has been standardized across shared clients and rebuilt
+- local Antigravity config was manually corrected to point at this repo
+- graph coverage is currently limited to `python` and `bash`
 
 ## Recommended next action
 
-Move to block 5. Verify the final operating setup for `code-review-graph`
-across the workspace and then continue with the next restructuring block.
+Move to block 6 and continue the new report / Overleaf system work, keeping in
+mind that Stata and LaTeX still require direct file reads beyond the graph.

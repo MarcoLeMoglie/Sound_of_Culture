@@ -37,6 +37,21 @@ Fall back to Grep/Glob/Read **only** when the graph doesn't cover what you need.
 3. Use `get_affected_flows` to understand impact.
 4. Use `query_graph` pattern="tests_for" to check coverage.
 
+### Current Review-Graph Limits
+
+- the current graph covers `python` and `bash`
+- Stata, LaTeX, CSV, and report assets are not structurally indexed by the
+  graph and still require direct file inspection
+- the repository contains tracked archival / replication snapshot material,
+  including `.coldstart_*` and packaged replication copies, so graph search may
+  return duplicate legacy paths
+- unless the task is explicitly about archival material, prefer active working
+  paths under `execution/step*`, `execution/phase_*`, `directives/`, and
+  `project_memory/`
+- if graph results look stale or inconsistent, rebuild with
+  `code-review-graph build --repo /Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture`
+  and restart the client
+
 ## Sound of Culture: Project Instructions
 
 ### Project North Star
@@ -104,11 +119,10 @@ This workspace must be usable by:
 
 Therefore continuity is mandatory.
 
-`supermemory` is now configured in the repo MCP files and in local Codex
-configuration, but it still requires client authentication before it becomes
-operational. Until that authentication is completed and validated, continue to
-use the repo-side memory files under `project_memory/` as the shared written
-memory.
+`supermemory` is operational for local Codex in the shared project scope
+`sound-of-culture`, but repo-side memory files under `project_memory/` remain
+mandatory as the written backup layer and as the cross-client fallback for any
+tool that is not yet authenticated locally.
 
 ### Mandatory Memory Discipline
 
@@ -178,6 +192,7 @@ Do not leave Stata analyses as unexplained `.do` files.
 - `directives/00_project_charter.md`
 - `directives/07_reporting_overleaf_sop.md`
 - `directives/08_memory_continuity_sop.md`
+- `directives/10_code_review_graph_sop.md`
 - `workspace_maps/restructure_block2_map_2026-04-18.md`
 
 ### Current Status Note
@@ -187,5 +202,8 @@ As of 2026-04-18:
 - block 1 archive branch was created and pushed
 - block 2 phase-based workspace skeleton was created and pushed
 - block 3 directives and SOP rewrite was completed
-- `supermemory` MCP is configured for the project scope `sound-of-culture`
-- client authentication still needs to be completed and validated
+- block 4 `supermemory` setup was completed and validated in-session
+- block 5 review-graph setup was standardized across Codex, Cursor, OpenCode,
+  Kiro, and local Antigravity configuration
+- the review graph was rebuilt on 2026-04-18 and currently indexes `python`
+  and `bash` only

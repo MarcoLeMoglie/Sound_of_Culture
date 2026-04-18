@@ -10,6 +10,7 @@ Read in this order:
 3. `07_reporting_overleaf_sop.md`
 4. `08_memory_continuity_sop.md`
 5. `09_git_branching_cutover_sop.md`
+6. `10_code_review_graph_sop.md`
 
 Current phase directives:
 
