@@ -16,7 +16,7 @@ Il package ricostruisce:
 ## Fonti e materiali usati
 
 - snapshot `country_songs` e `country_artists` gia' presenti nel progetto
-- script Python deterministici in `execution/step2_digitalize/`
+- script Python deterministici esposti oggi tramite `execution/phase_01_dataset_construction/`
 - direttive e materiali Antigravity presenti in:
   - `directives/costruzione dataset artisti country/PROMPT_ANTIGRAVITY.txt`
   - `directives/costruzione dataset artisti country/CHECKLIST_ANTIGRAVITY.md`
@@ -36,7 +36,10 @@ Nota: nel repository locale non sono emersi transcript aggiuntivi delle conversa
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
 
-1. `python3 execution/step5_replication/run_country_merge_v6_replication.py`
-2. `python3 execution/step2_digitalize/final_merge_restricted_v2.py`
-3. `python3 execution/step2_digitalize/backfill_restricted_final_v6_demographics.py`
-4. `python3 execution/step2_digitalize/enrich_release_years_restricted_final_v6.py`
+1. `python3 execution/phase_01_dataset_construction/run_country_merge_v6_replication.py`
+2. `python3 execution/phase_01_dataset_construction/final_merge_restricted_v2.py`
+3. `python3 execution/phase_01_dataset_construction/backfill_restricted_final_v6_demographics.py`
+4. `python3 execution/phase_01_dataset_construction/enrich_release_years_restricted_final_v6.py`
+
+Nel replication package bundled restano invece i path storici `step2_digitalize`
+e `step5_replication`, per preservare la struttura audited dello snapshot.

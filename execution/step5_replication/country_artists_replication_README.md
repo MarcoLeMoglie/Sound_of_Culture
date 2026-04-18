@@ -149,8 +149,12 @@ The folder `datasets/country_artists/intermediate/` contains the cached checkpoi
 
 The package includes the scripts required to rebuild and package `country_artists`:
 
-1. `execution/step4_country_artists/build_country_artists_dataset.py`
-2. `execution/step5_replication/run_full_replication.py`
+1. `execution/phase_01_dataset_construction/build_country_artists_dataset.py`
+2. `execution/phase_01_dataset_construction/run_full_replication.py`
+
+Inside the bundled replication snapshot, the historical internal folder names remain
+`step4_country_artists` and `step5_replication` so the audited package layout stays
+stable over time.
 
 ## How to Rerun the Pipeline
 
@@ -174,13 +178,13 @@ In `full_rebuild` mode, the wrapper first attempts live source collection and th
 Run:
 
 ```bash
-python3 execution/step5_replication/run_full_replication.py
+python3 execution/phase_01_dataset_construction/run_full_replication.py
 ```
 
 For a source-based cold start:
 
 ```bash
-python3 execution/step5_replication/run_full_replication.py --full-rebuild
+python3 execution/phase_01_dataset_construction/run_full_replication.py --full-rebuild
 ```
 
 In the current hardened implementation, `--full-rebuild` first attempts live source collection and enrichment. If Wikipedia or Wikidata respond with severe rate limits or similar external-service failures, the workflow degrades deterministically to the bundled checkpoints and then restores the canonical bundled final outputs so that the replicated deliverables remain exact.

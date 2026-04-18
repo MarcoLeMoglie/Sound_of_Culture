@@ -154,6 +154,35 @@ What is still not done:
   design
 - a later migration block is still needed before legacy folders can be removed
 
+## Block 9: Operational entrypoint migration
+
+What was done:
+
+- added the remaining high-value Phase 1 Python wrappers for
+  `final_merge_restricted_v2.py` and `validate_country_primary_artists.py`
+- added phase-based Stata wrapper launchers for the Phase 1 replication
+  scripts
+- updated the main replication READMEs so project-root reruns point first to
+  `execution/phase_01_dataset_construction/`
+- updated historical Antigravity notes so they no longer instruct collaborators
+  to launch the old `execution/step4_country_artists/` entrypoint directly
+- adjusted key replication orchestrators to prefer phase-based project-root
+  entrypoints when those wrappers exist
+
+Why it mattered:
+
+- after block 8, the biggest remaining practical confusion was that the
+  project's public documentation and launcher surface still mixed new and old
+  path conventions
+- this block makes the phase-based surface more complete for both Python and
+  Stata while still preserving audited historical package layouts
+
+What is still not done:
+
+- internal module imports still frequently use `execution.step*`
+- replication-package internals intentionally preserve the old directory names
+- destructive cleanup of legacy folders is still not safe
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.

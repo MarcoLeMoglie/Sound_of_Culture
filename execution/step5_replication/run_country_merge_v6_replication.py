@@ -291,6 +291,9 @@ def run(cmd: list[str], cwd: Path, *, env: dict[str, str] | None = None) -> None
 
 
 def script_path_for(project_root: Path, package_root: Path, script_name: str) -> str:
+    canonical_script = project_root / "execution" / "phase_01_dataset_construction" / script_name
+    if canonical_script.exists():
+        return str(canonical_script.relative_to(project_root))
     root_script = project_root / "execution" / "step2_digitalize" / script_name
     if root_script.exists():
         return str(root_script.relative_to(project_root))

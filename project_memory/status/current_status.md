@@ -20,11 +20,13 @@
 - block 7: GitHub-facing cutover preparation completed safely
 - block 8: initial legacy-reference migration completed for active project
   surfaces
+- block 9: operational launchers and replication instructions shifted further
+  toward phase-based entrypoints
 
 ## Current block
 
-- block 8 completed as the first safe migration pass from `step*` references
-  toward phase-based entrypoints
+- block 9 completed as the second safe migration pass from `step*`
+  references toward phase-based entrypoints
 
 ## Plugin memory status
 
@@ -62,6 +64,7 @@
 
 ## Next recommended step
 
-Proceed to the next migration pass that separates active references from
-archival / replication-package references and only then evaluate whether any
-destructive cleanup of `execution/step*` is safe.
+Proceed to the next migration pass that evaluates whether any remaining active
+code imports should be rerooted away from `execution.step*`, while still
+leaving archival / replication-package references untouched unless explicitly
+requested.

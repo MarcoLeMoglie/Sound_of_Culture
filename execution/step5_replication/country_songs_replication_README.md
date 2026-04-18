@@ -32,4 +32,7 @@ Questo package replica in modo deterministico gli output `country_songs` necessa
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
 
-1. `python3 execution/step5_replication/run_country_songs_replication.py`
+1. `python3 execution/phase_01_dataset_construction/run_country_songs_replication.py`
+
+Questo e' l'entrypoint canonico nel progetto ristrutturato. Il package continua a
+mantenere i nomi storici interni `step5_replication` per non alterare lo snapshot.

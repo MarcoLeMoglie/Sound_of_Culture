@@ -16,7 +16,7 @@ OUTPUT_DIR = ROOT / "data" / "processed_datasets" / "country_artists"
 INTERMEDIATE_DIR = OUTPUT_DIR / "intermediate"
 SONGS_CSV = OUTPUT_DIR / "Sound_of_Culture_Country_Restricted_Final_v6.csv"
 SEED_JSON = ROOT / "data" / "intermediate" / "json" / "seed_country_artists.json"
-BUILDER_PATH = ROOT / "execution" / "step4_country_artists" / "build_country_artists_dataset.py"
+BUILDER_PATH = ROOT / "execution" / "phase_01_dataset_construction" / "build_country_artists_dataset.py"
 
 ARTIST_SNAPSHOT_ROOT = OUTPUT_DIR / "replication_package_country_artists_2026_04_02" / "datasets" / "country_artists" / "final"
 RESTRICTED_CSV_CANDIDATES = [

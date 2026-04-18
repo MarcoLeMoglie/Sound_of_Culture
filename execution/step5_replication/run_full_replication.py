@@ -216,7 +216,9 @@ def run_country_pipeline(project_root: Path, package_root: Path, *, full_rebuild
     if not full_rebuild and restore_bundled_country_snapshot(project_root, package_root):
         return
     packaged_builder = package_root / "code" / "python" / "step4_country_artists" / "build_country_artists_dataset.py"
-    builder = project_root / "execution" / "step4_country_artists" / "build_country_artists_dataset.py"
+    builder = project_root / "execution" / "phase_01_dataset_construction" / "build_country_artists_dataset.py"
+    if not builder.exists():
+        builder = project_root / "execution" / "step4_country_artists" / "build_country_artists_dataset.py"
     if not builder.exists() and packaged_builder.exists():
         builder = packaged_builder
     env = os.environ.copy()

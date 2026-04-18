@@ -130,8 +130,8 @@ The project also kept QC and methodological companion files:
 
 The core source scripts behind the successful build were:
 
-- `execution/step4_country_artists/build_extended_artist_universe.py`
-- `execution/step4_country_artists/enrich_artist_universe_missing_metadata.py`
+- `execution/phase_01_dataset_construction/build_extended_artist_universe.py`
+- `execution/phase_01_dataset_construction/enrich_artist_universe_missing_metadata.py`
 
 The first script created the integrated artist universe from the project’s existing country outputs plus the adjacent seed pool. The second script performed repeated metadata recovery and final export, including `.dta` writing with variable labels.
 
@@ -276,7 +276,7 @@ This means the package reproduces the final canonical outputs exactly and quickl
 From the main project root:
 
 ```stata
-do execution/step5_replication/run_artist_universe_replication.do
+do execution/phase_01_dataset_construction/do/run_artist_universe_replication.do
 ```
 
 Or directly from the packaged launcher:
@@ -312,7 +312,11 @@ It is an exact-replication package for the final artist-universe deliverables.
 
 ## Python order in the last completed replication run
 
-1. `python3 execution/step5_replication/run_artist_universe_replication.py`
+1. `python3 execution/phase_01_dataset_construction/run_artist_universe_replication.py`
+
+For project-root reruns, the phase-based entrypoint above is now the canonical one.
+The bundled package still preserves the historical `step5_replication` naming
+internally so that previously audited snapshots remain unchanged.
 
 ## Practical interpretation
 

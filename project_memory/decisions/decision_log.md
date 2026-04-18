@@ -130,3 +130,28 @@ The canonical execution surface now starts in:
 
 But the underlying implementation and archival material remain in place until a
 later migration block safely retires them.
+
+## 2026-04-18
+
+### Decision
+
+Move operational launch instructions and project-root replication launchers to
+phase-based entrypoints before attempting any deeper import-level migration.
+
+### Why
+
+After block 8, the biggest remaining user-facing legacy exposure was in the
+instructions and orchestrators people actually use to run the project:
+replication READMEs, Antigravity notes, and Stata launchers. Migrating those
+first reduces practical confusion without disturbing audited package layouts.
+
+### Consequence
+
+The canonical entrypoints for project-root reruns now live in:
+
+- `execution/phase_01_dataset_construction/*.py`
+- `execution/phase_01_dataset_construction/do/*.do`
+
+Historical `step*` names remain inside bundled replication packages and legacy
+implementation modules until a later migration block decides whether deeper
+package-level rerooting is worth the breakage risk.

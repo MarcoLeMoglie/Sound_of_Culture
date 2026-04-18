@@ -32,9 +32,18 @@
 - block 8 created phase-based Stata wrapper entrypoints for exploratory
   analysis
 - active directives now point first to phase-based execution entrypoints
+- block 9 added the remaining high-value Phase 1 wrapper entrypoints for
+  `final_merge_restricted_v2.py` and `validate_country_primary_artists.py`
+- block 9 added phase-based Stata wrapper entrypoints for Phase 1 replication
+  launchers
+- active replication READMEs and Antigravity historical notes now point to the
+  phase-based project-root entrypoints first
+- key replication orchestrators now prefer phase-based paths when they launch
+  project-root scripts
 
 ## Recommended next action
 
-Continue with the next migration pass, focusing only on active non-archival
-references that still point directly to `execution/step*`, and keep
-replication-package / archival paths untouched unless explicitly requested.
+Continue with the next migration pass, focusing on whether any still-active
+Python imports should move away from `execution.step*` package references.
+Keep replication-package / archival paths untouched unless explicitly
+requested.

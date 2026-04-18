@@ -15,10 +15,16 @@ implementation still runs from legacy `execution/step*` directories.
 - `execution/phase_01_dataset_construction/build_country_only_chords_final.py`
 - `execution/phase_01_dataset_construction/backfill_restricted_final_v6_demographics.py`
 - `execution/phase_01_dataset_construction/enrich_release_years_restricted_final_v6.py`
+- `execution/phase_01_dataset_construction/final_merge_restricted_v2.py`
+- `execution/phase_01_dataset_construction/validate_country_primary_artists.py`
 - `execution/phase_01_dataset_construction/run_artist_universe_replication.py`
 - `execution/phase_01_dataset_construction/run_country_merge_v6_replication.py`
 - `execution/phase_01_dataset_construction/run_country_songs_replication.py`
 - `execution/phase_01_dataset_construction/run_full_replication.py`
+- `execution/phase_01_dataset_construction/do/run_country_artists_replication.do`
+- `execution/phase_01_dataset_construction/do/run_artist_universe_replication.do`
+- `execution/phase_01_dataset_construction/do/run_country_merge_v6_replication.do`
+- `execution/phase_01_dataset_construction/do/run_country_songs_replication.do`
 
 ## Current legacy implementation roots
 
