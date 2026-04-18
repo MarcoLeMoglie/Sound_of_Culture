@@ -80,3 +80,7 @@
 The operational restructuring pass is complete enough to move back to
 scientific work. Further cleanup should now be treated as optional deep
 refactoring rather than as a blocker.
+
+## Reporting language rule
+
+Canonical Overleaf reports for all phases are now explicitly English-only.

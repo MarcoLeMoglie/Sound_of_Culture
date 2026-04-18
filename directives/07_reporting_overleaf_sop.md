@@ -10,6 +10,8 @@ The canonical report destination is:
 
 Reports are not optional summaries. They are part of the core research output.
 
+The canonical language for all phase reports is English.
+
 Every major phase must leave behind:
 
 - an editable report project
@@ -37,6 +39,14 @@ update the relevant report before closing the work unit.
 
 Reports must be readable by a human collaborator without requiring them to open
 the code first.
+
+## English-only rule
+
+The canonical Overleaf reports for all project phases must be written in
+English only.
+
+If temporary reasoning notes are written in Italian or another language, they
+must be translated before they become part of the retained report text.
 
 ## Stata reporting rule
 

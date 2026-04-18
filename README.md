@@ -316,6 +316,8 @@ also be reused manually as a social preview image in GitHub settings if needed.
 Every substantial new attempt must be reflected in the relevant phase report in
 plain English, including:
 
+All canonical phase reports in Overleaf must be written in English.
+
 - what was done
 - why it was done
 - how it was done

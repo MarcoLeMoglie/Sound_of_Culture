@@ -96,6 +96,7 @@
   `execution/phase_02_exploratory_analysis/` as the canonical execution
   surface; treat `execution/step*` as the retained backend for implementation
   stability and historical compatibility
+- canonical Overleaf reports for all project phases must be written in English
 
 ## Recommended next action
 

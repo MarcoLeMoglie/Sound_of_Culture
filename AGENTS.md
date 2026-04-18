@@ -146,6 +146,10 @@ At minimum, record:
 
 Every substantial new attempt must be reflected in the relevant phase report.
 
+All phase reports must be written in English. Notes to yourself can live
+elsewhere, but the canonical Overleaf reports for Phases 1-4 must be
+English-only.
+
 Each report must say, in plain English:
 
 - what was done

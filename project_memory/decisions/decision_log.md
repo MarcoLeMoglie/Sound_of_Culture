@@ -244,6 +244,24 @@ Agents should now:
   blocker
 - keep the coexistence rule in mind whenever they touch legacy implementation
   files that still sit behind the phase-based bridge layer
+
+## 2026-04-18
+
+### Decision
+
+Make English the mandatory language for all canonical phase reports in
+Overleaf.
+
+### Why
+
+The reports are the shared research-facing deliverables for collaborators and
+must be readable in a consistent language across agents, conversations, and
+coauthors.
+
+### Consequence
+
+All retained phase-report text should be written in English, even if working
+notes or chat discussions happen in Italian.
 Machine-specific local paths can still appear as plain text when they are
 needed to describe external assets such as the Overleaf folder.
 
