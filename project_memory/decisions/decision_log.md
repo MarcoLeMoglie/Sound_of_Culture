@@ -201,3 +201,22 @@ were:
 
 - `execution/phase_01_dataset_construction/build_billboard_country_supplemental_targets.py`
 - `execution/phase_01_dataset_construction/run_country_songs_replication.py`
+
+## 2026-04-18
+
+### Decision
+
+Use repo-relative links, not local absolute filesystem links, in the main
+GitHub-facing `README.md`.
+
+### Why
+
+The default branch README is consumed on GitHub first. Absolute local links of
+the form `/Users/...` work in the desktop app but break on GitHub, which makes
+the repository landing page confusing for collaborators.
+
+### Consequence
+
+The main `README.md` should keep GitHub-facing references repo-relative.
+Machine-specific local paths can still appear as plain text when they are
+needed to describe external assets such as the Overleaf folder.

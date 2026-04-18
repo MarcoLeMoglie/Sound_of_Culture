@@ -56,6 +56,12 @@
 - block 11 runtime-validated
   `execution/phase_01_dataset_construction/run_country_songs_replication.py`
   successfully; the run refreshed the bundled replication snapshot
+- block 12 fixed the broken GitHub links in the main `README.md` by replacing
+  local absolute links with repo-relative links
+- block 12 runtime-validated
+  `execution/phase_01_dataset_construction/run_artist_universe_replication.py`
+  successfully; the run refreshed the bundled artist-universe replication
+  snapshot
 
 ## Recommended next action
 
@@ -63,7 +69,7 @@ Continue with the next migration/testing pass, choosing between:
 
 - expanding bridge coverage to more remaining Phase 1 legacy modules
 - validating another higher-value end-to-end workflow, such as the artist
-  universe replication path
+  enrichment/build path rather than only replication wrappers
 
 Keep replication-package / archival paths untouched unless explicitly
 requested, except when a validated replication run intentionally refreshes its

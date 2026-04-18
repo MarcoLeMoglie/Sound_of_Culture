@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import csv
+import json
 import re
 import shutil
 import sys
 import unicodedata
+from datetime import date, datetime
 from pathlib import Path
 from typing import Dict, Iterable, List
 
@@ -18,7 +21,7 @@ BASE_DIR = Path("/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from execution.step4_country_artists import build_country_artists_dataset as builder
+from execution.phase_01_dataset_construction import build_country_artists_dataset as builder
 
 OUTPUT_DIR = BASE_DIR / "data" / "processed_datasets" / "country_artists"
 INTERMEDIATE_DIR = OUTPUT_DIR / "intermediate"
@@ -100,6 +103,7 @@ VARIABLE_LABELS = {
     "birth_date": "Birth date or start date",
     "birth_place_raw": "Raw birth or origin place text",
     "birth_country_raw": "Raw birth country text",
+    "musicbrainz_artist_type": "MusicBrainz artist type",
 }
 
 COUNTRY_ALIASES = {
@@ -166,6 +170,8 @@ NON_US_SUBDIVISIONS = {
     "Wales",
     "Northern Ireland",
 }
+
+COUNTY_PATTERN = re.compile(r"\bcounty\b", re.I)
 
 WEB_CONFIRMED_OVERRIDES = {
     "Catherine McGrath": {
@@ -251,6 +257,111 @@ WEB_CONFIRMED_OVERRIDES = {
         "birth_state": "Kansas",
         "birth_country": "United States",
         "notes_append": "web-confirmed birthplace/year: Famous Birthdays + artist bio",
+    },
+    "Breland": {
+        "birth_date": "1995-07-18",
+        "birth_year": 1995,
+        "birth_city": "Burlington Township",
+        "birth_state": "New Jersey",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace/date: Wikipedia",
+    },
+    "George Birge": {
+        "birth_city": "Austin",
+        "birth_state": "Texas",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace: Wikipedia",
+    },
+    "Bryan Martin": {
+        "birth_city": "Logansport",
+        "birth_state": "Louisiana",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace: Wikipedia",
+    },
+    "Old Dominion": {
+        "birth_year": 2007,
+        "birth_city": "Nashville",
+        "birth_state": "Tennessee",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed group origin/year formed: Wikipedia",
+    },
+    "Due West": {
+        "birth_year": 2004,
+        "birth_city": "Nashville",
+        "birth_state": "Tennessee",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed group origin/year formed: Wikipedia",
+    },
+    "Shenandoah": {
+        "birth_year": 1984,
+        "birth_city": "Muscle Shoals",
+        "birth_state": "Alabama",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed group origin/year formed: Wikipedia",
+    },
+    "River Road": {
+        "birth_year": 1989,
+        "birth_state": "Louisiana",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed group origin/year formed: Wikipedia",
+    },
+    "Great Plains": {
+        "birth_year": 1987,
+        "birth_city": "Nashville",
+        "birth_state": "Tennessee",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed group origin/year formed: Wikipedia",
+    },
+    "Sparx": {
+        "birth_year": 1980,
+        "birth_state": "New Mexico",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed group origin/active decade: Wikipedia",
+    },
+    "Warren Zeiders": {
+        "birth_city": "Hershey",
+        "birth_state": "Pennsylvania",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace: Wikipedia",
+    },
+    "Oliver Anthony": {
+        "birth_date": "1992-06-30",
+        "birth_year": 1992,
+        "birth_city": "Farmville",
+        "birth_state": "Virginia",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace/date: Wikipedia",
+    },
+    "Lillie Mae": {
+        "birth_date": "1991-06-26",
+        "birth_year": 1991,
+        "birth_city": "Galena",
+        "birth_state": "Illinois",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace/date: Wikipedia",
+    },
+    "Kylie Morgan": {
+        "birth_state": "Oklahoma",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
+    },
+    "Ash Bowers": {
+        "birth_city": "Jackson",
+        "birth_state": "Tennessee",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
+    },
+    "Logan Brill": {
+        "birth_city": "Knoxville",
+        "birth_state": "Tennessee",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
+    },
+    "Sean Patrick McGraw": {
+        "birth_city": "Dunkirk",
+        "birth_state": "New York",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace region: Wikipedia",
     },
     "Karen Staley": {
         "birth_city": "Weirton",
@@ -605,9 +716,12 @@ def strip_leading_date(value: str) -> str:
     text = nonempty(value)
     if not text:
         return ""
+    text = text.replace(" U.S.", " United States").replace(", U.S.", ", United States").replace(" U.S", " United States")
     text = re.sub(r"^\+?\d{4}-\d{2}-\d{2}\s*", "", text).strip()
     text = re.sub(r"^\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*", "", text).strip()
     text = re.sub(r"^[A-Za-z]+\s+\d{1,2},\s+\d{4}\s*", "", text).strip()
+    text = re.sub(r"^(?:c\.|ca\.|circa)\s*(18\d{2}|19\d{2}|20\d{2})\s*", "", text, flags=re.I).strip()
+    text = re.sub(r"^(18\d{2}|19\d{2}|20\d{2})\s+or\s+(18\d{2}|19\d{2}|20\d{2})\s*", "", text, flags=re.I).strip()
     return text.lstrip(", ").strip()
 
 
@@ -619,31 +733,46 @@ def canonical_country(value: str) -> str:
 def parse_place_components(raw_place: str, current_country: str) -> dict:
     raw_place = strip_leading_date(raw_place)
     if not raw_place:
-        return {"birth_city": "", "birth_state": "", "birth_country": canonical_country(current_country)}
+        return {"birth_city": "", "birth_county": "", "birth_state": "", "birth_country": canonical_country(current_country)}
 
     parts = [part.strip(" .") for part in raw_place.split(",") if part.strip(" .")]
     if not parts:
-        return {"birth_city": "", "birth_state": "", "birth_country": canonical_country(current_country)}
+        return {"birth_city": "", "birth_county": "", "birth_state": "", "birth_country": canonical_country(current_country)}
 
     country = canonical_country(current_country)
-    tail_country = canonical_country(parts[-1])
-    if tail_country in set(COUNTRY_ALIASES.values()):
+    tail_raw = parts[-1]
+    tail_country = canonical_country(tail_raw)
+    if tail_raw not in NON_US_SUBDIVISIONS and tail_country in set(COUNTRY_ALIASES.values()):
         country = tail_country
         parts = parts[:-1]
 
+    county = ""
     state = ""
     if parts:
         candidate = parts[-1]
+        if COUNTY_PATTERN.search(candidate):
+            county = candidate
+            parts = parts[:-1]
+            candidate = parts[-1] if parts else ""
         if candidate in builder.US_STATE_ABBR:
             state = candidate
             country = country or "United States"
             parts = parts[:-1]
         elif candidate in NON_US_SUBDIVISIONS:
             state = candidate
+            if candidate in {"England", "Scotland", "Wales", "Northern Ireland"}:
+                country = country or "United Kingdom"
+            parts = parts[:-1]
+        elif country and country != "United States" and len(parts) > 1:
+            state = candidate
             parts = parts[:-1]
 
     city = parts[0] if parts else ""
-    return {"birth_city": city, "birth_state": state, "birth_country": country}
+    if not county and len(parts) > 1 and COUNTY_PATTERN.search(parts[-1]):
+        county = parts[-1]
+        if city == county:
+            city = ""
+    return {"birth_city": city, "birth_county": county, "birth_state": state, "birth_country": country}
 
 
 def apply_place_parsing(df: pd.DataFrame) -> pd.DataFrame:
@@ -664,6 +793,8 @@ def apply_place_parsing(df: pd.DataFrame) -> pd.DataFrame:
         if not city or re.search(r"\d{4}", city):
             if parsed["birth_city"]:
                 enriched.at[idx, "birth_city"] = parsed["birth_city"]
+        if not nonempty(row.get("birth_county", "")) and parsed["birth_county"]:
+            enriched.at[idx, "birth_county"] = parsed["birth_county"]
         if not nonempty(row.get("birth_state", "")) and parsed["birth_state"]:
             enriched.at[idx, "birth_state"] = parsed["birth_state"]
         if not nonempty(row.get("birth_country", "")) and parsed["birth_country"]:
@@ -679,17 +810,118 @@ def likely_group_name(name: object) -> bool:
         return False
     return bool(
         re.search(
-            r"^(The\s)|\&| Brothers| Band| Family| Sisters| Singers| Trio| Quartet| Ramblers| Minstrels| Party| Ensemble| Twenties| Boys| Girls| Club| Raised| Country$| Unlimited$",
+            r"^(The\s)| Brothers| Band| Family| Sisters| Singers| Trio| Quartet| Ramblers| Minstrels| Party| Ensemble| Twenties| Boys| Girls| Club| Raised| Country$| Unlimited$",
             text,
             flags=re.I,
         )
     )
 
 
+def infer_group_role(name: object, categories: object, occupations: object, notes: object = "", musicbrainz_type: object = "") -> str:
+    combined = " | ".join(nonempty(value).lower() for value in [name, categories, occupations, notes, musicbrainz_type] if nonempty(value))
+    if any(token in combined for token in [" duo", "duo", "duos"]):
+        return "duo"
+    if any(token in combined for token in [" trio", "trio", "trios"]):
+        return "trio"
+    if any(token in combined for token in [" quartet", "quartet", "quartets"]):
+        return "quartet"
+    return "band"
+
+
+def is_group_entity(row: pd.Series | dict) -> bool:
+    name = nonempty(row.get("name_primary", ""))
+    occupations = nonempty(row.get("occupations", "")).lower()
+    categories = nonempty(row.get("wikipedia_categories", "")).lower()
+    notes = nonempty(row.get("notes", "")).lower()
+    mb_type = nonempty(row.get("musicbrainz_artist_type", "")).lower()
+    collab_like = bool(re.search(r"\s(?:&|and)\s", name, flags=re.I))
+    has_structural_group_name = likely_group_name(name)
+    has_web_group_evidence = (
+        mb_type == "group"
+        or any(token in categories for token in ["musical groups", "music groups", "bands", "duos", "trios", "quartets", "ensembles", "groups from"])
+        or nonempty(row.get("wikipedia_url", "")) != ""
+        or nonempty(row.get("musicbrainz_mbid", "")) != ""
+    )
+    if collab_like and not has_structural_group_name and not has_web_group_evidence:
+        return False
+    if mb_type == "group":
+        return True
+    if has_structural_group_name:
+        return True
+    if any(token in occupations for token in ["band", "duo", "trio", "quartet", "group", "ensemble"]):
+        return True
+    if any(
+        token in categories
+        for token in ["musical groups", "music groups", "bands", "duos", "trios", "quartets", "ensembles", "groups from"]
+    ):
+        return True
+    if "group origin" in notes or "group formed" in notes or "duo origin" in notes:
+        return True
+    return False
+
+
+def append_pipe_value(existing: object, value: str) -> str:
+    current = [piece.strip() for piece in nonempty(existing).split("|") if piece.strip()]
+    if value and value not in current:
+        current.append(value)
+    return "|".join(current)
+
+
+def infer_occupations_from_categories(categories: object) -> List[str]:
+    text = nonempty(categories).lower()
+    inferred: List[str] = []
+    pattern_map = [
+        (r"singer.songwriters|singer-songwriters", "singer-songwriter"),
+        (r"\bsingers\b|\bvocalists\b", "singer"),
+        (r"\bsongwriters\b", "songwriter"),
+        (r"\bguitarists\b", "guitarist"),
+        (r"\bmusicians\b", "musician"),
+        (r"\bactors\b|\bactresses\b", "actor"),
+        (r"\brecord producers\b", "record producer"),
+    ]
+    for pattern, label in pattern_map:
+        if re.search(pattern, text) and label not in inferred:
+            inferred.append(label)
+    if any(token in text for token in ["musical groups", "music groups", "bands", "duos", "trios", "quartets", "ensembles"]):
+        inferred.append(infer_group_role("", text, ""))
+    return inferred
+
+
+def apply_group_and_occupation_annotations(df: pd.DataFrame) -> pd.DataFrame:
+    annotated = df.copy()
+    if "wikipedia_categories" not in annotated.columns:
+        annotated["wikipedia_categories"] = ""
+    if "musicbrainz_artist_type" not in annotated.columns:
+        annotated["musicbrainz_artist_type"] = ""
+
+    for idx, row in annotated.iterrows():
+        categories = row.get("wikipedia_categories", "")
+        occupation_parts = [piece.strip() for piece in nonempty(row.get("occupations", "")).split("|") if piece.strip()]
+        for inferred in infer_occupations_from_categories(categories):
+            if inferred not in occupation_parts:
+                occupation_parts.append(inferred)
+        if is_group_entity(row):
+            group_role = infer_group_role(row.get("name_primary", ""), categories, "|".join(occupation_parts), row.get("notes", ""), row.get("musicbrainz_artist_type", ""))
+            if group_role not in occupation_parts:
+                occupation_parts.append(group_role)
+            annotated.at[idx, "is_solo_person"] = 0
+        else:
+            occupation_parts = [piece for piece in occupation_parts if piece not in {"band", "duo", "trio", "quartet"}]
+            annotated.at[idx, "is_solo_person"] = 1
+        annotated.at[idx, "occupations"] = "|".join(occupation_parts)
+
+    return annotated
+
+
 def parse_years_active_start(text: object) -> int | None:
     raw = nonempty(text)
     match = re.search(r"(18\d{2}|19\d{2}|20\d{2})", raw)
-    return int(match.group(1)) if match else None
+    if match:
+        return int(match.group(1))
+    decade_match = re.search(r"\b((?:18|19|20)\d)0s\b", raw)
+    if decade_match:
+        return int(f"{decade_match.group(1)}0")
+    return None
 
 
 def parse_wikipedia_origin_years(s: requests.Session, wikipedia_url: str) -> dict:
@@ -714,7 +946,7 @@ def parse_wikipedia_origin_years(s: requests.Session, wikipedia_url: str) -> dic
         label = builder.clean_text(th.get_text(" ", strip=True))
         if label == "Origin":
             origin_text = builder.clean_text(td.get_text(" ", strip=True))
-        elif label in {"Years active", "Years Active"}:
+        elif label in {"Years active", "Years Active", "Active"}:
             years_active_text = builder.clean_text(td.get_text(" ", strip=True))
 
     result["origin_place_raw"] = origin_text
@@ -729,6 +961,7 @@ def enrich_from_wikipedia_origin_years(df: pd.DataFrame, checkpoint_name: str) -
         & (
             enriched["birth_year"].isna()
             | enriched["birth_state"].fillna("").astype(str).str.strip().eq("")
+            | enriched["birth_city"].fillna("").astype(str).str.strip().eq("")
         )
     ].copy()
     if needs.empty:
@@ -763,12 +996,15 @@ def enrich_from_wikipedia_origin_years(df: pd.DataFrame, checkpoint_name: str) -
 
     merged = enriched.merge(checkpoint_df, on="wikipedia_url", how="left")
     for idx, row in merged.iterrows():
-        is_group = likely_group_name(row.get("name_primary", ""))
+        is_group = is_group_entity(row)
         if is_group and pd.isna(row.get("birth_year")):
             year = builder.extract_year_hint(row.get("origin_start_year", ""))
             if year:
                 merged.at[idx, "birth_year"] = year
-        if nonempty(row.get("birth_state", "")) == "" and nonempty(row.get("origin_place_raw", "")):
+        if (
+            (nonempty(row.get("birth_state", "")) == "" or nonempty(row.get("birth_city", "")) == "")
+            and nonempty(row.get("origin_place_raw", ""))
+        ):
             parsed = parse_place_components(row.get("origin_place_raw", ""), row.get("birth_country", ""))
             if parsed["birth_city"] and nonempty(row.get("birth_city", "")) == "":
                 merged.at[idx, "birth_city"] = parsed["birth_city"]
@@ -829,6 +1065,8 @@ def clean_birth_geography(df: pd.DataFrame) -> pd.DataFrame:
             parsed = parse_place_components(place_raw, cleaned.at[idx, "birth_country"])
             if parsed["birth_city"] and not is_suspicious_city(parsed["birth_city"], row.get("name_primary", "")):
                 cleaned.at[idx, "birth_city"] = parsed["birth_city"]
+            if not nonempty(cleaned.at[idx, "birth_county"]) and parsed["birth_county"]:
+                cleaned.at[idx, "birth_county"] = parsed["birth_county"]
             if not nonempty(cleaned.at[idx, "birth_state"]) and parsed["birth_state"]:
                 cleaned.at[idx, "birth_state"] = parsed["birth_state"]
             if not nonempty(cleaned.at[idx, "birth_country"]) and parsed["birth_country"]:
@@ -836,6 +1074,52 @@ def clean_birth_geography(df: pd.DataFrame) -> pd.DataFrame:
 
     cleaned["birth_state_abbr"] = cleaned["birth_state"].map(lambda value: builder.US_STATE_ABBR.get(nonempty(value), ""))
     return cleaned
+
+
+def infer_state_from_existing_city_country(df: pd.DataFrame) -> pd.DataFrame:
+    enriched = df.copy()
+    reference = enriched[
+        enriched["birth_city"].fillna("").astype(str).str.strip().ne("")
+        & enriched["birth_state"].fillna("").astype(str).str.strip().ne("")
+    ].copy()
+    if reference.empty:
+        return enriched
+
+    reference["_city_country_key"] = list(
+        zip(
+            reference["birth_city"].fillna("").astype(str).str.strip().str.lower(),
+            reference["birth_country"].fillna("").astype(str).str.strip().str.lower(),
+        )
+    )
+    unique_keys = (
+        reference.groupby("_city_country_key")["birth_state"]
+        .nunique()
+        .reset_index(name="n_states")
+    )
+    unique_keys = set(unique_keys[unique_keys["n_states"].eq(1)]["_city_country_key"])
+    lookup = (
+        reference[reference["_city_country_key"].isin(unique_keys)]
+        .drop_duplicates(subset=["_city_country_key"])
+        .set_index("_city_country_key")["birth_state"]
+        .to_dict()
+    )
+    if not lookup:
+        return enriched
+
+    for idx, row in enriched.iterrows():
+        if nonempty(row.get("birth_state", "")):
+            continue
+        city = nonempty(row.get("birth_city", ""))
+        if not city:
+            continue
+        country = nonempty(row.get("birth_country", ""))
+        key = (city.lower(), country.lower())
+        inferred_state = nonempty(lookup.get(key, ""))
+        if inferred_state:
+            enriched.at[idx, "birth_state"] = inferred_state
+
+    enriched["birth_state_abbr"] = enriched["birth_state"].map(lambda value: builder.US_STATE_ABBR.get(nonempty(value), ""))
+    return enriched
 
 
 def resolve_missing_qids_from_names(df: pd.DataFrame, checkpoint_name: str) -> pd.DataFrame:
@@ -917,6 +1201,8 @@ def enrich_from_wikipedia_sources(df: pd.DataFrame, checkpoint_prefix: str) -> p
             | enriched["birth_city"].fillna("").astype(str).str.strip().eq("")
             | enriched["birth_state"].fillna("").astype(str).str.strip().eq("")
             | enriched["birth_country"].fillna("").astype(str).str.strip().eq("")
+            | enriched["occupations"].fillna("").astype(str).str.strip().eq("")
+            | enriched["wikipedia_categories"].fillna("").astype(str).str.strip().eq("")
             | enriched["name_primary"].fillna("").astype(str).str.strip().eq("")
         )
     )
@@ -1167,6 +1453,295 @@ def apply_discogs_itunes_merge(df: pd.DataFrame) -> pd.DataFrame:
     return merged.drop(columns=drop_cols)
 
 
+def resolve_missing_musicbrainz_mbids(df: pd.DataFrame, checkpoint_name: str) -> pd.DataFrame:
+    enriched = df.copy()
+    needs = enriched[
+        enriched["musicbrainz_mbid"].fillna("").astype(str).str.strip().eq("")
+        & (
+            enriched["birth_year"].isna()
+            | enriched["birth_state"].fillna("").astype(str).str.strip().eq("")
+            | enriched["birth_city"].fillna("").astype(str).str.strip().eq("")
+            | enriched["birth_country"].fillna("").astype(str).str.strip().eq("")
+        )
+    ].copy()
+    if needs.empty:
+        return enriched
+
+    checkpoint_path = INTERMEDIATE_DIR / checkpoint_name
+    if checkpoint_path.exists():
+        checkpoint_df = pd.read_csv(checkpoint_path)
+    else:
+        checkpoint_df = pd.DataFrame(columns=["name_primary", "resolved_musicbrainz_mbid", "resolved_musicbrainz_type", "resolved_musicbrainz_country"])
+
+    done = set(checkpoint_df["name_primary"].fillna("").astype(str))
+    pending = [name for name in needs["name_primary"].fillna("").astype(str).tolist() if name and name not in done]
+    if pending:
+        s = builder.session()
+        new_rows: List[dict] = []
+        for index, name in enumerate(pending, start=1):
+            mbid = ""
+            artist_type = ""
+            country = ""
+            try:
+                payload = builder.request_json(
+                    s,
+                    f"{builder.MUSICBRAINZ_API}/artist/",
+                    params={"fmt": "json", "limit": 5, "query": f'artist:"{name}"'},
+                    pause=1.05,
+                )
+                candidates = payload.get("artists", [])
+                target_key = normalize_name(name)
+                best = None
+                for item in candidates:
+                    candidate_key = normalize_name(item.get("name", ""))
+                    if candidate_key == target_key:
+                        best = item
+                        break
+                if not best and candidates:
+                    best = candidates[0]
+                if best:
+                    mbid = nonempty(best.get("id", ""))
+                    artist_type = nonempty(best.get("type", ""))
+                    country = canonical_country(best.get("country", ""))
+            except Exception as exc:
+                builder.log(f"MusicBrainz name-to-MBID lookup failed for {name}: {exc}")
+            new_rows.append(
+                {
+                    "name_primary": name,
+                    "resolved_musicbrainz_mbid": mbid,
+                    "resolved_musicbrainz_type": artist_type,
+                    "resolved_musicbrainz_country": country,
+                }
+            )
+            if new_rows and (index % 25 == 0 or index == len(pending)):
+                checkpoint_df = pd.concat([checkpoint_df, pd.DataFrame(new_rows)], ignore_index=True)
+                checkpoint_df = checkpoint_df.drop_duplicates(subset=["name_primary"], keep="last")
+                checkpoint_df.to_csv(checkpoint_path, index=False)
+                builder.log(f"Saved MusicBrainz name-to-MBID checkpoint at {len(checkpoint_df)} rows")
+                new_rows = []
+
+    merged = enriched.merge(checkpoint_df, on="name_primary", how="left")
+    merged["musicbrainz_mbid"] = merged.apply(
+        lambda row: nonempty(row.get("musicbrainz_mbid", "")) or nonempty(row.get("resolved_musicbrainz_mbid", "")),
+        axis=1,
+    )
+    merged["musicbrainz_artist_type"] = merged.apply(
+        lambda row: nonempty(row.get("musicbrainz_artist_type", "")) or nonempty(row.get("resolved_musicbrainz_type", "")),
+        axis=1,
+    )
+    merged["birth_country"] = merged.apply(
+        lambda row: nonempty(row.get("birth_country", "")) or nonempty(row.get("resolved_musicbrainz_country", "")),
+        axis=1,
+    )
+    return merged.drop(columns=["resolved_musicbrainz_mbid", "resolved_musicbrainz_type", "resolved_musicbrainz_country"], errors="ignore")
+
+
+def jsonld_objects_from_html(html: str) -> List[dict]:
+    soup = BeautifulSoup(html, "html.parser")
+    objects: List[dict] = []
+    for node in soup.select('script[type="application/ld+json"]'):
+        raw = node.string or node.get_text(" ", strip=True)
+        if not raw:
+            continue
+        try:
+            payload = json.loads(raw)
+        except Exception:
+            continue
+        stack = payload if isinstance(payload, list) else [payload]
+        while stack:
+            item = stack.pop()
+            if isinstance(item, dict):
+                objects.append(item)
+                for key in ["@graph", "itemListElement"]:
+                    value = item.get(key)
+                    if isinstance(value, list):
+                        stack.extend(value)
+                    elif isinstance(value, dict):
+                        stack.append(value)
+            elif isinstance(item, list):
+                stack.extend(item)
+    return objects
+
+
+def parse_schema_place(value: object, default_country: str = "") -> dict:
+    if isinstance(value, str):
+        return parse_place_components(value, default_country)
+    if not isinstance(value, dict):
+        return {"birth_city": "", "birth_county": "", "birth_state": "", "birth_country": canonical_country(default_country)}
+
+    city = nonempty(value.get("addressLocality", "")) or nonempty(value.get("city", "")) or nonempty(value.get("name", ""))
+    state = nonempty(value.get("addressRegion", "")) or nonempty(value.get("state", ""))
+    country = canonical_country(value.get("addressCountry", "")) or canonical_country(default_country)
+    county = nonempty(value.get("addressCounty", "")) or nonempty(value.get("county", ""))
+
+    address = value.get("address")
+    if isinstance(address, dict):
+        if not city:
+            city = nonempty(address.get("addressLocality", "")) or nonempty(address.get("name", ""))
+        if not state:
+            state = nonempty(address.get("addressRegion", "")) or nonempty(address.get("state", ""))
+        if not country:
+            country = canonical_country(address.get("addressCountry", ""))
+        if not county:
+            county = nonempty(address.get("addressCounty", "")) or nonempty(address.get("county", ""))
+    elif isinstance(address, str):
+        parsed = parse_place_components(address, country or default_country)
+        city = city or parsed["birth_city"]
+        state = state or parsed["birth_state"]
+        country = country or parsed["birth_country"]
+        county = county or parsed["birth_county"]
+
+    if city and city in {state, country}:
+        city = ""
+    return {"birth_city": city, "birth_county": county, "birth_state": state, "birth_country": country}
+
+
+def parse_official_website_schema(official_url: str, is_group: bool) -> dict:
+    result = {
+        "official_birth_year": None,
+        "official_birth_city": "",
+        "official_birth_county": "",
+        "official_birth_state": "",
+        "official_birth_country": "",
+        "official_schema_url": "",
+    }
+    if not nonempty(official_url):
+        return result
+
+    response = requests.get(official_url, timeout=45, headers={"User-Agent": builder.USER_AGENT})
+    response.raise_for_status()
+    result["official_schema_url"] = official_url
+    objects = jsonld_objects_from_html(response.text)
+    if not objects:
+        return result
+
+    candidate_types = {"MusicGroup", "MusicArtist", "Person", "Organization"}
+    for item in objects:
+        raw_types = item.get("@type", [])
+        types = {raw_types} if isinstance(raw_types, str) else set(raw_types or [])
+        if types and not (types & candidate_types):
+            continue
+
+        date_candidates = []
+        if is_group or "MusicGroup" in types or "Organization" in types:
+            date_candidates.extend([item.get("foundingDate", ""), item.get("startDate", ""), item.get("dateCreated", "")])
+        date_candidates.extend([item.get("birthDate", ""), item.get("datePublished", "")])
+        for candidate in date_candidates:
+            year = builder.extract_year_hint(candidate)
+            if year:
+                result["official_birth_year"] = year
+                break
+
+        place_candidates = []
+        for key in ["birthPlace", "foundingLocation", "locationCreated", "homeLocation", "location", "address"]:
+            value = item.get(key)
+            if value:
+                place_candidates.append(value)
+        for candidate in place_candidates:
+            parsed = parse_schema_place(candidate, result["official_birth_country"])
+            for key in ["birth_city", "birth_county", "birth_state", "birth_country"]:
+                if not result[f"official_{key}"] and parsed[key]:
+                    result[f"official_{key}"] = parsed[key]
+        if result["official_birth_year"] or result["official_birth_state"] or result["official_birth_city"] or result["official_birth_country"]:
+            break
+
+    return result
+
+
+def enrich_from_official_websites(df: pd.DataFrame, checkpoint_name: str) -> pd.DataFrame:
+    enriched = df.copy()
+    needs = enriched[
+        enriched["official_website"].fillna("").astype(str).str.strip().ne("")
+        & (
+            enriched["birth_year"].isna()
+            | enriched["birth_state"].fillna("").astype(str).str.strip().eq("")
+            | enriched["birth_city"].fillna("").astype(str).str.strip().eq("")
+            | enriched["birth_country"].fillna("").astype(str).str.strip().eq("")
+        )
+    ].copy()
+    if needs.empty:
+        return enriched
+
+    checkpoint_path = INTERMEDIATE_DIR / checkpoint_name
+    if checkpoint_path.exists():
+        checkpoint_df = pd.read_csv(checkpoint_path)
+    else:
+        checkpoint_df = pd.DataFrame(
+            columns=[
+                "official_website",
+                "official_birth_year",
+                "official_birth_city",
+                "official_birth_county",
+                "official_birth_state",
+                "official_birth_country",
+                "official_schema_url",
+            ]
+        )
+
+    done = set(checkpoint_df["official_website"].fillna("").astype(str))
+    pending = needs[~needs["official_website"].isin(done)].copy()
+    new_rows: List[dict] = []
+    for index, (_, row) in enumerate(pending.iterrows(), start=1):
+        url = nonempty(row["official_website"])
+        parsed = {
+            "official_birth_year": None,
+            "official_birth_city": "",
+            "official_birth_county": "",
+            "official_birth_state": "",
+            "official_birth_country": "",
+            "official_schema_url": "",
+        }
+        try:
+            parsed = parse_official_website_schema(url, is_group_entity(row))
+        except Exception as exc:
+            builder.log(f"Official website schema enrichment failed for {url}: {exc}")
+        new_rows.append({"official_website": url, **parsed})
+        if new_rows and (index % 25 == 0 or index == len(pending)):
+            checkpoint_df = pd.concat([checkpoint_df, pd.DataFrame(new_rows)], ignore_index=True)
+            checkpoint_df = checkpoint_df.drop_duplicates(subset=["official_website"], keep="last")
+            checkpoint_df.to_csv(checkpoint_path, index=False)
+            builder.log(f"Saved official-website checkpoint at {len(checkpoint_df)} rows")
+            new_rows = []
+
+    merged = enriched.merge(checkpoint_df, on="official_website", how="left")
+    merged["birth_year"] = merged.apply(
+        lambda row: row["birth_year"] if pd.notna(row["birth_year"]) else builder.extract_year_hint(row.get("official_birth_year", "")),
+        axis=1,
+    )
+    for source_col, target_col in [
+        ("official_birth_city", "birth_city"),
+        ("official_birth_county", "birth_county"),
+        ("official_birth_state", "birth_state"),
+        ("official_birth_country", "birth_country"),
+    ]:
+        merged[target_col] = merged.apply(
+            lambda row: nonempty(row.get(target_col, "")) or nonempty(row.get(source_col, "")),
+            axis=1,
+        )
+    merged["evidence_urls"] = merged.apply(
+        lambda row: "|".join(piece for piece in [nonempty(row.get("evidence_urls", "")), nonempty(row.get("official_schema_url", ""))] if piece),
+        axis=1,
+    )
+    merged["notes"] = merged.apply(
+        lambda row: "|".join(
+            piece
+            for piece in [nonempty(row.get("notes", "")), "birth/origin data enriched from official website schema" if nonempty(row.get("official_schema_url", "")) else ""]
+            if piece
+        ),
+        axis=1,
+    )
+    merged["birth_state_abbr"] = merged["birth_state"].map(lambda value: builder.US_STATE_ABBR.get(nonempty(value), ""))
+    drop_cols = [
+        "official_birth_year",
+        "official_birth_city",
+        "official_birth_county",
+        "official_birth_state",
+        "official_birth_country",
+        "official_schema_url",
+    ]
+    return merged.drop(columns=[col for col in drop_cols if col in merged.columns], errors="ignore")
+
+
 def generic_musicbrainz_area_context(s: requests.Session, area_id: str, cache: Dict[str, dict]) -> dict:
     if not area_id:
         return {"birth_city": "", "birth_state": "", "birth_country": ""}
@@ -1224,7 +1799,7 @@ def enrich_from_musicbrainz_generic(df: pd.DataFrame, checkpoint_name: str) -> p
     if checkpoint_path.exists():
         checkpoint_df = pd.read_csv(checkpoint_path)
     else:
-        checkpoint_df = pd.DataFrame(columns=["musicbrainz_mbid", "mbx_birth_year", "mbx_birth_city", "mbx_birth_state", "mbx_birth_country"])
+        checkpoint_df = pd.DataFrame(columns=["musicbrainz_mbid", "mbx_birth_year", "mbx_birth_city", "mbx_birth_state", "mbx_birth_country", "musicbrainz_artist_type"])
     done = set(checkpoint_df["musicbrainz_mbid"].fillna("").astype(str))
     pending = needs[~needs["musicbrainz_mbid"].isin(done)].copy()
     area_cache: Dict[str, dict] = {}
@@ -1256,6 +1831,7 @@ def enrich_from_musicbrainz_generic(df: pd.DataFrame, checkpoint_name: str) -> p
                     "mbx_birth_city": city,
                     "mbx_birth_state": state,
                     "mbx_birth_country": country,
+                    "musicbrainz_artist_type": nonempty(payload.get("type", "")),
                 }
             )
         except Exception as exc:
@@ -1267,6 +1843,7 @@ def enrich_from_musicbrainz_generic(df: pd.DataFrame, checkpoint_name: str) -> p
                     "mbx_birth_city": "",
                     "mbx_birth_state": "",
                     "mbx_birth_country": "",
+                    "musicbrainz_artist_type": "",
                 }
             )
         if new_rows and (index % 25 == 0 or index == len(pending)):
@@ -1290,13 +1867,17 @@ def enrich_from_musicbrainz_generic(df: pd.DataFrame, checkpoint_name: str) -> p
             lambda row: nonempty(row[target_col]) or nonempty(row[source_col]),
             axis=1,
         )
+    merged["musicbrainz_artist_type"] = merged.apply(
+        lambda row: nonempty(row.get("musicbrainz_artist_type", "")) or nonempty(row.get("musicbrainz_artist_type_y", "")) or nonempty(row.get("musicbrainz_artist_type_x", "")),
+        axis=1,
+    )
     merged["birth_state_abbr"] = merged["birth_state"].map(lambda value: builder.US_STATE_ABBR.get(nonempty(value), ""))
-    return merged.drop(columns=["mbx_birth_year", "mbx_birth_city", "mbx_birth_state", "mbx_birth_country"])
+    return merged.drop(columns=["mbx_birth_year", "mbx_birth_city", "mbx_birth_state", "mbx_birth_country"], errors="ignore")
 
 
 def enrich_from_wikidata_qids(df: pd.DataFrame, checkpoint_name: str) -> pd.DataFrame:
     enriched = df.copy()
-    for col in ["wd_birth_date", "wd_birth_place_raw", "wd_birth_country_raw"]:
+    for col in ["wd_birth_date", "wd_birth_place_raw", "wd_birth_country_raw", "wd_occupations", "wd_member_of", "wd_wikipedia_url", "wd_musicbrainz_mbid", "wd_aliases"]:
         if col in enriched.columns:
             enriched = enriched.drop(columns=[col])
     needs = enriched[
@@ -1306,6 +1887,9 @@ def enrich_from_wikidata_qids(df: pd.DataFrame, checkpoint_name: str) -> pd.Data
             | enriched["birth_state"].fillna("").astype(str).str.strip().eq("")
             | enriched["birth_country"].fillna("").astype(str).str.strip().eq("")
             | enriched["birth_city"].fillna("").astype(str).str.strip().eq("")
+            | enriched["occupations"].fillna("").astype(str).str.strip().eq("")
+            | enriched["wikipedia_url"].fillna("").astype(str).str.strip().eq("")
+            | enriched["musicbrainz_mbid"].fillna("").astype(str).str.strip().eq("")
         )
     ].copy()
     if needs.empty:
@@ -1315,7 +1899,7 @@ def enrich_from_wikidata_qids(df: pd.DataFrame, checkpoint_name: str) -> pd.Data
     if checkpoint_path.exists():
         checkpoint_df = pd.read_csv(checkpoint_path)
     else:
-        checkpoint_df = pd.DataFrame(columns=["wikidata_qid", "birth_date", "birth_place_raw", "birth_country_raw"])
+        checkpoint_df = pd.DataFrame(columns=["wikidata_qid", "wd_birth_date", "wd_birth_place_raw", "wd_birth_country_raw", "wd_occupations", "wd_member_of", "wd_wikipedia_url", "wd_musicbrainz_mbid", "wd_aliases"])
     done = set(checkpoint_df["wikidata_qid"].fillna("").astype(str))
     pending = [qid for qid in needs["wikidata_qid"].drop_duplicates().tolist() if qid not in done]
     s = builder.session()
@@ -1336,6 +1920,11 @@ def enrich_from_wikidata_qids(df: pd.DataFrame, checkpoint_name: str) -> pd.Data
                 "wd_birth_date": nonempty(row.get("birth_date", "")),
                 "wd_birth_place_raw": nonempty(row.get("birth_place_raw", "")),
                 "wd_birth_country_raw": nonempty(row.get("birth_country_raw", "")),
+                "wd_occupations": nonempty(row.get("occupations", "")),
+                "wd_member_of": nonempty(row.get("member_of", "")),
+                "wd_wikipedia_url": nonempty(row.get("wikipedia_url", "")),
+                "wd_musicbrainz_mbid": nonempty(row.get("musicbrainz_mbid", "")),
+                "wd_aliases": nonempty(row.get("aliases", "")),
             }
         )
         if new_rows and (index % 20 == 0 or index == len(pending)):
@@ -1352,8 +1941,13 @@ def enrich_from_wikidata_qids(df: pd.DataFrame, checkpoint_name: str) -> pd.Data
     merged["birth_date"] = merged.apply(lambda row: nonempty(row.get("birth_date", "")) or nonempty(row.get("wd_birth_date", "")), axis=1)
     merged["birth_place_raw"] = merged.apply(lambda row: nonempty(row.get("birth_place_raw", "")) or nonempty(row.get("wd_birth_place_raw", "")), axis=1)
     merged["birth_country"] = merged.apply(lambda row: nonempty(row.get("birth_country", "")) or canonical_country(row.get("wd_birth_country_raw", "")), axis=1)
+    merged["occupations"] = merged.apply(lambda row: nonempty(row.get("occupations", "")) or nonempty(row.get("wd_occupations", "")), axis=1)
+    merged["member_of"] = merged.apply(lambda row: nonempty(row.get("member_of", "")) or nonempty(row.get("wd_member_of", "")), axis=1)
+    merged["wikipedia_url"] = merged.apply(lambda row: nonempty(row.get("wikipedia_url", "")) or nonempty(row.get("wd_wikipedia_url", "")), axis=1)
+    merged["musicbrainz_mbid"] = merged.apply(lambda row: nonempty(row.get("musicbrainz_mbid", "")) or nonempty(row.get("wd_musicbrainz_mbid", "")), axis=1)
+    merged["aliases"] = merged.apply(lambda row: nonempty(row.get("aliases", "")) or nonempty(row.get("wd_aliases", "")), axis=1)
     merged = apply_place_parsing(merged)
-    return merged.drop(columns=["wd_birth_date", "wd_birth_place_raw", "wd_birth_country_raw"])
+    return merged.drop(columns=["wd_birth_date", "wd_birth_place_raw", "wd_birth_country_raw", "wd_occupations", "wd_member_of", "wd_wikipedia_url", "wd_musicbrainz_mbid", "wd_aliases"], errors="ignore")
 
 
 def coerce_for_stata(df: pd.DataFrame) -> pd.DataFrame:
@@ -1416,6 +2010,81 @@ def save_dataset(df: pd.DataFrame, basename: str) -> None:
         shutil.copy2(dta_path, OUTPUT_DIR / "artist_universe_country_only.dta")
 
 
+def save_country_only_dataset(df: pd.DataFrame) -> None:
+    csv_path = OUTPUT_DIR / "artist_universe_country_only.csv"
+    dta_path = OUTPUT_DIR / "artist_universe_country_only.dta"
+    df = collapse_merge_columns(df)
+    df = coerce_for_stata(df)
+    column_labels = [VARIABLE_LABELS.get(col, col) for col in df.columns]
+    df.to_csv(csv_path, index=False, encoding="utf-8", quoting=csv.QUOTE_MINIMAL)
+    pyreadstat.write_dta(df, dta_path, column_labels=column_labels, file_label="Country-only artist universe", version=15)
+    builder.log(f"Saved {csv_path.name} and {dta_path.name}")
+
+
+def refresh_country_only_derived_columns(df: pd.DataFrame) -> pd.DataFrame:
+    refreshed = df.copy()
+    refreshed["birth_year"] = pd.to_numeric(refreshed["birth_year"], errors="coerce")
+    refreshed["death_year"] = refreshed["death_date"].fillna("").astype(str).str.slice(0, 4).map(builder.maybe_int)
+    refreshed["birth_state_abbr"] = refreshed["birth_state"].map(lambda value: builder.US_STATE_ABBR.get(nonempty(value), ""))
+    refreshed["birth_decade"] = refreshed["birth_year"].map(lambda value: int(value // 10 * 10) if pd.notna(value) else None)
+    refreshed["us_macro_region"] = refreshed["birth_state"].map(lambda value: builder.STATE_TO_REGION.get(nonempty(value), "Unknown"))
+    refreshed["is_deceased"] = refreshed["death_date"].fillna("").astype(str).str.strip().ne("").astype(int)
+    refreshed["is_us_born"] = refreshed["birth_country"].fillna("").astype(str).str.strip().eq("United States").astype(int)
+
+    today = date.today()
+
+    def calc_age(row: pd.Series) -> int | None:
+        birth_date = nonempty(row.get("birth_date", ""))
+        death_date = nonempty(row.get("death_date", ""))
+        if not birth_date:
+            return None
+        try:
+            born = datetime.fromisoformat(birth_date.replace("Z", "+00:00")).date()
+            ended = datetime.fromisoformat(death_date.replace("Z", "+00:00")).date() if death_date else today
+            return ended.year - born.year - ((ended.month, ended.day) < (born.month, born.day))
+        except Exception:
+            return None
+
+    refreshed["age_or_age_at_death"] = refreshed.apply(calc_age, axis=1)
+    return refreshed
+
+
+def report_missingness(df: pd.DataFrame, label: str) -> None:
+    occupation_missing = int(df["occupations"].fillna("").astype(str).str.strip().eq("").sum())
+    birth_year_missing = int(pd.to_numeric(df["birth_year"], errors="coerce").isna().sum())
+    birth_state_missing = int(df["birth_state"].fillna("").astype(str).str.strip().eq("").sum())
+    builder.log(
+        f"{label}: occupation missing={occupation_missing}, "
+        f"birth_year missing={birth_year_missing}, birth_state missing={birth_state_missing}"
+    )
+
+
+def enrich_country_only_direct() -> None:
+    path = OUTPUT_DIR / "artist_universe_country_only.csv"
+    df = collapse_merge_columns(pd.read_csv(path, low_memory=False))
+    report_missingness(df, "country_only before enrichment")
+
+    df = apply_place_parsing(df)
+    df = clean_birth_geography(df)
+    df = resolve_missing_qids_from_names(df, "artist_universe_country_only_name_to_qid.csv")
+    df = enrich_from_wikidata_qids(df, "artist_universe_country_only_targeted_wikidata.csv")
+    df = enrich_from_wikipedia_sources(df, "country_artists")
+    df = resolve_missing_musicbrainz_mbids(df, "artist_universe_country_only_name_to_musicbrainz.csv")
+    df = builder.targeted_musicbrainz_bio_enrichment(builder.session(), df, INTERMEDIATE_DIR / "artist_universe_country_only_targeted_musicbrainz_bio.csv")
+    df = enrich_from_musicbrainz_generic(df, "artist_universe_country_only_generic_musicbrainz.csv")
+    df = enrich_from_wikipedia_origin_years(df, "artist_universe_country_only_wikipedia_origin_years.csv")
+    df = enrich_with_discogs_and_itunes(df, "artist_universe_country_only_discogs_itunes.csv")
+    df = enrich_from_official_websites(df, "artist_universe_country_only_official_websites.csv")
+    df = apply_web_confirmed_overrides(df)
+    df = apply_group_and_occupation_annotations(df)
+    df = apply_place_parsing(df)
+    df = clean_birth_geography(df)
+    df = infer_state_from_existing_city_country(df)
+    df = refresh_country_only_derived_columns(df)
+    report_missingness(df, "country_only after enrichment")
+    save_country_only_dataset(df)
+
+
 def write_qc_report(core_df: pd.DataFrame, adj_df: pd.DataFrame, full_df: pd.DataFrame) -> None:
     def miss(df: pd.DataFrame, col: str) -> int:
         if col == "birth_year":
@@ -1448,6 +2117,14 @@ def write_qc_report(core_df: pd.DataFrame, adj_df: pd.DataFrame, full_df: pd.Dat
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Enrich artist-universe metadata.")
+    parser.add_argument("--country-only-direct", action="store_true", help="Enrich artist_universe_country_only.csv in place.")
+    args = parser.parse_args()
+
+    if args.country_only_direct:
+        enrich_country_only_direct()
+        return
+
     core_df = collapse_merge_columns(pd.read_csv(OUTPUT_DIR / f"{CORE_BASENAME}.csv"))
     adj_df = collapse_merge_columns(pd.read_csv(OUTPUT_DIR / f"{ADJ_BASENAME}.csv"))
     full_df = collapse_merge_columns(pd.read_csv(OUTPUT_DIR / f"{FULL_BASENAME}.csv"))
@@ -1470,13 +2147,18 @@ def main() -> None:
         df = apply_place_parsing(df)
         df = clean_birth_geography(df)
         builder.log(f"Running generic MusicBrainz enrichment for {label}")
+        df = resolve_missing_musicbrainz_mbids(df, f"artist_universe_{label}_name_to_musicbrainz.csv")
+        df = builder.targeted_musicbrainz_bio_enrichment(builder.session(), df, INTERMEDIATE_DIR / f"artist_universe_{label}_targeted_musicbrainz_bio.csv")
         df = enrich_from_musicbrainz_generic(df, f"artist_universe_{label}_generic_musicbrainz.csv")
         builder.log(f"Running targeted Wikidata QID enrichment for {label}")
         df = enrich_from_wikidata_qids(df, f"artist_universe_{label}_targeted_wikidata.csv")
         builder.log(f"Running Discogs/iTunes enrichment for {label}")
         df = enrich_with_discogs_and_itunes(df, f"artist_universe_{label}_discogs_itunes.csv")
+        builder.log(f"Running official-website schema enrichment for {label}")
+        df = enrich_from_official_websites(df, f"artist_universe_{label}_official_websites.csv")
         df = apply_place_parsing(df)
         df = clean_birth_geography(df)
+        df = infer_state_from_existing_city_country(df)
         df = apply_web_confirmed_overrides(df)
         if label == "core":
             core_df = df

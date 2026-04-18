@@ -26,11 +26,13 @@
   toward phase-based bridge modules
 - block 11: runtime validation executed through the new phase-based bridge
   layer
+- block 12: GitHub README links fixed and artist-universe replication
+  validated through the phase-based surface
 
 ## Current block
 
-- block 11 completed as the first runtime-validation pass over the new
-  phase-based bridge layer
+- block 12 completed as the second runtime-validation pass plus GitHub README
+  link repair
 
 ## Plugin memory status
 
@@ -69,6 +71,6 @@
 ## Next recommended step
 
 Proceed to the next migration/testing pass that decides whether to migrate more
-local-only legacy imports or to validate additional end-to-end Phase 1
-workflows through the phase-based surface before touching more implementation
-internals.
+remaining legacy helper modules into bridge form or to validate a higher-cost
+Phase 1 path such as a richer artist-side workflow before touching more
+implementation internals.

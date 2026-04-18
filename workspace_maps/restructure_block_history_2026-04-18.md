@@ -235,6 +235,29 @@ What is still not done:
   surface
 - destructive cleanup of legacy folders remains unsafe
 
+## Block 12: GitHub README repair and artist-universe validation
+
+What was done:
+
+- repaired the main `README.md` so its key links are repo-relative and open
+  correctly on GitHub
+- ran the artist-universe replication wrapper through the phase-based surface
+- confirmed that the artist-universe replication package refreshed correctly
+  from the current project state
+
+Why it mattered:
+
+- the default-branch README is now the public landing page for collaborators,
+  so broken local links created immediate usability problems
+- this block extends runtime validation from the country-songs side to the
+  artist-universe replication side
+
+What is still not done:
+
+- no full live artist-universe rebuild was attempted in this block
+- several deeper legacy helper modules are still not bridged individually
+- destructive cleanup of legacy folders remains unsafe
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.

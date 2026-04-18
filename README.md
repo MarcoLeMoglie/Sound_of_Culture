@@ -43,7 +43,7 @@ Current restructuring status:
 
 For a block-by-block history, see:
 
-- [workspace_maps/restructure_block_history_2026-04-18.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/workspace_maps/restructure_block_history_2026-04-18.md)
+- [workspace_maps/restructure_block_history_2026-04-18.md](workspace_maps/restructure_block_history_2026-04-18.md)
 
 ## Research roadmap
 
@@ -206,7 +206,7 @@ Current local Codex pattern:
 
 For more detail, see:
 
-- [project_memory/inventories/memory_system.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/project_memory/inventories/memory_system.md)
+- [project_memory/inventories/memory_system.md](project_memory/inventories/memory_system.md)
 
 ## Shared tools installed for this project
 
@@ -232,8 +232,8 @@ remain necessary for Stata, Overleaf, and many outputs.
 
 See:
 
-- [directives/10_code_review_graph_sop.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/directives/10_code_review_graph_sop.md)
-- [project_memory/inventories/review_graph_system.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/project_memory/inventories/review_graph_system.md)
+- [directives/10_code_review_graph_sop.md](directives/10_code_review_graph_sop.md)
+- [project_memory/inventories/review_graph_system.md](project_memory/inventories/review_graph_system.md)
 
 ### caveman-compression
 
@@ -251,7 +251,7 @@ Current install notes:
 
 See:
 
-- [project_memory/inventories/local_tooling.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/project_memory/inventories/local_tooling.md)
+- [project_memory/inventories/local_tooling.md](project_memory/inventories/local_tooling.md)
 
 ## Repository presentation
 
@@ -309,8 +309,8 @@ project.
 
 ## Main reference files
 
-- [AGENTS.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/AGENTS.md:1)
-- [directives/README.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/directives/README.md:1)
-- [project_memory/status/current_status.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/project_memory/status/current_status.md:1)
-- [project_memory/handoffs/next_agent.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/project_memory/handoffs/next_agent.md:1)
-- [reports/README.md](/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/reports/README.md:1)
+- [AGENTS.md](AGENTS.md)
+- [directives/README.md](directives/README.md)
+- [project_memory/status/current_status.md](project_memory/status/current_status.md)
+- [project_memory/handoffs/next_agent.md](project_memory/handoffs/next_agent.md)
+- [reports/README.md](reports/README.md)
