@@ -104,8 +104,11 @@ This workspace must be usable by:
 
 Therefore continuity is mandatory.
 
-Until plugin-based memory is installed and validated, use the repo-side memory
-files under `project_memory/` as the shared written memory.
+`supermemory` is now configured in the repo MCP files and in local Codex
+configuration, but it still requires client authentication before it becomes
+operational. Until that authentication is completed and validated, continue to
+use the repo-side memory files under `project_memory/` as the shared written
+memory.
 
 ### Mandatory Memory Discipline
 
@@ -183,5 +186,6 @@ As of 2026-04-18:
 
 - block 1 archive branch was created and pushed
 - block 2 phase-based workspace skeleton was created and pushed
-- `supermemory` is **not yet installed**
-- plugin-based cross-agent memory remains a block 4 task
+- block 3 directives and SOP rewrite was completed
+- `supermemory` MCP is configured for the project scope `sound-of-culture`
+- client authentication still needs to be completed and validated

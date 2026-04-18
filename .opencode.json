@@ -1,5 +1,11 @@
 {
   "mcpServers": {
+    "supermemory": {
+      "url": "https://mcp.supermemory.ai/mcp",
+      "headers": {
+        "x-sm-project": "sound-of-culture"
+      }
+    },
     "code-review-graph": {
       "command": "uvx",
       "args": [

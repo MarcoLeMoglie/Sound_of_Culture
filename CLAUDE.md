@@ -30,7 +30,8 @@ The essential operating rules are:
 - document every serious attempt, including rejected ones
 - keep Stata workflows fully explained
 - preserve archival branches before destructive cleanup
-- remember that `supermemory` is not installed yet
+- remember that `supermemory` is configured, but client authentication still
+  needs to be completed and validated
 
 Read next:
 

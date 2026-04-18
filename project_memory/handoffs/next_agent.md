@@ -12,10 +12,9 @@
 - archival branch exists
 - phase-based skeleton exists
 - directives and SOPs were rewritten around the new project goals
-- `supermemory` is still pending installation
+- `supermemory` is configured but not yet authentication-validated
 
 ## Recommended next action
 
-Move to block 4 and install/configure the shared-memory plugin and its usage
-rules. After installation, document the working setup in both `AGENTS.md` and
-`project_memory/`.
+Authenticate and validate the configured `supermemory` setup. After a successful
+save/recall test, update the SOP to mark plugin-based memory as operational.

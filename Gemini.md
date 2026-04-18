@@ -39,7 +39,8 @@ Use this summary when you need a quick project picture:
    `project_memory/`.
 7. Stata work must always be documented in detail, with commented code and
    report snippets.
-8. `supermemory` is not installed yet; plugin-based memory is pending.
+8. `supermemory` is configured for the project, but client authentication still
+   needs to be completed and validated.
 
 Read next:
 

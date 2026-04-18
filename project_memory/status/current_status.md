@@ -20,10 +20,13 @@
 
 ## Plugin memory status
 
-- `supermemory` not installed yet
-- plugin setup deferred to block 4
+- `supermemory` MCP configured in repo MCP files
+- `supermemory` MCP configured in local Codex config
+- client authentication still not validated
+- repo-side memory remains mandatory until validation is complete
 
 ## Next recommended step
 
-Move to block 4 and install/configure the shared-memory plugin, then define the
-cross-agent usage SOP after the technical setup is working.
+Authenticate the configured `supermemory` server in the relevant clients,
+validate basic save/recall behavior, and then update the SOP to mark the plugin
+memory layer as operational.
