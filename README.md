@@ -86,6 +86,10 @@ The canonical conceptual organization is phase-based, but much of the active
 code still lives in legacy `execution/step*` folders. This is intentional. We
 are avoiding breaking hardcoded paths before the final migration step.
 
+Until migration is fully complete, every new modification must explicitly
+remember this coexistence rule instead of pretending the repository already has
+a single clean architecture.
+
 High-level structure:
 
 - `AGENTS.md`

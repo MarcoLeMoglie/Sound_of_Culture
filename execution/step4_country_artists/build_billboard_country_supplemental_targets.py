@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from execution.step4_country_artists import augment_country_only_universe_from_billboard as aug
+from execution.phase_01_dataset_construction import augment_country_only_universe_from_billboard as aug
 
 
 OUTPUT_DIR = aug.OUTPUT_DIR

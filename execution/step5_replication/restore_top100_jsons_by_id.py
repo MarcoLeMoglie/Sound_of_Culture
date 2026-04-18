@@ -12,7 +12,7 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.append(str(PROJECT_ROOT))
 
-from execution.step1_download.scraper_client import UltimateGuitarClient
+from execution.phase_01_dataset_construction.scraper_client import UltimateGuitarClient
 
 
 def safe_name(value: str) -> str:

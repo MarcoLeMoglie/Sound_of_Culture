@@ -16,8 +16,8 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from execution.step4_country_artists import build_extended_artist_universe as ext
-from execution.step4_country_artists.enrich_artist_universe_missing_metadata import VARIABLE_LABELS
+from execution.phase_01_dataset_construction import build_extended_artist_universe as ext
+from execution.phase_01_dataset_construction.enrich_artist_universe_missing_metadata import VARIABLE_LABELS
 
 
 OUTPUT_DIR = ROOT / "data" / "processed_datasets" / "country_artists"

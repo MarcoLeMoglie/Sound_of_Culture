@@ -13,7 +13,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from execution.step2_digitalize.build_country_only_chords_final import (  # noqa: E402
+from execution.phase_01_dataset_construction.build_country_only_chords_final import (  # noqa: E402
     OUTPUT_CSV,
     RELEASE_CACHE_FILE,
     USER_AGENT,

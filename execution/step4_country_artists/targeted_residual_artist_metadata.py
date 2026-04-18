@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from execution.step4_country_artists import build_country_artists_dataset as builder
-from execution.step4_country_artists import enrich_artist_universe_missing_metadata as meta
+from execution.phase_01_dataset_construction import build_country_artists_dataset as builder
+from execution.phase_01_dataset_construction import enrich_artist_universe_missing_metadata as meta
 
 
 def main() -> None:

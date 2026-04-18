@@ -19,7 +19,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from execution.step2_digitalize.music_indices import calculate_indices
+from execution.phase_01_dataset_construction.music_indices import calculate_indices
 
 
 BASE_DIR = Path("data/processed_datasets/country_artists")

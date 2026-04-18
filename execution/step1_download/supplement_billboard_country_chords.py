@@ -16,8 +16,8 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from execution.step1_download.scraper_client import UltimateGuitarClient
-from execution.step1_download import country_only_ultimate_guitar as base
+from execution.phase_01_dataset_construction.scraper_client import UltimateGuitarClient
+from execution.phase_01_dataset_construction import country_only_ultimate_guitar as base
 
 
 OUTPUT_DIR = ROOT / "data" / "processed_datasets" / "country_artists"

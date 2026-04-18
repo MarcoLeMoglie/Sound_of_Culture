@@ -40,10 +40,18 @@
   phase-based project-root entrypoints first
 - key replication orchestrators now prefer phase-based paths when they launch
   project-root scripts
+- block 10 turned key Phase 1 wrappers into importable bridge modules rather
+  than script-only launchers
+- block 10 added bridge modules for `music_indices`, `scraper_client`, and
+  `augment_country_only_universe_from_billboard`
+- block 10 rerooted a first active set of internal imports from
+  `execution.step*` to `execution.phase_01_dataset_construction`
+- `AGENTS.md` and `README.md` now explicitly say that every new modification
+  must remember the coexistence rule until the migration is fully complete
 
 ## Recommended next action
 
-Continue with the next migration pass, focusing on whether any still-active
-Python imports should move away from `execution.step*` package references.
-Keep replication-package / archival paths untouched unless explicitly
-requested.
+Continue with the next migration pass, focusing on whether the remaining
+local-style imports in legacy subpackages should also be bridged into
+`execution.phase_01_dataset_construction`. Keep replication-package /
+archival paths untouched unless explicitly requested.

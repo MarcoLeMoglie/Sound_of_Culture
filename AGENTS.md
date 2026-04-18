@@ -105,6 +105,8 @@ The project is in a transition state:
 
 - the **canonical conceptual structure** is phase-based
 - many **working scripts still live in legacy `execution/step*` folders**
+- every new modification must explicitly remember this coexistence rule rather
+  than assuming the repository already has a single clean architecture
 
 Do **not** rename or move legacy execution folders unless the current task
 explicitly includes path migration and you have checked downstream references.

@@ -155,3 +155,26 @@ The canonical entrypoints for project-root reruns now live in:
 Historical `step*` names remain inside bundled replication packages and legacy
 implementation modules until a later migration block decides whether deeper
 package-level rerooting is worth the breakage risk.
+
+## 2026-04-18
+
+### Decision
+
+Start the deep migration by turning selected Phase 1 wrappers into importable
+bridge modules and rerooting active internal imports to those bridge modules.
+
+### Why
+
+Option 1 was chosen for the restructuring program: the goal is no longer only
+to hide legacy paths at the launcher surface, but to progressively converge the
+active codebase toward a single phase-based architecture. To do that safely,
+the first step is to make canonical phase modules importable while keeping
+legacy files as the underlying implementation.
+
+### Consequence
+
+The repository still follows a coexistence rule for now, and every new
+modification must explicitly remember that rule rather than pretending the
+architecture is already fully clean. At the same time, new active imports
+should prefer `execution.phase_01_dataset_construction` whenever a bridge
+module exists there.

@@ -9,10 +9,13 @@ implementation still runs from legacy `execution/step*` directories.
 
 - `execution/phase_01_dataset_construction/build_country_artists_dataset.py`
 - `execution/phase_01_dataset_construction/build_extended_artist_universe.py`
+- `execution/phase_01_dataset_construction/augment_country_only_universe_from_billboard.py`
 - `execution/phase_01_dataset_construction/enrich_artist_universe_missing_metadata.py`
 - `execution/phase_01_dataset_construction/country_only_ultimate_guitar.py`
+- `execution/phase_01_dataset_construction/scraper_client.py`
 - `execution/phase_01_dataset_construction/supplement_billboard_country_chords.py`
 - `execution/phase_01_dataset_construction/build_country_only_chords_final.py`
+- `execution/phase_01_dataset_construction/music_indices.py`
 - `execution/phase_01_dataset_construction/backfill_restricted_final_v6_demographics.py`
 - `execution/phase_01_dataset_construction/enrich_release_years_restricted_final_v6.py`
 - `execution/phase_01_dataset_construction/final_merge_restricted_v2.py`

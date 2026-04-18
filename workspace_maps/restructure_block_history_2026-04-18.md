@@ -183,6 +183,32 @@ What is still not done:
 - replication-package internals intentionally preserve the old directory names
 - destructive cleanup of legacy folders is still not safe
 
+## Block 10: First internal-import migration
+
+What was done:
+
+- turned key Phase 1 wrapper files into importable bridge modules instead of
+  script-only launchers
+- added bridge modules for `music_indices`, `scraper_client`, and
+  `augment_country_only_universe_from_billboard`
+- rerooted a first active set of Python imports from `execution.step*` toward
+  `execution.phase_01_dataset_construction`
+- documented explicitly in the repo instructions that every new modification
+  must remember the coexistence rule until the migration is fully complete
+
+Why it mattered:
+
+- after block 9, the biggest remaining architectural inconsistency was inside
+  active Python imports, not only in launcher instructions
+- importable bridge modules let the project converge toward the phase-based
+  architecture without forcing immediate deletion of the legacy implementation
+
+What is still not done:
+
+- many local-only imports still exist inside the legacy subpackages
+- bundled replication packages still preserve historical names by design
+- destructive cleanup of `execution/step*` remains unsafe
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.

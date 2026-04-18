@@ -21,7 +21,7 @@ BASE_DIR = Path("/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from execution.step4_country_artists import build_country_artists_dataset as builder
+from execution.phase_01_dataset_construction import build_country_artists_dataset as builder
 
 OUTPUT_DIR = BASE_DIR / "data" / "processed_datasets" / "country_artists"
 INTERMEDIATE_DIR = OUTPUT_DIR / "intermediate"

@@ -22,11 +22,13 @@
   surfaces
 - block 9: operational launchers and replication instructions shifted further
   toward phase-based entrypoints
+- block 10: first internal-import migration moved active Python dependencies
+  toward phase-based bridge modules
 
 ## Current block
 
-- block 9 completed as the second safe migration pass from `step*`
-  references toward phase-based entrypoints
+- block 10 completed as the first safe migration pass that reroots active
+  Python imports away from `execution.step*`
 
 ## Plugin memory status
 
@@ -64,7 +66,7 @@
 
 ## Next recommended step
 
-Proceed to the next migration pass that evaluates whether any remaining active
-code imports should be rerooted away from `execution.step*`, while still
-leaving archival / replication-package references untouched unless explicitly
-requested.
+Proceed to the next migration pass that evaluates whether remaining local-only
+imports inside `step1_download/` and similar legacy subpackages should also be
+rerooted, while still leaving archival / replication-package references
+untouched unless explicitly requested.

@@ -10,7 +10,7 @@ import sys
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 sys.path.append(project_root)
 
-from execution.step2_digitalize.music_indices import calculate_indices
+from execution.phase_01_dataset_construction.music_indices import calculate_indices
 
 INSTRUMENT = "Chords"
 INPUT_DIR = "data/raw_tabs_country"

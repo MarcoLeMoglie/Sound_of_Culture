@@ -10,7 +10,7 @@ from threading import Lock
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 sys.path.append(project_root)
 
-from execution.step1_download.scraper_client import UltimateGuitarClient
+from execution.phase_01_dataset_construction.scraper_client import UltimateGuitarClient
 
 # Thread-safe printing and count tracking
 print_lock = Lock()
