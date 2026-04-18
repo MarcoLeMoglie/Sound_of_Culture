@@ -5,6 +5,7 @@ from pathlib import Path
 
 PACKAGE_DIRNAME = "replication_package_country_songs_2026_04_01"
 ROOT_DATA_DIR = Path("data/processed_datasets/country_artists")
+CACHE_SUBDIR = Path("intermediate/json_caches")
 
 SONG_OUTPUTS = [
     "Sound_of_Culture_Country_Full.csv",
@@ -113,8 +114,9 @@ def copy_current_outputs(project_root: Path, package_root: Path) -> None:
         src = root_dir / name
         if src.exists():
             copy_file(src, package_root / "output" / name)
+    cache_src_dir = root_dir / CACHE_SUBDIR
     for name in CACHE_FILES:
-        src = root_dir / name
+        src = cache_src_dir / name
         if src.exists():
             copy_file(src, package_root / "data" / name)
 
@@ -126,10 +128,12 @@ def restore_bundled_outputs(project_root: Path, package_root: Path) -> None:
         src = package_root / "output" / name
         if src.exists():
             copy_file(src, root_dir / name)
+    cache_dst = root_dir / CACHE_SUBDIR
+    cache_dst.mkdir(parents=True, exist_ok=True)
     for name in CACHE_FILES:
         src = package_root / "data" / name
         if src.exists():
-            copy_file(src, root_dir / name)
+            copy_file(src, cache_dst / name)
     print("Restored bundled country-song outputs.", flush=True)
 
 

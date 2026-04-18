@@ -48,10 +48,23 @@
   `execution.step*` to `execution.phase_01_dataset_construction`
 - `AGENTS.md` and `README.md` now explicitly say that every new modification
   must remember the coexistence rule until the migration is fully complete
+- block 11 added a phase-based wrapper for
+  `build_billboard_country_supplemental_targets.py`
+- block 11 runtime-validated
+  `execution/phase_01_dataset_construction/build_billboard_country_supplemental_targets.py`
+  successfully using cached local inputs
+- block 11 runtime-validated
+  `execution/phase_01_dataset_construction/run_country_songs_replication.py`
+  successfully; the run refreshed the bundled replication snapshot
 
 ## Recommended next action
 
-Continue with the next migration pass, focusing on whether the remaining
-local-style imports in legacy subpackages should also be bridged into
-`execution.phase_01_dataset_construction`. Keep replication-package /
-archival paths untouched unless explicitly requested.
+Continue with the next migration/testing pass, choosing between:
+
+- expanding bridge coverage to more remaining Phase 1 legacy modules
+- validating another higher-value end-to-end workflow, such as the artist
+  universe replication path
+
+Keep replication-package / archival paths untouched unless explicitly
+requested, except when a validated replication run intentionally refreshes its
+bundled snapshot.

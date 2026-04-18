@@ -209,6 +209,32 @@ What is still not done:
 - bundled replication packages still preserve historical names by design
 - destructive cleanup of `execution/step*` remains unsafe
 
+## Block 11: Runtime validation of the bridge layer
+
+What was done:
+
+- added a phase-based wrapper for
+  `build_billboard_country_supplemental_targets.py`
+- ran the Billboard supplemental-target builder through the phase-based
+  surface using cached local inputs
+- ran the country-songs replication wrapper through the phase-based surface
+- confirmed that the country-songs replication package refreshed correctly
+  from the current project state
+
+Why it mattered:
+
+- after block 10, the main unresolved question was whether the new bridge
+  layer held up during real execution rather than only during import checks
+- this block validates both a local data-building workflow and a replication
+  wrapper workflow through the new canonical Phase 1 surface
+
+What is still not done:
+
+- no full live enrichment or scraping rebuild was attempted in this block
+- the artist-universe replication path was not yet rerun through the new
+  surface
+- destructive cleanup of legacy folders remains unsafe
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.

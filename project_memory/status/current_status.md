@@ -24,11 +24,13 @@
   toward phase-based entrypoints
 - block 10: first internal-import migration moved active Python dependencies
   toward phase-based bridge modules
+- block 11: runtime validation executed through the new phase-based bridge
+  layer
 
 ## Current block
 
-- block 10 completed as the first safe migration pass that reroots active
-  Python imports away from `execution.step*`
+- block 11 completed as the first runtime-validation pass over the new
+  phase-based bridge layer
 
 ## Plugin memory status
 
@@ -66,7 +68,7 @@
 
 ## Next recommended step
 
-Proceed to the next migration pass that evaluates whether remaining local-only
-imports inside `step1_download/` and similar legacy subpackages should also be
-rerooted, while still leaving archival / replication-package references
-untouched unless explicitly requested.
+Proceed to the next migration/testing pass that decides whether to migrate more
+local-only legacy imports or to validate additional end-to-end Phase 1
+workflows through the phase-based surface before touching more implementation
+internals.

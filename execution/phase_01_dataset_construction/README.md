@@ -10,6 +10,7 @@ implementation still runs from legacy `execution/step*` directories.
 - `execution/phase_01_dataset_construction/build_country_artists_dataset.py`
 - `execution/phase_01_dataset_construction/build_extended_artist_universe.py`
 - `execution/phase_01_dataset_construction/augment_country_only_universe_from_billboard.py`
+- `execution/phase_01_dataset_construction/build_billboard_country_supplemental_targets.py`
 - `execution/phase_01_dataset_construction/enrich_artist_universe_missing_metadata.py`
 - `execution/phase_01_dataset_construction/country_only_ultimate_guitar.py`
 - `execution/phase_01_dataset_construction/scraper_client.py`

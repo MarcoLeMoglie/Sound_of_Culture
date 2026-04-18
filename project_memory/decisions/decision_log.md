@@ -178,3 +178,26 @@ modification must explicitly remember that rule rather than pretending the
 architecture is already fully clean. At the same time, new active imports
 should prefer `execution.phase_01_dataset_construction` whenever a bridge
 module exists there.
+
+## 2026-04-18
+
+### Decision
+
+Validate the restructuring with safe end-to-end runtime checks before pushing
+deeper into additional import migrations.
+
+### Why
+
+After block 10, the project had moved from surface wrappers to real bridge
+modules. The next risk was no longer syntax but runtime behavior. Safe local
+workflow checks provide better evidence that the new phase-based surface is not
+just importable, but usable.
+
+### Consequence
+
+Runtime validation should now accompany further restructuring whenever the
+changes touch active execution paths. In this first pass, the validated paths
+were:
+
+- `execution/phase_01_dataset_construction/build_billboard_country_supplemental_targets.py`
+- `execution/phase_01_dataset_construction/run_country_songs_replication.py`
