@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""Phase-based bridge for Billboard country scraping."""
+
+try:
+    from execution.phase_01_dataset_construction._legacy_runner import export_legacy_module, run_legacy_script
+except ModuleNotFoundError:
+    from _legacy_runner import export_legacy_module, run_legacy_script
+
+
+if __name__ == "__main__":
+    run_legacy_script("execution/step1_download/scrape_billboard_country.py")
+else:
+    export_legacy_module(
+        "execution/step1_download/scrape_billboard_country.py",
+        globals(),
+        module_name="soc_phase01_scrape_billboard_country",
+    )

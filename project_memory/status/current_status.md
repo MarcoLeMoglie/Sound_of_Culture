@@ -30,10 +30,13 @@
   validated through the phase-based surface
 - block 13: additional Phase 1 helper modules bridged and legacy helper
   imports reduced further
+- block 14: remaining step1/step2 Phase 1 wrappers completed and helper
+  coverage extended across the full active Python surface
 
 ## Current block
 
-- block 13 completed as the next helper-module migration pass for Phase 1
+- block 14 completed as the bridge-coverage completion pass for active
+  `step1_download` and `step2_digitalize` Python modules
 
 ## Plugin memory status
 
@@ -71,7 +74,7 @@
 
 ## Next recommended step
 
-Proceed to the next migration/testing pass that decides whether to bridge more
-remaining `step1_download` and `step2_digitalize` utilities or to validate one
-of the newly bridged helper workflows more deeply before touching additional
-implementation internals.
+Proceed to the next migration/testing pass that decides whether to start
+bridging deeper `step4_country_artists` residual helpers and any remaining
+replication-side code, or to shift attention back to scientific work now that
+the active Phase 1 Python surface has a canonical wrapper layer.

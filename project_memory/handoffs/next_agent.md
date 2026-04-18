@@ -78,14 +78,23 @@
   `execution/phase_01_dataset_construction/build_billboard_augmented_targets_from_cache.py`
   successfully; it reported `1515` augmented missing song targets with `1490`
   existing-artist matches and `25` missing-artist cases
+- block 14 added explicit phase-based bridge wrappers for the remaining active
+  `step1_download` and `step2_digitalize` Python modules
+- inventory check after block 14 showed no remaining unbridged Python files in
+  those two legacy subtrees
+- block 14 runtime-validated
+  `execution/phase_01_dataset_construction/prepare_bulk_input.py`
+  successfully; it recreated `data/intermediate/json/input_songs_bulk.json`
+  with `994` queries
 
 ## Recommended next action
 
 Continue with the next migration/testing pass, choosing between:
 
-- expanding bridge coverage to more remaining Phase 1 legacy modules
-- validating another higher-value end-to-end workflow, such as the artist
-  enrichment/build path rather than only replication wrappers
+- extending the same bridge strategy to deeper `step4_country_artists`
+  residual utilities and possibly some replication-side helpers
+- pausing restructuring and moving back to scientific dataset/report work now
+  that the active Phase 1 Python surface has a canonical wrapper layer
 
 Keep replication-package / archival paths untouched unless explicitly
 requested, except when a validated replication run intentionally refreshes its

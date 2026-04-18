@@ -36,6 +36,11 @@ implementation still runs from legacy `execution/step*` directories.
 - `execution/phase_01_dataset_construction/do/run_country_merge_v6_replication.do`
 - `execution/phase_01_dataset_construction/do/run_country_songs_replication.do`
 
+Bridge coverage now also extends across the remaining `step1_download` and
+`step2_digitalize` Python utilities, so the canonical Phase 1 folder now
+exposes wrappers for the full active Python surface of those two legacy
+subtrees.
+
 ## Current legacy implementation roots
 
 - `execution/step1_download/`

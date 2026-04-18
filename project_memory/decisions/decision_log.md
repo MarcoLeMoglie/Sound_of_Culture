@@ -245,3 +245,25 @@ The next migration pass should favor:
 - local cached runtime validation where possible
 
 before spending effort on more expensive live rebuild workflows.
+
+## 2026-04-18
+
+### Decision
+
+Complete wrapper coverage across the full active Python surface of
+`step1_download` and `step2_digitalize` once the bridge pattern was already
+working.
+
+### Why
+
+After the previous helper-migration passes, most of the risk had shifted from
+architecture design to consistency. Leaving a long tail of legacy-only helper
+files would have kept Phase 1 conceptually split even if the high-value paths
+were already bridged.
+
+### Consequence
+
+The canonical Phase 1 directory now provides wrappers across the full active
+Python surface of the legacy `step1_download` and `step2_digitalize`
+subtrees. Future restructuring can move on to deeper artist-side helpers or
+stop here and reuse the wrapper layer while focusing on substantive research.

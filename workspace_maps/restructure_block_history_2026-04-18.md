@@ -290,6 +290,31 @@ What is still not done:
 - some deeper or older `step2_digitalize` helpers remain legacy-only
 - destructive cleanup of legacy folders remains unsafe
 
+## Block 14: Wrapper-coverage completion for step1 and step2
+
+What was done:
+
+- added explicit phase-based bridge wrappers for the remaining active Python
+  files under `step1_download` and `step2_digitalize`
+- completed the canonical wrapper surface for the full active Python layer of
+  those two legacy subtrees
+- ran a lightweight runtime validation on
+  `execution/phase_01_dataset_construction/prepare_bulk_input.py`
+
+Why it mattered:
+
+- after earlier passes, the remaining gap was mostly consistency rather than
+  architecture design
+- finishing wrapper coverage makes Phase 1 much easier to navigate for humans
+  and agents, even while the underlying implementation still lives in legacy
+  folders
+
+What is still not done:
+
+- deeper `step4_country_artists` residual helpers are not all bridged
+- replication-side helper modules still preserve more legacy structure
+- destructive cleanup of legacy folders remains unsafe
+
 ## Transitional rule that still applies
 
 The project is not yet in the final cutover state.
