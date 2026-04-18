@@ -18,10 +18,17 @@
 - exploratory report copied into `phase_02_exploratory_analysis/`
 - pipeline report copied into
   `phase_01_dataset_construction/02_final_dataset_ultimate_guitar/`
+- report templates and output subfolders created for:
+  - `phase_01_dataset_construction/01_country_only_and_adjacent_only/`
+  - `phase_03_validation/`
+  - `phase_04_causal_shocks/01_war_deaths/`
+  - `phase_04_causal_shocks/02_china_shock/`
+- block 6 also added a root Overleaf `README.md` index and verified that the
+  new `main.tex` templates compile
 
 ## Pending report builds
 
-- phase 1.1 country-only and adjacent-only
-- phase 3 validation
-- phase 4.1 war deaths
-- phase 4.2 China shock
+- fill the new phase 1.1 report with the actual universe-construction narrative
+- fill the new phase 3 validation report with retained validation designs
+- fill the new phase 4.1 war-deaths report with the shock design and outputs
+- fill the new phase 4.2 China-shock report with the shock design and outputs

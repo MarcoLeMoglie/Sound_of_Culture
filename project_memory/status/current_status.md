@@ -15,10 +15,12 @@
 - block 3: directives and SOP rewrite completed on the working branch
 - block 4: Supermemory configured, authenticated, and validated in-session
 - block 5: code-review-graph standardized across clients and rebuilt
+- block 6: repository onboarding README and phase-based Overleaf/report
+  templates standardized
 
 ## Current block
 
-- waiting to start block 6
+- block 6 completed
 
 ## Plugin memory status
 
@@ -56,5 +58,6 @@
 
 ## Next recommended step
 
-Proceed to block 6 and continue standardizing the report / Overleaf operating
-structure for the new project phases.
+Proceed to the next restructuring or implementation block, using the new root
+README and the phase-based Overleaf templates as the canonical onboarding and
+reporting layer.

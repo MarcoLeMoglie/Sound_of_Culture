@@ -1,0 +1,121 @@
+# Restructure Block History
+
+Date: 2026-04-18
+
+Branch:
+
+- `codex/restructure-workspace-2026-04-18`
+
+## Purpose
+
+This file records what was actually done during the restructuring program that
+redefined the project around the new "music as culture" agenda.
+
+## Block 1: Archive and freeze the old project
+
+What was done:
+
+- created a dedicated archival branch from the pre-restructure project state
+- preserved dirty working-tree material instead of losing it during cleanup
+- pushed the archive branch to GitHub
+
+Why it mattered:
+
+- the user explicitly required that no historical material be destroyed before
+  being safely preserved on a separate branch
+
+Result:
+
+- archival branch: `codex-archive-pre-restructure-2026-04-18`
+
+## Block 2: Create the new phase-based skeleton
+
+What was done:
+
+- created phase-based repo folders under `reports/`, `execution/`, and
+  `project_memory/`
+- created the Overleaf phase folder skeleton
+- copied the existing exploratory and pipeline reports into their new canonical
+  phase destinations
+- preserved legacy `execution/step*` paths in place
+
+Why it mattered:
+
+- the project needed a canonical architecture aligned with the new research
+  agenda without breaking currently working code
+
+## Block 3: Rewrite directives and operating instructions
+
+What was done:
+
+- rewrote `AGENTS.md`, `Gemini.md`, and `CLAUDE.md`
+- replaced the old directives with the new phase-based SOP layer
+- created explicit memory and reporting rules for the project
+
+Why it mattered:
+
+- the old instruction layer was tied to the previous project framing and did
+  not encode the new four-phase workflow
+
+## Block 4: Configure and validate Supermemory
+
+What was done:
+
+- configured `supermemory` in the repo MCP files
+- configured local Codex authentication via
+  `bearer_token_env_var = "SUPERMEMORY_API_KEY"`
+- validated `whoAmI`, `memory(save)`, and `recall` in-session
+- removed credentials from tracked repo files and kept auth local-only
+
+Why it mattered:
+
+- cross-conversation and cross-agent continuity is central to this project
+
+## Block 5: Standardize code-review-graph
+
+What was done:
+
+- rebuilt the graph for the current workspace
+- added a Kiro MCP config
+- corrected local Antigravity config so it points at this repo
+- documented graph limits and path-noise issues in a dedicated SOP
+
+Why it mattered:
+
+- the graph is the first-line exploration tool for active Python and shell code
+- without a shared, correct setup different clients would have been reading
+  different repositories or stale graph states
+
+Important limit documented in block 5:
+
+- current graph coverage is `python` and `bash` only
+- Stata, LaTeX, Overleaf content, and data artifacts still require direct file
+  reads
+
+## Block 6: Standardize the Overleaf/report system
+
+What was done:
+
+- added a full repository `README.md` for collaborator onboarding
+- created a root Overleaf README index
+- created phase-report entry templates for the missing phase reports
+- created standardized report subfolders for `code`, `generated`, and
+  `analysis_outputs`
+- updated repo-side report and memory inventories to reflect the new system
+
+Why it mattered:
+
+- the project needed a stable, explicit reporting architecture that makes it
+  easy for collaborators to understand where each phase report lives, how it is
+  supposed to be updated, and where supporting outputs should be stored
+
+## Transitional rule that still applies
+
+The project is not yet in the final cutover state.
+
+That means:
+
+- legacy `execution/step*` folders are still active
+- phase-based folders are canonical for organization and reporting
+- final destructive cleanup should happen only after the relevant migration
+  block, not before

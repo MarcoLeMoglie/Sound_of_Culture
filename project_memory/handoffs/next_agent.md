@@ -22,8 +22,12 @@
 - `code-review-graph` has been standardized across shared clients and rebuilt
 - local Antigravity config was manually corrected to point at this repo
 - graph coverage is currently limited to `python` and `bash`
+- repo root now has a full onboarding `README.md`
+- block 6 created canonical Overleaf report templates for the missing phase
+  reports and standardized output subfolders
 
 ## Recommended next action
 
-Move to block 6 and continue the new report / Overleaf system work, keeping in
-mind that Stata and LaTeX still require direct file reads beyond the graph.
+Continue from the next implementation block, using the root README,
+`workspace_maps/restructure_block_history_2026-04-18.md`, and the new Overleaf
+phase entry points as the canonical map of the restructured project.

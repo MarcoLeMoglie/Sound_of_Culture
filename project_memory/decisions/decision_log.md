@@ -64,3 +64,28 @@ Agents should:
 - fall back to direct reads for Stata, LaTeX, and data artifacts
 - interpret graph results with path awareness, especially around `.coldstart_*`
   and replication-package copies
+
+## 2026-04-18
+
+### Decision
+
+Make the repository root `README.md` and the phase-based Overleaf entry points
+the canonical onboarding layer for collaborators.
+
+### Why
+
+The project had instructions and inventories scattered across multiple files,
+but no single onboarding document at the repository root and no complete set of
+phase report entry points in Overleaf for the missing phases.
+
+### Consequence
+
+Collaborators should now start from:
+
+- `README.md`
+- `AGENTS.md`
+- `project_memory/status/current_status.md`
+- `workspace_maps/restructure_block_history_2026-04-18.md`
+
+And phase report work should now target the phase-based Overleaf entry points
+created during block 6.
