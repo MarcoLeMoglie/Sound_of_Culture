@@ -16,19 +16,33 @@
 
 ## Current block
 
-- waiting to start block 4
+- block 4 completed: Supermemory is authenticated and operational
 
 ## Plugin memory status
 
 - `supermemory` MCP configured in repo MCP files
 - `supermemory` MCP configured in local Codex config
-- API-key authentication validated against the MCP server for local Codex
-- current live assistant session still does not expose Supermemory as a usable
-  tool
-- repo-side memory remains mandatory until tool availability is confirmed
+- local Codex now uses bearer-token authentication via
+  `SUPERMEMORY_API_KEY`
+- tracked repo MCP files are secret-free; authentication now lives only in the
+  local Codex config and local environment
+- live in-session MCP access is working
+- `whoAmI`, `memory(save)`, and `recall` were successfully tested in the
+  `sound-of-culture` project scope
+- repo-side memory remains mandatory as a redundancy layer and for clients
+  that may not yet be authenticated
+
+## Local tooling status
+
+- `caveman-compression` installed locally at
+  `~/.codex/vendor/caveman-compression`
+- dedicated virtual environment created
+- NLP mode dependencies installed
+- spaCy model download failed twice with upstream GitHub `504` errors
+- local install patched with a blank-pipeline fallback so NLP compression is
+  still usable offline
 
 ## Next recommended step
 
-Restart or refresh the client until the Supermemory MCP tools become available
-inside the live assistant session, then run a real save/recall test and mark
-the memory layer as operational.
+Proceed to block 5 and standardize the review-graph / multi-agent operating
+setup for the newly restructured project.
