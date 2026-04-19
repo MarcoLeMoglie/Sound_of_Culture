@@ -324,4 +324,4 @@ Questo progetto è pensato per ottenere un dataset:
 - con separazione chiara tra campione ristretto e campione allargato
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
-1. `python3 execution/step4_country_artists/build_country_artists_dataset.py`
+1. `python3 execution/phase_01_dataset_construction/build_country_artists_dataset.py`

@@ -37,9 +37,10 @@
 
 ## Current block
 
-- block 15 completed as the final active-wrapper completion pass for
-  `step4_country_artists`, `step5_replication`, and the Phase 2 exploratory
-  Stata surface
+- destructive-cutover preparation points 1-4 are now completed on the working
+  branch
+- point 5, the destructive deletion pass, has not been started and requires
+  explicit review of the validated state first
 
 ## Plugin memory status
 
@@ -77,9 +78,11 @@
 
 ## Next recommended step
 
-The operational restructuring pass is complete enough to move back to
-scientific work. Further cleanup should now be treated as optional deep
-refactoring rather than as a blocker.
+Review the completed destructive-cutover preparation and decide whether to:
+
+- approve point 5, the destructive deletion pass
+- keep the validated phase-based backend but retain the legacy `execution/step*`
+  trees for longer
 
 ## Reporting language rule
 
@@ -92,6 +95,13 @@ A destructive-cutover plan has now been written in
 
 Current conclusion:
 
-- operational restructuring is complete
-- destructive deletion of `execution/step*` is still unsafe until the backend
-  is migrated natively into `execution/phase_*`
+- the recommended-order points 1-4 have been completed
+- active phase-based files no longer depend on `execution/step*` as runtime
+  dependencies
+- the validation set succeeded for all required Python paths
+- the validation set succeeded for the two required exploratory Stata paths
+  after rerooting them to the real top100YearEnd datasets
+- the `r(199)` lines in the Stata logs come from the user's personal
+  `profile.do` (`panelwhiz` missing), not from project code
+- point 5, destructive deletion of legacy `execution/step*`, is still pending
+  user review and has not been executed

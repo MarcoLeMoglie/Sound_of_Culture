@@ -1,17 +1,38 @@
-#!/usr/bin/env python3
-"""Phase-based bridge for test-scale input preparation."""
+import json
+import os
 
-try:
-    from execution.phase_01_dataset_construction._legacy_runner import export_legacy_module, run_legacy_script
-except ModuleNotFoundError:
-    from _legacy_runner import export_legacy_module, run_legacy_script
+input_file = "data/processed_datasets/songs_tracklist.json"
+output_file = "data/input_songs_test_scale.json"
+
+if not os.path.exists(input_file):
+    print("Tracklist file not found.")
+    exit(1)
+
+with open(input_file, 'r') as f:
+    songs = json.load(f)
+
+# Group by year to take a subset
+by_year = {}
+for s in songs:
+    year = s.get("year")
+    if year not in by_year:
+        by_year[year] = []
+    by_year[year].append(s)
+
+sample_items = []
+for year, tracklist in by_year.items():
+    # Take top 2 from each year
+    for s in tracklist[:2]:
+         sample_items.append({
+             "artist": s['artist'],
+             "title": s['title'],
+             "year": s['year'],
+             "type": "Chords",
+             "limit": 5
+         })
 
 
-if __name__ == "__main__":
-    run_legacy_script("execution/step1_download/prepare_test_scale.py")
-else:
-    export_legacy_module(
-        "execution/step1_download/prepare_test_scale.py",
-        globals(),
-        module_name="soc_phase01_prepare_test_scale",
-    )
+with open(output_file, 'w') as f:
+    json.dump(sample_items, f, indent=4)
+
+print(f"Created {len(sample_items)} sample queries in {output_file}")

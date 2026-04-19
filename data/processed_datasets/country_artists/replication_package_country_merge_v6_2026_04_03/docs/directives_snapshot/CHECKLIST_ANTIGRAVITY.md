@@ -95,4 +95,4 @@
 - [ ] QC report compilato
 
 ## Python Utilizzati Nell'Ultima Esecuzione Completata
-1. `python3 execution/step4_country_artists/build_country_artists_dataset.py`
+1. `python3 execution/phase_01_dataset_construction/build_country_artists_dataset.py`

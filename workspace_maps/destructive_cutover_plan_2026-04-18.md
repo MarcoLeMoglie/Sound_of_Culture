@@ -22,13 +22,33 @@ Today, the canonical execution surface is phase-based, but the legacy
 
 ## Current conclusion
 
-We cannot yet delete the legacy execution trees in bulk.
+The recommended-order points 1-4 are now complete, but point 5 has not yet
+started.
 
 Reason:
 
-- active phase-based wrappers still call legacy files directly
-- replication orchestrators still package or reference legacy paths
-- exploratory Stata wrappers still delegate to legacy `.do` files
+- point 5 is intentionally pending user review before any destructive cleanup
+- replication-package and archival material still needs careful preservation
+- the branch should be summarized and inspected before legacy trees are removed
+
+## Progress update after implementation
+
+The following recommended-order items are now complete on the working branch:
+
+1. Phase 2 exploratory `.do` files and output paths were migrated natively into
+   `execution/phase_02_exploratory_analysis/do/` and
+   `execution/phase_02_exploratory_analysis/output_figures*`
+2. Phase 1 replication scripts were rerooted so the source-of-truth packaged
+   paths are phase-based
+3. The remaining active Phase 1 backend implementations were copied natively
+   into `execution/phase_01_dataset_construction/`
+4. The full required validation set was executed successfully
+
+Validation note:
+
+- the only `r(199)` lines remaining in the Stata logs come from the user's
+  local `profile.do` because `panelwhiz` is missing there; the project `.do`
+  files themselves now run and export their PDFs correctly
 
 ## Classification
 

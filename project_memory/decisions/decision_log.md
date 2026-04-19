@@ -336,3 +336,29 @@ The canonical Phase 1 directory now provides wrappers across the full active
 Python surface of the legacy `step1_download` and `step2_digitalize`
 subtrees. Future restructuring can move on to deeper artist-side helpers or
 stop here and reuse the wrapper layer while focusing on substantive research.
+
+## 2026-04-18
+
+### Decision
+
+Complete the destructive-cutover preparation through the end of the validation
+stage before attempting any deletion of legacy `execution/step*` trees.
+
+### Why
+
+The user asked to execute all preparation points through the end of point 4
+without stopping. The safe way to honor that was to:
+
+- replace the remaining phase-based pass-through files with native copies
+- reroot active runtime references away from `execution/step*`
+- reroot the exploratory Stata scripts to real current datasets
+- run the required validation suite before any destructive cleanup
+
+### Consequence
+
+The branch now has:
+
+- native phase-based Python implementations for the active Phase 1 surface
+- native phase-based exploratory `.do` files and output folders for Phase 2
+- a completed validation pass across the required Python and Stata workflows
+- an explicit stop before point 5, so legacy deletion is still pending review

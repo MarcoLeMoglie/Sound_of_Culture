@@ -6,7 +6,7 @@ args rebuild_mode
 
 local project_root "`c(pwd)'"
 local package_dirname "replication_package_country_merge_v6_2026_04_03"
-local python_launcher "data/processed_datasets/country_artists/`package_dirname'/code/python/step5_replication/run_full_replication.py"
+local python_launcher "data/processed_datasets/country_artists/`package_dirname'/code/python/phase_01_dataset_construction/run_country_merge_v6_replication.py"
 local full_rebuild 0
 
 if inlist("`rebuild_mode'", "full", "full_rebuild", "--full-rebuild") {

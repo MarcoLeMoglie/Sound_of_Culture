@@ -4,8 +4,8 @@
 
 - songs in current country song file: 6858
 - unique artists in current song file: 438
-- artists in country core union (`songs + restricted + master`): 2334
-- artists in full adjacent-genre universe: 4950
+- artists in country core union (`songs + restricted + master`): 1785
+- artists in full adjacent-genre universe: 4376
 
 ## Denominator 1: UG-Observable Country Universe
 

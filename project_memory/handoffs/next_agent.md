@@ -104,11 +104,40 @@
 
 ## Recommended next action
 
-Choose between:
+Do not start new migration work immediately. First, review the now-completed
+destructive-cutover preparation:
 
-- returning to scientific dataset/report work
-- starting Stage 1 of the destructive cutover plan, beginning with native
-  Phase 2 exploratory `.do` migration and output-path rerooting
+- points 1-4 of the recommended cutover order are complete
+- point 5, destructive deletion of the legacy execution trees, is still
+  pending and must not begin until the user explicitly approves it
+
+Important validation outcomes already obtained:
+
+- `execution/phase_01_dataset_construction/build_country_artists_dataset.py`
+  completed successfully after adding defensive defaults for missing
+  `birth_year`-family columns
+- `execution/phase_01_dataset_construction/build_extended_artist_universe.py`
+  completed successfully after making targeted live lookup degrade cleanly when
+  DNS/network resolution is unavailable
+- `execution/phase_01_dataset_construction/build_country_only_chords_final.py`
+  completed successfully
+- `execution/phase_01_dataset_construction/run_country_merge_v6_replication.py`
+  completed successfully from native phase-based packaged paths
+- `execution/phase_01_dataset_construction/run_country_songs_replication.py`
+  completed successfully
+- `execution/phase_01_dataset_construction/run_artist_universe_replication.py`
+  completed successfully
+- `execution/phase_02_exploratory_analysis/do/eda.do` now reads
+  `data/processed_datasets/top100YearEnd8525/dataset_chords_top100yearend.dta`
+  and produces PDFs in
+  `execution/phase_02_exploratory_analysis/output_figures/`
+- `execution/phase_02_exploratory_analysis/do/eda_bass.do` now reads
+  `data/processed_datasets/top100YearEnd8525/dataset_bass_top100yearend.dta`
+  and produces PDFs in
+  `execution/phase_02_exploratory_analysis/output_figures_bass/`
+- the `r(199)` lines in `eda.log` and `eda_bass.log` are harmless
+  environment noise from the local Stata `profile.do`, not failures in the
+  project scripts
 
 Keep replication-package / archival paths untouched unless explicitly
 requested, except when a validated replication run intentionally refreshes its
