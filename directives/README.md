@@ -21,8 +21,9 @@ Current phase directives:
 - `05_phase_04_war_deaths.md`
 - `06_phase_04_china_shock.md`
 
-Transitional rule:
+Current architecture rule:
 
-- legacy code still lives mainly in `execution/step*`
-- canonical organization is phase-based
-- do not move legacy execution folders unless path migration is part of the task
+- the active branch is phase-based
+- use only `execution/phase_*` as the runnable execution surface
+- treat legacy `step*` references as historical only unless you are working on
+  archival branches or packaged replication snapshots

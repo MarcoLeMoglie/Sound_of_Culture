@@ -362,3 +362,27 @@ The branch now has:
 - native phase-based exploratory `.do` files and output folders for Phase 2
 - a completed validation pass across the required Python and Stata workflows
 - an explicit stop before point 5, so legacy deletion is still pending review
+
+## 2026-04-19
+
+### Decision
+
+Execute destructive cutover point 5 on the active branch after creating a
+fresh archival snapshot branch.
+
+### Why
+
+All preconditions were already met:
+
+- points 1-4 of the cutover plan had been completed
+- the required validation suite had succeeded from the phase-based surface
+- active execution files no longer depended on `execution/step*` runtime paths
+
+### Consequence
+
+The active branch now keeps only the `execution/phase_*` trees. Legacy
+execution layouts survive through:
+
+- the archival branch `codex-archive-pre-destructive-cutover-2026-04-19`
+- packaged replication snapshots under `data/processed_datasets/...`
+- restructuring history under `workspace_maps/`

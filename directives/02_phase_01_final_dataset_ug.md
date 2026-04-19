@@ -24,12 +24,11 @@ recovery steps for missing or incomplete metadata.
 - `execution/phase_01_dataset_construction/run_country_songs_replication.py`
 - `execution/phase_01_dataset_construction/run_full_replication.py`
 
-## Legacy implementation roots behind those entrypoints
+## Architecture note
 
-- `execution/step1_download/`
-- `execution/step2_digitalize/`
-- `execution/step4_country_artists/`
-- `execution/step5_replication/`
+The active branch now runs this phase natively from
+`execution/phase_01_dataset_construction/`. Legacy `step*` layouts remain only
+inside archival branches and packaged replication material.
 
 ## Required outputs
 

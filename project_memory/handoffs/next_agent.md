@@ -72,7 +72,7 @@
 - block 13 rerooted a set of `step1_download` scripts away from local
   `scraper_client` imports toward
   `execution.phase_01_dataset_construction.scraper_client`
-- block 13 rerooted `execution/step2_digitalize/create_dataset.py` to the
+- block 13 rerooted the former legacy `create_dataset.py` workflow to the
   phase-based `music_indices` and `music_indices_bass` bridges
 - block 13 runtime-validated
   `execution/phase_01_dataset_construction/build_billboard_augmented_targets_from_cache.py`
@@ -94,22 +94,21 @@
 - after block 15, the operational interpretation is now:
   use `execution/phase_01_dataset_construction/` and
   `execution/phase_02_exploratory_analysis/` as the canonical execution
-  surface; treat `execution/step*` as the retained backend for implementation
-  stability and historical compatibility
+  surface; that statement described the pre-cutover architecture and is now
+  superseded by the destructive cutover recorded below
 - canonical Overleaf reports for all project phases must be written in English
 - a destructive-cutover plan now exists in
   `workspace_maps/destructive_cutover_plan_2026-04-18.md`
-- the current answer on cleanup is: safe for caches and residue, not yet safe
-  for tracked legacy `execution/step*` code
+- destructive cutover point 5 has now been executed on the active branch after
+  the validated pre-cutover snapshot branch was created and pushed
 
 ## Recommended next action
 
-Do not start new migration work immediately. First, review the now-completed
-destructive-cutover preparation:
+Do not start new migration work immediately. First, review the completed
+destructive cutover:
 
-- points 1-4 of the recommended cutover order are complete
-- point 5, destructive deletion of the legacy execution trees, is still
-  pending and must not begin until the user explicitly approves it
+- points 1-5 of the recommended cutover order are now complete
+- the active branch no longer contains `execution/step*` trees
 
 Important validation outcomes already obtained:
 

@@ -22,14 +22,10 @@ Today, the canonical execution surface is phase-based, but the legacy
 
 ## Current conclusion
 
-The recommended-order points 1-4 are now complete, but point 5 has not yet
-started.
+The recommended-order points 1-5 are now complete on the active branch.
 
-Reason:
-
-- point 5 is intentionally pending user review before any destructive cleanup
-- replication-package and archival material still needs careful preservation
-- the branch should be summarized and inspected before legacy trees are removed
+Point 5 was executed on 2026-04-19 after the fresh archival snapshot branch
+`codex-archive-pre-destructive-cutover-2026-04-19` was created and pushed.
 
 ## Progress update after implementation
 
@@ -43,12 +39,25 @@ The following recommended-order items are now complete on the working branch:
 3. The remaining active Phase 1 backend implementations were copied natively
    into `execution/phase_01_dataset_construction/`
 4. The full required validation set was executed successfully
+5. The active `execution/step*` trees were removed from the working branch
 
 Validation note:
 
 - the only `r(199)` lines remaining in the Stata logs come from the user's
   local `profile.do` because `panelwhiz` is missing there; the project `.do`
   files themselves now run and export their PDFs correctly
+
+## Post-cutover result
+
+The active branch now runs from:
+
+- `execution/phase_01_dataset_construction/`
+- `execution/phase_02_exploratory_analysis/`
+- `execution/phase_03_validation/`
+- `execution/phase_04_causal_shocks/`
+
+Legacy execution layouts are no longer part of the active branch and survive
+only in archival and packaged historical material.
 
 ## Classification
 

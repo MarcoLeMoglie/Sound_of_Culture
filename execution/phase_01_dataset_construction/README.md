@@ -2,8 +2,7 @@
 
 The canonical project phase is `phase_01_dataset_construction`.
 
-Public phase-based entrypoints now live here, even though the underlying
-implementation still runs from legacy `execution/step*` directories.
+Public and active Phase 1 entrypoints now live here.
 
 ## Canonical entrypoints
 
@@ -37,23 +36,6 @@ implementation still runs from legacy `execution/step*` directories.
 - `execution/phase_01_dataset_construction/do/run_country_merge_v6_replication.do`
 - `execution/phase_01_dataset_construction/do/run_country_songs_replication.do`
 
-Bridge coverage now also extends across the remaining `step1_download` and
-`step2_digitalize` Python utilities, so the canonical Phase 1 folder now
-exposes wrappers for the full active Python surface of those two legacy
-subtrees.
-
-As of block 15, bridge coverage also spans the active Python entrypoints in
-`step4_country_artists` and `step5_replication`, so collaborators can now
-treat `execution/phase_01_dataset_construction/` as the canonical operational
-surface for Phase 1 work. The legacy folders remain in place as the
-implementation backend and as historical packaging roots.
-
-## Current legacy implementation roots
-
-- `execution/step1_download/`
-- `execution/step2_digitalize/`
-- `execution/step4_country_artists/`
-- `execution/step5_replication/`
-
-This folder is the stable landing point for future code migration once path
-rewrites are completed.
+This folder is now the stable Phase 1 implementation surface on the active
+branch. Legacy `step*` layouts survive only in archival branches and packaged
+replication material.

@@ -17,9 +17,11 @@ validation or causal use.
 - `execution/phase_02_exploratory_analysis/do/eda.do`
 - `execution/phase_02_exploratory_analysis/do/eda_bass.do`
 
-## Legacy implementation root behind those entrypoints
+## Architecture note
 
-- `execution/step3_analysis/`
+The active branch now runs this phase natively from
+`execution/phase_02_exploratory_analysis/`. Historical `step3_analysis`
+layouts remain only in archival branches and transition records.
 
 ## Required outputs
 

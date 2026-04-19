@@ -46,8 +46,7 @@ Fall back to Grep/Glob/Read **only** when the graph doesn't cover what you need.
   including `.coldstart_*` and packaged replication copies, so graph search may
   return duplicate legacy paths
 - unless the task is explicitly about archival material, prefer active working
-  paths under `execution/step*`, `execution/phase_*`, `directives/`, and
-  `project_memory/`
+  paths under `execution/phase_*`, `directives/`, and `project_memory/`
 - if graph results look stale or inconsistent, rebuild with
   `code-review-graph build --repo /Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture`
   and restart the client
@@ -101,15 +100,16 @@ The repo-side mirrors for organization live in:
 
 ### Current Architecture Rule
 
-The project is in a transition state:
+The active project architecture is now phase-based:
 
-- the **canonical conceptual structure** is phase-based
-- many **working scripts still live in legacy `execution/step*` folders**
-- every new modification must explicitly remember this coexistence rule rather
-  than assuming the repository already has a single clean architecture
+- `execution/phase_01_dataset_construction/`
+- `execution/phase_02_exploratory_analysis/`
+- `execution/phase_03_validation/`
+- `execution/phase_04_causal_shocks/`
 
-Do **not** rename or move legacy execution folders unless the current task
-explicitly includes path migration and you have checked downstream references.
+Legacy `execution/step*` folders have been removed from the active branch after
+validated cutover and now survive only through archival branches, replication
+packages, and restructuring history documents.
 
 ### Shared-Agent Continuity
 
@@ -213,3 +213,5 @@ As of 2026-04-18:
   Kiro, and local Antigravity configuration
 - the review graph was rebuilt on 2026-04-18 and currently indexes `python`
   and `bash` only
+- on 2026-04-19, destructive cutover point 5 removed the active
+  `execution/step*` trees after the full validation pass succeeded

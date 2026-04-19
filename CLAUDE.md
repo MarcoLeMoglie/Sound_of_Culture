@@ -25,13 +25,13 @@ The essential operating rules are:
 
 - work against the new four-phase project design
 - treat Overleaf reports as canonical narrative deliverables
-- preserve legacy `execution/step*` paths unless migration is explicit
+- use only `execution/phase_*` as the active execution surface on this branch
 - update `project_memory/` after meaningful work
 - document every serious attempt, including rejected ones
 - keep Stata workflows fully explained
 - preserve archival branches before destructive cleanup
-- remember that `supermemory` is configured, but client authentication still
-  needs to be completed and validated
+- remember that `supermemory` is configured and operational for the shared
+  project scope, while `project_memory/` remains the written backup layer
 
 Read next:
 

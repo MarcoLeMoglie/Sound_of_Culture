@@ -31,16 +31,18 @@ Use this summary when you need a quick project picture:
    - phase 4 causal shocks
 3. The canonical reports live in the Overleaf project:
    - `/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Applicazioni/Overleaf/Sound of culture`
-4. Legacy execution code still lives in `execution/step*` and should not be
-   renamed casually.
+4. The active branch now runs from `execution/phase_*` only; legacy execution
+   layouts survive only in archival branches and packaged replication
+   snapshots.
 5. Every meaningful attempt must be written into the relevant report, including
    whether the attempt is kept or discarded and why.
 6. Every substantial work unit must update repo-side shared memory under
    `project_memory/`.
 7. Stata work must always be documented in detail, with commented code and
    report snippets.
-8. `supermemory` is configured for the project, but client authentication still
-   needs to be completed and validated.
+8. `supermemory` is configured and working for the shared project scope
+   `sound-of-culture`; repo-side `project_memory/` remains the written backup
+   layer.
 
 Read next:
 

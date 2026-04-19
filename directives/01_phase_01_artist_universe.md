@@ -20,10 +20,11 @@ documented.
 - `execution/phase_01_dataset_construction/enrich_artist_universe_missing_metadata.py`
 - `execution/phase_01_dataset_construction/run_artist_universe_replication.py`
 
-## Legacy implementation roots behind those entrypoints
+## Architecture note
 
-- `execution/step4_country_artists/`
-- `execution/step5_replication/`
+The active branch now runs this phase natively from
+`execution/phase_01_dataset_construction/`. Legacy `step*` layouts remain only
+inside archival branches and packaged replication material.
 
 ## Required outputs
 

@@ -55,7 +55,7 @@ including `.coldstart_*` and packaged replication copies. As a result:
 
 Therefore:
 
-- prefer active paths under `execution/step*` and `execution/phase_*`
+- prefer active paths under `execution/phase_*`
 - use path awareness when interpreting graph search results
 - only work inside archival or replication-package paths when the task
   explicitly requires it

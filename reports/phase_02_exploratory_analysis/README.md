@@ -13,9 +13,9 @@ Canonical exploratory entrypoints now live in:
 
 - `execution/phase_02_exploratory_analysis/`
 
-Legacy analytical materials still live mainly in:
-
-- `execution/step3_analysis/`
+The active branch now runs this phase from the phase-based surface only.
+Historical legacy layouts remain available only in archival branches and
+transition records.
 
 Expected Overleaf counterpart:
 

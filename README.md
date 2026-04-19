@@ -58,6 +58,8 @@ Current restructuring status:
 - block 15 completed: wrapper coverage was finished for the remaining active
   `step4_country_artists` / `step5_replication` surface, closing the
   operational restructuring pass
+- block 16 completed: destructive cutover removed the active `execution/step*`
+  trees after the validated pre-cutover snapshot was archived
 
 For a block-by-block history, see:
 
@@ -98,18 +100,7 @@ The validated measure is then used in causal applications:
 
 ## Repository structure
 
-The repository is in a transition state, but the operational restructuring is
-now substantially complete.
-
-The canonical conceptual organization is phase-based, but much of the active
-implementation still lives in legacy `execution/step*` folders. This is
-intentional. We have already shifted the public execution surface to the
-phase-based folders and are preserving the legacy layer for implementation
-stability, replication-package compatibility, and historical reproducibility.
-
-Until migration is fully complete, every new modification must explicitly
-remember this coexistence rule instead of pretending the repository already has
-a single clean architecture.
+The repository now runs on a phase-based architecture.
 
 High-level structure:
 
@@ -118,8 +109,7 @@ High-level structure:
 - `directives/`
   Canonical SOP and phase directives.
 - `execution/`
-  Working code. Legacy `step*` folders remain active. New `phase_*` folders are
-  the canonical future landing points.
+  Working code under the canonical `phase_*` directories.
 - `reports/`
   Repo-side mirror of the canonical Overleaf report structure.
 - `project_memory/`
@@ -131,29 +121,21 @@ High-level structure:
 
 Important subtrees:
 
-- `execution/step1_download/`
-  Legacy Ultimate Guitar discovery and download logic.
-- `execution/step2_digitalize/`
-  Legacy song-level processing and final dataset assembly logic.
-- `execution/step3_analysis/`
-  Legacy exploratory analysis code and report generation.
-- `execution/step4_country_artists/`
-  Legacy country artist-universe construction and metadata enrichment.
-- `execution/step5_replication/`
-  Legacy replication wrappers and cold-start packaging logic.
-- `execution/phase_*`
-  Canonical phase directories and public entrypoints created during
-  restructuring.
+- `execution/phase_01_dataset_construction/`
+  Dataset construction logic, replication launchers, and helper modules.
+- `execution/phase_02_exploratory_analysis/`
+  Exploratory analysis scripts and generated figures.
+- `execution/phase_03_validation/`
+  Validation-phase execution surface.
+- `execution/phase_04_causal_shocks/`
+  Causal-application execution surface.
 
-Current restructuring interpretation:
+Current architecture interpretation:
 
-- use `execution/phase_01_dataset_construction/` and
-  `execution/phase_02_exploratory_analysis/` as the canonical operational
-  entrypoints
-- treat `execution/step*` as the retained implementation backend and archival
-  compatibility layer
-- do not delete or rename legacy execution folders unless a later task
-  explicitly includes a destructive cutover with downstream reference checks
+- use the `execution/phase_*` directories as the only active execution surface
+- legacy `execution/step*` code is no longer present in the active branch
+- historical legacy layouts survive in archival branches, replication
+  packages, and restructuring notes only
 
 Current phase-based execution surfaces:
 
@@ -329,16 +311,15 @@ All canonical phase reports in Overleaf must be written in English.
 This rule applies even to discarded attempts if they informed the final
 project.
 
-## Known transition rules
+## Current architecture rules
 
-- Legacy `execution/step*` code is still active.
-- Phase-based folders are the canonical organizational layer.
-- New documentation should point to phase-based entrypoints first.
-- Do not move legacy execution folders unless a task explicitly includes path
-  migration.
-- The repo contains archival / replication snapshots such as `.coldstart_*`.
-  These may create duplicate results in graph search and should not be confused
-  with active working paths.
+- The active branch is phase-based.
+- New documentation should point only to phase-based entrypoints.
+- Legacy execution layouts now live only in archival branches and packaged
+  replication material.
+- The repo still contains archival / replication snapshots such as
+  `.coldstart_*`. These may create duplicate results in graph search and
+  should not be confused with active working paths.
 
 ## Main reference files
 

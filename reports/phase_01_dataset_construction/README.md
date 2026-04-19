@@ -12,9 +12,6 @@ Canonical execution entrypoints now live in:
 
 - `execution/phase_01_dataset_construction/`
 
-Legacy implementation still lives mainly in:
-
-- `execution/step1_download/`
-- `execution/step2_digitalize/`
-- `execution/step4_country_artists/`
-- `execution/step5_replication/`
+The active branch now runs this phase from the phase-based surface only.
+Legacy execution layouts remain available only in archival branches and
+packaged replication snapshots.
