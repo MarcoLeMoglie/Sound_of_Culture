@@ -80,6 +80,27 @@
 Return to scientific work and report-writing on top of the now-clean
 phase-based architecture.
 
+## Phase 1 reporting status
+
+- the old Overleaf `pipeline_report.tex` / `pipeline_report.pdf` narrative was
+  split into two canonical Phase 1 reports
+- `phase_01_dataset_construction/01_country_only_and_adjacent_only/main.tex`
+  now documents the retained construction workflow for the country-only and
+  adjacent-only artist universes
+- `phase_01_dataset_construction/02_final_dataset_ultimate_guitar/main.tex`
+  now documents the retained Ultimate Guitar download, supplementation, and
+  final-dataset workflow
+- both reports were synchronized to the shared Overleaf folder and compiled
+  successfully there on 2026-04-19
+- the legacy root-level and Phase 1.2 `pipeline_report.tex` /
+  `pipeline_report.pdf` files were removed from Overleaf after the split
+- the retained reporting rule for Phase 1 is now:
+  - reports remain English-only
+  - Python code is referenced by exact script path and line ranges, not pasted
+    as full snippets
+  - Stata code, when substantively used, should appear only as targeted
+    snippets after the explanatory text, never as full-script dumps
+
 ## Reporting language rule
 
 Canonical Overleaf reports for all phases are now explicitly English-only.

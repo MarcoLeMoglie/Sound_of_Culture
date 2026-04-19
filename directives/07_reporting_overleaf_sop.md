@@ -16,7 +16,6 @@ Every major phase must leave behind:
 
 - an editable report project
 - copied outputs needed to compile the report
-- code snippets for the important steps
 - a transparent narrative of what was retained and what was rejected
 
 ## Minimum update rule
@@ -32,7 +31,7 @@ update the relevant report before closing the work unit.
 - outputs
 - interpretation
 - retained vs discarded approaches
-- code snippets
+- code references
 - file and folder structure when helpful
 
 ## Plain-English rule
@@ -57,3 +56,19 @@ For Stata work, reports must explain:
 - estimation logic
 - exported outputs
 - exact code snippets for important figures or tables
+
+Do not paste entire `.do` files. Use only the specific snippet needed for the
+explained step, and place it after the prose explanation of that step.
+
+## Python reporting rule
+
+For Python work, reports should not paste full code blocks by default.
+
+Instead, reports must cite:
+
+- the exact script used
+- the exact line range for the relevant logic block
+- the purpose of that block in plain English
+
+Only include a Python snippet if a future task explicitly requires one. The
+default reporting style is script-and-line references rather than pasted code.

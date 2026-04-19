@@ -1,0 +1,25 @@
+{
+  "generated_at_utc": "2026-04-07T22:50:59.563777+00:00",
+  "artists_targeted": 2333,
+  "chords": {
+    "discovery_file": "/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/data/intermediate/json/ug_country_only_chords_discovery.json",
+    "output_dir": "/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/data/raw_tabs_country",
+    "unique_songs": 55335,
+    "json_total": 64829,
+    "json_existing": 64818,
+    "json_missing": 11
+  },
+  "tabs": {
+    "discovery_file": "/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/data/intermediate/json/ug_country_only_tabs_discovery.json",
+    "output_dir": "/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture/data/raw_country_tabs",
+    "unique_songs": 5243,
+    "json_total": 7299,
+    "json_existing": 7296,
+    "json_missing": 3
+  },
+  "combined": {
+    "json_total": 72128,
+    "json_existing": 72114,
+    "json_missing": 14
+  }
+}

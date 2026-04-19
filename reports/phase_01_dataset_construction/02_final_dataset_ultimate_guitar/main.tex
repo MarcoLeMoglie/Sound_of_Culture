@@ -1,0 +1,334 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\title{Sound of Culture\\Phase 1.2 Report: Ultimate Guitar Pipeline and Final Dataset Construction}
+\author{Detailed project report}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Purpose of this report}
+This report documents the retained song-side construction workflow that starts
+from the operational country-only artist file, runs Ultimate Guitar discovery
+and download, supplements the missing chart material, and ends with the final
+country-only chord dataset and the recovery of the remaining missing metadata.
+
+The key distinction relative to Phase 1.1 is that this report is about
+\emph{song-side} construction rather than \emph{artist-side} construction. The
+country-only file inherited from Phase 1.1 is treated here as the operational
+artist input. The report therefore focuses on:
+\begin{enumerate}[leftmargin=2em]
+\item Ultimate Guitar discovery, planning, and raw JSON download;
+\item Billboard supplementation for still-missing artists or songs;
+\item final dataset assembly on top of \texttt{Restricted Final v6};
+\item the hierarchical recovery of \texttt{release\_year} and other residual
+metadata;
+\item snapshot-assisted replication of the retained final outputs.
+\end{enumerate}
+
+\section{Inputs inherited from Phase 1.1}
+The song-side pipeline does not start from the full artist universe. It starts
+from the operational \texttt{artist\_universe\_country\_only.csv}. This is a
+retained design choice. The project does \emph{not} use the adjacent-only
+universe as the main scrape frame for the final country-only dataset.
+
+That distinction is essential:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{country-only} is the core artist frame used to search Ultimate
+Guitar and to attach artist metadata to the final dataset;
+\item \texttt{adjacent-only} is retained as a broader documented perimeter, not
+as the main song-discovery denominator for this report's dataset.
+\end{itemize}
+
+\section{Retained pipeline}
+
+\subsection{Stage 1. Ultimate Guitar discovery, planning, and raw JSON download}
+The retained Ultimate Guitar pipeline is implemented in
+\texttt{code/country\_only\_ultimate\_guitar.py}. The main retained entrypoints
+are:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{run\_discovery()} at lines 297--348;
+\item \texttt{build\_plan()} at lines 375--417;
+\item \texttt{run\_download()} and its worker logic at lines 420--560.
+\end{itemize}
+
+The script is intentionally split into three commands:
+\begin{enumerate}[leftmargin=2em]
+\item \texttt{discover}, which searches the country-only artist list and stores
+up to the top three versions per song;
+\item \texttt{plan}, which compares discovery targets with the raw JSON files
+already on disk;
+\item \texttt{download}, which retrieves the remaining JSON payloads with
+resume logic, sharding options, and explicit handling of rate limits and legal
+451 responses.
+\end{enumerate}
+
+This separation is retained because it makes the workflow restartable and
+auditable. Discovery, planning, and downloading are conceptually distinct
+objects and should remain distinct operationally.
+
+\begin{table}[H]
+\centering
+\caption{Retained Ultimate Guitar plan snapshot}
+\begin{tabular}{p{0.34\textwidth}rrr}
+\toprule
+Layer & Songs & JSON total & JSON missing \\
+\midrule
+UG chords & 55,335 & 64,829 & 11 \\
+UG tabs & 5,243 & 7,299 & 3 \\
+Combined & --- & 72,128 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The important substantive implication is that the pipeline keeps multiple JSON
+versions per song when available. The retained workflow is not a crude
+top-result-only scrape.
+
+\subsection{Stage 2. Billboard supplement}
+The retained supplement logic is implemented in
+\texttt{code/supplement\_billboard\_country\_chords.py}, especially:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{run()} at lines 235--363;
+\item \texttt{main()} at lines 366--390.
+\end{itemize}
+
+This stage exists because broad Ultimate Guitar discovery still leaves two
+types of holes:
+\begin{itemize}[leftmargin=2em]
+\item artists missing from the original country-only scrape frame but present
+in the Billboard repair layer;
+\item songs by already-known artists that remain absent from the discovery
+output.
+\end{itemize}
+
+The retained supplement therefore has two branches:
+\begin{enumerate}[leftmargin=2em]
+\item broad discovery for newly added artists when they are still missing from
+the discovery output;
+\item targeted song search for the Billboard songs that remain missing after
+the broad pass.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{Saved Billboard supplement report used by the retained workflow}
+\begin{tabular}{p{0.52\textwidth}r}
+\toprule
+Metric & Value \\
+\midrule
+Added artists in supplement & 206 \\
+Target songs processed in the saved run report & 1,516 \\
+Existing discovery rows before supplement & 70,496 \\
+Rows added by the supplement & 13 \\
+Final discovery rows after merge & 70,504 \\
+New raw JSON downloads & 8 \\
+Attempted target keys recorded & 1,087 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This is also the stage that explains why the current operational
+\texttt{artist\_universe\_country\_only.csv} is larger than the clean Phase 1.1
+core. The artist frame used in the final song pipeline is intentionally
+expanded when Billboard recovery requires it.
+
+\subsection{Stage 3. Build the final chord-level dataset}
+The retained final builder is
+\texttt{code/build\_country\_only\_chords\_final.py}. The main retained blocks
+are:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{build\_new\_song\_rows()} at lines 595--643;
+\item \texttt{apply\_num\_json\_used()} at lines 686--705;
+\item \texttt{apply\_chart\_variables()} at lines 1919--1953;
+\item \texttt{build\_final\_dataset()} at lines 1956--1983;
+\item \texttt{main()} at lines 2015--2033.
+\end{itemize}
+
+The builder starts from \texttt{Sound\_of\_Culture\_Country\_Restricted\_Final\_v6}
+and extends it. The retained logic is:
+\begin{enumerate}[leftmargin=2em]
+\item load the discovery rows and the raw JSON payloads;
+\item turn newly available songs into song-level rows;
+\item deduplicate those new rows first by Ultimate Guitar ID and then by
+artist-song key;
+\item reattach artist metadata from the operational country-only file;
+\item create bridge rows for artists who have raw JSON but no existing row in
+the combined file;
+\item record how many chord JSON files were actually used for each song;
+\item attach Billboard year-end variables;
+\item recover missing \texttt{release\_year};
+\item save the final \texttt{csv} and \texttt{dta}.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{Retained final output counts}
+\begin{tabular}{p{0.56\textwidth}r}
+\toprule
+Object & Count \\
+\midrule
+Current new-song cache (\texttt{country\_only\_chords\_new\_songs\_2026\_04\_08.csv}) & 36,584 \\
+Current final country-only chord dataset & 44,058 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two methodological details are retained and should not be misunderstood.
+
+First, \texttt{genre} in the final dataset is a \emph{song-level} attribute
+read from the Ultimate Guitar payload. It is not imposed from the artist-side
+country-only classification. This is why songs by country-only artists can
+still appear with non-country song tags.
+
+Second, the builder can use up to three JSON payloads for the same song. The
+retained workflow deliberately prefers deeper recovery from the best available
+versions rather than hard-coding a top-1 rule.
+
+\subsection{Stage 4. Recover missing \texttt{release\_year} and residual metadata}
+The retained \texttt{release\_year} logic is in
+\texttt{code/build\_country\_only\_chords\_final.py}, especially
+\texttt{enrich\_release\_years()} at lines 1519--1679.
+
+The retained hierarchy is explicit:
+\begin{enumerate}[leftmargin=2em]
+\item manual web-confirmed overrides;
+\item historical master caches inherited from previous project layers;
+\item dedicated caches saved by the current country-only final run;
+\item artist-level iTunes lookup;
+\item artist-level MusicBrainz recording lookup;
+\item artist-level MusicBrainz release lookup;
+\item artist-level Deezer lookup;
+\item song-bundle iTunes lookup for residual missing songs;
+\item song-level fallback through Discogs, MusicBrainz, Wikidata, and finally
+Wikipedia.
+\end{enumerate}
+
+This is a retained design choice because it minimizes both cost and noise. The
+workflow first reuses already-confirmed knowledge, then queries by artist when
+many missing songs belong to the same performer, and only at the end falls back
+to song-by-song searches.
+
+\begin{table}[H]
+\centering
+\caption{Saved augmentation and residual-missingness diagnostics used by the final pipeline}
+\begin{tabular}{p{0.56\textwidth}r}
+\toprule
+Metric & Value \\
+\midrule
+Base rows in the saved Wikipedia year-end supplement summary & 2,729 \\
+Supplemental rows added from the year-end supplement summary & 473 \\
+Augmented missing-song targets in the retained v4 summary & 1,515 \\
+Targets linked to existing artists in the retained v4 summary & 1,490 \\
+Targets still missing an artist in the retained v4 summary & 25 \\
+Rows in the retained residual release-year file & 2,893 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The key interpretation is that missing-data recovery is not a separate afterthought.
+It is part of the final build itself and is handled by a staged hierarchy rather
+than a single source.
+
+\subsection{Stage 5. Snapshot-assisted replication and package refresh}
+The retained workflow also preserves the package layer that restores or refreshes
+the canonical outputs. The main scripts are:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{code/run\_country\_songs\_replication.py}, especially lines
+10--29, 67--77, 87--108, 111--170;
+\item \texttt{code/run\_country\_merge\_v6\_replication.py}, especially lines
+67--71, 109--176, 215--247, 294--360.
+\end{itemize}
+
+These wrappers are retained because they let the project:
+\begin{itemize}[leftmargin=2em]
+\item restore the canonical upstream song and merge-to-v6 layers quickly in a
+clean workspace;
+\item refresh the packaged snapshots after a validated retained run;
+\item distinguish between exact reproducibility of final deliverables and a
+full live rebuild from raw web sources.
+\end{itemize}
+
+\section{Retained versus non-retained choices}
+\subsection{Retained choices}
+The following choices are retained in the final workflow:
+\begin{itemize}[leftmargin=2em]
+\item using the country-only file, not the adjacent universe, as the main
+Ultimate Guitar scrape input;
+\item separating discovery, planning, and downloading into distinct commands;
+\item using a targeted Billboard supplement instead of inflating the base
+discovery indiscriminately;
+\item constructing the final dataset from \texttt{Restricted Final v6} plus new
+UG rows, rather than replacing the upstream file wholesale;
+\item using a hierarchical cache-first \texttt{release\_year} recovery design;
+\item preserving exact-replication wrappers for the final deliverables.
+\end{itemize}
+
+\subsection{Not retained as final choices}
+The following ideas are not retained as the final workflow:
+\begin{itemize}[leftmargin=2em]
+\item scraping the full adjacent artist universe before the country-only song
+pipeline is stabilized;
+\item forcing artist-level genre identity onto song-level \texttt{genre} values
+in the final dataset;
+\item treating snapshot-assisted replication as if it were equivalent to the
+full live historical build.
+\end{itemize}
+
+Those choices were rejected because they would either make the final country
+dataset less interpretable or blur the difference between provenance and exact
+restoration.
+
+\section{Exact scripts used in the retained workflow}
+\begin{longtable}{p{0.36\textwidth}p{0.18\textwidth}p{0.33\textwidth}}
+\toprule
+Script copy in this folder & Main line ranges used & Role in the retained workflow \\
+\midrule
+\endfirsthead
+\toprule
+Script copy in this folder & Main line ranges used & Role in the retained workflow \\
+\midrule
+\endhead
+\texttt{code/country\_only\_ultimate\_guitar.py} & 297--348; 375--417; 420--560 & Discovery, planning, and raw JSON download for the operational country-only artist frame. \\
+\texttt{code/supplement\_billboard\_country\_chords.py} & 235--363; 366--390 & Billboard-based recovery of added artists and still-missing songs. \\
+\texttt{code/build\_country\_only\_chords\_final.py} & 595--643; 686--705; 1519--1679; 1919--1983; 2015--2033 & Build new song rows, attach chart variables, recover release years, and save the final dataset. \\
+\texttt{code/run\_country\_songs\_replication.py} & 10--29; 67--77; 87--108; 111--170 & Restore and refresh the upstream country-song package outputs and caches. \\
+\texttt{code/run\_country\_merge\_v6\_replication.py} & 67--71; 109--176; 215--247; 294--360 & Restore and verify the merge-to-v6 bridge that the final builder depends on. \\
+\bottomrule
+\end{longtable}
+
+\section{Stata note}
+There is no retained substantive Stata construction workflow in Phase 1.2. The
+main pipeline is Python-based. Stata appears only as a thin launcher layer for
+replication packages, so this report does not include Stata code snippets.
+
+\section{Conclusion}
+Phase 1.2 turns the artist-side frame into the final song-side construction
+dataset. The retained logic is a layered one:
+\begin{itemize}[leftmargin=2em]
+\item discover and download Ultimate Guitar material from the country-only
+artist frame;
+\item repair the coverage gaps that remain through the Billboard supplement;
+\item append the valid new songs to the upstream v6 base;
+\item recover \texttt{release\_year} through a documented hierarchy;
+\item preserve exact restoration wrappers for the canonical final outputs.
+\end{itemize}
+
+That retained sequence is the final Phase 1.2 construction workflow used by the
+project.
+
+\end{document}

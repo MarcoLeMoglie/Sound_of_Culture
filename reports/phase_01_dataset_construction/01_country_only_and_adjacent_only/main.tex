@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\title{Sound of Culture\\Phase 1.1 Report: Country-Only and Adjacent-Only Artist Universes}
+\author{Detailed project report}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Purpose of this report}
+This report documents the retained workflow used to construct the artist-side
+foundation of the project. Its job is not to describe the final chord-level
+dataset. Instead, it explains how the project defined the \texttt{country-only}
+artist frame, how it expanded that frame into \texttt{adjacent-only}, how
+missing artist metadata were recovered, and which outputs are the canonical
+deliverables for downstream work.
+
+The key conceptual point is that Phase 1.1 solves an \emph{artist-frame}
+problem before the project solves a \emph{song-frame} problem. The project
+first needs a defensible answer to ``which artists belong to the core country
+sample, which artists belong to the adjacent perimeter, and how much metadata
+can be recovered for both groups?'' Only after that artist-side construction is
+stable does the project move to Ultimate Guitar discovery and song-level
+assembly.
+
+\section{Final deliverables and how to read them}
+The retained artist-side deliverables are:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{artist\_universe\_country\_only.csv/.dta}: the canonical country
+core used as the artist input for the Ultimate Guitar pipeline;
+\item \texttt{artist\_universe\_adjacent\_only.csv/.dta}: the adjacent pool kept
+separate from the core country frame;
+\item \texttt{artist\_universe\_country\_plus\_adjacent.csv/.dta}: the final
+deduplicated union of the two universes;
+\item \texttt{artist\_universe\_qc\_report.md},
+\texttt{artist\_universe\_methodological\_note.md}, and the coverage-estimate
+files, which document quality, scope, and interpretation.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{Canonical Phase 1.1 counts used in the retained workflow}
+\begin{tabular}{p{0.55\textwidth}r}
+\toprule
+Object & Count \\
+\midrule
+Base country-only artist universe & 2,333 \\
+Adjacent-only artist universe & 2,493 \\
+Country plus adjacent universe & 4,824 \\
+Operational \texttt{artist\_universe\_country\_only.csv} after Billboard additions & 2,539 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The distinction between the first and the fourth row matters. The retained
+Phase 1.1 universe construction produces the clean artist-side core
+(\texttt{2,333}). Later, the Phase 1.2 Billboard supplement adds artists needed
+to recover missing chart material, which is why the current operational
+\texttt{artist\_universe\_country\_only.csv} is larger (\texttt{2,539}). This
+report therefore treats the clean country-only universe as the canonical
+construction object and the enlarged country-only file as the operational input
+handed over to Phase 1.2.
+
+\section{Retained workflow}
+
+\subsection{Stage 1. Build the base country-artist datasets}
+The first retained construction layer is the base country-artist build in
+\texttt{code/build\_country\_artists\_dataset.py}. The key orchestration lives in:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{prepare\_dataset()} at lines 2123--2258;
+\item \texttt{deduplicate()} at lines 2329--2353;
+\item \texttt{write\_qc\_report()} at lines 2393--2439;
+\item \texttt{main()} at lines 2442--2465 and the code that follows in the same
+entrypoint.
+\end{itemize}
+
+This builder does five things in a disciplined order.
+\begin{enumerate}[leftmargin=2em]
+\item It collects seed candidates from the Country Music Hall of Fame, from
+Wikipedia pages and categories, and from broad country-related Wikidata
+queries.
+\item It merges the seed layer with structured Wikidata details.
+\item It enriches identity and geography from Wikipedia when the structured
+layer is incomplete.
+\item It applies targeted MusicBrainz enrichment when important key fields
+remain unresolved.
+\item It deduplicates, assigns sample flags, and exports the country-artist
+tables in both \texttt{csv} and \texttt{dta}.
+\end{enumerate}
+
+The important methodological choice here is the source hierarchy. The retained
+workflow does not begin with weak web scraping. It begins with structured
+artist identifiers and only later uses semi-structured or targeted fallback
+sources.
+
+\subsection{Stage 2. Build the country core and the adjacent-only perimeter}
+The second retained layer is the integrated artist-universe build in
+\texttt{code/build\_extended\_artist\_universe.py}. The main retained blocks are:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{build\_core\_universe()} at lines 571--583;
+\item \texttt{build\_adjacent\_seed\_pool()} at lines 586--607;
+\item \texttt{resolve\_adjacent\_seeds()} at lines 610--691;
+\item \texttt{build\_adjacent\_universe()} at lines 694--845;
+\item \texttt{write\_qc\_report()} at lines 869--892;
+\item \texttt{write\_method\_note()} at lines 895--945;
+\item \texttt{main()} at lines 948 onward.
+\end{itemize}
+
+This script is where the final artist-universe logic becomes clear. The country
+core is not rebuilt from scratch. Instead, it is integrated from three existing
+project assets:
+\begin{itemize}[leftmargin=2em]
+\item artists already observed in the current song-side file;
+\item artists already present in \texttt{country\_artists\_restricted};
+\item artists already present in \texttt{country\_artists\_master}.
+\end{itemize}
+
+After the core is stabilized, the script builds an adjacent seed pool from
+genre-oriented sources and then resolves those candidates through the same
+artist-enrichment logic used on the country side. The adjacent perimeter is not
+treated as ``country by another name.'' It is retained as a separate staging
+universe that widens later discovery potential without collapsing genre
+identity into a single bucket.
+
+The adjacent seed logic is materially important. The retained adjacent tags are
+\texttt{folk}, \texttt{americana}, \texttt{bluegrass},
+\texttt{rockabilly}, \texttt{western swing}, \texttt{outlaw country},
+\texttt{roots rock}, and \texttt{country gospel}. The script then classifies
+adjacent cases into buckets and keeps the \texttt{adjacent-only} pool separate
+from the core country frame.
+
+\subsection{Stage 3. Recover missing metadata on the country-only file used downstream}
+The third retained layer is a direct top-up of the exact
+\texttt{artist\_universe\_country\_only.csv} file that Phase 1.2 will use. The
+retained logic is in
+\texttt{code/enrich\_artist\_universe\_missing\_metadata.py}, especially
+\texttt{enrich\_country\_only\_direct()} at lines 2062--2085 and
+\texttt{main()} at lines 2119 onward.
+
+This pass exists because the project separates two tasks:
+\begin{itemize}[leftmargin=2em]
+\item building a broad artist-side frame;
+\item making sure the exact country-only file used by the Ultimate Guitar
+pipeline is as complete as possible on the key demographic variables.
+\end{itemize}
+
+The retained enrichment order is explicit and hierarchical:
+\begin{enumerate}[leftmargin=2em]
+\item parse and clean the geography already present;
+\item resolve missing Wikidata QIDs from names;
+\item enrich from targeted Wikidata lookups;
+\item enrich from Wikipedia sources;
+\item resolve missing MusicBrainz MBIDs;
+\item run targeted MusicBrainz enrichment;
+\item run generic MusicBrainz enrichment;
+\item recover origin-year information from Wikipedia for bands and residual
+cases;
+\item use Discogs and iTunes as additional fallback sources;
+\item use official websites when structured public evidence exists;
+\item apply web-confirmed manual overrides;
+\item clean geography again and infer state from already-observed
+city-country combinations;
+\item refresh derived columns and save the final country-only file.
+\end{enumerate}
+
+\section{Source hierarchy and variable recovery}
+The retained workflow deliberately uses a source hierarchy rather than a flat
+merge of sources.
+
+\subsection{Primary source layer}
+The first layer is structured and semi-structured artist data:
+\begin{itemize}[leftmargin=2em]
+\item Wikidata for identifiers, birth dates, places, genres, occupations, and
+citizenship;
+\item Wikipedia infoboxes and lead text for recovery when structured fields are
+missing or incomplete;
+\item MusicBrainz for artist identity, area, and lifespan-style metadata.
+\end{itemize}
+
+\subsection{Secondary fallback layer}
+Only after that first layer does the project use:
+\begin{itemize}[leftmargin=2em]
+\item Discogs;
+\item iTunes / Apple Music;
+\item official websites via structured page metadata;
+\item targeted manual overrides when public evidence is clear enough.
+\end{itemize}
+
+\subsection{Priority variables}
+The project pushed hardest on:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{name\_primary};
+\item \texttt{birth\_year};
+\item \texttt{birth\_city};
+\item \texttt{birth\_state};
+\item \texttt{birth\_country}.
+\end{itemize}
+
+These variables matter for the later substantive design, because they are the
+artist-side bridge to time, geography, and eventual state-level cultural
+measurement.
+
+\begin{table}[H]
+\centering
+\caption{Residual missingness in the current operational country-only file}
+\begin{tabular}{lr}
+\toprule
+Variable & Remaining missing \\
+\midrule
+\texttt{birth\_year} & 118 \\
+\texttt{birth\_city} & 178 \\
+\texttt{birth\_state} & 122 \\
+\texttt{birth\_country} & 96 \\
+\texttt{wikidata\_qid} & 89 \\
+\texttt{musicbrainz\_mbid} & 531 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The retained principle is that the project prefers reliable missingness over
+fabricated certainty. If a field cannot be supported by sufficiently credible
+evidence, it remains missing.
+
+\section{Final outputs kept for downstream work}
+The artist-side outputs that are actually retained are:
+\begin{itemize}[leftmargin=2em]
+\item the three final universe files in \texttt{csv} and \texttt{dta};
+\item the quality-control report;
+\item the methodological note on denominators and coverage;
+\item the coverage-estimate files;
+\item the replication package for exact restoration of the final universe
+deliverables.
+\end{itemize}
+
+This last point matters. The retained project workflow is not just ``run the
+live builder again.'' It also preserves a stable replication package. The exact
+artist-universe restoration wrapper is in
+\texttt{code/run\_artist\_universe\_replication.py}, with the package structure
+and restore/copy logic at lines 6--20, 57--65, 68--75, 87--108, 111--121, and
+128--145.
+
+\section{Retained versus non-retained choices}
+\subsection{Retained choices}
+The following choices are retained in the final workflow:
+\begin{itemize}[leftmargin=2em]
+\item keeping \texttt{country-only} and \texttt{adjacent-only} as two separate
+objects rather than collapsing them into a single artist list;
+\item using structured sources first, then semi-structured fallbacks, then
+targeted web-confirmed overrides only when necessary;
+\item treating the country-only file as the operational input for song-side
+discovery;
+\item preserving exact-replication packaging alongside the live build logic.
+\end{itemize}
+
+\subsection{Not retained as final choices}
+The following ideas were not retained as the final workflow:
+\begin{itemize}[leftmargin=2em]
+\item using the full adjacent universe directly as the scrape input for the
+main Ultimate Guitar country dataset;
+\item forcing complete metadata fill when public evidence remained weak;
+\item redefining adjacent artists as if they were equivalent to the core
+country frame.
+\end{itemize}
+
+Those choices were rejected because they would either blur the substantive
+meaning of the country sample or create unreliable metadata.
+
+\section{Exact scripts used in the retained workflow}
+\begin{longtable}{p{0.34\textwidth}p{0.18\textwidth}p{0.35\textwidth}}
+\toprule
+Script copy in this folder & Main line ranges used & Role in the retained workflow \\
+\midrule
+\endfirsthead
+\toprule
+Script copy in this folder & Main line ranges used & Role in the retained workflow \\
+\midrule
+\endhead
+\texttt{code/build\_country\_artists\_dataset.py} & 2123--2258; 2329--2353; 2393--2439; 2442 onward & Build the base country-artist datasets, deduplicate, and export the first QC layer. \\
+\texttt{code/build\_extended\_artist\_universe.py} & 571--583; 586--607; 610--691; 694--845; 869--945; 948 onward & Build the country core, expand to adjacent-only, and write the final universe QC and methodological notes. \\
+\texttt{code/enrich\_artist\_universe\_missing\_metadata.py} & 2062--2085; 2119 onward & Recover missing key metadata directly on the operational country-only file used downstream. \\
+\texttt{code/run\_artist\_universe\_replication.py} & 6--20; 57--65; 68--75; 87--108; 111--121; 128--145 & Restore or refresh the exact artist-universe replication package. \\
+\bottomrule
+\end{longtable}
+
+\section{Stata note}
+There is no retained substantive Stata workflow in Phase 1.1. The artist-side
+construction is Python-based. Stata launchers exist only as thin replication
+wrappers, so this report does not include Stata code snippets.
+
+\section{Conclusion}
+Phase 1.1 gives the project a disciplined artist-side frame before any
+song-level scraping begins. The core contribution of this phase is not only the
+three final universe files. It is the combination of:
+\begin{itemize}[leftmargin=2em]
+\item a separated country and adjacent design;
+\item a documented source hierarchy for metadata recovery;
+\item a clear rule that country-only is the operational scrape input;
+\item a reproducible package that restores the final artist-universe outputs.
+\end{itemize}
+
+That is the retained artist-side workflow that the rest of the project now
+inherits.
+
+\end{document}

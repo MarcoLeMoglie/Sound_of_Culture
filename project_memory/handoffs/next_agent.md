@@ -97,6 +97,14 @@
   surface; that statement described the pre-cutover architecture and is now
   superseded by the destructive cutover recorded below
 - canonical Overleaf reports for all project phases must be written in English
+- Phase 1 reporting has now been split into two canonical Overleaf reports:
+  - `phase_01_dataset_construction/01_country_only_and_adjacent_only/main.tex`
+  - `phase_01_dataset_construction/02_final_dataset_ultimate_guitar/main.tex`
+- the former root-level and Phase 1.2 `pipeline_report.tex` /
+  `pipeline_report.pdf` files have been removed from Overleaf after the split
+- for Phase 1 reports, Python should be cited via script paths and line
+  references rather than copied as snippets; Stata should appear only via
+  narrowly targeted snippets when a real retained Stata workflow exists
 - a destructive-cutover plan now exists in
   `workspace_maps/destructive_cutover_plan_2026-04-18.md`
 - destructive cutover point 5 has now been executed on the active branch after
@@ -137,6 +145,12 @@ Important validation outcomes already obtained:
 - the `r(199)` lines in `eda.log` and `eda_bass.log` are harmless
   environment noise from the local Stata `profile.do`, not failures in the
   project scripts
+
+Most immediate scientific-reporting follow-up:
+
+- update future Phase 1 report revisions directly in the two canonical
+  `main.tex` files under the shared Overleaf Phase 1 folders, not in any
+  resurrected `pipeline_report.*` file
 
 Keep replication-package / archival paths untouched unless explicitly
 requested, except when a validated replication run intentionally refreshes its
