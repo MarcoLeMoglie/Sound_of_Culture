@@ -22,6 +22,10 @@
   `phase_01_dataset_construction/02_final_dataset_ultimate_guitar/`
 - both Phase 1 reports were updated again on 2026-04-19 to document the new
   final-dataset metadata-repair layer and compiled successfully in Overleaf
+- both Phase 1 reports were updated again on 2026-04-20 to document the
+  retained chunked BPM-repair workflow, the refreshed final counts, and the
+  additional artist-origin backfill fixes; both compiled successfully in
+  Overleaf
 - report templates and output subfolders created for:
   - `phase_03_validation/`
   - `phase_04_causal_shocks/01_war_deaths/`

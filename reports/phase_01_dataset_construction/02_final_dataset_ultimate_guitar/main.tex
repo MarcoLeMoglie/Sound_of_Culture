@@ -292,11 +292,11 @@ for clearly identifiable artists or groups.
 \toprule
 Metric & Before retained repair & Current value \\
 \midrule
-Rows missing \texttt{bpm} & 37,939 & 21,775 \\
+Rows missing \texttt{bpm} & 37,939 & 21,679 \\
 Rows missing \texttt{genre} & 2,398 & 109 \\
-Rows with official genre source (\texttt{genre\_is\_official = 1}) & 0 & 20,261 \\
-Rows missing \texttt{birth\_state} in the final song file & 273 & 158 \\
-Rows missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,474 & 2,360 \\
+Rows with official genre source (\texttt{genre\_is\_official = 1}) & 0 & 20,505 \\
+Rows missing \texttt{birth\_state} in the final song file & 273 & 147 \\
+Rows missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,474 & 2,349 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -308,20 +308,20 @@ Rows missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,474 & 2,360 \
 \toprule
 Genre source & Rows \\
 \midrule
-\texttt{apple\_music\_track} & 17,548 \\
-\texttt{deezer\_album\_genre} & 2,698 \\
-\texttt{discogs\_release} & 15 \\
-\texttt{artist\_metadata\_fallback} & 850 \\
-\texttt{ug\_selected} & 22,838 \\
+\texttt{apple\_music\_track} & 17,583 \\
+\texttt{deezer\_album\_genre} & 2,833 \\
+\texttt{discogs\_release} & 89 \\
+\texttt{artist\_metadata\_fallback} & 812 \\
+\texttt{ug\_selected} & 22,632 \\
 Still empty & 109 \\
 \midrule
 BPM source & Rows \\
 \midrule
-\texttt{apple\_preview\_estimated} & 14,749 \\
-\texttt{deezer\_track} & 1,255 \\
-\texttt{deezer\_preview\_estimated} & 160 \\
+\texttt{apple\_preview\_estimated} & 14,785 \\
+\texttt{deezer\_track} & 1,311 \\
+\texttt{deezer\_preview\_estimated} & 164 \\
 \texttt{ug\_selected} & 6,119 \\
-Still empty & 21,775 \\
+Still empty & 21,679 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -337,9 +337,13 @@ replacement was found.
 Second, BPM recovery improved materially but is still incomplete. The public
 sources that are fast and reproducible do not cover the entire catalogue, and a
 full song-by-song sweep over every residual BPM gap is constrained by rate
-limits and source availability. The retained result is therefore the current
-hierarchical backfill, not a claim that every residual BPM gap has already been
-solved.
+limits and source availability. The project therefore moved to a retained
+chunked strategy on 2026-04-20: small BPM-only batches are now run through the
+same hierarchical targeted pass, with preview estimation enabled but exact
+iTunes and Discogs queries automatically disabled for the rest of a run once
+they start returning \texttt{403} or \texttt{429}. The retained result is
+therefore the current hierarchical backfill plus chunked residual recovery, not
+a claim that every residual BPM gap has already been solved.
 
 Third, the artist-origin repair deliberately preferred verified blank values
 over inherited false certainty. This is why \texttt{birth\_country} did not

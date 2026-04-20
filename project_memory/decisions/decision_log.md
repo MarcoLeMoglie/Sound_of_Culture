@@ -436,3 +436,28 @@ The retained result is:
 
 The non-retained idea is a one-shot exact pass over every residual song in a
 single production batch.
+
+## 2026-04-20
+
+### Decision
+
+Move residual BPM repair to a chunked BPM-only workflow instead of rerunning
+the full targeted song pass each time.
+
+### Why
+
+Residual BPM missingness is still large, but monolithic song-by-song runs are
+too slow and also trigger iTunes `403` responses and Discogs `429`
+rate-limiting quickly. Small chunks preserve the useful Deezer / preview-based
+recovery while keeping each run bounded and resumable.
+
+### Consequence
+
+The retained script now supports:
+
+- `--bpm-gap-only`
+- `--chunk-start`
+- `--chunk-size`
+
+and the first two retained chunks on 2026-04-20 reduced BPM missingness from
+`21,775` to `21,679`.

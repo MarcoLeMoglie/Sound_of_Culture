@@ -91,25 +91,26 @@ country-only song dataset:
 Current final-dataset status after the retained completed passes:
 
 - rows: `44,058`
-- `bpm` missing: `21,775`
+- `bpm` missing: `21,679`
 - `genre` missing: `109`
-- rows with official genre source (`genre_is_official = 1`): `20,261`
-- `birth_state` missing rows: `158`
-- `us_macro_region` missing or `Unknown` rows: `2,360`
+- rows with official genre source (`genre_is_official = 1`): `20,505`
+- `birth_state` missing rows: `147`
+- `us_macro_region` missing or `Unknown` rows: `2,349`
 - `birth_country` missing rows: `121`
 
 Current artist-level residuals inside the final song dataset:
 
-- unique artists missing `birth_state`: `42`
-- unique artists missing or `Unknown` in `us_macro_region`: `125`
+- unique artists missing `birth_state`: `40`
+- unique artists missing or `Unknown` in `us_macro_region`: `123`
 - unique artists missing `birth_country`: `35`
-- US-origin artists still missing `birth_state`: `Jim Hurst`, `The Pinetoppers`,
-  `The Wreckers`
+- US-origin artists still missing `birth_state`: `The Wreckers`
 
 Interpretation:
 
 - BPM recovery improved substantially but remains incomplete because the
   scalable public sources do not cover the whole catalogue.
+- a chunked BPM-only residual strategy is now in place and was validated on
+  two retained chunks on 2026-04-20
 - Genre missingness is now much smaller, but many rows still retain
   `genre_source = ug_selected` because a universal official replacement could
   not yet be obtained from the currently responding public endpoints.
@@ -125,7 +126,7 @@ Retained reporting update completed:
   updated with a new metadata-repair section covering BPM, genre, and
   artist-origin backfills
 - both Overleaf reports were synchronized and compiled successfully on
-  2026-04-19
+  2026-04-20 after the new chunked BPM and artist-origin updates were added
 
 ## Phase 1 reporting status
 

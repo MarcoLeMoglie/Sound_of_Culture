@@ -232,6 +232,13 @@ FINAL_ARTIST_OVERRIDES = {
         "birth_country": "United States",
         "notes_append": "web-confirmed birthplace: Wikipedia",
     },
+    "Jim Hurst": {
+        "name_primary": "Jim Hurst",
+        "birth_city": "Middlesboro",
+        "birth_state": "Kentucky",
+        "birth_country": "United States",
+        "notes_append": "web-confirmed birthplace: BluegrassBios",
+    },
     "LANCO": {
         "name_primary": "LANCO",
         "birth_city": "Nashville",
@@ -247,6 +254,14 @@ FINAL_ARTIST_OVERRIDES = {
         "birth_country": "United States",
         "is_solo_person": 0,
         "notes_append": "web-confirmed duo origin: Wikipedia",
+    },
+    "The Pinetoppers": {
+        "name_primary": "The Pinetoppers",
+        "birth_city": "New York City",
+        "birth_state": "New York",
+        "birth_country": "United States",
+        "is_solo_person": 0,
+        "notes_append": "web-confirmed group origin/base: Roy Horton and George Vaughn Horton biographies",
     },
     "The Wreckers": {
         "name_primary": "The Wreckers",

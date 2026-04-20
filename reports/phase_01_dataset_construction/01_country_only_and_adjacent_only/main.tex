@@ -282,23 +282,23 @@ incorrect country or state assignments.
 \toprule
 Metric & Count \\
 \midrule
-Rows still missing \texttt{birth\_state} & 158 \\
-Rows still coded as missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,360 \\
+Rows still missing \texttt{birth\_state} & 147 \\
+Rows still coded as missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,349 \\
 Rows still missing \texttt{birth\_country} & 121 \\
-Unique artists still missing \texttt{birth\_state} & 42 \\
-Unique artists still missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 125 \\
+Unique artists still missing \texttt{birth\_state} & 40 \\
+Unique artists still missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 123 \\
 Unique artists still missing \texttt{birth\_country} & 35 \\
-US artists still missing \texttt{birth\_state} & 3 \\
+US artists still missing \texttt{birth\_state} & 1 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 The last row matters most for the substantive geography problem. After the
-retained repair pass, only three artists that are currently coded as US-origin
-still lack a state assignment in the final song-level file:
-\texttt{Jim Hurst}, \texttt{The Pinetoppers}, and \texttt{The Wreckers}. Most
-remaining \texttt{Unknown} macro-region cases are now non-US artists, for whom
-a US macro-region is conceptually unavailable rather than merely missing.
+retained repair pass and one additional web-confirmed update on 2026-04-20,
+only one artist that is currently coded as US-origin still lacks a state
+assignment in the final song-level file: \texttt{The Wreckers}. Most remaining
+\texttt{Unknown} macro-region cases are now non-US artists, for whom a US
+macro-region is conceptually unavailable rather than merely missing.
 
 \section{Retained versus non-retained choices}
 \subsection{Retained choices}

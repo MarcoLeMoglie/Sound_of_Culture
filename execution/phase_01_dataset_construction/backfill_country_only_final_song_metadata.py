@@ -538,10 +538,17 @@ def targeted_song_fill(
     preview_bpm_cache: Dict[str, object],
     *,
     genre_gap_only: bool = False,
+    bpm_gap_only: bool = False,
+    chunk_start: int = 0,
+    chunk_size: int = 0,
 ) -> pd.DataFrame:
     out = df.copy()
+    if genre_gap_only and bpm_gap_only:
+        raise ValueError("genre_gap_only and bpm_gap_only cannot both be true")
     if genre_gap_only:
         target_mask = out["genre"].fillna("").astype(str).str.strip().eq("")
+    elif bpm_gap_only:
+        target_mask = pd.to_numeric(out["bpm"], errors="coerce").isna() | pd.to_numeric(out["bpm"], errors="coerce").eq(0)
     else:
         target_mask = (
             (pd.to_numeric(out["bpm"], errors="coerce").isna() | pd.to_numeric(out["bpm"], errors="coerce").eq(0))
@@ -549,6 +556,14 @@ def targeted_song_fill(
             | out["genre_source"].fillna("").astype(str).str.strip().isin(["ug_selected", "ug_alternative_local", "artist_metadata_fallback"])
         )
     target_rows = out.loc[target_mask, ["artist_name", "song_name"]].drop_duplicates()
+    total_targets = len(target_rows)
+    if chunk_start or chunk_size:
+        start = max(0, int(chunk_start))
+        stop = len(target_rows) if not chunk_size or int(chunk_size) <= 0 else min(len(target_rows), start + int(chunk_size))
+        target_rows = target_rows.iloc[start:stop].copy()
+        log(f"Targeted song pass chunk selected: start={start}, stop={stop}, size={len(target_rows)}, total_eligible={total_targets}")
+    else:
+        start = 0
 
     for idx, row in enumerate(target_rows.itertuples(index=False), start=1):
         artist = row.artist_name
@@ -657,7 +672,10 @@ def targeted_song_fill(
             save_json(DEEZER_ALBUM_CACHE, deezer_album_cache)
             save_json(DISCOGS_CACHE, discogs_cache)
             save_json(PREVIEW_BPM_CACHE, preview_bpm_cache)
-            log(f"Targeted song pass progress {idx}/{len(target_rows)}")
+            if chunk_start or chunk_size:
+                log(f"Targeted song pass progress {idx}/{len(target_rows)} within chunk; global position up to {start + idx}/{total_targets}")
+            else:
+                log(f"Targeted song pass progress {idx}/{len(target_rows)}")
 
     return out
 
@@ -735,6 +753,9 @@ def main() -> None:
     parser.add_argument("--skip-artist-pass", action="store_true", help="Skip the artist-level online pass and run only local plus targeted song matching.")
     parser.add_argument("--skip-preview-estimation", action="store_true", help="Disable BPM estimation from preview audio and use only directly observed BPM metadata.")
     parser.add_argument("--genre-gap-only", action="store_true", help="Run the targeted pass only on songs whose final genre is still empty.")
+    parser.add_argument("--bpm-gap-only", action="store_true", help="Run the targeted pass only on songs whose BPM is still missing or zero.")
+    parser.add_argument("--chunk-start", type=int, default=0, help="Zero-based start index for the targeted song pass.")
+    parser.add_argument("--chunk-size", type=int, default=0, help="Maximum number of targeted songs to process in this run.")
     args = parser.parse_args()
 
     global CACHE_ONLY, ENABLE_PREVIEW_ESTIMATION
@@ -773,6 +794,9 @@ def main() -> None:
             discogs_cache,
             preview_bpm_cache,
             genre_gap_only=args.genre_gap_only,
+            bpm_gap_only=args.bpm_gap_only,
+            chunk_start=args.chunk_start,
+            chunk_size=args.chunk_size,
         )
 
     save_json(ITUNES_CACHE, itunes_cache)

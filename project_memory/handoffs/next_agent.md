@@ -177,29 +177,32 @@ Completed and retained:
 Current final-dataset counts:
 
 - rows: `44,058`
-- `bpm` missing: `21,775`
+- `bpm` missing: `21,679`
 - `genre` missing: `109`
-- official-genre rows: `20,261`
-- `birth_state` missing rows: `158`
-- `us_macro_region` missing or `Unknown` rows: `2,360`
+- official-genre rows: `20,505`
+- `birth_state` missing rows: `147`
+- `us_macro_region` missing or `Unknown` rows: `2,349`
 - `birth_country` missing rows: `121`
 
 Important residual interpretation:
 
 - most remaining `Unknown` macro-region cases are non-US artists
-- only three US-origin artists still lack a state assignment:
-  `Jim Hurst`, `The Pinetoppers`, `The Wreckers`
+- only one US-origin artist still lacks a state assignment:
+  `The Wreckers`
 - BPM remains the largest unresolved song-level gap
 - many songs still retain `genre_source = ug_selected`; the attempted
   song-by-song officialization sweep was not retained as a production run
   because iTunes exact queries returned `403` and Discogs exact queries quickly
   hit `429` rate limits
+- on 2026-04-20, two retained BPM-only chunks were run successfully with the
+  new chunked mode; together they reduced BPM missingness from `21,775` to
+  `21,679`
 
 Recommended next scientific action:
 
 - continue Phase 2 exploratory work on the improved final dataset
 - if Phase 1 cleanup continues, prioritize:
-  - a curated final pass for the last 3 US artists missing a state
+  - a curated final pass for `The Wreckers`
   - a chunked or resumable BPM enrichment design rather than a monolithic
     full-catalogue run
   - a chunked official-genre upgrade workflow for the large residual
