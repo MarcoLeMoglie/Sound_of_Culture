@@ -756,6 +756,10 @@ def main() -> None:
     parser.add_argument("--bpm-gap-only", action="store_true", help="Run the targeted pass only on songs whose BPM is still missing or zero.")
     parser.add_argument("--chunk-start", type=int, default=0, help="Zero-based start index for the targeted song pass.")
     parser.add_argument("--chunk-size", type=int, default=0, help="Maximum number of targeted songs to process in this run.")
+    parser.add_argument("--loop-until-stall", action="store_true", help="Repeat the targeted song pass until no further improvement is observed.")
+    parser.add_argument("--stall-limit", type=int, default=3, help="Stop a looped targeted pass after this many consecutive no-improvement iterations.")
+    parser.add_argument("--max-loops", type=int, default=0, help="Optional hard cap on looped targeted-pass iterations.")
+    parser.add_argument("--sleep-seconds", type=float, default=0.0, help="Optional pause between looped targeted-pass iterations.")
     args = parser.parse_args()
 
     global CACHE_ONLY, ENABLE_PREVIEW_ESTIMATION
@@ -784,20 +788,78 @@ def main() -> None:
     if not args.skip_artist_pass:
         df = artist_search_fill(df, session, itunes_cache, deezer_search_cache, deezer_track_cache, deezer_album_cache, preview_bpm_cache)
     if not args.skip_targeted_song_pass:
-        df = targeted_song_fill(
-            df,
-            session,
-            itunes_exact_cache,
-            deezer_search_cache,
-            deezer_track_cache,
-            deezer_album_cache,
-            discogs_cache,
-            preview_bpm_cache,
-            genre_gap_only=args.genre_gap_only,
-            bpm_gap_only=args.bpm_gap_only,
-            chunk_start=args.chunk_start,
-            chunk_size=args.chunk_size,
-        )
+        if args.loop_until_stall:
+            loop_idx = 0
+            stalled = 0
+            while True:
+                bpm_before = int((pd.to_numeric(df["bpm"], errors="coerce").isna() | pd.to_numeric(df["bpm"], errors="coerce").eq(0)).sum())
+                genre_before = int(df["genre"].fillna("").astype(str).str.strip().eq("").sum())
+                if args.bpm_gap_only and bpm_before == 0:
+                    log("Looped targeted pass finished: no BPM gaps remain.")
+                    break
+                if args.genre_gap_only and genre_before == 0:
+                    log("Looped targeted pass finished: no genre gaps remain.")
+                    break
+
+                loop_idx += 1
+                df = targeted_song_fill(
+                    df,
+                    session,
+                    itunes_exact_cache,
+                    deezer_search_cache,
+                    deezer_track_cache,
+                    deezer_album_cache,
+                    discogs_cache,
+                    preview_bpm_cache,
+                    genre_gap_only=args.genre_gap_only,
+                    bpm_gap_only=args.bpm_gap_only,
+                    chunk_start=0 if args.bpm_gap_only or args.genre_gap_only else args.chunk_start,
+                    chunk_size=args.chunk_size,
+                )
+
+                bpm_after = int((pd.to_numeric(df["bpm"], errors="coerce").isna() | pd.to_numeric(df["bpm"], errors="coerce").eq(0)).sum())
+                genre_after = int(df["genre"].fillna("").astype(str).str.strip().eq("").sum())
+                improved = bpm_after < bpm_before or genre_after < genre_before
+                stalled = 0 if improved else stalled + 1
+                log(
+                    f"Loop {loop_idx}: bpm missing {bpm_before} -> {bpm_after}; "
+                    f"genre missing {genre_before} -> {genre_after}; "
+                    f"stalled={stalled}/{args.stall_limit}"
+                )
+
+                save_json(ITUNES_EXACT_CACHE, itunes_exact_cache)
+                save_json(DEEZER_SEARCH_CACHE, deezer_search_cache)
+                save_json(DEEZER_TRACK_CACHE, deezer_track_cache)
+                save_json(DEEZER_ALBUM_CACHE, deezer_album_cache)
+                save_json(DISCOGS_CACHE, discogs_cache)
+                save_json(PREVIEW_BPM_CACHE, preview_bpm_cache)
+                save_outputs(df)
+
+                if (args.bpm_gap_only and bpm_after == 0) or (args.genre_gap_only and genre_after == 0):
+                    break
+                if stalled >= max(1, args.stall_limit):
+                    log("Looped targeted pass stopped after repeated no-improvement iterations.")
+                    break
+                if args.max_loops and loop_idx >= args.max_loops:
+                    log(f"Looped targeted pass stopped after reaching max_loops={args.max_loops}.")
+                    break
+                if args.sleep_seconds > 0:
+                    time.sleep(args.sleep_seconds)
+        else:
+            df = targeted_song_fill(
+                df,
+                session,
+                itunes_exact_cache,
+                deezer_search_cache,
+                deezer_track_cache,
+                deezer_album_cache,
+                discogs_cache,
+                preview_bpm_cache,
+                genre_gap_only=args.genre_gap_only,
+                bpm_gap_only=args.bpm_gap_only,
+                chunk_start=args.chunk_start,
+                chunk_size=args.chunk_size,
+            )
 
     save_json(ITUNES_CACHE, itunes_cache)
     save_json(ITUNES_EXACT_CACHE, itunes_exact_cache)

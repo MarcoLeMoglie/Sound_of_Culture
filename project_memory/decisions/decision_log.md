@@ -258,6 +258,47 @@ The reports are the shared research-facing deliverables for collaborators and
 must be readable in a consistent language across agents, conversations, and
 coauthors.
 
+## 2026-04-20
+
+### Decision
+
+Code non-US artist origins explicitly as `Non-US` in `us_macro_region`
+instead of leaving them under `Unknown`.
+
+### Why
+
+Once artist-origin repair improved, the large residual `Unknown` block was
+mostly made up of legitimate non-US artists, not US artists with unresolved
+geography. Leaving them under `Unknown` obscured the real residual problem.
+
+### Consequence
+
+Future Phase 1 and Phase 2 work should interpret:
+
+- `Unknown` in `us_macro_region` as a true unresolved geography case
+- `Non-US` in `us_macro_region` as a resolved non-US origin case
+
+## 2026-04-20
+
+### Decision
+
+Run residual BPM repair through a looped chunked BPM-only workflow until
+repeated no-improvement iterations stop the process automatically.
+
+### Why
+
+The first retained BPM-only chunks still produced gains, but the residual block
+is large and direct song-by-song sweeps are constrained by rate limits and
+endpoint coverage. A loop-until-stall design keeps harvesting feasible BPM
+recoveries without pretending the same public sources can fill the whole
+catalogue.
+
+### Consequence
+
+`execution/phase_01_dataset_construction/backfill_country_only_final_song_metadata.py`
+now supports an automatic repeated chunk mode. The retained stopping rule is
+repeated no-improvement iterations, not manual interruption.
+
 ### Consequence
 
 All retained phase-report text should be written in English, even if working

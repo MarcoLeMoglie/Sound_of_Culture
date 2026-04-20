@@ -265,9 +265,11 @@ FINAL_ARTIST_OVERRIDES = {
     },
     "The Wreckers": {
         "name_primary": "The Wreckers",
+        "birth_city": "Nashville",
+        "birth_state": "Tennessee",
         "birth_country": "United States",
         "is_solo_person": 0,
-        "notes_append": "web-confirmed duo country: Wikipedia",
+        "notes_append": "web-confirmed duo country: Wikipedia; group origin/base curated as Nashville, Tennessee from LiveOne biography",
     },
     "Wilburn Brothers": {
         "name_primary": "The Wilburn Brothers",

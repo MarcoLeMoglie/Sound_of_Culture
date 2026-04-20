@@ -82,8 +82,8 @@ phase-based architecture.
 
 ## Phase 1 metadata-repair status
 
-On 2026-04-19, a new retained metadata-repair block was run on the final
-country-only song dataset:
+On 2026-04-19 and 2026-04-20, a retained metadata-repair block was run on the
+final country-only song dataset:
 
 - `execution/phase_01_dataset_construction/backfill_country_only_final_artist_metadata.py`
 - `execution/phase_01_dataset_construction/backfill_country_only_final_song_metadata.py`
@@ -91,32 +91,34 @@ country-only song dataset:
 Current final-dataset status after the retained completed passes:
 
 - rows: `44,058`
-- `bpm` missing: `21,679`
+- `bpm` missing: `21,515`
 - `genre` missing: `109`
-- rows with official genre source (`genre_is_official = 1`): `20,505`
-- `birth_state` missing rows: `147`
-- `us_macro_region` missing or `Unknown` rows: `2,349`
+- rows with official genre source (`genre_is_official = 1`): `20,752`
+- `birth_state` missing rows: `132`
+- `us_macro_region` missing or `Unknown` rows: `121`
+- rows explicitly coded as `Non-US` in `us_macro_region`: `2,768`
 - `birth_country` missing rows: `121`
 
 Current artist-level residuals inside the final song dataset:
 
-- unique artists missing `birth_state`: `40`
-- unique artists missing or `Unknown` in `us_macro_region`: `123`
-- unique artists missing `birth_country`: `35`
-- US-origin artists still missing `birth_state`: `The Wreckers`
+- unique artists missing `birth_state`: `43`
+- unique artists missing or `Unknown` in `us_macro_region`: `39`
+- unique artists explicitly coded as `Non-US` in `us_macro_region`: `144`
+- unique artists missing `birth_country`: `39`
+- US-origin artists still missing `birth_state`: none
 
 Interpretation:
 
 - BPM recovery improved substantially but remains incomplete because the
   scalable public sources do not cover the whole catalogue.
-- a chunked BPM-only residual strategy is now in place and was validated on
-  two retained chunks on 2026-04-20
+- a looped chunked BPM-only residual strategy is now in place and was run on
+  2026-04-20 until repeated no-improvement iterations stopped it automatically
 - Genre missingness is now much smaller, but many rows still retain
   `genre_source = ug_selected` because a universal official replacement could
   not yet be obtained from the currently responding public endpoints.
-- Artist-origin metadata improved materially, and most residual
-  `us_macro_region = Unknown` cases are now non-US artists rather than US
-  artists with a missing state.
+- Artist-origin metadata improved materially. `The Wreckers` now has a curated
+  group-origin assignment (`Nashville, Tennessee`), and non-US artists are now
+  explicitly coded as `Non-US` rather than being left under `Unknown`.
 
 Retained reporting update completed:
 
@@ -126,7 +128,8 @@ Retained reporting update completed:
   updated with a new metadata-repair section covering BPM, genre, and
   artist-origin backfills
 - both Overleaf reports were synchronized and compiled successfully on
-  2026-04-20 after the new chunked BPM and artist-origin updates were added
+  2026-04-20 after the extended chunked BPM run, the `Non-US` recode, and the
+  `The Wreckers` artist-origin update were added
 
 ## Phase 1 reporting status
 

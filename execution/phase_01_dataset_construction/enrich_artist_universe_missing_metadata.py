@@ -2028,6 +2028,11 @@ def refresh_country_only_derived_columns(df: pd.DataFrame) -> pd.DataFrame:
     refreshed["birth_state_abbr"] = refreshed["birth_state"].map(lambda value: builder.US_STATE_ABBR.get(nonempty(value), ""))
     refreshed["birth_decade"] = refreshed["birth_year"].map(lambda value: int(value // 10 * 10) if pd.notna(value) else None)
     refreshed["us_macro_region"] = refreshed["birth_state"].map(lambda value: builder.STATE_TO_REGION.get(nonempty(value), "Unknown"))
+    non_us_mask = (
+        refreshed["birth_country"].fillna("").astype(str).str.strip().ne("")
+        & refreshed["birth_country"].fillna("").astype(str).str.strip().ne("United States")
+    )
+    refreshed.loc[non_us_mask, "us_macro_region"] = "Non-US"
     refreshed["is_deceased"] = refreshed["death_date"].fillna("").astype(str).str.strip().ne("").astype(int)
     refreshed["is_us_born"] = refreshed["birth_country"].fillna("").astype(str).str.strip().eq("United States").astype(int)
 

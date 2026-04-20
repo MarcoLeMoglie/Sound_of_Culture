@@ -26,6 +26,9 @@
   retained chunked BPM-repair workflow, the refreshed final counts, and the
   additional artist-origin backfill fixes; both compiled successfully in
   Overleaf
+- both Phase 1 reports were updated again later on 2026-04-20 to document the
+  loop-until-stall BPM run, the `Non-US` recode in `us_macro_region`, and the
+  curated `The Wreckers` origin fix; both compiled successfully in Overleaf
 - report templates and output subfolders created for:
   - `phase_03_validation/`
   - `phase_04_causal_shocks/01_war_deaths/`

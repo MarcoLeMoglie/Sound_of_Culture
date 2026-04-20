@@ -282,23 +282,27 @@ incorrect country or state assignments.
 \toprule
 Metric & Count \\
 \midrule
-Rows still missing \texttt{birth\_state} & 147 \\
-Rows still coded as missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,349 \\
+Rows still missing \texttt{birth\_state} & 132 \\
+Rows still coded as missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 121 \\
+Rows explicitly coded as \texttt{Non-US} in \texttt{us\_macro\_region} & 2,768 \\
 Rows still missing \texttt{birth\_country} & 121 \\
-Unique artists still missing \texttt{birth\_state} & 40 \\
-Unique artists still missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 123 \\
-Unique artists still missing \texttt{birth\_country} & 35 \\
-US artists still missing \texttt{birth\_state} & 1 \\
+Unique artists still missing \texttt{birth\_state} & 43 \\
+Unique artists still missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 39 \\
+Unique artists explicitly coded as \texttt{Non-US} in \texttt{us\_macro\_region} & 144 \\
+Unique artists still missing \texttt{birth\_country} & 39 \\
+US artists still missing \texttt{birth\_state} & 0 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 The last row matters most for the substantive geography problem. After the
-retained repair pass and one additional web-confirmed update on 2026-04-20,
-only one artist that is currently coded as US-origin still lacks a state
-assignment in the final song-level file: \texttt{The Wreckers}. Most remaining
-\texttt{Unknown} macro-region cases are now non-US artists, for whom a US
-macro-region is conceptually unavailable rather than merely missing.
+retained repair pass and the additional curated update on 2026-04-20, no
+artist that is currently coded as US-origin still lacks a state assignment in
+the final song-level file. \texttt{The Wreckers} now receives a curated
+group-origin assignment of \texttt{Nashville, Tennessee}, while non-US artists
+are explicitly coded as \texttt{Non-US} rather than being left under
+\texttt{Unknown}. The remaining \texttt{Unknown} block is therefore much
+smaller and now tracks genuinely unresolved geography.
 
 \section{Retained versus non-retained choices}
 \subsection{Retained choices}
