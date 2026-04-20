@@ -386,3 +386,53 @@ execution layouts survive through:
 - the archival branch `codex-archive-pre-destructive-cutover-2026-04-19`
 - packaged replication snapshots under `data/processed_datasets/...`
 - restructuring history under `workspace_maps/`
+
+## 2026-04-19
+
+### Decision
+
+Treat the final-dataset artist-origin repair as a conservative correction layer
+rather than a completion-at-all-costs exercise.
+
+### Why
+
+The exploratory figures revealed that several artist-origin fields in the final
+song dataset were still missing, but the first brute-force repair pass also
+revealed false positive identity matches for ambiguous artist strings such as
+`Eagles`, `LANCO`, `Alee (Canada)`, and related cases.
+
+### Consequence
+
+The retained workflow now:
+
+- resets suspicious inherited matches first
+- rejects low-confidence alias-based reattachments for those names
+- applies only stricter lookup matches plus a small set of web-confirmed
+  overrides
+- prefers verified blanks to incorrect geography
+
+## 2026-04-19
+
+### Decision
+
+Keep the new song-level metadata backfill as a hierarchical, partly targeted
+workflow instead of declaring a full exact-song sweep as the canonical method.
+
+### Why
+
+The project materially improved BPM and genre coverage with local UG metadata,
+artist-level Apple/Deezer passes, preview-based BPM estimation, and a
+gap-focused targeted pass. However, a monolithic exact-song sweep across the
+entire residual catalogue proved operationally fragile because some public
+endpoints returned `403` or `429` quickly.
+
+### Consequence
+
+The retained result is:
+
+- provenance-tracked genre repair in the final dataset
+- substantial but incomplete BPM repair
+- targeted gap-only runs as the practical next step
+
+The non-retained idea is a one-shot exact pass over every residual song in a
+single production batch.

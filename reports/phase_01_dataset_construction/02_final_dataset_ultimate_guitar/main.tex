@@ -35,8 +35,8 @@ artist input. The report therefore focuses on:
 \item Ultimate Guitar discovery, planning, and raw JSON download;
 \item Billboard supplementation for still-missing artists or songs;
 \item final dataset assembly on top of \texttt{Restricted Final v6};
-\item the hierarchical recovery of \texttt{release\_year} and other residual
-metadata;
+\item the hierarchical recovery of \texttt{release\_year} and the post-build
+repair of BPM, genre, and artist-origin metadata;
 \item snapshot-assisted replication of the retained final outputs.
 \end{enumerate}
 
@@ -190,10 +190,12 @@ Current final country-only chord dataset & 44,058 \\
 
 Two methodological details are retained and should not be misunderstood.
 
-First, \texttt{genre} in the final dataset is a \emph{song-level} attribute
+First, \texttt{genre} in the raw final build is a \emph{song-level} attribute
 read from the Ultimate Guitar payload. It is not imposed from the artist-side
 country-only classification. This is why songs by country-only artists can
-still appear with non-country song tags.
+still appear with non-country song tags. In the retained post-build repair
+described below, the project then tries to replace those raw UG tags with
+official track or release genres wherever external evidence is available.
 
 Second, the builder can use up to three JSON payloads for the same song. The
 retained workflow deliberately prefers deeper recovery from the best available
@@ -244,6 +246,118 @@ The key interpretation is that missing-data recovery is not a separate afterthou
 It is part of the final build itself and is handled by a staged hierarchy rather
 than a single source.
 
+\subsection{Stage 4B. Post-build repair of BPM, official genre, and artist origin}
+Once the final dataset was assembled and the first exploratory figures were
+generated, the project identified three remaining quality problems:
+\begin{itemize}[leftmargin=2em]
+\item too many songs still missing \texttt{bpm};
+\item too many songs still relying on UG-native genre tags rather than official
+track or release genres;
+\item too many artist rows still carrying missing or \texttt{Unknown} origin
+metadata in the final song-level file.
+\end{itemize}
+
+The retained repair layer is now split across two scripts:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_song\_metadata.py},
+especially the local UG lookup at lines 182--221 and 659--683, the artist-level
+official-source pass at lines 426--527, the targeted song-level pass at lines
+530--656, and the orchestration layer at lines 725--760;
+\item \texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_artist\_metadata.py},
+especially the suspicious-match reset and override logic at lines 107--265 and
+324--341, the conservative lookup layer at lines 379--523, and the final save
+path at lines 526--579.
+\end{itemize}
+
+The song-level repair uses a hierarchy that is intentionally different from the
+UG construction stage. It begins with the already-downloaded local UG JSONs to
+recover alternative BPM or genre tags when a stronger local version exists. It
+then tries to replace or supplement those values with track- or release-level
+metadata from Apple Music / iTunes and Deezer. For BPM, the retained sources are
+direct track BPM from Deezer and preview-based BPM estimation when preview audio
+is available. For genre, the retained official sources are Apple Music track
+genres, Deezer album genres, and, for the residual empty cells only, Discogs
+release genres.
+
+The artist-side repair is more conservative because the main risk there is false
+identity matching rather than simple missingness. The retained workflow first
+resets suspicious inherited matches, then reruns bundled and live lookup under a
+stricter rule set, and finally applies a short list of web-confirmed overrides
+for clearly identifiable artists or groups.
+
+\begin{table}[H]
+\centering
+\caption{Combined effect of the retained Phase 1.2 metadata-repair passes}
+\begin{tabular}{p{0.58\textwidth}rr}
+\toprule
+Metric & Before retained repair & Current value \\
+\midrule
+Rows missing \texttt{bpm} & 37,939 & 21,775 \\
+Rows missing \texttt{genre} & 2,398 & 109 \\
+Rows with official genre source (\texttt{genre\_is\_official = 1}) & 0 & 20,261 \\
+Rows missing \texttt{birth\_state} in the final song file & 273 & 158 \\
+Rows missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,474 & 2,360 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Current provenance of genre and BPM values after the retained repair passes}
+\begin{tabular}{p{0.56\textwidth}r}
+\toprule
+Genre source & Rows \\
+\midrule
+\texttt{apple\_music\_track} & 17,548 \\
+\texttt{deezer\_album\_genre} & 2,698 \\
+\texttt{discogs\_release} & 15 \\
+\texttt{artist\_metadata\_fallback} & 850 \\
+\texttt{ug\_selected} & 22,838 \\
+Still empty & 109 \\
+\midrule
+BPM source & Rows \\
+\midrule
+\texttt{apple\_preview\_estimated} & 14,749 \\
+\texttt{deezer\_track} & 1,255 \\
+\texttt{deezer\_preview\_estimated} & 160 \\
+\texttt{ug\_selected} & 6,119 \\
+Still empty & 21,775 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three interpretation points matter.
+
+First, the retained project now distinguishes \texttt{genre\_ug\_original} from
+the current \texttt{genre} field, and it records \texttt{genre\_source},
+\texttt{genre\_official\_raw}, and \texttt{genre\_is\_official}. This means the
+dataset preserves the original UG signal while also tracking when an official
+replacement was found.
+
+Second, BPM recovery improved materially but is still incomplete. The public
+sources that are fast and reproducible do not cover the entire catalogue, and a
+full song-by-song sweep over every residual BPM gap is constrained by rate
+limits and source availability. The retained result is therefore the current
+hierarchical backfill, not a claim that every residual BPM gap has already been
+solved.
+
+Third, the artist-origin repair deliberately preferred verified blank values
+over inherited false certainty. This is why \texttt{birth\_country} did not
+mechanically improve everywhere: several ambiguous names were first cleared and
+then only partially rebuilt under stricter matching rules.
+
+\subsection{Not retained from the metadata-repair experiments}
+Two ideas were explored but are not retained as the current production
+workflow.
+\begin{itemize}[leftmargin=2em]
+\item A monolithic exact song-by-song pass over every song still carrying a UG
+genre tag or missing BPM. In practice, this approach is too slow and quickly
+runs into \texttt{403} or \texttt{429} responses on some public endpoints.
+\item Keeping inherited artist-country or artist-state assignments that were
+known to come from weak alias matches. These values were explicitly discarded in
+the retained workflow.
+\end{itemize}
+
 \subsection{Stage 5. Snapshot-assisted replication and package refresh}
 The retained workflow also preserves the package layer that restores or refreshes
 the canonical outputs. The main scripts are:
@@ -275,6 +389,11 @@ discovery indiscriminately;
 \item constructing the final dataset from \texttt{Restricted Final v6} plus new
 UG rows, rather than replacing the upstream file wholesale;
 \item using a hierarchical cache-first \texttt{release\_year} recovery design;
+\item preserving the original UG genre in \texttt{genre\_ug\_original} while
+separately building a sourced current \texttt{genre} field;
+\item treating artist-origin repair in the final song file as a separate
+conservative backfill layer rather than folding weak alias matches into the
+main build;
 \item preserving exact-replication wrappers for the final deliverables.
 \end{itemize}
 
@@ -283,8 +402,10 @@ The following ideas are not retained as the final workflow:
 \begin{itemize}[leftmargin=2em]
 \item scraping the full adjacent artist universe before the country-only song
 pipeline is stabilized;
-\item forcing artist-level genre identity onto song-level \texttt{genre} values
-in the final dataset;
+\item forcing artist-level genre identity wholesale onto song-level
+\texttt{genre} values in the final dataset;
+\item assuming that public official-metadata endpoints are stable enough to
+support an unlimited exact song-by-song sweep in one batch;
 \item treating snapshot-assisted replication as if it were equivalent to the
 full live historical build.
 \end{itemize}
@@ -306,6 +427,8 @@ Script copy in this folder & Main line ranges used & Role in the retained workfl
 \texttt{code/country\_only\_ultimate\_guitar.py} & 297--348; 375--417; 420--560 & Discovery, planning, and raw JSON download for the operational country-only artist frame. \\
 \texttt{code/supplement\_billboard\_country\_chords.py} & 235--363; 366--390 & Billboard-based recovery of added artists and still-missing songs. \\
 \texttt{code/build\_country\_only\_chords\_final.py} & 595--643; 686--705; 1519--1679; 1919--1983; 2015--2033 & Build new song rows, attach chart variables, recover release years, and save the final dataset. \\
+\texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_song\_metadata.py} & 182--221; 426--527; 530--656; 725--760 & Recover missing BPM, replace UG-native genres with official track or release genres when possible, and save provenance columns for the final dataset. \\
+\texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_artist\_metadata.py} & 107--265; 324--341; 379--523; 526--579 & Repair artist origin metadata inside the final song-level file, clear suspicious false matches, and apply web-confirmed overrides. \\
 \texttt{code/run\_country\_songs\_replication.py} & 10--29; 67--77; 87--108; 111--170 & Restore and refresh the upstream country-song package outputs and caches. \\
 \texttt{code/run\_country\_merge\_v6\_replication.py} & 67--71; 109--176; 215--247; 294--360 & Restore and verify the merge-to-v6 bridge that the final builder depends on. \\
 \bottomrule
@@ -325,6 +448,8 @@ artist frame;
 \item repair the coverage gaps that remain through the Billboard supplement;
 \item append the valid new songs to the upstream v6 base;
 \item recover \texttt{release\_year} through a documented hierarchy;
+\item repair BPM, genre provenance, and artist-origin metadata through a
+separate post-build layer;
 \item preserve exact restoration wrappers for the canonical final outputs.
 \end{itemize}
 

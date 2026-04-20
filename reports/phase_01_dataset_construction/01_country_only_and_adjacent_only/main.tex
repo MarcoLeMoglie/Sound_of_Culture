@@ -253,6 +253,53 @@ artist-universe restoration wrapper is in
 and restore/copy logic at lines 6--20, 57--65, 68--75, 87--108, 111--121, and
 128--145.
 
+\section{Downstream artist-origin repair in the final song dataset}
+Phase 1.1 also has a downstream implication that only became visible once the
+Phase 2 exploratory plots were produced. The final song-level dataset inherits
+artist geography from the country-only universe and from later merge layers, so
+the project needed a second artist-side repair pass directly on the final
+dataset once the exploratory figures revealed too many residual
+\texttt{Unknown} macro regions.
+
+The retained downstream repair now lives in
+\texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_artist\_metadata.py},
+especially the suspicious-match reset and manual override layer at lines
+107--265, the conservative lookup logic at lines 379--523, and the save path at
+lines 526--579.
+
+The important retained principle is conservative correction rather than blind
+completion. The script first clears inherited false positives for ambiguous
+artist strings, then reapplies only stricter matches, and finally uses a small
+set of web-confirmed overrides for the cases where public evidence is clear
+enough. This is why some rows that previously looked ``complete'' were allowed
+to become missing again: the project now prefers verified missingness to
+incorrect country or state assignments.
+
+\begin{table}[H]
+\centering
+\caption{Current artist-origin status inside the final song dataset after the retained repair pass}
+\begin{tabular}{p{0.58\textwidth}r}
+\toprule
+Metric & Count \\
+\midrule
+Rows still missing \texttt{birth\_state} & 158 \\
+Rows still coded as missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,360 \\
+Rows still missing \texttt{birth\_country} & 121 \\
+Unique artists still missing \texttt{birth\_state} & 42 \\
+Unique artists still missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 125 \\
+Unique artists still missing \texttt{birth\_country} & 35 \\
+US artists still missing \texttt{birth\_state} & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The last row matters most for the substantive geography problem. After the
+retained repair pass, only three artists that are currently coded as US-origin
+still lack a state assignment in the final song-level file:
+\texttt{Jim Hurst}, \texttt{The Pinetoppers}, and \texttt{The Wreckers}. Most
+remaining \texttt{Unknown} macro-region cases are now non-US artists, for whom
+a US macro-region is conceptually unavailable rather than merely missing.
+
 \section{Retained versus non-retained choices}
 \subsection{Retained choices}
 The following choices are retained in the final workflow:

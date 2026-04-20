@@ -155,3 +155,52 @@ Most immediate scientific-reporting follow-up:
 Keep replication-package / archival paths untouched unless explicitly
 requested, except when a validated replication run intentionally refreshes its
 bundled snapshot.
+
+## New Phase 1 metadata block
+
+A new retained metadata-repair block has now been executed on the final
+country-only song dataset.
+
+Completed and retained:
+
+- `execution/phase_01_dataset_construction/backfill_country_only_final_artist_metadata.py`
+  now resets suspicious artist matches, applies stricter lookup rules, and
+  uses a short set of web-confirmed artist/group overrides
+- `execution/phase_01_dataset_construction/backfill_country_only_final_song_metadata.py`
+  now preserves `genre_ug_original`, tracks provenance with
+  `genre_source` / `genre_official_raw` / `genre_is_official` /
+  `bpm_source`, and supports targeted gap-only runs
+- the final dataset and `.dta` were updated
+- both canonical Phase 1 reports were updated in the repo mirror, synchronized
+  to Overleaf, and compiled successfully
+
+Current final-dataset counts:
+
+- rows: `44,058`
+- `bpm` missing: `21,775`
+- `genre` missing: `109`
+- official-genre rows: `20,261`
+- `birth_state` missing rows: `158`
+- `us_macro_region` missing or `Unknown` rows: `2,360`
+- `birth_country` missing rows: `121`
+
+Important residual interpretation:
+
+- most remaining `Unknown` macro-region cases are non-US artists
+- only three US-origin artists still lack a state assignment:
+  `Jim Hurst`, `The Pinetoppers`, `The Wreckers`
+- BPM remains the largest unresolved song-level gap
+- many songs still retain `genre_source = ug_selected`; the attempted
+  song-by-song officialization sweep was not retained as a production run
+  because iTunes exact queries returned `403` and Discogs exact queries quickly
+  hit `429` rate limits
+
+Recommended next scientific action:
+
+- continue Phase 2 exploratory work on the improved final dataset
+- if Phase 1 cleanup continues, prioritize:
+  - a curated final pass for the last 3 US artists missing a state
+  - a chunked or resumable BPM enrichment design rather than a monolithic
+    full-catalogue run
+  - a chunked official-genre upgrade workflow for the large residual
+    `ug_selected` block

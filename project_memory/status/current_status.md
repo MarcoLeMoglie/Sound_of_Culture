@@ -80,6 +80,53 @@
 Return to scientific work and report-writing on top of the now-clean
 phase-based architecture.
 
+## Phase 1 metadata-repair status
+
+On 2026-04-19, a new retained metadata-repair block was run on the final
+country-only song dataset:
+
+- `execution/phase_01_dataset_construction/backfill_country_only_final_artist_metadata.py`
+- `execution/phase_01_dataset_construction/backfill_country_only_final_song_metadata.py`
+
+Current final-dataset status after the retained completed passes:
+
+- rows: `44,058`
+- `bpm` missing: `21,775`
+- `genre` missing: `109`
+- rows with official genre source (`genre_is_official = 1`): `20,261`
+- `birth_state` missing rows: `158`
+- `us_macro_region` missing or `Unknown` rows: `2,360`
+- `birth_country` missing rows: `121`
+
+Current artist-level residuals inside the final song dataset:
+
+- unique artists missing `birth_state`: `42`
+- unique artists missing or `Unknown` in `us_macro_region`: `125`
+- unique artists missing `birth_country`: `35`
+- US-origin artists still missing `birth_state`: `Jim Hurst`, `The Pinetoppers`,
+  `The Wreckers`
+
+Interpretation:
+
+- BPM recovery improved substantially but remains incomplete because the
+  scalable public sources do not cover the whole catalogue.
+- Genre missingness is now much smaller, but many rows still retain
+  `genre_source = ug_selected` because a universal official replacement could
+  not yet be obtained from the currently responding public endpoints.
+- Artist-origin metadata improved materially, and most residual
+  `us_macro_region = Unknown` cases are now non-US artists rather than US
+  artists with a missing state.
+
+Retained reporting update completed:
+
+- `reports/phase_01_dataset_construction/01_country_only_and_adjacent_only/main.tex`
+  updated with a downstream artist-origin repair addendum
+- `reports/phase_01_dataset_construction/02_final_dataset_ultimate_guitar/main.tex`
+  updated with a new metadata-repair section covering BPM, genre, and
+  artist-origin backfills
+- both Overleaf reports were synchronized and compiled successfully on
+  2026-04-19
+
 ## Phase 1 reporting status
 
 - the old Overleaf `pipeline_report.tex` / `pipeline_report.pdf` narrative was
