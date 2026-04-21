@@ -18,7 +18,7 @@ Missing counts treat true nulls and blank strings as missing. `missing_or_unknow
 | birth_county | 23378 | 20680 | 46.94 | 20680 | 46.94 | Use targeted Wikipedia/Wikidata/MusicBrainz/official bio/manual review; non-US should remain Non-US, not Unknown. |
 | birth_state | 43925 | 133 | 0.3 | 133 | 0.3 | Use targeted Wikipedia/Wikidata/MusicBrainz/official bio/manual review; non-US should remain Non-US, not Unknown. |
 | birth_country | 43936 | 122 | 0.28 | 122 | 0.28 | Use targeted Wikipedia/Wikidata/MusicBrainz/official bio/manual review; non-US should remain Non-US, not Unknown. |
-| us_macro_region | 44058 | 0 | 0.0 | 0 | 0.0 | No action needed. |
+| us_macro_region | 44058 | 0 | 0.0 | 122 | 0.28 | Strict missing is zero, but remaining Unknown rows should be resolved via birth_country/birth_state review; confirmed non-US should remain Non-US. |
 | sample_membership | 39081 | 4977 | 11.3 | 4977 | 11.3 | Backfill from the same upstream source family or document as intentionally missing. |
 | bpm_sections | 4967 | 39091 | 88.73 | 39091 | 88.73 | Only recoverable where UG JSON contains strumming blocks; otherwise cannot be imputed reliably without audio/score analysis. |
 | strumming_patterns | 4973 | 39085 | 88.71 | 39085 | 88.71 | Only recoverable where UG JSON contains strumming blocks; otherwise cannot be imputed reliably without audio/score analysis. |
@@ -27,7 +27,7 @@ Missing counts treat true nulls and blank strings as missing. `missing_or_unknow
 ### Song identity / UG tab identity
 | variable | what_it_is | non_missing | missing | missing_pct | missing_or_unknown | missing_or_unknown_pct | unique_non_missing | fill_strategy |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| song_name | Song/tab identity from UG or row construction. | 44058 | 0 | 0.0 | 0 | 0.0 | 36323 | No action needed. |
+| song_name | Song/tab identity from UG or row construction. | 44058 | 0 | 0.0 | 1 | 0.0 | 36323 | No action needed. |
 | artist_name | Song/tab identity from UG or row construction. | 44058 | 0 | 0.0 | 0 | 0.0 | 1794 | No action needed. |
 | id | Song/tab identity from UG or row construction. | 44058 | 0 | 0.0 | 0 | 0.0 | 44058 | No action needed. |
 | type | Song/tab identity from UG or row construction. | 44058 | 0 | 0.0 | 0 | 0.0 | 1 | No action needed. |
@@ -113,7 +113,7 @@ Missing counts treat true nulls and blank strings as missing. `missing_or_unknow
 | death_year | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 11398 | 32660 | 74.13 | 32660 | 74.13 | 72 | Backfill from Wikidata/Wikipedia/MusicBrainz; age needs both birth and death/current reference date. |
 | death_place_raw | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 11075 | 32983 | 74.86 | 32983 | 74.86 | 182 | Backfill from Wikidata/Wikipedia/MusicBrainz; age needs both birth and death/current reference date. |
 | birth_decade | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 43572 | 486 | 1.1 | 486 | 1.1 | 15 | Backfill from Wikidata/Wikipedia/MusicBrainz; age needs both birth and death/current reference date. |
-| us_macro_region | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 44058 | 0 | 0.0 | 0 | 0.0 | 7 | No action needed. |
+| us_macro_region | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 44058 | 0 | 0.0 | 122 | 0.28 | 7 | Strict missing is zero, but remaining Unknown rows should be resolved via birth_country/birth_state review; confirmed non-US should remain Non-US. |
 | is_deceased | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 44058 | 0 | 0.0 | 0 | 0.0 | 2 | No action needed. |
 | age_or_age_at_death | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 10830 | 33228 | 75.42 | 33228 | 75.42 | 91 | Backfill from Wikidata/Wikipedia/MusicBrainz; age needs both birth and death/current reference date. |
 | is_us_born | Artist geography/demography from Wikidata, Wikipedia/MusicBrainz, and manual backfills. | 44058 | 0 | 0.0 | 0 | 0.0 | 2 | No action needed. |
