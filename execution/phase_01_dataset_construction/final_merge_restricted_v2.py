@@ -3,7 +3,7 @@ import os
 import json
 
 def main():
-    base_dir = "data/processed_datasets/country_artists"
+    base_dir = "data/phase_01_dataset_construction/processed/country_artists"
     songs_csv = os.path.join(base_dir, "Sound_of_Culture_Country_Full_Enriched_v5.csv")
     artists_csv = os.path.join(base_dir, "country_artists_restricted.csv")
     dictionary_csv = os.path.join(base_dir, "country_artists_data_dictionary.csv")

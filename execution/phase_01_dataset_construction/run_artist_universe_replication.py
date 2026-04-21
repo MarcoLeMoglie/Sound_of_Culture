@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 PACKAGE_DIRNAME = "replication_package_country_artist_universe_2026_04_08"
-ROOT_DATA_DIR = Path("data/processed_datasets/country_artists")
+ROOT_DATA_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 
 FINAL_OUTPUTS = [
     "artist_universe_country_only.csv",

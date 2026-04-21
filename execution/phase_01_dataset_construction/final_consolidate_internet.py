@@ -22,7 +22,7 @@ def super_normalize(text):
     return re.sub(r'[^a-zA-Z0-9]', '', text)
 
 def main():
-    base_dir = "data/processed_datasets/country_artists"
+    base_dir = "data/phase_01_dataset_construction/processed/country_artists"
     input_csv = os.path.join(base_dir, "Sound_of_Culture_Country_Full_Enriched_v3.csv")
     output_v5_csv = os.path.join(base_dir, "Sound_of_Culture_Country_Full_Enriched_v5.csv")
     output_v5_dta = os.path.join(base_dir, "Sound_of_Culture_Country_Full_Enriched_v5.dta")

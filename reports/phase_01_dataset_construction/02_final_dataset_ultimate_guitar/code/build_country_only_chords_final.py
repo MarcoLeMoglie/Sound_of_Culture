@@ -22,15 +22,15 @@ if str(PROJECT_ROOT) not in sys.path:
 from execution.phase_01_dataset_construction.music_indices import calculate_indices
 
 
-BASE_DIR = Path("data/processed_datasets/country_artists")
+BASE_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 INTERMEDIATE_DIR = BASE_DIR / "intermediate"
 JSON_CACHE_DIR = INTERMEDIATE_DIR / "json_caches"
 
 V6_CSV = BASE_DIR / "Sound_of_Culture_Country_Restricted_Final_v6.csv"
 V6_DTA = BASE_DIR / "Sound_of_Culture_Country_Restricted_Final_v6.dta"
 ARTIST_UNIVERSE_CSV = BASE_DIR / "artist_universe_country_only.csv"
-DISCOVERY_JSON = Path("data/intermediate/json/ug_country_only_chords_discovery.json")
-RAW_CHORDS_DIR = Path("data/raw_tabs_country")
+DISCOVERY_JSON = Path("data/phase_01_dataset_construction/intermediate/json/ug_country_only_chords_discovery.json")
+RAW_CHORDS_DIR = Path("data/phase_01_dataset_construction/raw/ultimate_guitar_country_chords")
 RAW_CHORD_INDEX: Optional[Dict[int, Path]] = None
 DEEZER_DISABLED = False
 DEEZER_FAILURES = 0
@@ -109,6 +109,8 @@ SONG_COLUMNS = [
     "playability",
     "harmonic_softness",
     "release_year",
+    "bpm_sections",
+    "strumming_patterns",
     "num_chord_json_used",
 ]
 
@@ -164,6 +166,8 @@ STRING_LABELS = {
     "playability": "Ease of playing proxy",
     "harmonic_softness": "Soft chord ratio",
     "release_year": "Song release year",
+    "bpm_sections": "BPM values by song section from UG strumming JSON",
+    "strumming_patterns": "UG strumming measures and metadata by section",
     "num_chord_json_used": "Number of chord JSON files used to build song row",
     "billboard_country_year_end_flag": "Song in Billboard country year-end chart",
     "billboard_country_year_end_year": "Year of Billboard country year-end entry",
@@ -371,9 +375,18 @@ def is_missing_numeric(value: object) -> bool:
 def parse_json(path: Path) -> Optional[dict]:
     if not path.exists():
         return None
+    # Skip effectively empty or corrupted 2-byte files
+    if path.stat().st_size <= 2:
+        return None
     try:
         with path.open() as handle:
-            return json.load(handle)
+            data = json.load(handle)
+            if not isinstance(data, dict) or not data:
+                return None
+            # Basic validation: must have some content or a song_id
+            if "content" not in data and "song_id" not in data:
+                return None
+            return data
     except Exception as exc:
         log(f"Could not read {path.name}: {exc}")
         return None
@@ -422,25 +435,110 @@ def deep_backfill(base: dict, donor: dict) -> dict:
     return base
 
 
+def extract_strumming_metadata(strumming_data: object) -> Tuple[Optional[float], str, str]:
+    """Extract total BPM and section-level strumming metadata from UG JSON."""
+    if not isinstance(strumming_data, list):
+        return None, "", ""
+
+    overall_bpm: Optional[float] = None
+    bpm_sections: List[dict] = []
+    strumming_sections: List[dict] = []
+
+    for section_index, section in enumerate(strumming_data, start=1):
+        if not isinstance(section, dict):
+            continue
+        part = normalize_space(section.get("part")) or "General"
+        raw_bpm = pd.to_numeric(section.get("bpm"), errors="coerce")
+        bpm_value = float(raw_bpm) if pd.notna(raw_bpm) and float(raw_bpm) > 0 else None
+        if bpm_value is not None and overall_bpm is None:
+            overall_bpm = bpm_value
+        if bpm_value is not None:
+            bpm_sections.append(
+                {
+                    "section_index": section_index,
+                    "part": part,
+                    "bpm": int(bpm_value) if bpm_value.is_integer() else bpm_value,
+                }
+            )
+
+        measure_values: List[int] = []
+        measures = section.get("measures")
+        if isinstance(measures, list):
+            for measure in measures:
+                if isinstance(measure, dict):
+                    value = pd.to_numeric(measure.get("measure"), errors="coerce")
+                else:
+                    value = pd.to_numeric(measure, errors="coerce")
+                if pd.notna(value):
+                    measure_values.append(int(value))
+
+        denominator = pd.to_numeric(section.get("denuminator", section.get("denominator")), errors="coerce")
+        strumming_sections.append(
+            {
+                "section_index": section_index,
+                "part": part,
+                "bpm": int(bpm_value) if bpm_value is not None and bpm_value.is_integer() else bpm_value,
+                "denuminator": int(denominator) if pd.notna(denominator) else None,
+                "is_triplet": int(section.get("is_triplet") or 0),
+                "measure_count": len(measure_values),
+                "measures": measure_values,
+            }
+        )
+
+    return (
+        overall_bpm,
+        json.dumps(bpm_sections, ensure_ascii=False, separators=(",", ":")) if bpm_sections else "",
+        json.dumps(strumming_sections, ensure_ascii=False, separators=(",", ":")) if strumming_sections else "",
+    )
+
+
 def build_enriched_payload(version_rows: List[dict]) -> Tuple[dict, dict, int]:
-    ordered_rows = sorted(version_rows, key=tab_sort_key, reverse=True)
+    # Preliminary path check
+    valid_candidates = []
+    for row in version_rows:
+        path = raw_json_path(int(row["id"]))
+        if path and path.exists():
+            valid_candidates.append(row)
+    
+    if not valid_candidates:
+        raise FileNotFoundError(f"No raw JSON found for versions {[row['id'] for row in version_rows]}")
+
+    # Re-sort with a bias towards versions that likely have more data
+    def quality_sort_key(row: dict) -> Tuple[int, float, int, int]:
+        # We prefer versions that aren't 'ver 1' if higher versions exist,
+        # but primarily we use the UG rating and votes.
+        # We also check if we've already cached meta about strumming (if we had an index)
+        # but here we'll just use the standard sort and then parse.
+        rating = float(row.get("rating") or 0.0)
+        votes = int(row.get("votes") or 0)
+        return (rating >= 4.5, rating, votes, int(row.get("id") or 0))
+
+    ordered_rows = sorted(valid_candidates, key=quality_sort_key, reverse=True)
+    
     payloads = []
     for row in ordered_rows:
         path = raw_json_path(int(row["id"]))
-        payload = parse_json(path) if path else None
+        payload = parse_json(path)
         if payload:
-            payloads.append((row, payload))
+            # Check if this payload has the specific 'strumming' or 'tonality' info we want
+            has_rich_meta = 1 if (payload.get("strumming") or payload.get("tonality_name")) else 0
+            payloads.append((row, payload, has_rich_meta))
 
     if not payloads:
-        raise FileNotFoundError(f"No raw JSON found for versions {[row['id'] for row in ordered_rows]}")
+        raise FileNotFoundError(f"All raw JSON for versions {[row['id'] for row in ordered_rows]} were corrupted or empty")
 
-    base_row, base_payload = payloads[0]
+    # Re-sort payloads to put those with rich metadata FIRST if ratings are similar
+    payloads.sort(key=lambda x: (x[2], x[0].get("rating", 0), x[0].get("votes", 0)), reverse=True)
+
+    base_row, base_payload, _ = payloads[0]
     merged_payload = deepcopy(base_payload)
+    
+    # Merge up to 3 versions to backfill missing fields
     payloads_used = payloads[:3]
-    for _, donor_payload in payloads_used[1:]:
+    for _, donor_payload, _ in payloads_used[1:]:
         merged_payload = deep_backfill(merged_payload, donor_payload)
 
-    # Keep ranking metadata from the top-rated version.
+    # Keep ranking metadata from the top-rated version (the original choice).
     merged_payload["id"] = int(base_row["id"])
     merged_payload["rating"] = base_row.get("rating", merged_payload.get("rating"))
     merged_payload["votes"] = base_row.get("votes", merged_payload.get("votes"))
@@ -482,18 +580,15 @@ def flatten_chord_payload(base_row: dict, data: dict, num_json_used: int | None 
     row["genre"] = data.get("advertising", {}).get("targeting_song_genre", "country") or "country"
 
     content = data.get("content", "") or ""
-    strumming = data.get("strumming", []) or []
+    strumming_data = data.get("strumming", []) or []
     row["main_key"] = data.get("tonality_name", "")
 
-    bpm = None
-    if isinstance(strumming, list):
-        for part in strumming:
-            part_bpm = part.get("bpm")
-            if part_bpm and not bpm:
-                bpm = part_bpm
-                break
-    row["bpm"] = bpm
+    overall_bpm, bpm_sections_json, strumming_patterns_json = extract_strumming_metadata(strumming_data)
+    row["bpm"] = overall_bpm
+    row["bpm_sections"] = bpm_sections_json
+    row["strumming_patterns"] = strumming_patterns_json
 
+    # Structural indicators
     content_parts = re.split(r"\[(?!ch|/ch|tab|/tab)([^\]]+)\]", content)
     sections_list = []
     if len(content_parts) > 1:
@@ -512,6 +607,7 @@ def flatten_chord_payload(base_row: dict, data: dict, num_json_used: int | None 
     row["has_bridge"] = has_section(["bridge"])
     row["has_outro"] = has_section(["outro"])
 
+    # Chord extraction
     chord_matches = re.findall(r"\[ch\](.*?)\[/ch\]", content)
     chord_counts = Counter(chord_matches)
     sorted_chords = chord_counts.most_common(3)
@@ -522,7 +618,9 @@ def flatten_chord_payload(base_row: dict, data: dict, num_json_used: int | None 
     row["chord_3"] = sorted_chords[2][0] if len(sorted_chords) > 2 else ""
     row["chord_3_count"] = sorted_chords[2][1] if len(sorted_chords) > 2 else 0
 
+    # Musical Indices
     row.update(calculate_indices(data))
+    
     row["release_year"] = None
     row["num_chord_json_used"] = int(num_json_used or 1)
     return row
@@ -586,7 +684,7 @@ def attach_artist_metadata(song_row: dict, base_row: dict, by_id: Dict[str, dict
 
 def build_output_columns(reference_columns: List[str]) -> List[str]:
     output_columns = list(reference_columns)
-    for column in FINAL_EXTRA_COLUMNS:
+    for column in SONG_COLUMNS + CHART_COLUMNS + FINAL_EXTRA_COLUMNS:
         if column not in output_columns:
             output_columns.append(column)
     return output_columns
@@ -658,6 +756,33 @@ def deduplicate_new_song_cache(new_df: pd.DataFrame, reference_columns: List[str
         log(f"Deduplicated cached new-song rows removed: {removed}")
     working.drop(columns=["_artist_norm", "_song_norm"], inplace=True)
     return working.reindex(columns=reference_columns)
+
+
+def cached_strumming_patterns_need_rebuild(new_df: pd.DataFrame) -> bool:
+    """Detect caches built before numeric UG strumming measures were parsed."""
+    if "strumming_patterns" not in new_df.columns:
+        return True
+    sample = new_df["strumming_patterns"].fillna("").astype(str).str.strip()
+    sample = sample[sample.ne("")].head(200)
+    if sample.empty:
+        return False
+    for value in sample:
+        try:
+            sections = json.loads(value)
+        except Exception:
+            continue
+        if not isinstance(sections, list):
+            continue
+        for section in sections:
+            if not isinstance(section, dict):
+                continue
+            measures = section.get("measures")
+            measure_count = pd.to_numeric(section.get("measure_count"), errors="coerce")
+            if isinstance(measures, list) and measures:
+                return False
+            if pd.notna(measure_count) and int(measure_count) > 0:
+                return False
+    return True
 
 
 def build_song_json_usage_maps(discovery_rows: List[dict]) -> Tuple[Dict[int, int], Dict[Tuple[str, str], int]]:
@@ -1961,8 +2086,15 @@ def build_final_dataset() -> pd.DataFrame:
     if NEW_SONGS_CSV.exists():
         new_df = pd.read_csv(NEW_SONGS_CSV, low_memory=False)
         log(f"Loaded cached new-song rows from {NEW_SONGS_CSV.name}: {len(new_df)} rows")
-        new_df = deduplicate_new_song_cache(new_df, output_columns)
-        new_df.to_csv(NEW_SONGS_CSV, index=False)
+        if {"bpm_sections", "strumming_patterns"}.difference(new_df.columns):
+            log("Cached new-song rows predate section-level BPM/strumming fields; rebuilding from raw JSON")
+            new_df = build_new_song_rows()
+        elif cached_strumming_patterns_need_rebuild(new_df):
+            log("Cached new-song rows predate numeric strumming-measure parsing; rebuilding from raw JSON")
+            new_df = build_new_song_rows()
+        else:
+            new_df = deduplicate_new_song_cache(new_df, output_columns)
+            new_df.to_csv(NEW_SONGS_CSV, index=False)
     else:
         new_df = build_new_song_rows()
     existing_ids = set(pd.to_numeric(base_df["id"], errors="coerce").dropna().astype(int))

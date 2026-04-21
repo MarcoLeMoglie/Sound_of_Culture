@@ -28,14 +28,14 @@ try:
              print(f"Found {count} songs for 1985")
              
              # Load existing
-             with open("data/processed_datasets/songs_tracklist.json", 'r') as f:
+             with open("data/phase_02_exploratory_analysis/processed/songs_tracklist.json", 'r') as f:
                   all_songs = json.load(f)
                   
              # Extend
              all_songs.extend(songs_1985)
              
              # Save back
-             with open("data/processed_datasets/songs_tracklist.json", 'w') as f:
+             with open("data/phase_02_exploratory_analysis/processed/songs_tracklist.json", 'w') as f:
                   json.dump(all_songs, f, indent=4)
              print("Successfully appended 1985.")
         else:

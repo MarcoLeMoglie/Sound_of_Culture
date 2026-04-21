@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 PACKAGE_DIRNAME = "replication_package_country_songs_2026_04_01"
-ROOT_DATA_DIR = Path("data/processed_datasets/country_artists")
+ROOT_DATA_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 CACHE_SUBDIR = Path("intermediate/json_caches")
 
 SONG_OUTPUTS = [

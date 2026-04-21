@@ -35,7 +35,7 @@ These references appear in:
 - repo READMEs
 - replication wrappers
 - Stata scripts
-- packaged replication snapshots under `data/processed_datasets/country_artists/`
+- packaged replication snapshots under `data/phase_01_dataset_construction/processed/country_artists/`
 
 ## Main blockers
 
@@ -59,7 +59,7 @@ Examples include:
 ### 3. Replication packages embed old path references by design
 
 Multiple packaged replication directories under
-`data/processed_datasets/country_artists/replication_package_*` intentionally
+`data/phase_01_dataset_construction/processed/country_artists/replication_package_*` intentionally
 preserve historical paths and should not be rewritten casually.
 
 ## Safe interpretation

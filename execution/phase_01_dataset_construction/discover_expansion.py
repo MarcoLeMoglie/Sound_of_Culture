@@ -17,12 +17,12 @@ from execution.phase_01_dataset_construction.discover_artists_chords import (
 def run_expansion_discovery():
     client = UltimateGuitarClient()
     # Path relative to project root
-    output_file = os.path.join(project_root, 'data/intermediate/json/input_songs_bulk_country_expansion.json')
+    output_file = os.path.join(project_root, 'data/phase_01_dataset_construction/intermediate/json/input_songs_bulk_country_expansion.json')
     
     # 1. Extract combined new artists
-    res_csv = os.path.join(project_root, 'data/processed_datasets/country_artists/country_artists_restricted.csv')
-    mas_csv = os.path.join(project_root, 'data/processed_datasets/country_artists/country_artists_master.csv')
-    seed_file = os.path.join(project_root, 'data/intermediate/json/seed_country_artists.json')
+    res_csv = os.path.join(project_root, 'data/phase_01_dataset_construction/processed/country_artists/country_artists_restricted.csv')
+    mas_csv = os.path.join(project_root, 'data/phase_01_dataset_construction/processed/country_artists/country_artists_master.csv')
+    seed_file = os.path.join(project_root, 'data/phase_01_dataset_construction/intermediate/json/seed_country_artists.json')
     
     df_res = pd.read_csv(res_csv)
     df_mas = pd.read_csv(mas_csv)

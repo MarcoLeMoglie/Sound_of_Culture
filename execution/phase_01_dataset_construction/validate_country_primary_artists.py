@@ -19,8 +19,8 @@ to obviously non-country primary genres, and emits a validation label:
 Typical use:
     python3 execution/phase_01_dataset_construction/build_country_artists_dataset.py
     python3 execution/phase_01_dataset_construction/validate_country_primary_artists.py \
-      --input data/processed_datasets/country_artists/artist_universe_country_only.csv \
-      --output data/processed_datasets/country_artists/artist_universe_country_only_validated.csv
+      --input data/phase_01_dataset_construction/processed/country_artists/artist_universe_country_only.csv \
+      --output data/phase_01_dataset_construction/processed/country_artists/artist_universe_country_only_validated.csv
 """
 
 from __future__ import annotations

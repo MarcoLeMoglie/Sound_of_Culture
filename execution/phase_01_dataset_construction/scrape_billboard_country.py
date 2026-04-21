@@ -7,7 +7,7 @@ import time
 
 def scrape_billboard_country():
     years = list(range(1980, 2025))
-    output_file = "data/intermediate/json/billboard_country_artists.json"
+    output_file = "data/phase_01_dataset_construction/intermediate/json/billboard_country_artists.json"
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     
     headers = {

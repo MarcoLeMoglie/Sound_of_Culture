@@ -8,7 +8,7 @@ cd "/Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Culture"
 set scheme s1color
 
 * 1. Carica il dataset
-use "data/processed_datasets/top100YearEnd8525/dataset_bass_top100yearend.dta", clear
+use "data/phase_02_exploratory_analysis/processed/top100YearEnd8525/dataset_bass_top100yearend.dta", clear
 
 * 2. Assicura che variabili siano numeriche
 destring chart_year, replace force

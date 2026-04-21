@@ -1,0 +1,91 @@
+
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+Stata license: Single-user 2-core  perpetual
+Serial number: 501706343699
+  Licensed to: MARCO LE MOGLIE
+               Catholic University
+
+Notes:
+      1. Stata is running in batch mode.
+      2. Unicode is supported; see help unicode_advice.
+      3. More than 2 billion observations are allowed; see help obs_advice.
+      4. Maximum number of variables is set to 5,000; see help set_maxvar.
+
+
+Running /Users/marcolemoglie_1_2/Library/Application Support/Stata/ado/personal
+> /profile.do ...
+command panelwhiz is unrecognized
+r(199);
+
+. do data/processed_datasets/country_artists/replication_package_2026-03-27/cod
+> e/stata/run_full_replication.do full_rebuild 
+
+. version 17
+
+. clear all
+
+. set more off
+
+. 
+. args rebuild_mode
+
+. 
+. local project_root "`c(pwd)'"
+
+. local package_date "2026-03-27"
+
+. local python_launcher "data/processed_datasets/country_artists/replication_pa
+> ckage_2026-03-27/code/python/step5_replication/run_full_replication.py"
+
+. local full_rebuild 0
+
+. 
+. if inlist("`rebuild_mode'", "full", "full_rebuild", "--full-rebuild") {
+.     local full_rebuild 1
+. }
+
+. 
+. display as text "Project root: `project_root'"
+Project root: /Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Cu
+> lture/.coldstart_country_artists_stata_v4
+
+. display as text "Replication package date: `package_date'"
+Replication package date: 2026-03-27
+
+. display as text "Full rebuild mode: `full_rebuild'"
+Full rebuild mode: 1
+
+. 
+. if `full_rebuild' {
+.     python script `python_launcher', args("--full-rebuild")
+Project root: /Users/marcolemoglie_1_2/Library/CloudStorage/Dropbox/Sound_of_Cu
+> lture/.coldstart_country_artists_stata_v4
+Replication package target: /Users/marcolemoglie_1_2/Library/CloudStorage/Dropb
+> ox/Sound_of_Culture/.coldstart_country_artists_stata_v4/data/processed_datase
+> ts/country_artists/replication_package_2026-03-27
+Full rebuild mode: True
+
+>>> python3 data/processed_datasets/country_artists/replication_package_2026-03
+> -27/code/python/step4_country_artists/build_country_artists_dataset.py
+Bundled intermediate fallback was used during full rebuild; restoring canonical
+>  bundled final outputs.
+Restored country-artist outputs from bundled replication snapshot.
+Replication pipeline completed successfully.
+. }
+
+. else {
+.     python script `python_launcher'
+. }
+
+. 
+end of do-file

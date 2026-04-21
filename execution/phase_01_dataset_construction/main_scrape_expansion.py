@@ -81,8 +81,8 @@ def download_worker(tab_metadata, client, output_dir, total_count):
     return "failed"
 
 def main():
-    discovery_file = "data/intermediate/json/input_songs_bulk_country_expansion.json"
-    output_dir = "data/raw_tabs_country"
+    discovery_file = "data/phase_01_dataset_construction/intermediate/json/input_songs_bulk_country_expansion.json"
+    output_dir = "data/phase_01_dataset_construction/raw/ultimate_guitar_country_chords"
     NUM_WORKERS = 5 # Increased workers for expansion download
     
     if not os.path.exists(output_dir):

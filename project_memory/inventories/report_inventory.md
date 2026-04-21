@@ -29,6 +29,12 @@
 - both Phase 1 reports were updated again later on 2026-04-20 to document the
   loop-until-stall BPM run, the `Non-US` recode in `us_macro_region`, and the
   curated `The Wreckers` origin fix; both compiled successfully in Overleaf
+- both Phase 1 reports were updated again on 2026-04-21 after the phase-based
+  data-folder reorganization and the UG section-level rhythm enrichment. Phase
+  1.2 now documents `bpm_sections`, `strumming_patterns`, the distinction
+  between final `genre` and official genre rows, and the current post-rebuild
+  metadata counts. Wide tables were converted to `tabularx` to avoid text
+  overlap in Overleaf.
 - report templates and output subfolders created for:
   - `phase_03_validation/`
   - `phase_04_causal_shocks/01_war_deaths/`

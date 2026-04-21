@@ -1,0 +1,64 @@
+column_name,data_type,required,allowed_values,description,example
+artist_id,string,yes,,Unique internal artist identifier,artist_000001
+name_primary,string,yes,,Primary display name,Dolly Parton
+birth_name,string,no,,Birth/legal name if available,Dolly Rebecca Parton
+stage_name,string,no,,Stage name if distinct from primary name,Dolly Parton
+aliases,string,no,,Pipe-separated aliases or alternative spellings,Dolly Parton|D. Parton
+wikidata_qid,string,no,,Wikidata entity identifier,Q237806
+musicbrainz_mbid,string,no,,MusicBrainz artist identifier,abcd1234-ef56-....
+isni,string,no,,International Standard Name Identifier,0000000123456789
+viaf_id,string,no,,VIAF identifier,123456789
+wikipedia_url,string,no,,Wikipedia page URL,https://en.wikipedia.org/wiki/Dolly_Parton
+birth_date,date,no,,Full birth date in ISO format,1946-01-19
+birth_year,integer,yes,,Birth year derived from birth_date or source,1946
+birth_place_raw,string,no,,Raw birth place string from source,"Sevier County, Tennessee, United States"
+birth_city,string,no,,Birth city if available,
+birth_county,string,no,,Birth county if available,Sevier County
+birth_state,string,no,,US state of birth,Tennessee
+birth_state_abbr,string,no,,US state abbreviation,TN
+birth_country,string,yes,,Country of birth,United States
+death_date,date,no,,Full death date in ISO format,
+death_year,integer,no,,Death year if deceased,
+death_place_raw,string,no,,Raw death place string from source,
+citizenship,string,no,,Citizenship or country of citizenship,United States
+occupations,string,no,,Pipe-separated normalized occupations,singer-songwriter|actor
+genres_raw,string,no,,Original genre labels from sources,country|country pop|bluegrass
+genres_normalized,string,no,,Pipe-separated normalized genres,country|country pop
+country_relevance_score,float,no,0-1,Continuous score for relevance to country music,0.95
+instruments,string,no,,Pipe-separated instruments,voice|guitar
+member_of,string,no,,Associated groups or duos if relevant,The Highwaymen
+record_labels,string,no,,Pipe-separated record labels,RCA Nashville|Columbia
+awards,string,no,,Pipe-separated awards or major honors,Country Music Hall of Fame
+official_website,string,no,,Official website URL,https://dollyparton.com
+birth_decade,integer,yes,,Birth decade derived from birth_year,1940
+us_macro_region,string,no,South|Northeast|Midwest|West|Appalachia|Unknown,Broad US region of birth state,South
+is_deceased,integer,yes,0|1,Whether the person is deceased,0
+age_or_age_at_death,integer,no,,Current age or age at death,80
+is_us_born,integer,yes,0|1,Whether born in the United States,1
+is_solo_person,integer,yes,0|1,Whether the row represents a person rather than a group,1
+is_country_core,integer,yes,0|1,Core country relevance boolean,1
+is_country_broad,integer,yes,0|1,Broad country relevance boolean,1
+flag_restricted_sample,integer,yes,0|1,Restricted sample membership flag,1
+flag_expanded_sample,integer,yes,0|1,Expanded sample membership flag,1
+sample_membership,string,yes,restricted|expanded_only,Combined membership label,restricted
+inclusion_reason,string,no,,Short reason for inclusion,US-born core country singer with reliable birth metadata
+exclusion_reason,string,no,,Reason for exclusion or non-US routing,
+source_primary,string,yes,,Primary source used for the record,Wikidata
+source_secondary,string,no,,Secondary source used for validation,MusicBrainz
+source_seed,string,no,,Seed source used to discover candidate,Country Music Hall of Fame
+evidence_urls,string,yes,,Pipe-separated URLs supporting the record,https://...|https://...
+source_count,integer,yes,,Number of supporting sources,3
+birth_date_confidence,string,yes,high|medium|low,Confidence in birth date,high
+birth_place_confidence,string,yes,high|medium|low,Confidence in birth place/state,high
+genre_confidence,string,yes,high|medium|low,Confidence in country classification,high
+manual_review_needed,integer,yes,0|1,Whether manual inspection is required,0
+notes,string,no,,Free text notes including conflicts or caveats,
+in_songfile,byte,no,0/1,Artist appears in current songs file,1
+in_country_restricted,byte,no,0/1,Artist appears in country_artists_restricted,1
+in_country_master,byte,no,0/1,Artist appears in country_artists_master,1
+in_adjacent_seed_pool,byte,no,0/1,Artist was added from adjacent-genre seed expansion,1
+source_membership_count,integer,no,,Count of source memberships across core and adjacent pools,2
+artist_name_songfile_example,string,no,,Observed artist spelling from the current song file,Doyle Lawson & Quicksilver
+adjacent_genre_bucket,string,no,,Primary adjacent-genre bucket inferred after enrichment,bluegrass
+adjacent_source_group,string,no,,Seed source used for adjacent-genre expansion,MusicBrainz tag:bluegrass
+core_union_flag,byte,no,0/1,"Artist belongs to the core country union (songs, restricted, or master)",1

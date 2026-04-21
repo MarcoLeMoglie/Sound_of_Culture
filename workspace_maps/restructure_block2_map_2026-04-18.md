@@ -18,8 +18,9 @@ working legacy code layout.
 - `execution/phase_02_exploratory_analysis/`
 - `execution/phase_03_validation/`
 - `execution/phase_04_causal_shocks/`
-- `data/external_sources/`
-- `data/project_outputs/`
+- `data/phase_03_validation/external/`
+- `data/phase_04_causal_shocks/*/external_sources/`
+- `data/phase_*/project_outputs/`
 
 ## Legacy-to-phase map
 

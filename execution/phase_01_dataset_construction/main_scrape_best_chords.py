@@ -90,8 +90,8 @@ def download_worker(t, client, output_dir, total_to_process):
     return "failed"
 
 def main():
-    discovery_file = "data/intermediate/json/input_songs_bulk_country.json"
-    output_dir = "data/raw_tabs_country"
+    discovery_file = "data/phase_01_dataset_construction/intermediate/json/input_songs_bulk_country.json"
+    output_dir = "data/phase_01_dataset_construction/raw/ultimate_guitar_country_chords"
     NUM_WORKERS = 3 # 3 concurrent workers for ~3x speedup
     
     client = UltimateGuitarClient()

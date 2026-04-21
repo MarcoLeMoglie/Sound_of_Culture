@@ -1,7 +1,7 @@
 import json
 import os
 
-input_file = "data/processed_datasets/songs_tracklist.json"
+input_file = "data/phase_02_exploratory_analysis/processed/songs_tracklist.json"
 output_file = "data/input_songs_test_scale.json"
 
 if not os.path.exists(input_file):

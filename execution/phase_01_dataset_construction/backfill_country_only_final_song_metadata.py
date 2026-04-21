@@ -24,10 +24,10 @@ warnings.filterwarnings("ignore", message="PySoundFile failed. Trying audioread 
 warnings.filterwarnings("ignore", message="librosa.core.audio.__audioread_load", category=FutureWarning)
 
 
-BASE_DIR = Path("data/processed_datasets/country_artists")
+BASE_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 TARGET_CSV = BASE_DIR / "Sound_of_Culture_Country_CountryOnly_Chords_Final_2026_04_08.csv"
 TARGET_DTA = BASE_DIR / "Sound_of_Culture_Country_CountryOnly_Chords_Final_2026_04_08.dta"
-RAW_TABS_DIR = Path("data/raw_tabs_country")
+RAW_TABS_DIR = Path("data/phase_01_dataset_construction/raw/ultimate_guitar_country_chords")
 INTERMEDIATE_DIR = BASE_DIR / "intermediate" / "final_song_metadata_backfill"
 SUMMARY_JSON = INTERMEDIATE_DIR / "final_song_metadata_backfill_summary_2026_04_19.json"
 ITUNES_CACHE = INTERMEDIATE_DIR / "itunes_track_cache.json"
@@ -557,6 +557,12 @@ def targeted_song_fill(
         )
     target_rows = out.loc[target_mask, ["artist_name", "song_name"]].drop_duplicates()
     total_targets = len(target_rows)
+    if CACHE_ONLY:
+        cached_keys = set(itunes_exact_cache) | set(deezer_search_cache) | set(discogs_cache)
+        target_rows = target_rows[
+            target_rows.apply(lambda row: canonical_key(row["artist_name"], row["song_name"]) in cached_keys, axis=1)
+        ].copy()
+        log(f"Cache-only targeted song pass filtered {total_targets} eligible songs to {len(target_rows)} cached songs")
     if chunk_start or chunk_size:
         start = max(0, int(chunk_start))
         stop = len(target_rows) if not chunk_size or int(chunk_size) <= 0 else min(len(target_rows), start + int(chunk_size))
@@ -605,6 +611,8 @@ def targeted_song_fill(
         cache_key = canonical_key(artist, song)
         if cache_key in deezer_search_cache:
             search_results = deezer_search_cache[cache_key]
+        elif CACHE_ONLY:
+            search_results = []
         else:
             results: List[dict] = []
             try:

@@ -5,12 +5,14 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \geometry{margin=1in}
 \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \title{Sound of Culture\\Phase 1.2 Report: Ultimate Guitar Pipeline and Final Dataset Construction}
 \author{Detailed project report}
@@ -84,7 +86,7 @@ objects and should remain distinct operationally.
 \begin{table}[H]
 \centering
 \caption{Retained Ultimate Guitar plan snapshot}
-\begin{tabular}{p{0.34\textwidth}rrr}
+\begin{tabularx}{\textwidth}{Y r r r}
 \toprule
 Layer & Songs & JSON total & JSON missing \\
 \midrule
@@ -92,7 +94,7 @@ UG chords & 55,335 & 64,829 & 11 \\
 UG tabs & 5,243 & 7,299 & 3 \\
 Combined & --- & 72,128 & 14 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 The important substantive implication is that the pipeline keeps multiple JSON
@@ -127,7 +129,7 @@ the broad pass.
 \begin{table}[H]
 \centering
 \caption{Saved Billboard supplement report used by the retained workflow}
-\begin{tabular}{p{0.52\textwidth}r}
+\begin{tabularx}{\textwidth}{Y r}
 \toprule
 Metric & Value \\
 \midrule
@@ -139,7 +141,7 @@ Final discovery rows after merge & 70,504 \\
 New raw JSON downloads & 8 \\
 Attempted target keys recorded & 1,087 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 This is also the stage that explains why the current operational
@@ -152,11 +154,11 @@ The retained final builder is
 \texttt{code/build\_country\_only\_chords\_final.py}. The main retained blocks
 are:
 \begin{itemize}[leftmargin=2em]
-\item \texttt{build\_new\_song\_rows()} at lines 595--643;
-\item \texttt{apply\_num\_json\_used()} at lines 686--705;
-\item \texttt{apply\_chart\_variables()} at lines 1919--1953;
-\item \texttt{build\_final\_dataset()} at lines 1956--1983;
-\item \texttt{main()} at lines 2015--2033.
+\item \texttt{build\_new\_song\_rows()} at lines 693--743;
+\item \texttt{apply\_num\_json\_used()} at lines 811--832;
+\item \texttt{apply\_chart\_variables()} at lines 2044--2078;
+\item \texttt{build\_final\_dataset()} at lines 2081--2144;
+\item \texttt{main()} at lines 2147 onward.
 \end{itemize}
 
 The builder starts from \texttt{Sound\_of\_Culture\_Country\_Restricted\_Final\_v6}
@@ -178,14 +180,14 @@ the combined file;
 \begin{table}[H]
 \centering
 \caption{Retained final output counts}
-\begin{tabular}{p{0.56\textwidth}r}
+\begin{tabularx}{\textwidth}{Y r}
 \toprule
 Object & Count \\
 \midrule
 Current new-song cache (\texttt{country\_only\_chords\_new\_songs\_2026\_04\_08.csv}) & 36,584 \\
 Current final country-only chord dataset & 44,058 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 Two methodological details are retained and should not be misunderstood.
@@ -201,10 +203,61 @@ Second, the builder can use up to three JSON payloads for the same song. The
 retained workflow deliberately prefers deeper recovery from the best available
 versions rather than hard-coding a top-1 rule.
 
+\subsection{Stage 3B. Extract section-level BPM and strumming information from UG JSON}
+After the first final-dataset build, a manual inspection of the downloaded UG
+JSON files showed that many chord payloads contain a structured
+\texttt{strumming} block. This block is richer than a single song-level tempo:
+it can store the song part name, a BPM value for that part, the denominator
+field as written by UG (\texttt{denuminator}), whether the part is triplet-based,
+and a list of encoded strumming measures.
+
+This information is now retained in the final dataset rather than being left
+inside the raw JSON layer. The retained implementation is in
+\path{execution/phase_01_dataset_construction/build_country_only_chords_final.py}.
+The key blocks are \texttt{extract\_strumming\_metadata()} at lines 438--491,
+\texttt{flatten\_chord\_payload()} at lines 552--625,
+\texttt{cached\_strumming\_patterns\_need\_rebuild()} at lines 761--785, and
+\texttt{build\_final\_dataset()} at lines 2081--2099. Together, these blocks
+parse the UG \texttt{strumming} field, write it into each song row, and detect
+stale caches that predate the richer fields or the numeric-measure parser.
+
+The resulting variables are:
+\begin{itemize}[leftmargin=2em]
+\item \texttt{bpm}: the first positive BPM found in the selected UG strumming
+sections when no stronger later source replaces it;
+\item \texttt{bpm\_sections}: a compact JSON list of section names and BPM
+values, for example verse-level or chorus-level values when UG provides them;
+\item \texttt{strumming\_patterns}: a compact JSON list of the UG strumming
+metadata by section, including \texttt{part}, \texttt{bpm},
+\texttt{denuminator}, \texttt{is\_triplet}, \texttt{measure\_count}, and the
+encoded \texttt{measures} list.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{Current coverage of UG section-level BPM and strumming fields}
+\begin{tabularx}{\textwidth}{Y r}
+\toprule
+Field or diagnostic & Rows \\
+\midrule
+Rows with non-missing \texttt{bpm\_sections} & 4,967 \\
+Rows with non-missing \texttt{strumming\_patterns} & 4,973 \\
+Rows whose \texttt{strumming\_patterns} include encoded measure values & 4,973 \\
+Rows whose \texttt{strumming\_patterns} include a section-level BPM value & 4,967 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+This extraction is retained because it creates a direct bridge from chord
+payloads to rhythm and performance-style information. It also answers a key
+data-construction concern: the final dataset now preserves the UG plettrata /
+strumming signal instead of collapsing the raw JSON to only chords, key, and
+overall song metadata.
+
 \subsection{Stage 4. Recover missing \texttt{release\_year} and residual metadata}
 The retained \texttt{release\_year} logic is in
 \texttt{code/build\_country\_only\_chords\_final.py}, especially
-\texttt{enrich\_release\_years()} at lines 1519--1679.
+\texttt{enrich\_release\_years()} at lines 1644--1806.
 
 The retained hierarchy is explicit:
 \begin{enumerate}[leftmargin=2em]
@@ -228,7 +281,7 @@ to song-by-song searches.
 \begin{table}[H]
 \centering
 \caption{Saved augmentation and residual-missingness diagnostics used by the final pipeline}
-\begin{tabular}{p{0.56\textwidth}r}
+\begin{tabularx}{\textwidth}{Y r}
 \toprule
 Metric & Value \\
 \midrule
@@ -239,7 +292,7 @@ Targets linked to existing artists in the retained v4 summary & 1,490 \\
 Targets still missing an artist in the retained v4 summary & 25 \\
 Rows in the retained residual release-year file & 2,893 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 The key interpretation is that missing-data recovery is not a separate afterthought.
@@ -259,11 +312,11 @@ metadata in the final song-level file.
 
 The retained repair layer is now split across two scripts:
 \begin{itemize}[leftmargin=2em]
-\item \texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_song\_metadata.py},
+\item \path{execution/phase_01_dataset_construction/backfill_country_only_final_song_metadata.py},
 especially the local UG lookup at lines 182--221 and 659--683, the artist-level
 official-source pass at lines 426--527, the targeted song-level pass at lines
 530--656, and the orchestration layer at lines 725--760;
-\item \texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_artist\_metadata.py},
+\item \path{execution/phase_01_dataset_construction/backfill_country_only_final_artist_metadata.py},
 especially the suspicious-match reset and override logic at lines 107--265 and
 324--341, the conservative lookup layer at lines 379--523, and the final save
 path at lines 526--579.
@@ -288,43 +341,42 @@ for clearly identifiable artists or groups.
 \begin{table}[H]
 \centering
 \caption{Combined effect of the retained Phase 1.2 metadata-repair passes}
-\begin{tabular}{p{0.58\textwidth}rr}
+\begin{tabularx}{\textwidth}{Y r r}
 \toprule
 Metric & Before retained repair & Current value \\
 \midrule
-Rows missing \texttt{bpm} & 37,939 & 21,515 \\
-Rows missing \texttt{genre} & 2,398 & 109 \\
-Rows with official genre source (\texttt{genre\_is\_official = 1}) & 0 & 20,752 \\
-Rows missing \texttt{birth\_state} in the final song file & 273 & 132 \\
-Rows missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,474 & 121 \\
+Rows missing \texttt{bpm} & 37,939 & 22,446 \\
+Rows missing \texttt{genre} & 2,398 & 124 \\
+Rows with official genre source (\texttt{genre\_is\_official = 1}) & 0 & 18,860 \\
+Rows missing \texttt{birth\_state} in the final song file & 273 & 133 \\
+Rows missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 2,474 & 122 \\
 Rows explicitly coded as \texttt{Non-US} in \texttt{us\_macro\_region} & 0 & 2,768 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Current provenance of genre and BPM values after the retained repair passes}
-\begin{tabular}{p{0.56\textwidth}r}
+\begin{tabularx}{\textwidth}{Y r}
 \toprule
 Genre source & Rows \\
 \midrule
-\texttt{apple\_music\_track} & 17,587 \\
-\texttt{deezer\_album\_genre} & 3,053 \\
-\texttt{discogs\_release} & 112 \\
-\texttt{artist\_metadata\_fallback} & 767 \\
-\texttt{ug\_selected} & 22,430 \\
-Still empty & 109 \\
+\texttt{apple\_music\_track} & 18,382 \\
+\texttt{deezer\_album\_genre} & 329 \\
+\texttt{discogs\_release} & 149 \\
+\texttt{artist\_metadata\_fallback} & 836 \\
+\texttt{ug\_selected} & 24,238 \\
+Still empty & 124 \\
 \midrule
 BPM source & Rows \\
 \midrule
-\texttt{apple\_preview\_estimated} & 14,799 \\
-\texttt{deezer\_track} & 1,396 \\
-\texttt{deezer\_preview\_estimated} & 229 \\
-\texttt{ug\_selected} & 6,119 \\
-Still empty & 21,515 \\
+\texttt{apple\_preview\_estimated} & 15,418 \\
+\texttt{deezer\_preview\_estimated} & 57 \\
+\texttt{ug\_selected} & 6,137 \\
+Still empty & 22,446 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 Three interpretation points matter.
@@ -426,6 +478,7 @@ dataset less interpretable or blur the difference between provenance and exact
 restoration.
 
 \section{Exact scripts used in the retained workflow}
+\scriptsize
 \begin{longtable}{p{0.36\textwidth}p{0.18\textwidth}p{0.33\textwidth}}
 \toprule
 Script copy in this folder & Main line ranges used & Role in the retained workflow \\
@@ -435,15 +488,16 @@ Script copy in this folder & Main line ranges used & Role in the retained workfl
 Script copy in this folder & Main line ranges used & Role in the retained workflow \\
 \midrule
 \endhead
-\texttt{code/country\_only\_ultimate\_guitar.py} & 297--348; 375--417; 420--560 & Discovery, planning, and raw JSON download for the operational country-only artist frame. \\
-\texttt{code/supplement\_billboard\_country\_chords.py} & 235--363; 366--390 & Billboard-based recovery of added artists and still-missing songs. \\
-\texttt{code/build\_country\_only\_chords\_final.py} & 595--643; 686--705; 1519--1679; 1919--1983; 2015--2033 & Build new song rows, attach chart variables, recover release years, and save the final dataset. \\
-\texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_song\_metadata.py} & 182--221; 426--527; 530--656; 725--760 & Recover missing BPM, replace UG-native genres with official track or release genres when possible, and save provenance columns for the final dataset. \\
-\texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_artist\_metadata.py} & 107--265; 324--341; 379--523; 526--579 & Repair artist origin metadata inside the final song-level file, clear suspicious false matches, and apply web-confirmed overrides. \\
-\texttt{code/run\_country\_songs\_replication.py} & 10--29; 67--77; 87--108; 111--170 & Restore and refresh the upstream country-song package outputs and caches. \\
-\texttt{code/run\_country\_merge\_v6\_replication.py} & 67--71; 109--176; 215--247; 294--360 & Restore and verify the merge-to-v6 bridge that the final builder depends on. \\
+\path{code/country_only_ultimate_guitar.py} & 297--348; 375--417; 420--560 & Discovery, planning, and raw JSON download for the operational country-only artist frame. \\
+\path{code/supplement_billboard_country_chords.py} & 235--363; 366--390 & Billboard-based recovery of added artists and still-missing songs. \\
+\path{code/build_country_only_chords_final.py} & 438--491; 552--625; 693--743; 761--785; 1644--1806; 2044--2144 & Build new song rows, extract section-level BPM and strumming metadata, attach chart variables, recover release years, and save the final dataset. \\
+\path{execution/phase_01_dataset_construction/backfill_country_only_final_song_metadata.py} & 182--221; 426--527; 530--656; 725--760 & Recover missing BPM, replace UG-native genres with official track or release genres when possible, and save provenance columns for the final dataset. \\
+\path{execution/phase_01_dataset_construction/backfill_country_only_final_artist_metadata.py} & 107--265; 324--341; 379--523; 526--579 & Repair artist origin metadata inside the final song-level file, clear suspicious false matches, and apply web-confirmed overrides. \\
+\path{code/run_country_songs_replication.py} & 10--29; 67--77; 87--108; 111--170 & Restore and refresh the upstream country-song package outputs and caches. \\
+\path{code/run_country_merge_v6_replication.py} & 67--71; 109--176; 215--247; 294--360 & Restore and verify the merge-to-v6 bridge that the final builder depends on. \\
 \bottomrule
 \end{longtable}
+\normalsize
 
 \section{Stata note}
 There is no retained substantive Stata construction workflow in Phase 1.2. The

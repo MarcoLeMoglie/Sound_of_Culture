@@ -15,7 +15,7 @@ from pathlib import Path
 # Configuration
 musicbrainzngs.set_useragent("SoundOfCultureEnrichment", "1.0", "https://github.com/MarcoLeMoglie/Sound_of_Culture")
 
-BASE_DIR = Path("data/processed_datasets/country_artists")
+BASE_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 INPUT_CSV = BASE_DIR / "Sound_of_Culture_Country_Full.csv"
 OUTPUT_CSV = BASE_DIR / "Sound_of_Culture_Country_Full_Enriched.csv"
 CACHE_FILE = BASE_DIR / "intermediate" / "json_caches" / "release_years_cache.json"

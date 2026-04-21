@@ -8,7 +8,7 @@ import pandas as pd
 
 
 PACKAGE_DIRNAME = "replication_package_country_merge_v6_2026_04_03"
-ROOT_DATA_DIR = Path("data/processed_datasets/country_artists")
+ROOT_DATA_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 BACKFILL_SUBDIR = Path("intermediate/restricted_final_v6_backfill")
 CACHE_SUBDIR = Path("intermediate/json_caches")
 

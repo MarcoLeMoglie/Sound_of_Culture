@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 
 
-BASE_DIR = Path("data/processed_datasets/country_artists")
+BASE_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 INTERMEDIATE_DIR = BASE_DIR / "intermediate"
 
 BASE_CHART_CSV = INTERMEDIATE_DIR / "billboard_country_year_end_songs_1946_2025.csv"

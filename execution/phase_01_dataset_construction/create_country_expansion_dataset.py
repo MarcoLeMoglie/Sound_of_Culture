@@ -13,8 +13,8 @@ sys.path.append(project_root)
 from execution.phase_01_dataset_construction.music_indices import calculate_indices
 
 INSTRUMENT = "Chords"
-INPUT_DIR = "data/raw_tabs_country"
-OUTPUT_DIR = "data/processed_datasets/country_artists"
+INPUT_DIR = "data/phase_01_dataset_construction/raw/ultimate_guitar_country_chords"
+OUTPUT_DIR = "data/phase_01_dataset_construction/processed/country_artists"
 OUTPUT_FILENAME = "Sound_of_Culture_Country_Full"
 
 def flatten_tab_data(filepath):

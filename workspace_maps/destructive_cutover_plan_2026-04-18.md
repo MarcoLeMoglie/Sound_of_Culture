@@ -116,7 +116,8 @@ Examples:
 
 - archival Git branches such as
   `codex-archive-pre-restructure-2026-04-18`
-- bundled replication-package layouts under `data/processed_datasets/...`
+- bundled replication-package layouts now located under
+  `data/phase_01_dataset_construction/processed/...`
 - cutover maps and restructuring histories under `workspace_maps/`
 - old output snapshots that are part of documented replication bundles
 

@@ -70,8 +70,8 @@ def discover_for_artist(client, artist_name):
     return all_tabs
 
 def main():
-    artist_csv = "data/processed_datasets/country_artists/country_artists_master.csv"
-    output_json = "data/intermediate/json/input_songs_bulk_country.json"
+    artist_csv = "data/phase_01_dataset_construction/processed/country_artists/country_artists_master.csv"
+    output_json = "data/phase_01_dataset_construction/intermediate/json/input_songs_bulk_country.json"
     
     client = UltimateGuitarClient()
     artists = load_artists(artist_csv)

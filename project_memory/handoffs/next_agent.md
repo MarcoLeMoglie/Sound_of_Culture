@@ -84,7 +84,7 @@
   those two legacy subtrees
 - block 14 runtime-validated
   `execution/phase_01_dataset_construction/prepare_bulk_input.py`
-  successfully; it recreated `data/intermediate/json/input_songs_bulk.json`
+  successfully; it recreated `data/phase_01_dataset_construction/intermediate/json/input_songs_bulk.json`
   with `994` queries
 - block 15 added the last missing active replication-side Phase 1 wrapper:
   `execution/phase_01_dataset_construction/restore_top100_jsons_by_id.py`
@@ -135,11 +135,11 @@ Important validation outcomes already obtained:
 - `execution/phase_01_dataset_construction/run_artist_universe_replication.py`
   completed successfully
 - `execution/phase_02_exploratory_analysis/do/eda.do` now reads
-  `data/processed_datasets/top100YearEnd8525/dataset_chords_top100yearend.dta`
+  `data/phase_02_exploratory_analysis/processed/top100YearEnd8525/dataset_chords_top100yearend.dta`
   and produces PDFs in
   `execution/phase_02_exploratory_analysis/output_figures/`
 - `execution/phase_02_exploratory_analysis/do/eda_bass.do` now reads
-  `data/processed_datasets/top100YearEnd8525/dataset_bass_top100yearend.dta`
+  `data/phase_02_exploratory_analysis/processed/top100YearEnd8525/dataset_bass_top100yearend.dta`
   and produces PDFs in
   `execution/phase_02_exploratory_analysis/output_figures_bass/`
 - the `r(199)` lines in `eda.log` and `eda_bass.log` are harmless
@@ -206,3 +206,39 @@ Recommended next scientific action:
     block rather than rerunning the same currently stalled loop
   - a chunked official-genre upgrade workflow for the large residual
     `ug_selected` block
+
+## 2026-04-21 update
+
+The data folder has been reorganized physically into the canonical phase
+structure. Start from:
+
+- `data/README.md`
+- `data/phase_01_dataset_construction/`
+- `data/phase_02_exploratory_analysis/`
+- `data/phase_03_validation/`
+- `data/phase_04_causal_shocks/`
+
+Do not resurrect old top-level data roots. If a script still points to
+`data/processed_datasets` or other old roots, treat that as a path bug and
+reroot it to the phase-based location.
+
+Antigravity's UG rhythm-enrichment work has been reviewed and retained with
+corrections. The final builder now extracts:
+
+- `bpm_sections`
+- `strumming_patterns`
+
+Current final dataset:
+
+- rows: `44,058`
+- `bpm` non-missing: `21,612`
+- `bpm` missing: `22,446`
+- `bpm_sections` non-empty rows: `4,967`
+- `strumming_patterns` non-empty rows: `4,973`
+- `genre` non-missing: `43,934`
+- official genre rows: `18,860`
+
+The Phase 1.2 report has been updated to document the UG strumming extraction.
+The next agent should not interpret `genre` and official genre rows as the same
+count: `genre` is the final field, while official genre rows are only the
+subset with `genre_is_official = 1`.

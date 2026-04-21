@@ -116,11 +116,39 @@ def calculate_indices(data):
     res["structure_variation"] = unique_sections / 6.0
     
     # 10. Finger Movement Proxy
-    # Average length difference of chord strings (heuristic proxy)
-    # Real applicator movement is slow, string length as weight of extension
-    fret_movement = sum(abs(len(chord_matches[i]) - len(chord_matches[i-1])) for i in range(1, total_chords))
-    res["finger_movement"] = fret_movement / total_chords
-    
+    # Improved: Calculate absolute fret distance between consecutive chords
+    # using 'applicature' data if available.
+    applicature = data.get("applicature", [])
+    chord_fret_map = {}
+    if isinstance(applicature, list):
+        for app in applicature:
+            chord_name = app.get("chord")
+            variations = app.get("variations", [])
+            if chord_name and variations:
+                # Use the first variation (usually standard)
+                first_var = variations[0]
+                frets = first_var.get("frets", [])
+                if frets:
+                    # Average fret position of active strings
+                    active_frets = [f for f in frets if f >= 0]
+                    if active_frets:
+                        chord_fret_map[chord_name] = sum(active_frets) / len(active_frets)
+
+    if total_chords > 1:
+        fret_jumps = []
+        for i in range(1, total_chords):
+            c1, c2 = chord_matches[i-1], chord_matches[i]
+            p1 = chord_fret_map.get(c1)
+            p2 = chord_fret_map.get(c2)
+            if p1 is not None and p2 is not None:
+                fret_jumps.append(abs(p1 - p2))
+            else:
+                # Fallback to label length difference if applicature is missing
+                fret_jumps.append(abs(len(c1) - len(c2)) / 5.0)
+        res["finger_movement"] = sum(fret_jumps) / len(fret_jumps) if fret_jumps else 0.0
+    else:
+        res["finger_movement"] = 0.0
+
     # 11. Playability
     res["playability"] = 1.0 - res["complexity"]
     

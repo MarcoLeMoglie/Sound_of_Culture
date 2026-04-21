@@ -425,7 +425,8 @@ The active branch now keeps only the `execution/phase_*` trees. Legacy
 execution layouts survive through:
 
 - the archival branch `codex-archive-pre-destructive-cutover-2026-04-19`
-- packaged replication snapshots under `data/processed_datasets/...`
+- packaged replication snapshots under
+  `data/phase_01_dataset_construction/processed/...`
 - restructuring history under `workspace_maps/`
 
 ## 2026-04-19
@@ -502,3 +503,51 @@ The retained script now supports:
 
 and the first two retained chunks on 2026-04-20 reduced BPM missingness from
 `21,775` to `21,679`.
+
+## 2026-04-21
+
+### Decision
+
+Make the physical data layout phase-based now, while preserving generated and
+downloaded material inside the new phase folders rather than deleting it.
+
+### Why
+
+The repository had already moved conceptually to four research phases, but the
+`data/` tree still exposed old roots such as `processed_datasets`,
+`intermediate`, `raw_tabs_*`, `external_sources`, and `project_outputs`. That
+made the active branch harder for Codex, Antigravity, and the coauthor's Codex
+to read consistently.
+
+### Consequence
+
+`data/` now exposes the phase folders as the primary layout. Legacy material is
+retained under phase-specific raw, intermediate, processed, validation, logs,
+archive, or project-output folders. Future code should reference the
+phase-based paths directly.
+
+## 2026-04-21
+
+### Decision
+
+Retain Ultimate Guitar section-level rhythm metadata in the final Phase 1.2
+dataset.
+
+### Why
+
+Manual inspection showed that many UG chord JSON files include a structured
+`strumming` block with part names, BPM values, denominator-like fields, triplet
+flags, and encoded strumming measures. This is substantively useful rhythm and
+performance-style information, not just raw scrape residue.
+
+### Consequence
+
+The final builder now writes:
+
+- `bpm_sections`
+- `strumming_patterns`
+
+The retained parser handles numeric and dictionary-style UG measure entries,
+and the builder detects stale caches that predate the richer parser. The
+current final dataset has `4,967` rows with section-level BPM and `4,973` rows
+with structured strumming patterns.

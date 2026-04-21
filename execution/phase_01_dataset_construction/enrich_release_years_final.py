@@ -9,7 +9,7 @@ from googlesearch import search  # If available, else mock with search_web calls
 from pathlib import Path
 
 # Paths
-BASE_DIR = Path("data/processed_datasets/country_artists")
+BASE_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 INPUT_CSV = BASE_DIR / 'Sound_of_Culture_Country_Full_Enriched_v3.csv'
 OUTPUT_CSV = BASE_DIR / 'Sound_of_Culture_Country_Full_Enriched_v5.csv'
 OUTPUT_DTA = BASE_DIR / 'Sound_of_Culture_Country_Full_Enriched_v5.dta'

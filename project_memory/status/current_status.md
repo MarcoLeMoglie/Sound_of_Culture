@@ -2,7 +2,7 @@
 
 ## Date
 
-2026-04-18
+2026-04-21
 
 ## Active working branch
 
@@ -79,6 +79,61 @@
 
 Return to scientific work and report-writing on top of the now-clean
 phase-based architecture.
+
+## 2026-04-21 workspace reorganization and UG rhythm enrichment
+
+The project data tree has now been physically reorganized to mirror the
+canonical phase structure:
+
+- `data/phase_01_dataset_construction/`
+- `data/phase_02_exploratory_analysis/`
+- `data/phase_03_validation/`
+- `data/phase_04_causal_shocks/`
+
+Legacy data roots such as `data/processed_datasets/`, `data/intermediate/`,
+`data/raw_tabs_country/`, `data/raw_country_tabs/`, `data/raw_tabs_chords/`,
+`data/raw_tabs_bass/`, `data/external_sources/`, `data/project_outputs/`,
+`validation/`, `log/`, and the cold-start root folder were folded into the
+phase folders or archived under the phase folders. `data/README.md` now
+documents the canonical data layout.
+
+Antigravity's Phase 1.2 rhythm-enrichment idea was reviewed and retained with
+additional corrections. The final builder now extracts structured UG
+`strumming` metadata into:
+
+- `bpm_sections`
+- `strumming_patterns`
+
+The parser handles both numeric and dictionary-style UG measure entries, and
+the builder now detects stale new-song caches that predate the richer
+section-level fields or numeric-measure parsing.
+
+Current final-dataset status after rebuild plus retained artist/song metadata
+backfills:
+
+- rows: `44,058`
+- `bpm` non-missing: `21,612`
+- `bpm` missing: `22,446`
+- rows with non-empty `bpm_sections`: `4,967`
+- rows with non-empty `strumming_patterns`: `4,973`
+- rows whose `strumming_patterns` include encoded measure values: `4,973`
+- `genre` non-missing: `43,934`
+- `genre` missing: `124`
+- rows with official genre source (`genre_is_official = 1`): `18,860`
+- `birth_state` missing rows: `133`
+- `birth_country` missing rows: `122`
+- `us_macro_region` missing or `Unknown` rows: `122`
+- rows explicitly coded as `Non-US` in `us_macro_region`: `2,768`
+
+Interpretation:
+
+- `genre` is the final populated genre field and can still come from UG or
+  artist fallback.
+- official genre rows are the subset where `genre_is_official = 1`, currently
+  from Apple Music, Deezer, or Discogs track/release evidence.
+- Spotify is a possible supplemental BPM source only if usable API credentials
+  have access to the restricted audio-features/audio-analysis surface; it
+  should not be assumed as a universal replacement source.
 
 ## Phase 1 metadata-repair status
 

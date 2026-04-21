@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 
 INSTRUMENT = "Chords" # Default
-OUTPUT_DIR = "data/processed_datasets/top100YearEnd8525"
+OUTPUT_DIR = "data/phase_02_exploratory_analysis/processed/top100YearEnd8525"
 OUTPUT_NAME_MAP = {
     "Chords": "dataset_chords_top100yearend",
     "Bass": "dataset_bass_top100yearend",

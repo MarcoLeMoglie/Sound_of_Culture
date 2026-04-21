@@ -38,7 +38,7 @@ def expand_seeds():
     all_new_artists = set()
     
     # Load existing
-    seed_file = "data/intermediate/json/seed_country_artists.json"
+    seed_file = "data/phase_01_dataset_construction/intermediate/json/seed_country_artists.json"
     with open(seed_file, 'r') as f:
         existing_artists = set(json.load(f))
     

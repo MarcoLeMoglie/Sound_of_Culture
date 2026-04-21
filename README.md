@@ -60,6 +60,12 @@ Current restructuring status:
   operational restructuring pass
 - block 16 completed: destructive cutover removed the active `execution/step*`
   trees after the validated pre-cutover snapshot was archived
+- 2026-04-21 data-layout cleanup completed: `data/` now exposes the same
+  phase-based structure as the research design, and legacy data roots were
+  folded into the relevant phase folders
+- 2026-04-21 Phase 1.2 rhythm enrichment completed: the final dataset now
+  carries UG section-level `bpm_sections` and structured `strumming_patterns`
+  fields
 
 For a block-by-block history, see:
 
@@ -117,7 +123,7 @@ High-level structure:
 - `workspace_maps/`
   Restructuring maps and transition documentation.
 - `data/`
-  Project data and replication packages.
+  Project data organized by the same phase structure as the research design.
 
 Important subtrees:
 
@@ -129,6 +135,19 @@ Important subtrees:
   Validation-phase execution surface.
 - `execution/phase_04_causal_shocks/`
   Causal-application execution surface.
+- `data/phase_01_dataset_construction/`
+  Raw UG downloads, intermediate construction files, processed country datasets,
+  validation-reference outputs, logs, and archived cold-start replication
+  material.
+- `data/phase_02_exploratory_analysis/`
+  Processed Top 100 / year-end datasets and raw chord/bass material used by the
+  exploratory scripts.
+- `data/phase_03_validation/`
+  External culture-measure inputs and validation outputs.
+- `data/phase_04_causal_shocks/`
+  War-deaths and China-shock data inputs and causal-shock outputs.
+- `data/README.md`
+  Canonical map of the phase-based data layout.
 
 Current architecture interpretation:
 

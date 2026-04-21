@@ -33,7 +33,8 @@ been completed and validated.
 
 - the last pre-cutover active state is preserved on
   `codex-archive-pre-destructive-cutover-2026-04-19`
-- replication-package copies under `data/processed_datasets/` were not removed
+- at that time, replication-package copies still lived under the pre-phase data
+  layout; they were later moved into the Phase 1 data tree
 - historical restructuring records were not removed
 
 ## Remaining historical references

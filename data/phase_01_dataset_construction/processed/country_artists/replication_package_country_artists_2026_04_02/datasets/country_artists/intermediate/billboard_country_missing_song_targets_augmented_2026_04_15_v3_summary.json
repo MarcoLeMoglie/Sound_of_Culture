@@ -1,0 +1,27 @@
+{
+  "year_end_rows": 2729,
+  "year_end_unique_songs": 2705,
+  "supp_rows": 473,
+  "supp_unique_songs": 466,
+  "supp_years": [
+    1958,
+    1959,
+    1961,
+    1970,
+    1971,
+    1972,
+    1973,
+    1974,
+    1975,
+    1976,
+    1977,
+    1978,
+    1979
+  ],
+  "augmented_missing_song_targets": 1511,
+  "targets_existing_artist": 1486,
+  "targets_missing_artist": 25,
+  "targets_artist_in_adjacent": 65,
+  "targets_artist_in_full": 1298,
+  "supp_new_vs_base_unique_songs": 466
+}

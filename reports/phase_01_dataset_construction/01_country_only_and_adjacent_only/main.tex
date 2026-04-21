@@ -5,12 +5,14 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \geometry{margin=1in}
 \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \title{Sound of Culture\\Phase 1.1 Report: Country-Only and Adjacent-Only Artist Universes}
 \author{Detailed project report}
@@ -54,7 +56,7 @@ files, which document quality, scope, and interpretation.
 \begin{table}[H]
 \centering
 \caption{Canonical Phase 1.1 counts used in the retained workflow}
-\begin{tabular}{p{0.55\textwidth}r}
+\begin{tabularx}{\textwidth}{Y r}
 \toprule
 Object & Count \\
 \midrule
@@ -63,7 +65,7 @@ Adjacent-only artist universe & 2,493 \\
 Country plus adjacent universe & 4,824 \\
 Operational \texttt{artist\_universe\_country\_only.csv} after Billboard additions & 2,539 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 The distinction between the first and the fourth row matters. The retained
@@ -217,7 +219,7 @@ measurement.
 \begin{table}[H]
 \centering
 \caption{Residual missingness in the current operational country-only file}
-\begin{tabular}{lr}
+\begin{tabularx}{\textwidth}{Y r}
 \toprule
 Variable & Remaining missing \\
 \midrule
@@ -228,7 +230,7 @@ Variable & Remaining missing \\
 \texttt{wikidata\_qid} & 89 \\
 \texttt{musicbrainz\_mbid} & 531 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 The retained principle is that the project prefers reliable missingness over
@@ -262,7 +264,7 @@ dataset once the exploratory figures revealed too many residual
 \texttt{Unknown} macro regions.
 
 The retained downstream repair now lives in
-\texttt{execution/phase\_01\_dataset\_construction/backfill\_country\_only\_final\_artist\_metadata.py},
+\path{execution/phase_01_dataset_construction/backfill_country_only_final_artist_metadata.py},
 especially the suspicious-match reset and manual override layer at lines
 107--265, the conservative lookup logic at lines 379--523, and the save path at
 lines 526--579.
@@ -278,21 +280,21 @@ incorrect country or state assignments.
 \begin{table}[H]
 \centering
 \caption{Current artist-origin status inside the final song dataset after the retained repair pass}
-\begin{tabular}{p{0.58\textwidth}r}
+\begin{tabularx}{\textwidth}{Y r}
 \toprule
 Metric & Count \\
 \midrule
-Rows still missing \texttt{birth\_state} & 132 \\
-Rows still coded as missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 121 \\
+Rows still missing \texttt{birth\_state} & 133 \\
+Rows still coded as missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 122 \\
 Rows explicitly coded as \texttt{Non-US} in \texttt{us\_macro\_region} & 2,768 \\
-Rows still missing \texttt{birth\_country} & 121 \\
-Unique artists still missing \texttt{birth\_state} & 43 \\
-Unique artists still missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 39 \\
-Unique artists explicitly coded as \texttt{Non-US} in \texttt{us\_macro\_region} & 144 \\
-Unique artists still missing \texttt{birth\_country} & 39 \\
+Rows still missing \texttt{birth\_country} & 122 \\
+Unique artists still missing \texttt{birth\_state} & 39 \\
+Unique artists still missing or \texttt{Unknown} in \texttt{us\_macro\_region} & 35 \\
+Unique artists explicitly coded as \texttt{Non-US} in \texttt{us\_macro\_region} & 96 \\
+Unique artists still missing \texttt{birth\_country} & 35 \\
 US artists still missing \texttt{birth\_state} & 0 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 The last row matters most for the substantive geography problem. After the
@@ -331,6 +333,7 @@ Those choices were rejected because they would either blur the substantive
 meaning of the country sample or create unreliable metadata.
 
 \section{Exact scripts used in the retained workflow}
+\scriptsize
 \begin{longtable}{p{0.34\textwidth}p{0.18\textwidth}p{0.35\textwidth}}
 \toprule
 Script copy in this folder & Main line ranges used & Role in the retained workflow \\
@@ -340,12 +343,13 @@ Script copy in this folder & Main line ranges used & Role in the retained workfl
 Script copy in this folder & Main line ranges used & Role in the retained workflow \\
 \midrule
 \endhead
-\texttt{code/build\_country\_artists\_dataset.py} & 2123--2258; 2329--2353; 2393--2439; 2442 onward & Build the base country-artist datasets, deduplicate, and export the first QC layer. \\
-\texttt{code/build\_extended\_artist\_universe.py} & 571--583; 586--607; 610--691; 694--845; 869--945; 948 onward & Build the country core, expand to adjacent-only, and write the final universe QC and methodological notes. \\
-\texttt{code/enrich\_artist\_universe\_missing\_metadata.py} & 2062--2085; 2119 onward & Recover missing key metadata directly on the operational country-only file used downstream. \\
-\texttt{code/run\_artist\_universe\_replication.py} & 6--20; 57--65; 68--75; 87--108; 111--121; 128--145 & Restore or refresh the exact artist-universe replication package. \\
+\path{code/build_country_artists_dataset.py} & 2123--2258; 2329--2353; 2393--2439; 2442 onward & Build the base country-artist datasets, deduplicate, and export the first QC layer. \\
+\path{code/build_extended_artist_universe.py} & 571--583; 586--607; 610--691; 694--845; 869--945; 948 onward & Build the country core, expand to adjacent-only, and write the final universe QC and methodological notes. \\
+\path{code/enrich_artist_universe_missing_metadata.py} & 2062--2085; 2119 onward & Recover missing key metadata directly on the operational country-only file used downstream. \\
+\path{code/run_artist_universe_replication.py} & 6--20; 57--65; 68--75; 87--108; 111--121; 128--145 & Restore or refresh the exact artist-universe replication package. \\
 \bottomrule
 \end{longtable}
+\normalsize
 
 \section{Stata note}
 There is no retained substantive Stata workflow in Phase 1.1. The artist-side

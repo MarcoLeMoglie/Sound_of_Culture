@@ -15,7 +15,7 @@ if str(ROOT) not in sys.path:
 from execution.phase_01_dataset_construction import enrich_artist_universe_missing_metadata as meta
 
 
-BASE_DIR = Path("data/processed_datasets/country_artists")
+BASE_DIR = Path("data/phase_01_dataset_construction/processed/country_artists")
 TARGET_CSV = BASE_DIR / "Sound_of_Culture_Country_CountryOnly_Chords_Final_2026_04_08.csv"
 TARGET_DTA = BASE_DIR / "Sound_of_Culture_Country_CountryOnly_Chords_Final_2026_04_08.dta"
 COUNTRY_ONLY_UNIVERSE = BASE_DIR / "artist_universe_country_only.csv"

@@ -1,0 +1,30 @@
+[
+  {
+    "metric":"existing_universe_artists",
+    "value":2333
+  },
+  {
+    "metric":"chart_missing_rows",
+    "value":1855
+  },
+  {
+    "metric":"chart_missing_unique_songs",
+    "value":1812
+  },
+  {
+    "metric":"chart_missing_raw_artists",
+    "value":214
+  },
+  {
+    "metric":"added_artists",
+    "value":206
+  },
+  {
+    "metric":"unresolved_placeholder_artists",
+    "value":115
+  },
+  {
+    "metric":"updated_universe_artists",
+    "value":2539
+  }
+]

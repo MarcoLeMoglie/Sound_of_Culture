@@ -6,7 +6,7 @@ args rebuild_mode
 
 local project_root "`c(pwd)'"
 local package_dirname "replication_package_country_songs_2026_04_01"
-local python_launcher "data/processed_datasets/country_artists/`package_dirname'/code/python/phase_01_dataset_construction/run_country_songs_replication.py"
+local python_launcher "data/phase_01_dataset_construction/processed/country_artists/`package_dirname'/code/python/phase_01_dataset_construction/run_country_songs_replication.py"
 local full_rebuild 0
 
 if inlist("`rebuild_mode'", "full", "full_rebuild", "--full-rebuild") {

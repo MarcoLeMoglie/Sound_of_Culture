@@ -1,8 +1,8 @@
 import json
 import os
 
-input_file = "data/processed_datasets/top100YearEnd8525/songs_tracklist_top100yearend.json"
-output_file = "data/intermediate/json/input_songs_bulk.json"
+input_file = "data/phase_02_exploratory_analysis/processed/top100YearEnd8525/songs_tracklist_top100yearend.json"
+output_file = "data/phase_01_dataset_construction/intermediate/json/input_songs_bulk.json"
 
 if not os.path.exists(input_file):
     print("Tracklist file not found.")
